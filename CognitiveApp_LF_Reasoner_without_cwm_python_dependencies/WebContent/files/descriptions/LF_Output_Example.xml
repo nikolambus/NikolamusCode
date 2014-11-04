@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:lf="http://localhost:8080/CognitiveApp/files/ontologies/lf#">
+	<rdf:Description rdf:about="http://www.example.com/Request_01_Example">
+		<rdf:type rdf:resource="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3ARequest"/>
+		<lf:hasPatientFile>
+			<rdf:Description rdf:about="http://localhost:8080/CognitiveApp/files/input/universal_patient.ttl">
+				<rdf:type rdf:resource="http://localhost:8080/CognitiveApp/files/ontologies/lf/PatientFile"/>
+				<dc:format>text/turtle</dc:format> 
+			</rdf:Description>		
+		</lf:hasPatientFile>	
+		<lf:hasRuleFile>
+			<rdf:Description rdf:about="http://localhost:8080/CognitiveApp/files/input/rule_SF.n3">
+				<rdf:type rdf:resource="http://localhost:8080/CognitiveApp/files/ontologies/lf/RuleFile"/>
+				<dc:format>text/n3</dc:format> 
+			</rdf:Description>
+		</lf:hasRuleFile>
+		<lf:hasNewPatientFile>
+			<rdf:Description rdf:about="http://localhost:8080/CognitiveApp/files/output/result_patient.ttl">
+				<rdf:type rdf:resource="http://localhost:8080/CognitiveApp/files/ontologies/lf/PatientFile"/>
+				<dc:format>text/turtle</dc:format> 
+			</rdf:Description>
+		</lf:hasNewPatientFile>
+	</rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:msm="http://cms-wg.sti2.org/minimal-service-model#" 
+	xmlns:sawsdl="http://www.w3.org/ns/sawsdl#" 
+	xmlns:sparql="http://www.w3.org/TR/rdf-sparql-query/#" 
+	xmlns:sp="http://surgipedia.sfb125.de/wiki/Special:URIResolver/"
+	xmlns:lapis="http://localhost:8080/CognitiveApp/files/ontologies/lapis#"
+	xmlns:lf="http://localhost:8080/CognitiveApp/files/ontologies/lf#">
+	
+<rdf:Description rdf:about="http://localhost:8080/CognitiveApp/LFReasoner">
+	<rdf:type rdf:resource="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3ACognitive_App"/>
+	<rdfs:label> Cognitive App for reasoning over the Liver factors of a patient </rdfs:label>	
+	<owl:sameAs	 rdf:resource="http://surgipedia.sfb125.de/wiki/Special:URIResolver/LiverRuleExec"/>
+	<sp:Property-3AHas_description>Applies a rule to patient data and ouputs the patient data with some new informations</sp:Property-3AHas_description>
+	<lapis:hasInputDescription>A patient in RDF (Turtle) format and a rule formalized in N3 format"</lapis:hasInputDescription>>
+	<lapis:hasOutputDescription>A patient after reasoning (with new liver factor observations)</lapis:hasOutputDescription>
+	<sp:Property-3AHasExampleRequest rdf:resource="http://localhost:8080/CognitiveApp/files/examples/lf/LF_Input_Example.xml"/>
+	<sp:Property-3AHasExampleResponse rdf:resource="http://localhost:8080/SFBPrototyp/files/examples/lf/LF_Output_Example.xml"/>
+	<sawsdl:modelReference>
+		<msm:Precondition>
+			<rdf:value rdf:datatype="http://www.w3.org/TR/rdf-sparql-query/#GraphPattern">{
+				?request		rdf:type				sp:Category-3ARequest.
+				?request		lf:hasPatientFile		?patientFile.
+				?request		lf:hasRuleFile			?ruleFile.
+				?patientFile		dc:format			"text/turtle".
+				?ruleFile 			dc:format 			"text/n3".
+			}</rdf:value>
+		</msm:Precondition>
+	</sawsdl:modelReference>	
+	<sawsdl:modelReference>
+			<msm:Postcondition>
+				<rdf:value rdf:datatype="http://www.w3.org/TR/rdf-sparql-query/#GraphPattern">{	
+					?request		rdf:type			sp:Category-3ARequest.
+					?request		lf:hasPatientFile		?patientFile.
+					?request		lf:hasRuleFile			?ruleFile.
+					?patientFile		dc:format			"text/turtle".
+					?ruleFile 			dc:format 			"text/n3".
+					
+					?request 		lf:hasNewPatientFile	?newPatientFile.
+				}</rdf:value>
+			</msm:Postcondition>
+		</sawsdl:modelReference>
+</rdf:Description>
+</rdf:RDF>
