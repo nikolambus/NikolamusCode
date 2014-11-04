@@ -1,0 +1,191 @@
+    @prefix xnat: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+    @prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+    @prefix sp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+    @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+    @prefix time: <http://www.w3.org/2000/10/swap/time#>.
+    @prefix string: <http://www.w3.org/2000/10/swap/string#>.
+    
+{ 
+ ?o1 sp:has_liverfactor xnat:Fong .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_positiveLymphNode ?posNode .
+ ?posNode string:equalIgnoringCase "No" 
+} => {
+	xnat:scoresHelpNode sp:has_score_posNode 0 .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:Fong .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_positiveLymphNode ?posNode .
+ ?posNode string:equalIgnoringCase "Yes" 
+} => {
+	xnat:scoresHelpNode sp:has_score_posNode 1 .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:Fong .
+ ?o1 sp:has_patient ?p . 
+ ?o1 sp:has_intervalFromResectionToMetastases ?interval .
+ ?interval math:notLessThan 12 
+} => {
+	xnat:scoresHelpNode sp:has_score_interval 0 .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:Fong .
+ ?o1 sp:has_patient ?p . 
+ ?o1 sp:has_intervalFromResectionToMetastases ?interval .
+ ?interval math:lessThan 12 
+} => {
+	xnat:scoresHelpNode sp:has_score_interval 1 .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:Fong .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_numberOfMetastases ?num .
+ ?num math:notGreaterThan 1 
+} => {
+	xnat:scoresHelpNode sp:has_score_num 0 .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:Fong .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_numberOfMetastases ?num .
+ ?num math:greaterThan 1 
+} => {
+	xnat:scoresHelpNode sp:has_score_num 1 .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:Fong .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_CEALevel ?cea .
+ ?cea math:notGreaterThan 200
+} => {
+	xnat:scoresHelpNode sp:has_score_cea 0 .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:Fong .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_CEALevel ?cea .
+ ?cea math:greaterThan 200
+} => {
+	xnat:scoresHelpNode sp:has_score_cea 1 .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:Fong .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_metSize ?size .
+ ?size math:notGreaterThan 5 
+} => {
+	xnat:scoresHelpNode sp:has_score_size 0 .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:Fong .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_metSize ?size .
+ ?size math:greaterThan 5 
+} => {
+	xnat:scoresHelpNode sp:has_score_size 1 .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:Fong .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs . 
+ xnat:scoresHelpNode sp:has_score_posNode ?po .
+ xnat:scoresHelpNode sp:has_score_interval ?in .
+ xnat:scoresHelpNode sp:has_score_num ?nu .
+ xnat:scoresHelpNode sp:has_score_cea ?ce .
+ xnat:scoresHelpNode sp:has_score_size ?si .
+ (?po ?in ?nu ?ce ?si) math:sum ?s .
+ ?s math:equalTo 5
+} => {
+	_:FongObs a sp:has_Liver_Factor_Observation .
+	_:FongObs sp:has_liverfactor xnat:Fong .
+	_:FongObs sp:has_patient ?p .
+	_:FongObs sp:has_obsValue "Prognostic survival of 15 months" .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:Fong .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs . 
+ xnat:scoresHelpNode sp:has_score_posNode ?po .
+ xnat:scoresHelpNode sp:has_score_interval ?in .
+ xnat:scoresHelpNode sp:has_score_num ?nu .
+ xnat:scoresHelpNode sp:has_score_cea ?ce .
+ xnat:scoresHelpNode sp:has_score_size ?si .
+ (?po ?in ?nu ?ce ?si) math:sum ?s .
+ ?s math:equalTo 4
+} => {
+	_:FongObs a sp:has_Liver_Factor_Observation .
+	_:FongObs sp:has_liverfactor xnat:Fong .
+	_:FongObs sp:has_patient ?p .
+	_:FongObs sp:has_obsValue "Prognostic survival of 30 months" .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:Fong .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs . 
+ xnat:scoresHelpNode sp:has_score_posNode ?po .
+ xnat:scoresHelpNode sp:has_score_interval ?in .
+ xnat:scoresHelpNode sp:has_score_num ?nu .
+ xnat:scoresHelpNode sp:has_score_cea ?ce .
+ xnat:scoresHelpNode sp:has_score_size ?si .
+ (?po ?in ?nu ?ce ?si) math:sum ?s .
+ ?s math:equalTo 3
+} => {
+	_:FongObs a sp:has_Liver_Factor_Observation .
+	_:FongObs sp:has_liverfactor xnat:Fong .
+	_:FongObs sp:has_patient ?p .
+	_:FongObs sp:has_obsValue "Prognostic survival of 50 months" .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:Fong .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs . 
+ xnat:scoresHelpNode sp:has_score_posNode ?po .
+ xnat:scoresHelpNode sp:has_score_interval ?in .
+ xnat:scoresHelpNode sp:has_score_num ?nu .
+ xnat:scoresHelpNode sp:has_score_cea ?ce .
+ xnat:scoresHelpNode sp:has_score_size ?si .
+ (?po ?in ?nu ?ce ?si) math:sum ?s .
+ ?s math:equalTo 2
+} => {
+	_:FongObs a sp:has_Liver_Factor_Observation .
+	_:FongObs sp:has_liverfactor xnat:Fong .
+	_:FongObs sp:has_patient ?p .
+	_:FongObs sp:has_obsValue "Prognostic survival of 73 months" .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:Fong .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs . 
+ xnat:scoresHelpNode sp:has_score_posNode ?po .
+ xnat:scoresHelpNode sp:has_score_interval ?in .
+ xnat:scoresHelpNode sp:has_score_num ?nu .
+ xnat:scoresHelpNode sp:has_score_cea ?ce .
+ xnat:scoresHelpNode sp:has_score_size ?si .
+ (?po ?in ?nu ?ce ?si) math:sum ?s .
+ ?s math:equalTo 1
+} => {
+	_:FongObs a sp:has_Liver_Factor_Observation .
+	_:FongObs sp:has_liverfactor xnat:Fong .
+	_:FongObs sp:has_patient ?p .
+	_:FongObs sp:has_obsValue "Prognostic survival of 74 months" .
+	} .

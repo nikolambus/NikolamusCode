@@ -1,0 +1,204 @@
+    @prefix : <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+    @prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+    @prefix sp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+    @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+    @prefix time: <http://www.w3.org/2000/10/swap/time#>.
+    @prefix string: <http://www.w3.org/2000/10/swap/string#>.
+    
+{
+ ?o1 sp:has_liverfactor :Weight .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_obsValue ?weight .
+ ?o2 sp:has_liverfactor :Height .
+ ?o2 sp:has_patient ?p .
+ ?o2 sp:has_obsValue ?height .
+ ?o1 sp:has_observationDate ?date1 .
+ ?o2 sp:has_observationDate ?date2 .
+ ?date1 string:equalIgnoringCase ?date2 . 
+ ?date1 time:inSeconds ?secs .
+ (?weight (?height 2).math:exponentiation) math:quotient ?bmi .
+ ?bmi math:lessThan 16  
+} => {
+	_:bmiObs a sp:has_Liver_Factor_Observation .
+	_:bmiObs sp:has_liverfactor :BMI .
+	_:bmiObs sp:has_patient ?p .
+	_:bmiObs sp:has_bmiValue ?bmi .
+	_:bmiObs sp:has_obsValue :severeUnderweight .
+	_:bmiObs sp:has_datatype xnatpatient:String .
+	_:bmiObs sp:has_observationDate ?date1 .
+	_:bmiObs sp:has_timestamp ?secs .
+	} .
+
+{
+ ?o1 sp:has_liverfactor :Weight .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_obsValue ?weight .
+ ?o2 sp:has_liverfactor :Height .
+ ?o2 sp:has_patient ?p .
+ ?o2 sp:has_obsValue ?height .
+ ?o1 sp:has_observationDate ?date1 .
+ ?o2 sp:has_observationDate ?date2 .
+ ?date1 string:equalIgnoringCase ?date2 .
+ ?date1 time:inSeconds ?secs . 
+ (?weight (?height 2).math:exponentiation) math:quotient ?bmi .
+ ?bmi math:notLessThan 16 .
+ ?bmi math:lessThan 17 
+} => {
+	_:bmiObs a sp:has_Liver_Factor_Observation .
+	_:bmiObs sp:has_liverfactor :BMI .
+	_:bmiObs sp:has_patient ?p .
+	_:bmiObs sp:has_bmiValue ?bmi .
+	_:bmiObs sp:has_obsValue :Underweight .
+	_:bmiObs sp:has_datatype xnatpatient:String .
+	_:bmiObs sp:has_observationDate ?date1 .
+	_:bmiObs sp:has_timestamp ?secs .
+	} .
+
+{
+ ?o1 sp:has_liverfactor :Weight .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_obsValue ?weight .
+ ?o2 sp:has_liverfactor :Height .
+ ?o2 sp:has_patient ?p .
+ ?o2 sp:has_obsValue ?height .
+ ?o1 sp:has_observationDate ?date1 .
+ ?o2 sp:has_observationDate ?date2 .
+ ?date1 string:equalIgnoringCase ?date2 . 
+ ?date1 time:inSeconds ?secs .
+ (?weight (?height 2).math:exponentiation) math:quotient ?bmi .
+ ?bmi math:notLessThan 17 .
+ ?bmi math:lessThan 18.5 
+} => {
+	_:bmiObs a sp:has_Liver_Factor_Observation .
+	_:bmiObs sp:has_liverfactor :BMI .
+	_:bmiObs sp:has_patient ?p .
+	_:bmiObs sp:has_bmiValue ?bmi .
+	_:bmiObs sp:has_obsValue :lightUnderweight .
+	_:bmiObs sp:has_datatype xnatpatient:String .
+	_:bmiObs sp:has_observationDate ?date1 .
+	_:bmiObs sp:has_timestamp ?secs .
+	} .
+
+{
+ ?o1 sp:has_liverfactor :Weight .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_obsValue ?weight .
+ ?o2 sp:has_liverfactor :Height .
+ ?o2 sp:has_patient ?p .
+ ?o2 sp:has_obsValue ?height .
+ ?o1 sp:has_observationDate ?date1 .
+ ?o2 sp:has_observationDate ?date2 .
+ ?date1 string:equalIgnoringCase ?date2 . 
+ ?date1 time:inSeconds ?secs .
+ (?weight (?height 2).math:exponentiation) math:quotient ?bmi .
+ ?bmi math:notLessThan 18.5 .
+ ?bmi math:lessThan 25 
+} => {
+	_:bmiObs a sp:has_Liver_Factor_Observation .
+	_:bmiObs sp:has_liverfactor :BMI .
+	_:bmiObs sp:has_patient ?p .
+	_:bmiObs sp:has_bmiValue ?bmi .
+	_:bmiObs sp:has_obsValue :Normal .
+	_:bmiObs sp:has_datatype xnatpatient:String .
+	_:bmiObs sp:has_observationDate ?date1 .
+	_:bmiObs sp:has_timestamp ?secs .
+	} .
+
+{
+ ?o1 sp:has_liverfactor :Weight .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_obsValue ?weight .
+ ?o2 sp:has_liverfactor :Height .
+ ?o2 sp:has_patient ?p .
+ ?o2 sp:has_obsValue ?height .
+ ?o1 sp:has_observationDate ?date1 .
+ ?o2 sp:has_observationDate ?date2 .
+ ?date1 string:equalIgnoringCase ?date2 .
+ ?date1 time:inSeconds ?secs . 
+ (?weight (?height 2).math:exponentiation) math:quotient ?bmi .
+ ?bmi math:notLessThan 25 .
+ ?bmi math:lessThan 30 
+} => {
+	_:bmiObs a sp:has_Liver_Factor_Observation .
+	_:bmiObs sp:has_liverfactor :BMI .
+	_:bmiObs sp:has_patient ?p .
+	_:bmiObs sp:has_bmiValue ?bmi .
+	_:bmiObs sp:has_obsValue :Overweight .
+	_:bmiObs sp:has_datatype xnatpatient:String .
+	_:bmiObs sp:has_observationDate ?date1 .
+	_:bmiObs sp:has_timestamp ?secs .
+	} .
+
+{
+ ?o1 sp:has_liverfactor :Weight .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_obsValue ?weight .
+ ?o2 sp:has_liverfactor :Height .
+ ?o2 sp:has_patient ?p .
+ ?o2 sp:has_obsValue ?height . 
+ ?o1 sp:has_observationDate ?date1 .
+ ?o2 sp:has_observationDate ?date2 .
+ ?date1 string:equalIgnoringCase ?date2 . 
+ ?date1 time:inSeconds ?secs .
+ (?weight (?height 2).math:exponentiation) math:quotient ?bmi .
+ ?bmi math:notLessThan 30 .
+ ?bmi math:lessThan 35 
+} => {
+	_:bmiObs a sp:has_Liver_Factor_Observation .
+	_:bmiObs sp:has_liverfactor :BMI .
+	_:bmiObs sp:has_patient ?p .
+	_:bmiObs sp:has_bmiValue ?bmi .
+	_:bmiObs sp:has_obsValue :AdiposityClass1 .
+	_:bmiObs sp:has_datatype xnatpatient:String .
+	_:bmiObs sp:has_observationDate ?date1 .
+	_:bmiObs sp:has_timestamp ?secs .
+	} .
+
+{
+ ?o1 sp:has_liverfactor :Weight .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_obsValue ?weight .
+ ?o2 sp:has_liverfactor :Height .
+ ?o2 sp:has_patient ?p .
+ ?o2 sp:has_obsValue ?height .
+ ?o1 sp:has_observationDate ?date1 .
+ ?o2 sp:has_observationDate ?date2 .
+ ?date1 string:equalIgnoringCase ?date2 .
+ ?date1 time:inSeconds ?secs . 
+ (?weight (?height 2).math:exponentiation) math:quotient ?bmi .
+ ?bmi math:notLessThan 35 . 
+ ?bmi math:lessThan 40 
+} => {
+	_:bmiObs a sp:has_Liver_Factor_Observation .
+	_:bmiObs sp:has_liverfactor :BMI .
+	_:bmiObs sp:has_patient ?p .
+	_:bmiObs sp:has_bmiValue ?bmi .
+	_:bmiObs sp:has_obsValue :AdiposityClass2 .
+	_:bmiObs sp:has_datatype xnatpatient:String .
+	_:bmiObs sp:has_observationDate ?date1 .
+	_:bmiObs sp:has_timestamp ?secs .
+	} .
+
+{
+ ?o1 sp:has_liverfactor :Weight .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_obsValue ?weight .
+ ?o2 sp:has_liverfactor :Height .
+ ?o2 sp:has_patient ?p .
+ ?o2 sp:has_obsValue ?height .
+ ?o1 sp:has_observationDate ?date1 .
+ ?o2 sp:has_observationDate ?date2 .
+ ?date1 string:equalIgnoringCase ?date2 . 
+ ?date1 time:inSeconds ?secs .
+ (?weight (?height 2).math:exponentiation) math:quotient ?bmi .
+ ?bmi math:notLessThan 40
+} => {
+	_:bmiObs a sp:has_Liver_Factor_Observation .
+	_:bmiObs sp:has_liverfactor :BMI .
+	_:bmiObs sp:has_patient ?p .
+	_:bmiObs sp:has_bmiValue ?bmi .
+	_:bmiObs sp:has_obsValue :AdiposityClass3 .
+	_:bmiObs sp:has_datatype xnatpatient:String .
+	_:bmiObs sp:has_observationDate ?date1 .
+	_:bmiObs sp:has_timestamp ?secs .
+	} .

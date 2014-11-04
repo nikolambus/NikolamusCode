@@ -1,0 +1,214 @@
+    @prefix xnat: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+    @prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+    @prefix sp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+    @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+    @prefix time: <http://www.w3.org/2000/10/swap/time#>.
+    @prefix string: <http://www.w3.org/2000/10/swap/string#>.
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_bilirubin ?bil .
+ ?bil math:lessThan 2.0 
+} => {
+	xnat:scoresHelpNode sp:has_score_bil 1 .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_bilirubin ?bil .
+ ?bil math:notLessThan 2.0 .
+ ?bil math:notGreaterThan 3.0 
+} => {
+	xnat:scoresHelpNode sp:has_score_bil 2 .
+	} .
+
+{
+ ?o1 sp:has_liverfactor :ChildPugh .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_bilirubin ?bil .
+ ?bil math:greaterThan 3.0 
+} => {
+	xnat:scoresHelpNode sp:has_score_bil 3 .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_albumin ?al .
+ ?al math:greaterThan 3.5 
+} => {
+	xnat:scoresHelpNode sp:has_score_al 1 .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_albumin ?al .
+ ?al math:notLessThan 2.8 .
+ ?al math:notGreaterThan 3.5 
+} => {
+	xnat:scoresHelpNode sp:has_score_al 2 .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_albumin ?al .
+ ?al math:lessThan 2.8 
+} => {
+	xnat:scoresHelpNode sp:has_score_al 3 .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_inr ?inr .
+ ?inr math:lessThan 1.7 
+} => {
+	xnat:scoresHelpNode sp:has_score_inr 1 .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_inr ?inr .
+ ?inr math:notLessThan 1.7 .
+ ?inr math:notGreaterThan 2.2 
+} => {
+	xnat:scoresHelpNode sp:has_score_inr 2 .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_inr ?inr .
+ ?inr math:greaterThan 2.2 
+} => {
+	xnat:scoresHelpNode sp:has_score_inr 3 .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_ascites ?asc .
+ ?asc string:equalIgnoringCase "No"
+} => {
+	xnat:scoresHelpNode sp:has_score_asc 1 .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_ascites ?asc .
+ ?asc string:equalIgnoringCase "Mild (Grade 1)" 
+} => {
+	xnat:scoresHelpNode sp:has_score_asc 2 .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_ascites ?asc .
+ ?asc string:equalIgnoringCase "Moderate (Grade 2,3)" 
+} => {
+	xnat:scoresHelpNode sp:has_score_asc 3 .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_encephalopathy ?enc .
+ ?enc string:equalIgnoringCase "No" 
+} => {
+	xnat:scoresHelpNode sp:has_score_enc 1 .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_encephalopathy ?enc .
+ ?enc string:equalIgnoringCase "Stage I - II" 
+} => {
+	xnat:scoresHelpNode sp:has_score_enc 2 .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_encephalopathy ?enc .
+ ?enc string:equalIgnoringCase "Stage III - IV" 
+} => {
+	xnat:scoresHelpNode sp:has_score_enc 3 .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs . 
+ ?o1 sp:has_patient ?p .
+ xnat:scoresHelpNode sp:has_score_enc ?enc .
+ xnat:scoresHelpNode sp:has_score_al ?al .
+ xnat:scoresHelpNode sp:has_score_bil ?bil .
+ xnat:scoresHelpNode sp:has_score_inr ?inr .
+ xnat:scoresHelpNode sp:has_score_asc ?asc .
+ (?bil ?al ?asc ?enc ?inr) math:sum ?s .
+ ?s math:notLessThan 10 .
+ ?s math:notGreaterThan 15
+} => {
+	_:childpugh a sp:has_Liver_Factor_Observation .
+	_:childpugh sp:has_liverfactor xnat:ChildPughOutput .
+	_:childpugh sp:has_patient ?p .
+	_:childpugh sp:has_score ?s .
+	_:childpugh sp:has_obsValue xnat:Stage_C .
+	_:childpugh sp:has_observationDate ?date1 .
+	_:childpugh sp:has_timestamp ?secs .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p . 
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs . 
+ xnat:scoresHelpNode sp:has_score_enc ?enc .
+ xnat:scoresHelpNode sp:has_score_al ?al .
+ xnat:scoresHelpNode sp:has_score_bil ?bil .
+ xnat:scoresHelpNode sp:has_score_inr ?inr .
+ xnat:scoresHelpNode sp:has_score_asc ?asc .
+ (?bil ?al ?asc ?enc ?inr) math:sum ?s .
+ ?s math:notLessThan 5 .
+ ?s math:notGreaterThan 6
+} => {
+	_:childpugh a sp:has_Liver_Factor_Observation .
+	_:childpugh sp:has_liverfactor xnat:ChildPughOutput .
+	_:childpugh sp:has_patient ?p .
+	_:childpugh sp:has_score ?s .
+	_:childpugh sp:has_obsValue xnat:Stage_A .
+	_:childpugh sp:has_observationDate ?date1 .
+	_:childpugh sp:has_timestamp ?secs .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:ChildPugh .
+ ?o1 sp:has_patient ?p . 
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs . 
+ xnat:scoresHelpNode sp:has_score_enc ?enc .
+ xnat:scoresHelpNode sp:has_score_al ?al .
+ xnat:scoresHelpNode sp:has_score_bil ?bil .
+ xnat:scoresHelpNode sp:has_score_inr ?inr .
+ xnat:scoresHelpNode sp:has_score_asc ?asc .
+ (?bil ?al ?asc ?enc ?inr) math:sum ?s .
+ ?s math:notLessThan 7 .
+ ?s math:notGreaterThan 9 
+} => {
+	_:childpugh a sp:has_Liver_Factor_Observation .
+	_:childpugh sp:has_liverfactor xnat:ChildPughOutput .
+	_:childpugh sp:has_patient ?p .
+	_:childpugh sp:has_score ?s .
+	_:childpugh sp:has_obsValue xnat:Stage_B .
+	_:childpugh sp:has_observationDate ?date1 .
+	_:childpugh sp:has_timestamp ?secs .
+	} .

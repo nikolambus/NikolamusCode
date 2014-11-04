@@ -1,0 +1,9 @@
+@prefix ex: <http://example#> .
+
+{
+ ?p1 ex:hasFather ex:Boris .
+ ?p2 ex:hasMother ex:Natasha .
+ ex:Boris ex:marriedTo ex:Natasha .
+} => {
+	?p1 ex:hasSibling "yes" .
+	} .

@@ -1,0 +1,74 @@
+    @prefix xnat: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+    @prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+    @prefix sp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+    @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+    @prefix time: <http://www.w3.org/2000/10/swap/time#>.
+    @prefix string: <http://www.w3.org/2000/10/swap/string#>.
+
+{ 
+ ?o1 sp:has_liverfactor xnat:PostOPHemor .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs . 
+ ?o1 sp:requires_numberPRBCunitsForTransfusion ?prbc .
+ ?prbc math:notGreaterThan 2 
+} => {
+	_:PostOPHemorObs a sp:has_Liver_Factor_Observation .
+	_:PostOPHemorObs sp:has_liverfactor xnat:PostOPHemorOutput .
+	_:PostOPHemorObs sp:has_patient ?p .
+	_:PostOPHemorObs sp:has_observationDate ?date1 .
+	_:PostOPHemorObs sp:has_timestamp ?secs .
+	_:PostOPHemorObs sp:has_grade "Grade A" .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:PostOPHemor .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs . 
+ ?o1 sp:requires_numberPRBCunitsForTransfusion ?prbc .
+ ?prbc math:greaterThan 2 .
+ ?o1 sp:requires_radiologicalIntervention false .
+ ?o1 sp:requires_relaparotomy false
+} => {
+	_:PostOPHemorObs a sp:has_Liver_Factor_Observation .
+	_:PostOPHemorObs sp:has_liverfactor xnat:PostOPHemorOutput .
+	_:PostOPHemorObs sp:has_patient ?p .
+	_:PostOPHemorObs sp:has_observationDate ?date1 .
+	_:PostOPHemorObs sp:has_timestamp ?secs .
+	_:PostOPHemorObs sp:has_grade "Grade B" .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:PostOPHemor .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs . 
+ ?o1 sp:requires_numberPRBCunitsForTransfusion ?prbc .
+ ?prbc math:greaterThan 2 .
+ ?o1 sp:requires_radiologicalIntervention true
+} => {
+	_:PostOPHemorObs a sp:has_Liver_Factor_Observation .
+	_:PostOPHemorObs sp:has_liverfactor xnat:PostOPHemorOutput .
+	_:PostOPHemorObs sp:has_patient ?p .
+	_:PostOPHemorObs sp:has_observationDate ?date1 .
+	_:PostOPHemorObs sp:has_timestamp ?secs .
+	_:PostOPHemorObs sp:has_grade "Grade C" .
+	} .
+
+{ 
+ ?o1 sp:has_liverfactor xnat:PostOPHemor .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs . 
+ ?o1 sp:requires_numberPRBCunitsForTransfusion ?prbc .
+ ?prbc math:greaterThan 2 .
+ ?o1 sp:requires_relaparotomy true
+} => {
+	_:PostOPHemorObs a sp:has_Liver_Factor_Observation .
+	_:PostOPHemorObs sp:has_liverfactor xnat:PostOPHemorOutput .
+	_:PostOPHemorObs sp:has_patient ?p .
+	_:PostOPHemorObs sp:has_observationDate ?date1 .
+	_:PostOPHemorObs sp:has_timestamp ?secs .
+	_:PostOPHemorObs sp:has_grade "Grade C" .
+	} .

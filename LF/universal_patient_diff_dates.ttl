@@ -1,0 +1,382 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix surgprop: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3Ahas_> .
+@prefix sp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+@prefix xnat: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+@prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+@prefix xnatversion: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Abdominalpain,Diarrhoea,Feelingfullaftereating,Hematemes,Nausea,Lossofappetite,Palecolourstool> surgprop:part "Abdominal pain",
+     " Diarrhoea",
+     " Feeling full after eating",
+     " Hematemes",
+     " Nausea",
+     " Loss of appetite",
+     " Pale colour stool";
+   surgprop:whole "Abdominal pain, Diarrhoea, Feeling full after eating, Hematemes, Nausea, Loss of appetite, Pale colour stool" .
+
+xnat:Age a skos:Concept,
+     surgprop:Liver_Factor;
+   rdfs:label "Age";
+   skos:broader xnat:DemograhicData;
+   skos:inScheme xnat:Liver_Factors .
+
+<http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Alcohol,Drug> surgprop:whole "Alcohol, Drug" .
+
+xnat:Bonepain surgprop:whole "Bone pain" .
+
+<http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Bonepain,Painintherightshoulder> surgprop:part "Bone pain",
+     " Pain in the right shoulder";
+   surgprop:whole "Bone pain, Pain in the right shoulder" .
+
+xnat:ClinicalManifestations a skos:Concept;
+   rdfs:label "Clinical Manifestations" .
+
+xnat:Darkcoloururine surgprop:whole "Dark colour urine" .
+
+<http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Darkcoloururine,Erectiledysfunction> surgprop:part "Dark colour urine",
+     " Erectile dysfunction";
+   surgprop:whole "Dark colour urine, Erectile dysfunction" .
+
+xnat:DemographicData a skos:Concept;
+   rdfs:label "Demographic Data" .
+
+xnat:Diethabit a skos:Concept,
+     surgprop:Liver_Factor;
+   rdfs:label "Diet habit";
+   skos:broader xnat:DemograhicData;
+   skos:inScheme xnat:Liver_Factors .
+
+xnat:GI a skos:Concept,
+     surgprop:Liver_Factor;
+   rdfs:label "GI";
+   skos:broader xnat:Symptoms;
+   skos:inScheme xnat:Liver_Factors .
+
+xnat:General a skos:Concept,
+     surgprop:Liver_Factor;
+   rdfs:label "General";
+   skos:broader xnat:Symptoms;
+   skos:inScheme xnat:Liver_Factors .
+
+<http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Generalweaknessandfatigue,Itching,Sweating,UnexplainedWeightloss> surgprop:part "General weakness and fatigue",
+     " Itching",
+     "Sweating",
+     " Unexplained Weight loss";
+   surgprop:whole "General weakness and fatigue, Itching,Sweating, Unexplained Weight loss" .
+
+xnat:Habit a skos:Concept,
+     surgprop:Liver_Factor;
+   rdfs:label "Habit";
+   skos:broader xnat:DemograhicData;
+   skos:inScheme xnat:Liver_Factors .
+
+xnat:Height a skos:Concept,
+     surgprop:Liver_Factor;
+   rdfs:label "Height";
+   skos:broader xnat:DemograhicData;
+   skos:inScheme xnat:Liver_Factors .
+
+<http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Itching,Sweatingh> surgprop:whole "Itching, Sweatingh" .
+
+xnat:Lung a skos:Concept,
+     surgprop:Liver_Factor;
+   rdfs:label "Lung";
+   skos:broader xnat:Symptoms;
+   skos:inScheme xnat:Liver_Factors .
+
+xnat:Muscoskeletal a skos:Concept,
+     surgprop:Liver_Factor;
+   rdfs:label "Muscoskeletal";
+   skos:broader xnat:Symptoms;
+   skos:inScheme xnat:Liver_Factors .
+
+xnat:Nausea surgprop:whole "Nausea" .
+
+<http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#No,GIbledding,Renalfailure,Esophagealvarices> surgprop:part "No",
+     " GI bledding",
+     " Renal failure",
+     " Esophageal varices";
+   surgprop:whole "No, GI bledding, Renal failure, Esophageal varices" .
+
+<http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#No,Nalower,Klower,Hypoxia> surgprop:part "No",
+     " Na lower",
+     " Klower",
+     " Hypoxia";
+   surgprop:whole "No, Na lower, Klower, Hypoxia" .
+
+xnat:Normal surgprop:whole "Normal" .
+
+<http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Normal,Flexitarianism,Vegetarianism(Fruitarianism),Veganism> surgprop:part "Normal",
+     " Flexitarianism",
+     " Vegetarianism (Fruitarianism)",
+     " Veganism";
+   surgprop:whole "Normal, Flexitarianism, Vegetarianism (Fruitarianism), Veganism" .
+
+xnat:PastMedicalHistory a skos:Concept;
+   rdfs:label "Past Medical History" .
+
+xnat:Renalfailure surgprop:whole "Renal failure" .
+
+<http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Smoke,Alcohol,Drug,Others> surgprop:part "Smoke",
+     " Alcohol",
+     " Drug",
+     " Others";
+   surgprop:whole "Smoke, Alcohol, Drug, Others" .
+
+<http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Stroke(CVA)> a skos:Concept,
+     surgprop:Liver_Factor;
+   rdfs:label "Stroke (CVA)";
+   skos:broader xnat:CNS;
+   skos:inScheme xnat:Liver_Factors .
+
+xnat:Urology a skos:Concept,
+     surgprop:Liver_Factor;
+   rdfs:label "Urology";
+   skos:broader xnat:Symptoms;
+   skos:inScheme xnat:Liver_Factors .
+
+xnat:Weight a skos:Concept,
+     surgprop:Liver_Factor;
+   rdfs:label "Weight";
+   skos:broader xnat:DemograhicData;
+   skos:inScheme xnat:Liver_Factors .
+
+xnat:Yes surgprop:whole "Yes" .
+
+xnat:CNS a skos:Concept;
+   rdfs:label "CNS";
+   skos:broader xnat:PastMedicalHistory .
+
+xnat:Encephalopathy a skos:Concept,
+     surgprop:Liver_Factor;
+   rdfs:label "Encephalopathy";
+   skos:broader xnat:CNS;
+   skos:inScheme xnat:Liver_Factors .
+
+xnat:No surgprop:whole "No" .
+
+<http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Yes,No> surgprop:part "Yes",
+     " No";
+   surgprop:whole "Yes, No" .
+
+xnat:DemograhicData a skos:Concept;
+   rdfs:label "Demograhic Data";
+   skos:broader xnat:DemographicData .
+
+xnat:Symptoms a skos:Concept;
+   rdfs:label "Symptoms";
+   skos:broader xnat:ClinicalManifestations .
+
+xnat:Liver_Factors a skos:ConceptScheme;
+   rdfs:label "Classification hierarchy of all liver factors" .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:String;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:Muscoskeletal;
+    surgprop:obsValue xnat:Nausea;
+    surgprop:observationDate "2014-04-07"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:possibleObsValues <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Abdominalpain,Diarrhoea,Feelingfullaftereating,Hematemes,Nausea,Lossofappetite,Palecolourstool>;
+    surgprop:unit xnat:OneofList] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:int;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:Height;
+    surgprop:obsValue 1.84;
+    surgprop:observationDate "2014-04-07"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:unit xnat:meter] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:int;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:Height;
+    surgprop:obsValue 1.84;
+    surgprop:observationDate "2014-04-09"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:unit xnat:meter] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:int;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:Height;
+    surgprop:obsValue 1.84;
+    surgprop:observationDate "2014-04-17"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:unit xnat:meter] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:String;
+    surgprop:feature_characteristic1 xnat:Excessivenitrogenload;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:Encephalopathy;
+    surgprop:obsValue xnat:Renalfailure;
+    surgprop:observationDate "2014-04-07"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:possibleObsValues <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#No,GIbledding,Renalfailure,Esophagealvarices>;
+    surgprop:unit xnat:List] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:String;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:Urology;
+    surgprop:obsValue xnat:Bonepain;
+    surgprop:observationDate "2014-04-07"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:possibleObsValues <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Bonepain,Painintherightshoulder>;
+    surgprop:unit xnat:OneofList] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:String;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:Diethabit;
+    surgprop:obsValue xnat:Normal;
+    surgprop:observationDate "2014-04-07"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:possibleObsValues <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Normal,Flexitarianism,Vegetarianism(Fruitarianism),Veganism>;
+    surgprop:unit xnat:OneofList] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:Boolean;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:General;
+    surgprop:obsValue xnat:Yes;
+    surgprop:observationDate "2014-04-07"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:possibleObsValues <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Yes,No>;
+    surgprop:unit xnat:OneofList] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:int;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:Age;
+    surgprop:obsValue 29.0;
+    surgprop:observationDate "2014-04-07"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:unit <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#years(1-130)>] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:String;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:Habit;
+    surgprop:obsValue <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Alcohol,Drug>;
+    surgprop:observationDate "2014-04-07"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:possibleObsValues <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Smoke,Alcohol,Drug,Others>;
+    surgprop:unit xnat:List] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:String;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:GI;
+    surgprop:obsValue <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Itching,Sweatingh>;
+    surgprop:observationDate "2014-04-07"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:possibleObsValues <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Generalweaknessandfatigue,Itching,Sweating,UnexplainedWeightloss>;
+    surgprop:unit xnat:OneofList] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:int;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:Weight;
+    surgprop:obsValue 110.0;
+    surgprop:observationDate "2014-04-07"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:unit xnat:gramm] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:int;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:Weight;
+    surgprop:obsValue 170.0;
+    surgprop:observationDate "2014-04-09"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:unit xnat:gramm] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:int;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:Weight;
+    surgprop:obsValue 70.0;
+    surgprop:observationDate "2014-04-17"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:unit xnat:gramm] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:String;
+    surgprop:feature_characteristic1 xnat:Electrolyteormetabolicdisturbance;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:Encephalopathy;
+    surgprop:obsValue xnat:No;
+    surgprop:observationDate "2014-04-07"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:possibleObsValues <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#No,Nalower,Klower,Hypoxia>;
+    surgprop:unit xnat:List] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:String;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor xnat:Lung;
+    surgprop:obsValue xnat:Darkcoloururine;
+    surgprop:observationDate "2014-04-07"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:possibleObsValues <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Darkcoloururine,Erectiledysfunction>;
+    surgprop:unit xnat:OneofList] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:datatype xnatpatient:Boolean;
+    surgprop:liver_factor_table <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Version#0.7>;
+    surgprop:liverfactor <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Stroke(CVA)>;
+    surgprop:obsValue xnat:No;
+    surgprop:observationDate "2014-04-07"^^xsd:date;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:possibleObsValues <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#Yes,No>;
+    surgprop:unit xnat:OneofList] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:liverfactor xnat:ChildPugh;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:observationDate "2014-09-17"^^xsd:date;
+    surgprop:bilirubin 2.7;
+    surgprop:albumin 8.9;
+    surgprop:inr 3.5;
+    surgprop:ascites "No";
+    surgprop:encephalopathy "Stage I - II"] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:liverfactor xnat:SanFrancisco;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:observationDate "2014-09-17"^^xsd:date;
+    surgprop:tumor_number 5;
+    surgprop:max_tumor_size 4.0;
+    surgprop:total_tumor_size 10.5] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:liverfactor xnat:SanFrancisco;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:observationDate "2014-09-24"^^xsd:date;
+    surgprop:tumor_number 3;
+    surgprop:max_tumor_size 3.5;
+    surgprop:total_tumor_size 7.5] .
+
+ [ a surgprop:Liver_Factor_Observation;
+    surgprop:liverfactor xnat:Fong;
+    surgprop:patient xnatpatient:ABCDEF12345;
+    surgprop:observationDate "2014-09-20"^^xsd:date;
+    surgprop:positiveLymphNode "Yes";
+    surgprop:intervalFromResectionToMetastases 8;
+    surgprop:numberOfMetastases 1;
+    surgprop:CEALevel 150;
+    surgprop:metSize 7] .
+
+ [ a sp:has_Liver_Factor_Observation;
+    sp:has_liverfactor xnat:PostOPHemor;
+    sp:has_observationDate "2014-09-23"^^xsd:date;
+    sp:has_patient xnatpatient:ABCDEF12345;
+    sp:requires_numberPRBCunitsForTransfusion 3;
+    sp:requires_radiologicalIntervention false;
+    sp:requires_relaparotomy false] .

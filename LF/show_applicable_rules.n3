@@ -1,0 +1,56 @@
+    @prefix xnat: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+    @prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+    @prefix sp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+    @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+    @prefix time: <http://www.w3.org/2000/10/swap/time#>.
+    @prefix string: <http://www.w3.org/2000/10/swap/string#>.
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+{
+ ?o1 sp:has_liverfactor xnat:Weight .
+ ?o1 sp:has_obsValue ?weight .	
+ ?o2 sp:has_liverfactor xnat:Height . 
+ ?o2 sp:has_obsValue ?height
+} => {
+	xnat:ListOfApplicableRule sp:includes_rule xnat:rule_bmi .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:SanFrancisco .
+ ?o1 sp:has_tumor_number ?number .
+ ?o1 sp:has_max_tumor_size ?maxSize .
+ ?o1 sp:has_total_tumor_size ?totalSize 
+} => {
+	xnat:ListOfApplicableRule sp:includes_rule xnat:rule_sf .
+	} .
+
+{
+ ?o sp:has_liverfactor xnat:ChildPugh .
+ ?o sp:has_albumin ?alb .
+ ?o sp:has_bilirubin ?bil .
+ ?o sp:has_inr ?inr .
+ ?o sp:has_encephalopathy ?enc .
+ ?o sp:has_ascites ?asc 
+} => {
+	xnat:ListOfApplicableRule sp:includes_rule xnat:rule_childpugh .
+	} .
+
+{
+ ?o sp:has_liverfactor xnat:Fong .
+ ?o sp:has_CEALevel ?cea .
+ ?o sp:has_metSize ?metsize .
+ ?o sp:has_numberOfMetastases ?metNumb .
+ ?o sp:has_positiveLymphNode ?posLymph .
+ ?o sp:has_intervalFromResectionToMetastases ?totalSize 
+} => {
+	xnat:ListOfApplicableRule sp:includes_rule xnat:rule_fong .
+	} .
+
+{
+ ?o sp:has_liverfactor xnat:PostOPHemor .
+ ?o sp:requires_numberPRBCunitsForTransfusion ?numb .
+ ?o sp:requires_radiologicalIntervention ?radint .
+ ?o sp:requires_relaparotomy ?rlp
+} => {
+	xnat:ListOfApplicableRule sp:includes_rule xnat:rule_hemorrhage_postop .
+	} .

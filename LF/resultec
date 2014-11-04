@@ -1,0 +1,34 @@
+<rdf:RDF xmlns:ex="http://niko/example#" xmlns:var="http://niko/variable#" xmlns:swrl="http://www.w3.org/2003/11/swrl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ Atomlist
+     first
+        [
+          rule:subject var:p1;
+          rule:predicate ex:hasFather;
+          rule:object ex:Boris
+        ] .
+     /first
+     rest
+         Atomlist
+             first
+                [
+                  rule:subject var:p2;
+                  rule:predicate ex:hasMother;
+                  rule:object ex:Natasha
+                ] .
+             /first
+             rest
+                 Atomlist
+                     first
+                        [
+                          rule:subject ex:Boris;
+                          rule:predicate ex:marriedTo;
+                          rule:object ex:Natasha
+                        ] .
+                     /first
+                     rest
+                         nil
+                 /Atomlist
+             /rest
+         /Atomlist
+     /rest
+ /Atomlist

@@ -1,0 +1,22 @@
+<rdf:RDF xmlns:ex="http://niko/example#" xmlns:var="http://niko/variable#" xmlns:swrl="http://www.w3.org/2003/11/swrl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ Atomlist
+     first
+         Triple1
+     /first
+     rest
+         Atomlist
+             first
+                 Triple2
+             /first
+             rest
+                 Atomlist
+                     first
+                         Triple3
+                     /first
+                     rest
+                         nil
+                 /Atomlist
+             /rest
+         /Atomlist
+     /rest
+ /Atomlist

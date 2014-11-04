@@ -1,0 +1,120 @@
+    @prefix xnat: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+    @prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+    @prefix sp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+    @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+    @prefix time: <http://www.w3.org/2000/10/swap/time#>.
+    @prefix string: <http://www.w3.org/2000/10/swap/string#>.
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+{
+ ?o1 sp:has_liverfactor xnat:SanFrancisco .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs .
+ ?o1 sp:has_tumor_number ?number .
+ ?o1 sp:has_max_tumor_size ?maxSize .
+ ?o1 sp:has_total_tumor_size ?totalSize .
+ ?number math:notGreaterThan 1 .
+ ?maxSize math:lessThan 6.5  
+} => {
+	_:bmiObs a sp:has_Liver_Factor_Observation .
+	_:bmiObs sp:has_liverfactor xnat:SFOutput .
+	_:bmiObs sp:has_patient ?p .
+	_:bmiObs sp:has_observationDate ?date1 .
+	_:bmiObs sp:has_timestamp ?secs .
+	_:bmiObs sp:has_obsValue "SF criteria fullfilled" .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:SanFrancisco .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs .
+ ?o1 sp:has_tumor_number ?number .
+ ?o1 sp:has_max_tumor_size ?maxSize .
+ ?o1 sp:has_total_tumor_size ?totalSize .
+ ?number math:greaterThan 1 .
+ ?number math:lessThan 4 .
+ ?maxSize math:notGreaterThan 4.5 .
+ ?totalSize math:lessThan 8   
+} => {
+	_:bmiObs a sp:has_Liver_Factor_Observation .
+	_:bmiObs sp:has_liverfactor xnat:SFOutput .
+	_:bmiObs sp:has_patient ?p .
+	_:bmiObs sp:has_observationDate ?date1 .
+	_:bmiObs sp:has_timestamp ?secs .
+	_:bmiObs sp:has_obsValue "SF criteria fullfilled" .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:SanFrancisco .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs .
+ ?o1 sp:has_tumor_number ?number .
+ ?o1 sp:has_max_tumor_size ?maxSize .
+ ?o1 sp:has_total_tumor_size ?totalSize .
+ ?number math:notGreaterThan 1 .
+ ?maxSize math:notLessThan 6.5  
+} => {
+	_:bmiObs a sp:has_Liver_Factor_Observation .
+	_:bmiObs sp:has_liverfactor xnat:SFOutput .
+	_:bmiObs sp:has_patient ?p .
+	_:bmiObs sp:has_observationDate ?date1 .
+	_:bmiObs sp:has_timestamp ?secs .
+	_:bmiObs sp:has_obsValue "SF criteria NOT fullfilled" .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:SanFrancisco .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs .
+ ?o1 sp:has_tumor_number ?number .
+ ?number math:notLessThan 4 
+} => {
+	_:bmiObs a sp:has_Liver_Factor_Observation .
+	_:bmiObs sp:has_liverfactor xnat:SFOutput .
+	_:bmiObs sp:has_patient ?p .
+	_:bmiObs sp:has_observationDate ?date1 .
+	_:bmiObs sp:has_timestamp ?secs .
+	_:bmiObs sp:has_obsValue "SF criteria NOT fullfilled" .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:SanFrancisco .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs .
+ ?o1 sp:has_tumor_number ?number .
+ ?o1 sp:has_max_tumor_size ?maxSize .
+ ?number math:greaterThan 1 .
+ ?number math:lessThan 4 .
+ ?maxSize math:greaterThan 4.5 
+} => {
+	_:bmiObs a sp:has_Liver_Factor_Observation .
+	_:bmiObs sp:has_liverfactor xnat:SFOutput .
+	_:bmiObs sp:has_patient ?p .
+	_:bmiObs sp:has_observationDate ?date1 .
+	_:bmiObs sp:has_timestamp ?secs .
+	_:bmiObs sp:has_obsValue "SF criteria NOT fullfilled" .
+	} .
+
+{
+ ?o1 sp:has_liverfactor xnat:SanFrancisco .
+ ?o1 sp:has_patient ?p .
+ ?o1 sp:has_observationDate ?date1 .
+ ?date1 time:inSeconds ?secs .
+ ?o1 sp:has_tumor_number ?number .
+ ?o1 sp:has_total_tumor_size ?totalSize .
+ ?number math:greaterThan 1 .
+ ?number math:lessThan 4 .
+ ?totalSize math:notLessThan 8   
+} => {
+	_:bmiObs a sp:has_Liver_Factor_Observation .
+	_:bmiObs sp:has_liverfactor xnat:SFOutput .
+	_:bmiObs sp:has_patient ?p .
+	_:bmiObs sp:has_observationDate ?date1 .
+	_:bmiObs sp:has_timestamp ?secs .
+	_:bmiObs sp:has_obsValue "SF criteria NOT fullfilled" .
+	} .
