@@ -4,35 +4,25 @@ package LFreasoner;
 //import QuerySolution;
 //import ResultSet;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringReader;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
+
+
 
 import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Request;
 import javax.ws.rs.core.UriInfo;
-import javax.xml.ws.http.HTTPException;
 
-import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import com.hp.hpl.jena.query.Query;
@@ -40,16 +30,10 @@ import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.query.QueryFactory;
 import com.hp.hpl.jena.query.QuerySolution;
-import com.hp.hpl.jena.query.QuerySolutionMap;
 import com.hp.hpl.jena.query.ResultSet;
-import com.hp.hpl.jena.query.ResultSetFactory;
-import com.hp.hpl.jena.query.ResultSetFormatter;
-import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.sun.org.apache.xerces.internal.parsers.SAXParser;
+
 
 @Path("/")
 public class ReasonerService {
@@ -135,9 +119,9 @@ public class ReasonerService {
 		System.out.println("Request URI: " + requestURI);	
 						
 		Runtime rt = Runtime.getRuntime();
-
-		// Use the output path hardcoded in "localhost.properties" file 
-		String outputPath = Helper.getProperties(context, "outputPath");
+		
+		//get the output path via ServletContext method "getRealPath" (see explanation how does it work at the end)
+		String outputPath = context.getRealPath("/files/output/") + "/";
 		
 		String cmd = "cmd /C cwm.py " + patient + " --think=" + rule + " --n3=qd > " + outputPath + "result_patient.ttl";
 		Process proc = rt.exec(cmd);		
@@ -147,10 +131,10 @@ public class ReasonerService {
 	@Path("/descriptionTTL")
 	@Produces("application/rdf+turtle")
 	public String getDescription(@Context final HttpServletResponse servletResponse, @Context final HttpServletRequest servletRequest, @Context final ServletContext context) throws Exception {
-        
-		//get the path to the folder which stores all our descriptions
-		String descriptionsPath = Helper.getProperties(context, "descriptionsPath");
-		
+
+		//get the descriptions path via ServletContext method "getRealPath" (see explanation how does it work at the end)
+		String descriptionsPath = context.getRealPath("/files/descriptions/") + "/";
+
 		//choose the "LF_turtle.ttl" file from the folder with descriptions and output it as response to @GET @Path "/descriptionTTL"
 		Helper.printRDFDescriptionFromFile(descriptionsPath + "LF_turtle.ttl", servletResponse, context, "application/rdf+turtle");
 		return "";
@@ -164,3 +148,31 @@ public class ReasonerService {
 	        + "<body><h1>" + "HTML Description Body" + "</body></h1>" + "</html> ";
 	}
 }
+
+/* getting to the "http://localhost:8080/CognitiveApp/files/" via ServletContext.getRealPath
+ * 
+ ###################################################################################################################################################
+ #  If launching Tomcat server via Eclipse this command leads us to                                                                                #
+ #  D:\DiplArbeit\OurWork\Eclipse_workSPACE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\CognitiveApp\files\                     #
+ #  which is a copied from "real" Eclipse_workSPACE:                                                                                               #
+ #  D:\DiplArbeit\OurWork\Eclipse_workSPACE\CognitiveApp\WebContent\files\                                                                         #
+ #  by starting a server.                                                                                                                          #
+ #  By reading operations it's all the same where to read from. The files are the same.                                                            #
+ #                                                                                                                                                 #
+ #  It causes small problems by writing operations, because we write in .metadata/... instead of "real" Eclipse workspace                          #
+ #  So new created files will not be visible from Eclipse perspective (associated with "real" Eclipse workspace)                                   #
+ #  but they are still accessible on "http://localhost:8080/CognitiveApp/files/" (which is associated with .metadata/...  #
+ #                                                                                                                                                 #
+ ###################################################################################################################################################
+ 
+ ######################################################################################################
+ #  If launching Tomcat server externally (via xampp) it leads us just to the tomcat folder           #
+ #  "C:\xampp\tomcat\webapps\CognitiveApp\files\"                                                     #
+ #  Access through "http://localhost:8080/CognitiveApp/files/" is possible and refers to this folder. #                                                       #
+ ######################################################################################################
+  
+ With ServletContext.getRealPath imho we have no need in hardcoded paths in the localhost.properties
+ But I am not sure about cwm and python pahts. This version assumes that they are executable in every 
+ folder.
+   		     
+*/

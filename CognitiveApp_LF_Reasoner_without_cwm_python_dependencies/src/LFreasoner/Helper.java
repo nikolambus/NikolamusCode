@@ -10,6 +10,7 @@ import java.util.Properties;
 
 
 
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 
@@ -77,16 +78,17 @@ public class Helper {
 		br.close();
 		writer.close();
 	}
-
+	
+	//actually not used 
+	/*
 	public static String getProperties(ServletContext context, String key) throws IOException {			
+		
 		Reader reader = new FileReader(context.getRealPath("/files/localhost.properties"));
-				
+		
 		Properties prop = new Properties();
 		prop.load(reader);
 		return prop.getProperty(key);
 		//reader.close();	
-
-		
 	}
-	
+	*/
 }
