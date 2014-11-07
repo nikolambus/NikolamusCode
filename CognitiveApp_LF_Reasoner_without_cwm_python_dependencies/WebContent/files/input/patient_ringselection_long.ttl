@@ -1,0 +1,19 @@
+@prefix ex: <http://example/heart#> .
+
+[ a ex:Observation;
+  ex:hasFactor ex:MR ;
+  ex:hasObsValue "organic" ;
+  ex:hasPatient ex:ABCD 
+] .
+
+[ a ex:Observation;
+  ex:hasFactor ex:Disease ;
+  ex:hasObsValue "degenerative" ;
+  ex:hasPatient ex:ABCD 
+] .
+
+[ a ex:Observation;
+  ex:hasFactor ex:valveLeaflets ;
+  ex:hasObsValue "elongated" ;
+  ex:hasPatient ex:ABCD 
+] .

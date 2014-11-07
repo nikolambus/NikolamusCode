@@ -69,8 +69,7 @@ public class Helper {
 		response.setContentType(contenttype);
 		PrintWriter writer = response.getWriter();
 
-		BufferedReader br = new BufferedReader(new FileReader(context.getRealPath(filepath)));
-		System.out.println(context.getRealPath(filepath));
+		BufferedReader br = new BufferedReader(new FileReader(filepath));
 		String line = null;
 		while ((line = br.readLine()) != null) {
 			writer.println(line);
