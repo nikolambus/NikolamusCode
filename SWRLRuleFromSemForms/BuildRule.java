@@ -11,20 +11,25 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLOntologyCreationException;
+import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
 public class BuildRule {
 	
-    public String rule = "";
+    public static String rule = "";
 	static List<String> SubjectsList = new ArrayList<String>(); 
 	static List<String> PredicatesList = new ArrayList<String>(); 
 	static List<String> ObjectsList = new ArrayList<String>(); 
+
+	static List<String> varsBank = new ArrayList<String>();
+	static List<String> classesBank = new ArrayList<String>();
 
     
     // Use here the same IRI as your SMW or Surgipedia
   	public static IRI basicIRI = IRI.create("http://localhost/mediawiki/index.php/Special:URIResolver/");	
     
     
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, OWLOntologyCreationException, OWLOntologyStorageException {
 		
 		//getting the RDF export of the rule's page in SMW
 		Scanner scanner = new Scanner(new URL("http://localhost/mediawiki/index.php/Special:ExportRDF/RudisRule1").openStream(), "UTF-8").useDelimiter("\\A");
@@ -47,7 +52,9 @@ public class BuildRule {
 	    	
 	    	// 2nd possibility to match the line with a concept. Internal shortcuts are used.
 	    	if (Pattern.matches("		<property:(HasObject|HasSubject|HasPredicate)\\d rdf:resource=\"&wiki;[a-zA-Z_0-9:,?\"./]+\"/>", line)) {
-    			System.out.println(line);
+    			
+	    		//check
+	    		//System.out.println(line);
     			
     			//Is it an object/predicate/subject ?
     			String conceptType = line.substring(line.indexOf(":")+1, line.indexOf(" ")-1);
@@ -57,7 +64,9 @@ public class BuildRule {
     			
     			String conceptName = line.substring(line.indexOf(";")+1, line.indexOf("\"", line.indexOf(";")));
     			
-    			System.out.println(conceptType + "  " + conceptNumber);
+    			//check
+    			//System.out.println(conceptType + "  " + conceptNumber);
+    			
     			switch (conceptType)
     			{
     			  case "HasSubject":
@@ -72,11 +81,6 @@ public class BuildRule {
     			  default:
     			    System.err.println( "Unknown concept type: " + conceptType );
     			}
-
-    			System.out.println(SubjectsList);
-    			System.out.println(ObjectsList);
-    			System.out.println(PredicatesList);
-    			
 	    	}	    	
 	    }
 	    br.close();	
@@ -91,21 +95,106 @@ public class BuildRule {
 			
 			// Searching for the line which contains "swivt:type ... wpg" on the RDF Export page. 
 			// For this do activate RegEx multiline modus with (?sm)
-			System.out.println(Pattern.matches("(?sm).*^\t\t<swivt:type rdf:resource=\"http://semantic-mediawiki.org/swivt/1.0#_wpg\"/>$.*", currentPredicatePage));
+			if (Pattern.matches("(?sm).*^\t\t<swivt:type rdf:resource=\"http://semantic-mediawiki.org/swivt/1.0#_wpg\"/>$.*", currentPredicatePage)) {
+				
+				// If found, then this property is an object property.
+				// Assume: our i-th triple looks like "Patient wirdUntersuchtDurch DRU"
+				
+				// Firstly add "Patient(?patient)" to the rule 
+				addRuleClass(SubjectsList.get(i), SubjectsList.get(i));	
+				
+				// Secondly add "DRU(?dru)" to the rule 
+				addRuleClass(ObjectsList.get(i), ObjectsList.get(i));
+				
+				// Thirdly add "wirdUntesuchtDurch (?patient, ?dru)"
+				addRuleObjectProperty(currentPredicate, SubjectsList.get(i), ObjectsList.get(i));
+				
+			}
+			else {
+				
+			}
 
-			// If found, then this property is an object property.
-			//HIER WEITER
+			// If not found, then this property is a data property.
+
+			// 1st possibility: DataStringProperty
+			if (Pattern.matches("(?sm).*^\t\t<swivt:type rdf:resource=\"http://semantic-mediawiki.org/swivt/1.0#_str\"/>$.*", currentPredicatePage)) {
+				
+			// Assume: our i-th triple looks like "DRU untersuchungZeigt Auffaelliger Befund"
+
+			// Firstly add "DRU(?dru)" to the rule 
+			addRuleClass(SubjectsList.get(i), SubjectsList.get(i));	
 			
+			// Secondly add "untersuchungZeigt (?dru, "Auffaelliger Bedfund")"
+			addRuleDataStringProperty(currentPredicate, SubjectsList.get(i), ObjectsList.get(i));
+			
+			}
+
+			// 2nd possibility: DataNumberProperty
+			if (Pattern.matches("(?sm).*^\t\t<swivt:type rdf:resource=\"http://semantic-mediawiki.org/swivt/1.0#_num\"/>$.*", currentPredicatePage)) {
+			
+				// Assume: our i-th triple looks like "Patient hasAge Age"
+				// The handling of this case is similar to the object property, with one difference: we do not create a class for Age  
+				// It makes sense, since one uses DataNumberProperties to bind some value to a variable and then
+				// to compare this variable against some threshold within a swrl built-in like: 
+				// "Patient(?p), hasAge(?p, ?age), greaterThan(?age, 70)".
+				
+				addRuleClass(SubjectsList.get(i), SubjectsList.get(i));	
+				addRuleObjectProperty(currentPredicate, SubjectsList.get(i), ObjectsList.get(i));
+			
+			}
+
+			//check
 			//System.out.println(currentPredicatePage);
 
 		}
 		scanner.close();
+
+		// cut the last conjugation symbol
+		rule = rule.substring(0, rule.length()-1);
+		
+		System.out.println("Subjects list: " + SubjectsList);
+		System.out.println("Objects list: " + ObjectsList);
+		System.out.println("Predicates list: " + PredicatesList);
+
+		System.out.println("Rule: " + rule);
+		System.out.println("Classes bank: " + classesBank);
+		System.out.println("Vars bank: " + varsBank);
+		
+		//add some head just for testing
+		rule = rule + "->Biopsie(?biopsie)";
+		
+		GetConceptsFromString.fromStringToOWLRDFNotation(rule, basicIRI);
+
 	}
 	
-	public void setRuleClass (String name, String var)
+	public static void addRuleClass (String name, String var)
+    {
+    	if ((name != "") && (name != null) && (!classesBank.contains(name))) {
+    		rule = rule + name + "(?" + var + ")^";
+    		classesBank.add(name);
+    		varsBank.add(var);
+    	}
+    }
+	
+    public static void addRuleObjectProperty (String name, String var1, String var2)
     {
     	if ((name != "") && (name != null))
-        rule = rule + name + "(?" + var + ")^";
+        rule = rule + name + "(?" + var1 + ",?" + var2 + ")^";
+    }
+    
+    // Version1: for String values
+    public static void addRuleDataStringProperty (String name, String var, String value)
+    {
+    	if ((name != "") && (name != null))
+        rule = rule + name + "(?" + var + ",\"" + value + "\")^";
+    }
+    
+    // Version2: for Number values
+    public static void addRuleDataNumberProperty (String name, String var1, String var2)
+    {
+    	if ((name != "") && (name != null))
+        rule = rule + name + "(?" + var1 + ",?" + var2 + ")^";
+		varsBank.add(var2);
     }
 
 }
