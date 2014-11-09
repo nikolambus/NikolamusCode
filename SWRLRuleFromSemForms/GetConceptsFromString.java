@@ -58,10 +58,11 @@ public class GetConceptsFromString {
 		String body = rule.substring(0, rule.indexOf('-'));
 		String head = rule.substring(rule.indexOf('-')+2, rule.length());
 		
-		//CHECK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		System.out.println(body + " AND " + head);
-		
-		//---------------------------------------------------------------------------------------------
+		//check
+		System.out.println("body: "+ body); 
+		System.out.println("head: "+ head); 
+
+		//######################## BODY ######################################################
 		
 		//Now we will deal with the body part.
 		//We want to extract each body-atom. For that we create a list structure that will contain them. 
@@ -112,7 +113,7 @@ public class GetConceptsFromString {
 			leftBoundary = rightBoundary+2;
 		}
 		
-		//This list serves as for storing all bodyAtoms in SWRL(!) format
+		//This list serves for storing all bodyAtoms in SWRL(!) format
 		List<SWRLHelpClass> swrlBodyAtoms = new ArrayList<SWRLHelpClass>();
 		
 		//Within this loop we initialize necessary classes and properties for the body part of the SWRL rule	
@@ -122,9 +123,9 @@ public class GetConceptsFromString {
 			
 			if (a.atomType == "CLASS") {				
 				//Get a reference to the needed class so that we can process it with the reasoner.
-				SWRLBodyAtom.SWRLClassAtomName = df.getOWLClass(IRI.create(ontologyIRI + "#" + a.atomName));
+				SWRLBodyAtom.SWRLClassAtomName = df.getOWLClass(IRI.create(ontologyIRI + a.atomName));
 				//Create a variable that represents the instance of this class 
-				SWRLBodyAtom.SWRLAtomVar1 = df.getSWRLVariable(IRI.create(ontologyIRI + "#" + a.atomVar));				
+				SWRLBodyAtom.SWRLAtomVar1 = df.getSWRLVariable(IRI.create(ontologyIRI + a.atomVar));				
 			
 				//Specify the relationship between a class and a variable
 				SWRLBodyAtom.classAtom = df.getSWRLClassAtom(SWRLBodyAtom.SWRLClassAtomName, SWRLBodyAtom.SWRLAtomVar1);
@@ -132,11 +133,11 @@ public class GetConceptsFromString {
 			}
 			else {				
 				//Get a reference to the needed property so that we can process it with the reasoner.
-				SWRLBodyAtom.SWRLPropertyAtomName = df.getOWLObjectProperty(IRI.create(ontologyIRI + "#" + a.atomName));
+				SWRLBodyAtom.SWRLPropertyAtomName = df.getOWLObjectProperty(IRI.create(ontologyIRI + a.atomName));
 				
 				//Create 2 variables that represents the instance of this class 
-				SWRLBodyAtom.SWRLAtomVar1 = df.getSWRLVariable(IRI.create(ontologyIRI + "#" + a.atomVar.substring(0, a.atomVar.indexOf(','))));
-				SWRLBodyAtom.SWRLAtomVar2 = df.getSWRLVariable(IRI.create(ontologyIRI + "#" + a.atomVar.substring(a.atomVar.indexOf(',')+1,a.atomVar.length())));
+				SWRLBodyAtom.SWRLAtomVar1 = df.getSWRLVariable(IRI.create(ontologyIRI + a.atomVar.substring(0, a.atomVar.indexOf(','))));
+				SWRLBodyAtom.SWRLAtomVar2 = df.getSWRLVariable(IRI.create(ontologyIRI + a.atomVar.substring(a.atomVar.indexOf(',')+1,a.atomVar.length())));
 		
 				SWRLBodyAtom.propAtom = df.getSWRLObjectPropertyAtom(SWRLBodyAtom.SWRLPropertyAtomName, SWRLBodyAtom.SWRLAtomVar1, SWRLBodyAtom.SWRLAtomVar2);
 			}
@@ -157,43 +158,111 @@ public class GetConceptsFromString {
 		//We should remove it, because there is no null-Atom.
 		premises.remove(null);
 		
-		//CHECK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		//check
 		//System.out.println (premises);
 		
-		//----------------------------------------------------------------------------------------------------
-		
-		//Now we will deal with the head part
-		//We assume at this point that head can include only a class atom
-		//If we need property atom in the head we can build according to the described above if-branching
-		
-		//Now we cut the class atom from the head
-		String helpHead = head.substring(0, head.indexOf(')')+1);
+		//######################## HEAD ######################################################
 
-		//In the object "newAtomHead" we store information about each atom occurred in the head in STRING(!) format
-		Atom newAtomHead = new Atom();
+		//We want to extract each head-atom. For that we create a list structure that will contain them. 
+		List<Atom> headAtoms = new ArrayList<Atom>();
+		
+		//our first left boundary is just the first symbol
+		leftBoundary = 0;
+		
+		//We may iterate the leftBoundary as long as it's smaller than the head-length 
+		while (leftBoundary < head.length()) {
 			
-		//We save this atom's name like this: "man"
-		newAtomHead.atomName = helpHead.substring(0, helpHead.indexOf('('));
+			//Our first right boundary is the first ')'-symbol
+			rightBoundary = head.indexOf(')', leftBoundary);
 			
-		//We save this atom's variable like this: "x"
-		newAtomHead.atomVar = helpHead.substring(helpHead.indexOf('?')+1, helpHead.indexOf(')'));
-		
-		//Building the head (conclusion) of a SWRL rule
-		SWRLHelpClass SWRLHeadAtom = new SWRLHelpClass();
-		
-		//Get a reference to the needed class so that we can process it with the reasoner.
-		SWRLHeadAtom.SWRLClassAtomName = df.getOWLClass(IRI.create(ontologyIRI + "#" + newAtomHead.atomName));
-		
-		//Create a variable that represents the instance of this class 
-		SWRLHeadAtom.SWRLAtomVar1 = df.getSWRLVariable(IRI.create(ontologyIRI + "#" + newAtomHead.atomVar));				
+			//Now we cut the first atom from the head
+			String help = head.substring(leftBoundary, rightBoundary+1);
+
+			//In the object "newAtomHead" we store information about each atom occurred in head in STRING(!) format
+			Atom newAtomHead = new Atom();
+			
+			if (help.indexOf(',') == -1) {
+			
+				//If this atom doesn't contain a comma, it's a class	
+				newAtomHead.atomType = "CLASS";
+				
+				//We save this atom's name like this "man"
+				newAtomHead.atomName = help.substring(0, help.indexOf('('));
+				
+				//We save this atom's variable like this "x"
+				newAtomHead.atomVar = help.substring(help.indexOf('?')+1, help.indexOf(')'));
+			}
+			else {
+				
+				//If this atom contains a comma, it's a property	
+				newAtomHead.atomType = "PROPERTY";
+				
+				//We save this property's name like this "married"
+				newAtomHead.atomName = help.substring(0, help.indexOf('('));
+				
+				//We save this property's both variables like this "x,y"
+				newAtomHead.atomVar = help.substring(help.indexOf('?')+1, help.indexOf(',')) + "," +  help.substring(help.indexOf(',')+2, help.indexOf(')'));	
+				
+				
+			}
+			
+			//Now we add the processed atom to our headAtoms list
+			headAtoms.add(newAtomHead);
+			
+			//And shift our leftBoundary
+			leftBoundary = rightBoundary+2;
+			
+		}	
+			
+		//This list serves for storing all headAtoms in SWRL(!) format
+		List<SWRLHelpClass> swrlHeadAtoms = new ArrayList<SWRLHelpClass>();
+			
+		//Within this loop we initialize necessary classes and properties for the head part of the SWRL rule	
+		for ( Atom a : headAtoms ) {
+			
+			SWRLHelpClass SWRLHeadAtom = new SWRLHelpClass();
+			
+			if (a.atomType == "CLASS") {				
+				
+				//Get a reference to the needed class so that we can process it with the reasoner.
+				SWRLHeadAtom.SWRLClassAtomName = df.getOWLClass(IRI.create(ontologyIRI + a.atomName));
+				//Create a variable that represents the instance of this class 
+				SWRLHeadAtom.SWRLAtomVar1 = df.getSWRLVariable(IRI.create(ontologyIRI + a.atomVar));				
+			
+				//Specify the relationship between a class and a variable
+				SWRLHeadAtom.classAtom = df.getSWRLClassAtom(SWRLHeadAtom.SWRLClassAtomName, SWRLHeadAtom.SWRLAtomVar1);
+			}	
+		    else {				
+				//Get a reference to the needed property so that we can process it with the reasoner.
+				SWRLHeadAtom.SWRLPropertyAtomName = df.getOWLObjectProperty(IRI.create(ontologyIRI + a.atomName));
+				
+				//Create 2 variables that represents the instance of this class 
+				SWRLHeadAtom.SWRLAtomVar1 = df.getSWRLVariable(IRI.create(ontologyIRI + a.atomVar.substring(0, a.atomVar.indexOf(','))));
+				SWRLHeadAtom.SWRLAtomVar2 = df.getSWRLVariable(IRI.create(ontologyIRI + a.atomVar.substring(a.atomVar.indexOf(',')+1,a.atomVar.length())));
+			
+				SWRLHeadAtom.propAtom = df.getSWRLObjectPropertyAtom(SWRLHeadAtom.SWRLPropertyAtomName, SWRLHeadAtom.SWRLAtomVar1, SWRLHeadAtom.SWRLAtomVar2);
+			}
+			
+			//Now we add the processed atom to our swrlHeadAtoms list
+			swrlHeadAtoms.add(SWRLHeadAtom);
+
+		}
+			
+		//Building the head (conclusions) of a SWRL rule
+		Set<SWRLAtom> conclusions = new HashSet<SWRLAtom>();
+		for (SWRLHelpClass s : swrlHeadAtoms) {
+			conclusions.add(s.classAtom);
+		    conclusions.add(s.propAtom);      
+		}
+			
+		//Working with list we generated null at the beginning of premises. 
+		//We should remove it, because there is no null-Atom.
+		conclusions.remove(null);
 	
-		//Specify the relationship between a class and a variable
-		SWRLHeadAtom.classAtom = df.getSWRLClassAtom(SWRLHeadAtom.SWRLClassAtomName, SWRLHeadAtom.SWRLAtomVar1);
-		
-		//----------------------------------------------------------------------------------------------------		
-	
+		//###################### PUT THEM TOGETHER ########################################################
+
 		//Now we specify the whole SWRL rule 
-        SWRLRule ruleSWRL = df.getSWRLRule(premises, Collections.singleton(SWRLHeadAtom.classAtom));
+        SWRLRule ruleSWRL = df.getSWRLRule(premises, conclusions);
 		
         //Apply change
         m.applyChange(new AddAxiom(o, ruleSWRL));

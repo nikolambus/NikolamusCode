@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:sf="http://localhost:8080/CognitiveApp/files/ontologies/sf#">
+	<rdf:Description rdf:about="http://www.example.com/Request_02_Example">
+		<rdf:type rdf:resource="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3ARequest"/>
+		<sf:hasSemanticFormsRDFExport>
+			<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:ExportRDF/RudisRule2">
+				<rdf:type rdf:resource="http://localhost:8080/CognitiveApp2/files/ontologies/sf/RDFExport"/>
+				<dc:format>application/rdf+xml</dc:format> 
+			</rdf:Description>		
+		</sf:hasSemanticFormsRDFExport>	
+	</rdf:Description>
+</rdf:RDF>

@@ -17,11 +17,13 @@ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 public class BuildRule {
 	
     public static String rule = "";    
+  	public static IRI basicIRI = IRI.create("http://localhost/mediawiki/index.php/Special:URIResolver/");	
+
     
 	public static void main(String[] args) throws IOException, OWLOntologyCreationException, OWLOntologyStorageException {
 		
 		//getting the RDF export of the rule's page in SMW
-		Scanner scanner = new Scanner(new URL("http://localhost/mediawiki/index.php/Special:ExportRDF/RudisRule1").openStream(), "UTF-8").useDelimiter("\\A");
+		Scanner scanner = new Scanner(new URL("http://localhost/mediawiki/index.php/Special:ExportRDF/RudisRule2").openStream(), "UTF-8").useDelimiter("\\A");
 		String out = scanner.next();
 	    		
 		Helper.buildBody(out);
@@ -35,7 +37,7 @@ public class BuildRule {
 		System.out.println("Classes bank: " + Helper.classesBank);
 		System.out.println("Vars bank: " + Helper.varsBank);
 		
-		//GetConceptsFromString.fromStringToOWLRDFNotation(rule, basicIRI);
+		GetConceptsFromString_short.fromStringToOWLRDFNotation(rule, basicIRI);
 
 	}
 	

@@ -1,0 +1,214 @@
+@prefix rdf:   		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#"> .
+@prefix owl:   		<http://www.w3.org/2002/07/owl#> .
+@prefix lapis:   	<http://localhost:8080/CognitveApp/files/ontologies/lapis#> .
+@prefix sp:		<http://surgipedia.sfb125.de/wiki/Special:URIResolver/> .
+@prefix xsd:	 	<http://www.w3.org/2001/XMLSchema#> .
+@prefix dc:		<http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements#> .
+
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#hasAbstract
+lapis:hasAbstract
+		rdf:type 	rdf:Property;
+		rdfs:comment 	"Abstract of Service Functionality";
+		rdfs:domain 	sp:Category:Coginitive_App;
+		rdfs:range 	xsd:string.
+
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#hasInputDescription
+lapis:hasInputDescription
+		rdf:type 	rdf:Property;
+		rdfs:comment 	"Description of Input Parameters";
+		rdfs:domain 	sp:Category:Coginitive_App;
+		rdfs:range 	xsd:string.
+
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#hasOutputDescription
+lapis:hasOutputDescription
+		rdf:type 	rdf:Property;
+		rdfs:comment 	"Description of Output";
+		rdfs:domain 	sp:Category:Coginitive_App;
+		rdfs:range 	xsd:string.
+
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#hasExampleRequest
+lapis:hasExampleRequest
+		rdf:type 	rdf:Property;
+		rdfs:comment 	"Example Request for Invocation";
+		rdfs:domain 	sp:Category:Coginitive_App;
+		rdfs:range 	xsd:string.
+		
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#hasExampleResponse
+lapis:hasExampleResponse
+		rdf:type 	rdf:Property;
+		rdfs:comment 	"Example Response";
+		rdfs:domain 	sp:Category:Coginitive_App;
+		rdfs:range 	xsd:string.
+
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#Request
+lapis:Request
+		rdf:type	rdfs:Class;
+		rdfs:comment 	"The class containing all requests.".
+					
+	
+##############################
+##Parameter-Type / Class######
+##			Start			##
+##############################		
+		
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#boolean
+lapis:boolean
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: Boolean" ;
+		owl:equivalentClass	xsd:boolean.
+		
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#integer
+lapis:integer
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: Integer" ;
+		owl:equivalentClass xsd:integer.
+		
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#float
+lapis:float
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: Float" ;
+		owl:equivalentClass xsd:float.
+
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#double
+lapis:double
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: Double" ;
+		owl:equivalentClass xsd:double.
+
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#string
+lapis:string
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: String" ;
+		owl:equivalentClass xsd:string.		
+		
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#directory
+lapis:directory
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: Directory" ;
+		owl:equivalentClass xsd:anyURI.	
+	
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#integer-vector
+lapis:integer-vector
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: Integer-vector" ;
+		owl:onDatatype xsd:string ;
+		owl:withRestrictions (
+		[
+			xsd:pattern "[\-+]?[0-9]+[,]*"
+		]
+	) .
+	
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#float-vector
+lapis:float-vector
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: Float-vector" ;
+		owl:onDatatype xsd:string ;
+		owl:withRestrictions (
+		[
+			xsd:pattern "[\-+]?[0-9][\.]?[,]*"
+		]
+	) .	
+
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#double-vector
+lapis:double-vector
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: Double-vector" ;
+		owl:onDatatype xsd:string ;
+		owl:withRestrictions (
+		[
+			xsd:pattern "[\-+]?[0-9][\.]?[,]*"
+		]
+	) .	
+	
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#string-vector
+lapis:string-vector
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: String-vector" ;
+		owl:onDatatype xsd:string ;
+		owl:withRestrictions (
+		[
+			xsd:pattern "[a-zA-Z0-9][,]*"
+		]
+	) .	
+		
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#integer-enumeration
+lapis:integer-enumeration
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: Integer-enumeration" ;
+		owl:onDatatype xsd:string ;
+		owl:withRestrictions (
+		[
+			xsd:pattern "[\-+]?[0-9]+[,]*"
+		]
+	) .	
+
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#float-enumeration
+lapis:float-enumeration
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: Float-enumeration" ;
+		owl:onDatatype xsd:string ;
+		owl:withRestrictions (
+		[
+			xsd:pattern "[\-+]?[0-9][\.]?[,]*"
+		]
+	) .	
+
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#double-enumeration
+lapis:double-enumeration
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: Double-enumeration" ;
+		owl:onDatatype xsd:string ;
+		owl:withRestrictions (
+		[
+			xsd:pattern "[\-+]?[0-9][\.]?[,]*"
+		]
+	) .	
+
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis##string-enumeration
+lapis:string-enumeration
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: String-enumeration" ;
+		owl:onDatatype xsd:string ;
+		owl:withRestrictions (
+		[
+			xsd:pattern "[a-zA-Z0-9][,]*"
+		]
+	) .	
+	
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#point
+lapis:point
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: Point - corresponds to Slicer Fiducial Node" ;
+		owl:equivalentClass xsd:string.	
+	
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#region
+lapis:region
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: Region" ;
+		owl:equivalentClass xsd:string.		
+		
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#file
+lapis:file
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: File" ;
+		owl:equivalentClass xsd:string.	
+
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#image
+lapis:image
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: Image" ;
+		owl:equivalentClass xsd:anyURI.	
+		
+###  http://localhost:8080/CognitveApp/files/ontologies/lapis#geometry
+lapis:geometry
+		rdf:type	rdfs:Datatype;
+		rdfs:comment "CTK Input-Type: Geometry - corresponds to Slicer Model Node" ;
+		owl:equivalentClass xsd:string.	
+
+		
+		
+		
+		
+	
+
