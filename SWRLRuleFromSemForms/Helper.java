@@ -14,7 +14,6 @@ public class Helper {
 	// here we gonna store our body and head
 	static String body = "";
 	static String head = "";
-
 	
 	static List<String> BodySubjectsList = new ArrayList<String>(); 
 	static List<String> BodyPredicatesList = new ArrayList<String>(); 
@@ -280,7 +279,7 @@ public class Helper {
     	if ((name != "") && (name != null) && (!classesBank.contains(name))) {
     		rulePart = rulePart + name + "(?" + var + ")^";
     		classesBank.add(name);
-    		varsBank.add(var);
+    		varsBank.add(var + "_var");
     	}
     	return rulePart;
     }
@@ -305,7 +304,7 @@ public class Helper {
     {
     	if ((name != "") && (name != null))
         rulePart = rulePart + name + "(?" + var1 + ",?" + var2 + ")^";
-		varsBank.add(var2);
+		varsBank.add(var2 + "_var");
 		return rulePart;
     }
 

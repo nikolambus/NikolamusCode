@@ -24,7 +24,7 @@ public class ServiceHelper {
 		namespaceList.add("PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>");
 		namespaceList.add("PREFIX owl: <http://www.w3.org/2002/07/owl#>");
 		namespaceList.add("PREFIX foaf: <http://xmlns.com/foaf/0.1/>");
-		namespaceList.add("PREFIX lf: <http://localhost:8080/CognitiveApp/files/ontologies/lf#>");
+		namespaceList.add("PREFIX sf: <http://localhost:8080/CognitiveApp2/files/ontologies/sf#>");
 		namespaceList.add("PREFIX dc: <http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements#>");
 		return namespaceList;
 	}

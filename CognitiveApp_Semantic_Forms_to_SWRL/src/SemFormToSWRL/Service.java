@@ -118,23 +118,23 @@ public class Service {
 		System.out.println("rdfExport: " + rdfExport);
 		System.out.println("Request URI: " + requestURI);	
 						
-		//get the output path via ServletContext method "getRealPath" (see explanation how does it work at the end)
-		String outputPath = context.getRealPath("/files/output/") + "/";
-		
+		//get the output path via ServletContext method "getRealPath" (explanation at the end)
+		//and save the rule in a filed named "swrl_rule.owl"
+		String outputPath = context.getRealPath("/files/output/") + "/swrl_rule.owl";
 		BuildRule.action(rdfExport, outputPath);
 	
 	}
 	
 	@GET
-	@Path("/descriptionTTL")
-	@Produces("application/rdf+turtle")
+	@Path("/descriptionRDF")
+	@Produces("application/rdf+xml")
 	public String getDescription(@Context final HttpServletResponse servletResponse, @Context final HttpServletRequest servletRequest, @Context final ServletContext context) throws Exception {
 
 		//get the descriptions path via ServletContext method "getRealPath" (see explanation how does it work at the end)
 		String descriptionsPath = context.getRealPath("/files/descriptions/") + "/";
 
 		//choose the "LF_turtle.ttl" file from the folder with descriptions and output it as response to @GET @Path "/descriptionTTL"
-		ServiceHelper.printRDFDescriptionFromFile(descriptionsPath + "SF_turtle.ttl", servletResponse, context, "application/rdf+turtle");
+		ServiceHelper.printRDFDescriptionFromFile(descriptionsPath + "SF_description.xml", servletResponse, context, "application/rdf+xml");
 		return "";
 	}
 	

@@ -18,8 +18,8 @@
 	<sp:Property-3AHas_description>Applies a rule to patient data and ouputs the patient data with some new informations</sp:Property-3AHas_description>
 	<lapis:hasInputDescription>A patient in RDF (Turtle) format and a rule formalized in N3 format"</lapis:hasInputDescription>>
 	<lapis:hasOutputDescription>A patient after reasoning (with new liver factor observations)</lapis:hasOutputDescription>
-	<sp:Property-3AHasExampleRequest rdf:resource="http://localhost:8080/CognitiveApp/files/examples/lf/LF_Input_Example.xml"/>
-	<sp:Property-3AHasExampleResponse rdf:resource="http://localhost:8080/SFBPrototyp/files/examples/lf/LF_Output_Example.xml"/>
+	<sp:Property-3AHasExampleRequest rdf:resource="http://localhost:8080/CognitiveApp/files/descriptions/LF_Input_Example.xml"/>
+	<sp:Property-3AHasExampleResponse rdf:resource="http://localhost:8080/CognitiveApp/files/descriptions/LF_Output_Example.xml"/>
 	<sawsdl:modelReference>
 		<msm:Precondition>
 			<rdf:value rdf:datatype="http://www.w3.org/TR/rdf-sparql-query/#GraphPattern">{

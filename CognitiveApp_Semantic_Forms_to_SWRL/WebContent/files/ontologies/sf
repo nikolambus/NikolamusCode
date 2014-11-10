@@ -8,34 +8,36 @@
 @prefix xsd:	 	<http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: 		<http://www.w3.org/2002/07/owl#>.
 @prefix dcterms:		<http://purl.org/dc/terms/> .
-@prefix lapis:   	<http://localhost:8080/CognitiveApp/files/ontologies/lapis#> .
-@prefix sf:   	<http://localhost:8080/CognitiveApp/files/ontologies/sf#> .
+@prefix lapis:   	<http://localhost:8080/CognitiveApp2/files/ontologies/lapis#> .
+@prefix sf:   	<http://localhost:8080/CognitiveApp2/files/ontologies/sf#> .
 
 
 ################################################################################################################
 #Classes#
 ################################################################################################################
 
-#http://localhost:8080/CognitiveApp/files/ontologies/sf#RDFExport
+#http://localhost:8080/CognitiveApp2/files/ontologies/sf#RDFExport
 sf:RDFExport
+		rdfs:subClassOf dcterms:URI;
 		rdfs:comment "RDF export of the rule defined via Semantic Forms" .
 		
-#http://localhost:8080/CognitiveApp/files/ontologies/sf#SWRLRule
+#http://localhost:8080/CognitiveApp2/files/ontologies/sf#SWRLRule
 sf:SWRLRule
+		rdfs:subClassOf dcterms:FileFormat;
 		rdfs:comment "SWRL rule in OWL/RDF as result of the RDF Export processing" .
 		
 ################################################################################################################
 #Properties#
 ################################################################################################################
 
-###  http://localhost:8080/CognitiveApp/files/ontologies/sf#hasSemanticFormsRDFExport	
+###  http://localhost:8080/CognitiveApp2/files/ontologies/sf#hasSemanticFormsRDFExport	
 sf:hasSemanticFormsRDFExport
 		rdf:type 	rdf:Property;
 		rdfs:comment 	"A request should contain a semantic forms RDF export";
 		rdfs:domain 	lapis:Request;
 		rdfs:range 	sf:RDFExport .
 
-###  http://localhost:8080/CognitiveApp/files/ontologies/sf#hasCorrespondingSwrlRule		
+###  http://localhost:8080/CognitiveApp2/files/ontologies/sf#hasCorrespondingSwrlRule		
 sf:hasCorrespondingSwrlRule
 		rdf:type 	rdf:Property;
 		rdfs:comment 	"A request gets a SWRL file as result of this cognitive app";

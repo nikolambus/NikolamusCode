@@ -97,6 +97,9 @@ public class GetConceptsFromString_short {
 		
         //Apply change
         m.applyChange(new AddAxiom(o, ruleSWRL));
+        
+        //check
+        //System.out.println("File exists: " + new File(outputPath).exists()); 
 
         //Now we can assure that our rule was added into the ontology by saving ontology in a new file 
         File output = new File(outputPath);
@@ -169,7 +172,7 @@ public class GetConceptsFromString_short {
 				//Get a reference to the needed class so that we can process it with the reasoner.
 				SWRLPartAtom.SWRLClassAtomName = df.getOWLClass(IRI.create(ontologyIRI + a.atomName));
 				//Create a variable that represents the instance of this class 
-				SWRLPartAtom.SWRLAtomVar1 = df.getSWRLVariable(IRI.create(ontologyIRI + a.atomVar));				
+				SWRLPartAtom.SWRLAtomVar1 = df.getSWRLVariable(IRI.create(ontologyIRI + a.atomVar + "_var"));				
 			
 				//Specify the relationship between a class and a variable
 				SWRLPartAtom.classAtom = df.getSWRLClassAtom(SWRLPartAtom.SWRLClassAtomName, SWRLPartAtom.SWRLAtomVar1);
@@ -180,8 +183,8 @@ public class GetConceptsFromString_short {
 				SWRLPartAtom.SWRLPropertyAtomName = df.getOWLObjectProperty(IRI.create(ontologyIRI + a.atomName));
 				
 				//Create 2 variables that represents the instance of this class 
-				SWRLPartAtom.SWRLAtomVar1 = df.getSWRLVariable(IRI.create(ontologyIRI + a.atomVar.substring(0, a.atomVar.indexOf(','))));
-				SWRLPartAtom.SWRLAtomVar2 = df.getSWRLVariable(IRI.create(ontologyIRI + a.atomVar.substring(a.atomVar.indexOf(',')+1,a.atomVar.length())));
+				SWRLPartAtom.SWRLAtomVar1 = df.getSWRLVariable(IRI.create(ontologyIRI + a.atomVar.substring(0, a.atomVar.indexOf(',')) + "_var"));
+				SWRLPartAtom.SWRLAtomVar2 = df.getSWRLVariable(IRI.create(ontologyIRI + a.atomVar.substring(a.atomVar.indexOf(',')+1,a.atomVar.length()) + "_var"));
 		
 				SWRLPartAtom.propAtom = df.getSWRLObjectPropertyAtom(SWRLPartAtom.SWRLPropertyAtomName, SWRLPartAtom.SWRLAtomVar1, SWRLPartAtom.SWRLAtomVar2);
 			}
