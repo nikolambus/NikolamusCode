@@ -51,6 +51,7 @@ public class GetConceptsFromString_short {
 	//private static final String ontologyIRI = "justSomeIRI";
 	public static void fromStringToOWLRDFNotation(String rule, IRI ontologyIRI, String outputPath) throws OWLOntologyCreationException, IOException, OWLOntologyStorageException {
 
+		//this will be our owl ontology
 		OWLOntology o = m.createOntology(ontologyIRI);
 
 		//First of all we divide it in two parts: body and head
@@ -112,6 +113,9 @@ public class GetConceptsFromString_short {
 	// We use it once for our body and once for our head
 	public static List<SWRLHelpClass> buildRulePart(String part, IRI ontologyIRI) throws OWLOntologyCreationException {
 		
+		//define IRI for variables
+	  	IRI varIRI = IRI.create(ontologyIRI + "Variable#");	
+		
 		//We want to extract each part-atom. For that we create a list structure that will contain them. 
 		List<Atom> partAtoms = new ArrayList<Atom>();
 		
@@ -172,7 +176,7 @@ public class GetConceptsFromString_short {
 				//Get a reference to the needed class so that we can process it with the reasoner.
 				SWRLPartAtom.SWRLClassAtomName = df.getOWLClass(IRI.create(ontologyIRI + a.atomName));
 				//Create a variable that represents the instance of this class 
-				SWRLPartAtom.SWRLAtomVar1 = df.getSWRLVariable(IRI.create(ontologyIRI + a.atomVar + "_var"));				
+				SWRLPartAtom.SWRLAtomVar1 = df.getSWRLVariable(IRI.create(varIRI + a.atomVar));				
 			
 				//Specify the relationship between a class and a variable
 				SWRLPartAtom.classAtom = df.getSWRLClassAtom(SWRLPartAtom.SWRLClassAtomName, SWRLPartAtom.SWRLAtomVar1);
@@ -183,8 +187,8 @@ public class GetConceptsFromString_short {
 				SWRLPartAtom.SWRLPropertyAtomName = df.getOWLObjectProperty(IRI.create(ontologyIRI + a.atomName));
 				
 				//Create 2 variables that represents the instance of this class 
-				SWRLPartAtom.SWRLAtomVar1 = df.getSWRLVariable(IRI.create(ontologyIRI + a.atomVar.substring(0, a.atomVar.indexOf(',')) + "_var"));
-				SWRLPartAtom.SWRLAtomVar2 = df.getSWRLVariable(IRI.create(ontologyIRI + a.atomVar.substring(a.atomVar.indexOf(',')+1,a.atomVar.length()) + "_var"));
+				SWRLPartAtom.SWRLAtomVar1 = df.getSWRLVariable(IRI.create(varIRI + a.atomVar.substring(0, a.atomVar.indexOf(','))));
+				SWRLPartAtom.SWRLAtomVar2 = df.getSWRLVariable(IRI.create(varIRI + a.atomVar.substring(a.atomVar.indexOf(',')+1,a.atomVar.length())));
 		
 				SWRLPartAtom.propAtom = df.getSWRLObjectPropertyAtom(SWRLPartAtom.SWRLPropertyAtomName, SWRLPartAtom.SWRLAtomVar1, SWRLPartAtom.SWRLAtomVar2);
 			}

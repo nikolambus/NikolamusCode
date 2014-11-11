@@ -117,10 +117,12 @@ public class Service {
 		//check
 		System.out.println("rdfExport: " + rdfExport);
 		System.out.println("Request URI: " + requestURI);	
-						
+		
+		//parse "RudisRule2" from "http://localhost/mediawiki/index.php/Special:ExportRDF/RudisRule2"
+		String ruleName = rdfExport.substring(rdfExport.lastIndexOf("/")+1, rdfExport.length());
+		
 		//get the output path via ServletContext method "getRealPath" (explanation at the end)
-		//and save the rule in a filed named "swrl_rule.owl"
-		String outputPath = context.getRealPath("/files/output/") + "/swrl_rule.owl";
+		String outputPath = context.getRealPath("/files/output/") + "/" + ruleName + ".owl";
 		BuildRule.action(rdfExport, outputPath);
 	
 	}

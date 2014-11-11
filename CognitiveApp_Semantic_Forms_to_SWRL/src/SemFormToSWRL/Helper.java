@@ -281,7 +281,7 @@ public class Helper {
     	if ((name != "") && (name != null) && (!classesBank.contains(name))) {
     		rulePart = rulePart + name + "(?" + var + ")^";
     		classesBank.add(name);
-    		varsBank.add(var + "_var");
+    		varsBank.add(var);
     	}
     	return rulePart;
     }
@@ -306,7 +306,7 @@ public class Helper {
     {
     	if ((name != "") && (name != null))
         rulePart = rulePart + name + "(?" + var1 + ",?" + var2 + ")^";
-		varsBank.add(var2 + "_var");
+		varsBank.add(var2);
 		return rulePart;
     }
 

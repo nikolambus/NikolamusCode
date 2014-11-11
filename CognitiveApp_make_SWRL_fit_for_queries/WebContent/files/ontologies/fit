@@ -1,0 +1,36 @@
+<html>
+<head></head>
+<body>
+<table border="0"><tr><td>
+<textarea rows="50" cols="170">@prefix rdfs:    	<http://www.w3.org/2000/01/rdf-schema/> .
+@prefix rdf:   		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#"> .
+@prefix xsd:	 	<http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: 		<http://www.w3.org/2002/07/owl#>.
+@prefix dcterms:		<http://purl.org/dc/terms/> .
+@prefix lapis:   	<http://localhost:8080/CognitiveApp3/files/ontologies/lapis#> .
+@prefix fit:   	<http://localhost:8080/CognitiveApp3/files/ontologies/fit#> .
+
+
+################################################################################################################
+#Classes#
+################################################################################################################
+		
+#http://localhost:8080/CognitiveApp3/files/ontologies/fit#SWRLRule
+fit:SWRLRule
+		rdfs:subClassOf dcterms:FileFormat;
+		rdfs:comment "SWRL rule in OWL/RDF as result of the RDF Export processing" .
+		
+################################################################################################################
+#Properties#
+################################################################################################################
+
+###  http://localhost:8080/CognitiveApp3/files/ontologies/fit#hasSWRLRule		
+fit:hasSWRLRule
+		rdf:type 	rdf:Property;
+		rdfs:comment 	"describes the relationship between a request and a SWRL rule";
+		rdfs:domain 	lapis:Request;
+		rdfs:range 	fit:SWRLRule .	
+	
+</textarea></td><td style="padding-left:100px">RDF can be POSTed to <a href="../descriptions/fit">service</a><br/></td></tr></table></body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:fit="http://localhost:8080/CognitiveApp3/files/ontologies/fit#">
+	<rdf:Description rdf:about="http://www.example.com/Request_03_Example">
+		<rdf:type rdf:resource="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3ARequest"/>
+		<fit:hasSWRLRule rdf:resource="http://localhost:8080/CognitiveApp2/files/output/RudisRule2.owl"/> 	
+		
+		<fit:hasSWRLRule rdf:resource="http://localhost:8080/CognitiveApp3/files/output/RudisRule2_fit.owl"/> 		
+	</rdf:Description>
+</rdf:RDF>
