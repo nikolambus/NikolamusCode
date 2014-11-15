@@ -93,10 +93,7 @@ public class Service {
 				 
 				//QuerySolution -- A single answer from a SELECT query.
 				//results.nextSolution() -- Moves on to the next result
-				QuerySolution soln = results.nextSolution();
-
-				//check
-				//System.out.println("SOLN:" + soln);		
+				QuerySolution soln = results.nextSolution();	
 				
 				//Return the value of the named variable in this binding, casting to a Resource. 
 				//This solution is a shorter alternative to the string-parsing-HandlerLF-solution. Here we do not need HandlerLF class at all.
@@ -118,7 +115,7 @@ public class Service {
 		//get the output path via ServletContext method "getRealPath" (explanation at the end)
 		String outputPath = context.getRealPath("/files/output/") + "/" + ruleName + "_fit.owl";
 		
-		SWRLRuleQueryPropertiesImplantator implantator = new SWRLRuleQueryPropertiesImplantator();
+		AnnotationPropertiesImplantator implantator = new AnnotationPropertiesImplantator();
 		implantator.action(swrlRule, outputPath);
 	
 	}

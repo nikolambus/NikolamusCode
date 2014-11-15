@@ -18,7 +18,7 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 
 
-public class SWRLRuleQueryPropertiesImplantator {
+public class AnnotationPropertiesImplantator {
 
 	public List<String> classNames = new ArrayList<String>(); 
 	public String base = "http://localhost/mediawiki/index.php/Special:URIResolver/";
@@ -43,14 +43,37 @@ public class SWRLRuleQueryPropertiesImplantator {
 	    String line;
 	    while ((line = br.readLine()) != null) {
 	    
-	    	
-	    	
 	    	//check
 	    	System.out.println(line);
 	    	
 	    	//add the current line to the result file
 			writer.println(line);
 	    	
+			/* immediately after prefixes comes the declaration of our help properties for better querying. 
+			 * They are described  as annotation properties.
+			 */
+			if (Pattern.matches("\\s*<owl:Ontology rdf:about=\""+base+"\"/>", line)) {
+				writer.println("    <!-- ");
+				writer.println("    ///////////////////////////////////////////////////////////////////////////////////////");
+	    		writer.println("    //");
+	    		writer.println("    // Annotation Properties");
+	    		writer.println("    //");
+	    		writer.println("    ///////////////////////////////////////////////////////////////////////////////////////");
+	    		writer.println("     -->");
+				writer.println("");
+				writer.println("");
+				writer.println("");
+				writer.println(" <!-- " + base + "Property-3AHas_name -->");
+				writer.println(" <owl:AnnotationProperty rdf:about=\"" + base + "Property-3AHas_name\"/>");
+				writer.println("");
+				writer.println(" <!-- " + base + "Property-3AHas_source_rule -->");
+				writer.println(" <owl:AnnotationProperty rdf:about=\"" + base + "Property-3AHas_source_rule\"/>");
+				writer.println("");
+				writer.println(" <!-- " + base + "Property-3AHas_topic -->");
+				writer.println(" <owl:AnnotationProperty rdf:about=\"" + base + "Property-3AHas_topic\"/>");
+	    	}
+			
+			// if we encounter a class declaration save the class name - each class name is the value of the "Property-3AHas_topic" property
 			if (Pattern.matches("\\s*<owl:Class rdf:about=\"http://localhost/mediawiki/index.php/Special:URIResolver/([a-zA-Z_0-9:,?\"./]+)\"/>", line)) {
 				
 				//parse the class name from regex ([a-zA-Z_0-9:,?\"./]+)
@@ -62,41 +85,20 @@ public class SWRLRuleQueryPropertiesImplantator {
 				}
 			}
 
-			
+			// By encountering the rule begin do implanting our annotation properties as properties of the blank node that starts the rule  
 			if (Pattern.matches("        <rdf:type rdf:resource=\"http://www.w3.org/2003/11/swrl#Imp\"/>", line)) {
-				writer.println("        <Property-3AHas_name rdf:resource=\"http://localhost/mediawiki/index.php/Special:URIResolver/RudisRule2\"/>");
+				//parse "RudisRule2" from "http://localhost:8080/CognitiveApp2/files/output/RudisRule2.owl"
+				String ruleName = swrlRule.substring(swrlRule.lastIndexOf("/")+1, swrlRule.lastIndexOf("."));
+				writer.println("        <Property-3AHas_name rdf:resource=\"http://localhost/mediawiki/index.php/Special:URIResolver/"+ruleName+"\"/>");
 				writer.println("        <Property-3AHas_source_rule rdf:resource=\""+swrlRule+"\"/>");
 				for (int i=0; i < classNames.size(); i++)
 					writer.println("        <Property-3AHas_topic rdf:resource=\"" + base + classNames.get(i) + "\"/>");
-			}
-	    	
-			//mark the moment when we have reached the line with "Object Properties"
-			if (Pattern.matches("    // Object Properties", line))
-				insertFlag = true;
-
-			// start to count lines after the "Object Properties" line has been reached
-			if (insertFlag == true)
-				lineCounterForInsert++;
-	    
-			// after 4 lines we can define implanted properties as object properties just before the OWL API native ones
-			if (lineCounterForInsert == 4) {
-				writer.println("");
-				writer.println(" <!-- " + base + "Property-3AHas_name -->");
-				writer.println(" <owl:ObjectProperty rdf:about=\"" + base + "Property-3AHas_name\"/>");
-				writer.println("");
-				writer.println(" <!-- " + base + "Property-3AHas_source_rule -->");
-				writer.println(" <owl:ObjectProperty rdf:about=\"" + base + "Property-3AHas_source_rule\"/>");
-				writer.println("");
-				writer.println(" <!-- " + base + "Property-3AHas_topic -->");
-				writer.println(" <owl:ObjectProperty rdf:about=\"" + base + "Property-3AHas_topic\"/>");
 			}
 	    }
 	    
 		writer.close();
 	    scanner.close();
-	    
-	    
-	    
+	  
 	}
 
 }

@@ -1,34 +1,22 @@
 package SWRLReasoner;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.StringReader;
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Scanner;
 import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.AxiomType;
 import org.semanticweb.owlapi.model.IRI;
-import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyChangeVisitor;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
-import org.semanticweb.owlapi.model.RemoveAxiom;
 import org.semanticweb.owlapi.model.SWRLRule;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
@@ -36,9 +24,6 @@ import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 import org.semanticweb.owlapi.reasoner.structural.StructuralReasonerFactory;
 import org.semanticweb.owlapi.util.InferredOntologyGenerator;
 import org.semanticweb.owlapi.util.OWLEntityRemover;
-import org.semanticweb.owlapi.util.OWLOntologyChangeFilter;
-import org.semanticweb.owlapi.util.OWLOntologyChangeVisitorAdapter;
-import org.semanticweb.owlapi.util.OWLOntologyMerger;
 
 import com.clarkparsia.pellet.owlapiv3.PelletReasoner;
 import com.clarkparsia.pellet.owlapiv3.PelletReasonerFactory;
@@ -57,35 +42,6 @@ public class Reasoner {
     public OWLClass currentPhaseCls = null;
   	
     public void action(String rule, String patient, String outputPath) throws OWLOntologyCreationException, OWLOntologyStorageException, IOException {
-
-    	/* Firstly we would like to check which rule we are going to deal with: a common rule or a rule_fit version.
-    	 * If it's the latter we would like to do a redirect to the former one. Because a rule_fit version is fit for queries, but 
-    	 * the common rule is fitter for reasoning. 
-    	 * 
-    	 *  For that we look inside the rule and search for special property "Property-3AHas_source_rule" which specifies the relation
-    	 *  rule_fit --> rule. If found, process the source rule in following. Else - do nothing (it is a common rule)
-    	 *  
-    	 *  Looking inside is done in 2 steps: 1) get the text from an URI (via Scanner) 2) find the necessary line inside (Pattern Class and its multiline modus (?sm))  
-    	 */
-    	
-    	Scanner scanner = new Scanner(new URL(rule).openStream(), "UTF-8").useDelimiter("\\A");
-		String out = scanner.next();
-		
-		//check
-		//System.out.println(out);       
-		
-		if (Pattern.matches("(?sm).*^\\s*<Property-3AHas_source_rule rdf:resource=\"([a-zA-Z_0-9:,?\"./]+)\"/>$.*", out)) {
-    		//parse the source rule name from regex ([a-zA-Z_0-9:,?\"./]+)
-			Pattern pattern = Pattern.compile("(?sm).*^\\s*<Property-3AHas_source_rule rdf:resource=\"([a-zA-Z_0-9:,?\"./]+)\"/>$.*");
-			Matcher mtch = pattern.matcher(out);
-			while (mtch.find()) {
-				//and save the found label to the rule variable
-				rule = mtch.group(1);
-			}
-		}
-    	
-    	//check
-    	System.out.println("RULE after possibly redirect: " + rule);
     	
     	/*load at first the rule and the patient files as 2 ontologies. Note: they have the same basic IRI. 
     	It isn't allowed to load 2 different ontologies with the same IRI into the same manager. So we need different manager:
@@ -94,28 +50,14 @@ public class Reasoner {
     	OWLOntology patOnto = m2.loadOntology(IRI.create(patient));
     	OWLOntology mergedOnt = m3.createOntology(basicIRI);
     	
-    	/* another idea: we could just preprocess our rule_fit ontology. 
-    	 * That means we could find all anonymous individuals and remove them  
-    	 * I've just printed it down very fast without debugging it. 
-    	 * If it would work there would be no need in above redirection
-    	     
-    	Set<OWLOntology> ruleHelpSet = new HashSet<OWLOntology>();
-    	ruleHelpSet.add(ruleOnto);
-    	OWLEntityRemover remover = new OWLEntityRemover(m1, ruleHelpSet);
-    	for (OWLNamedIndividual ind : ruleOnto.getIndividualsInSignature()) {
-    		if (ind.isAnonymous()) {
-    		    ind.accept(remover)
-    		}
-    	}
-    	*/
-    	
-    	/* Copy all axioms from rule and patient ontologies into the new one */
-		m3.addAxioms(mergedOnt, ruleOnto.getAxioms());
+    	/* Copy all logical axioms (discard annotation properties) from the rule ontology and all axioms from the patient ontology into the new one */
+		m3.addAxioms(mergedOnt, ruleOnto.getLogicalAxioms());
 		m3.addAxioms(mergedOnt, patOnto.getAxioms());
 		
-		/* Before we start the reasoning we would like to save some older results that will be obsolete and can only 
-		 * confuse us after the new inference results will be added. There is only one method in our case we need to pay attention to: 
-		 * BefindetSichInDerPhase. It does not make sense for a patient be in different phases simultaneously. 
+		/* Before we start the reasoning we would like to save some older results that can become obsolete after 
+		 * the new inference results will be added. If so they will only confuse us. 
+		 * There is only one method in our case we need to pay attention to: "BefindetSichInDerPhase". 
+		 * It does not make sense for a patient to be in different phases simultaneously. 
 		 * So we save the "currentPhase" before reasoning in order to differentiate between the older and the newly inferenced phase.
 		 */
 
@@ -142,7 +84,7 @@ public class Reasoner {
 		
 		// remove rules if any
 		removeRules(mergedOnt);
-		
+			
 		//Now we can assure that our rule was added into the ontology by saving ontology in a new file 
         File output = new File(outputPath);
         output.createNewFile();
@@ -178,12 +120,14 @@ public class Reasoner {
 		    	currentPhaseInd = phases.iterator().next();
 		    }
 		   
+		    if (!phases.isEmpty()) { 
+			    Set<OWLClassExpression> phaseClsSet = currentPhaseInd.getTypes(o);
 		    
-		    Set<OWLClassExpression> phaseClsSet = currentPhaseInd.getTypes(o);
-		    if (!phaseClsSet.isEmpty()) {
-		    	currentPhaseCls = (OWLClass) phaseClsSet.iterator().next();
+		    	if (!phaseClsSet.isEmpty()) {
+		    		currentPhaseCls = (OWLClass) phaseClsSet.iterator().next();
+		    	}
 		    }
-    	}    
+		}    
     }
     
     //check do we have got a new phase. If not, utilize the old one.
