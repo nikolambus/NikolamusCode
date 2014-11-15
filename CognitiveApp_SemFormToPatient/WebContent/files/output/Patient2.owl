@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://localhost/mediawiki/index.php/Special:URIResolver/"
+     xml:base="http://localhost/mediawiki/index.php/Special:URIResolver/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:URIResolver="http://localhost/mediawiki/index.php/Special:URIResolver/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/BefindetSichInDerPhase -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/BefindetSichInDerPhase"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Hat_Diagnose -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Hat_Diagnose"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Hat_Symptom -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Hat_Symptom"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/WirdUntersuchtDurch -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/WirdUntersuchtDurch"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Zeigt -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Zeigt"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Auffaelliger_Befund -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Auffaelliger_Befund"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Blut_im_Stuhl -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Blut_im_Stuhl"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/DRU -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/DRU"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Diagnosephase -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Diagnosephase"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Koloskopie -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Koloskopie"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Patient -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Patient"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Rektumkarzinom -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Rektumkarzinom"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Verdaechtiges_Muttermal -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Verdaechtiges_Muttermal"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Auffaelliger_Befund1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Auffaelliger_Befund1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Auffaelliger_Befund"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Biopsie1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Biopsie1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Blut_im_Stuhl1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Blut_im_Stuhl1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Blut_im_Stuhl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#DRU1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#DRU1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/DRU"/>
+        <Zeigt rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Auffaelliger_Befund1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Diagnosephase1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Diagnosephase1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Diagnosephase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Fred -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Fred">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Patient"/>
+        <WirdUntersuchtDurch rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Biopsie1"/>
+        <Hat_Symptom rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Blut_im_Stuhl1"/>
+        <WirdUntersuchtDurch rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#DRU1"/>
+        <BefindetSichInDerPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Diagnosephase1"/>
+        <WirdUntersuchtDurch rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Koloskopie1"/>
+        <Hat_Diagnose rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Rektumkarzinom1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Koloskopie1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Koloskopie1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Koloskopie"/>
+        <Zeigt rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Auffaelliger_Befund1"/>
+        <Zeigt rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Verdaechtiges_Muttermal1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Rektumkarzinom1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Rektumkarzinom1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Rektumkarzinom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Verdaechtiges_Muttermal1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Verdaechtiges_Muttermal1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Verdaechtiges_Muttermal"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.5-SNAPSHOT) http://owlapi.sourceforge.net -->
+

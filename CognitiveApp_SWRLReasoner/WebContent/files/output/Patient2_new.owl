@@ -1,0 +1,367 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://localhost/mediawiki/index.php/Special:URIResolver/"
+     xml:base="http://localhost/mediawiki/index.php/Special:URIResolver/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:URIResolver="http://localhost/mediawiki/index.php/Special:URIResolver/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/BefindetSichInDerPhase -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/BefindetSichInDerPhase">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Hat_Diagnose -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Hat_Diagnose">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Hat_Symptom -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Hat_Symptom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/WirdUntersuchtDurch -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/WirdUntersuchtDurch">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Zeigt -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Zeigt">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Auffaelliger_Befund -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Auffaelliger_Befund">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Blut_im_Stuhl -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Blut_im_Stuhl">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/DRU -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/DRU">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Diagnosephase -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Diagnosephase">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Koloskopie -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Koloskopie">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Patient -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Patient">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Rektumkarzinom -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Rektumkarzinom">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Verdaechtiges_Muttermal -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Verdaechtiges_Muttermal">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Auffaelliger_Befund1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Auffaelliger_Befund1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Auffaelliger_Befund"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Biopsie1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Biopsie1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Blut_im_Stuhl1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Blut_im_Stuhl1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Blut_im_Stuhl"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#DRU1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#DRU1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/DRU"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <Zeigt rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Auffaelliger_Befund1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Diagnosephase1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Diagnosephase1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Diagnosephase"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Fred -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Fred">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Patient"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <WirdUntersuchtDurch rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Biopsie1"/>
+        <Hat_Symptom rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Blut_im_Stuhl1"/>
+        <WirdUntersuchtDurch rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#DRU1"/>
+        <BefindetSichInDerPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Diagnosephase1"/>
+        <WirdUntersuchtDurch rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Koloskopie1"/>
+        <Hat_Diagnose rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Rektumkarzinom1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Koloskopie1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Koloskopie1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Koloskopie"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <Zeigt rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Auffaelliger_Befund1"/>
+        <Zeigt rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Verdaechtiges_Muttermal1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Rektumkarzinom1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Rektumkarzinom1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Rektumkarzinom"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Verdaechtiges_Muttermal1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Verdaechtiges_Muttermal1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Verdaechtiges_Muttermal"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Auffaelliger_Befund">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Biopsie">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#DRU">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Patient">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Auffaelliger_Befund"/>
+                        <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Auffaelliger_Befund"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie"/>
+                                <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Biopsie"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/WirdUntersuchtDurch"/>
+                                                        <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#DRU"/>
+                                                        <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Patient"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Zeigt"/>
+                                                                <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Auffaelliger_Befund"/>
+                                                                <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#DRU"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Patient"/>
+                                                <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Patient"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                    </rdf:Description>
+                                </rdf:rest>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/DRU"/>
+                                        <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#DRU"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/WirdUntersuchtDurch"/>
+                        <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Biopsie"/>
+                        <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Patient"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.5-SNAPSHOT) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:swrlr="http://localhost:8080/CognitiveApp5/files/ontologies/swrlr#">
+	<rdf:Description rdf:about="http://www.example.com/Request_05_Example">
+		<rdf:type rdf:resource="http://surgipedia.swrlrb125.de/wiki/Special:URIResolver/Category-3ARequest"/>
+		<swrlr:hasSWRLRule>
+			<rdf:Description rdf:about="http://localhost:8080/CognitiveApp3/files/output/RudisRule2_fit.owl">
+				<rdf:type rdf:resource="http://localhost:8080/CognitiveApp5/files/ontologies/swrlr#SWRLRule"/>
+				<dc:format>application/rdf+xml</dc:format> 
+			</rdf:Description>		
+		</swrlr:hasSWRLRule>	
+		<swrlr:hasOWLPatient>
+			<rdf:Description rdf:about="http://localhost:8080/CognitiveApp4/files/output/Patient1.owl">
+				<rdf:type rdf:resource="http://localhost:8080/CognitiveApp5/files/ontologies/swrlr#OWLPatient"/>
+				<dc:format>application/rdf+xml</dc:format> 
+			</rdf:Description>		
+		</swrlr:hasOWLPatient>
+	</rdf:Description>
+</rdf:RDF>
