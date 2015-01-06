@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:msm="http://cms-wg.sti2.org/minimal-service-model#" 
+	xmlns:sawsdl="http://www.w3.org/ns/sawsdl#" 
+	xmlns:sparql="http://www.w3.org/TR/rdf-sparql-query/#" 
+	xmlns:sp="http://surgipedia.sfb125.de/wiki/Special:URIResolver/"
+	xmlns:lapis="http://localhost:8080/CognitiveApp2/files/ontologies/lapis#"
+	xmlns:sf="http://localhost:8080/CognitiveApp2/files/ontologies/sf#">
+	
+<rdf:Description rdf:about="http://localhost:8080/CognitiveApp2/SemFormToSWRL">
+	<rdf:type rdf:resource="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3ACognitive_App"/>
+	<rdfs:label> Cognitive App for transforming a rule defined with Semantic Forms into a SWRL rule </rdfs:label>	
+	<sp:Property-3AHas_description>Find the rule atoms within a semantic forms RDF export and compose them to a SWRL rule </sp:Property-3AHas_description>
+	<lapis:hasInputDescription>A URI with RDF Export"</lapis:hasInputDescription>>
+	<lapis:hasOutputDescription>A file with a SWRL rule</lapis:hasOutputDescription>
+	<sp:Property-3AHasExampleRequest rdf:resource="http://localhost:8080/CognitiveApp2/files/descriptions/SF_Input_Example.xml"/>
+	<sp:Property-3AHasExampleResponse rdf:resource="http://localhost:8080/CognitiveApp2/files/descriptions/SF_Output_Example.xml"/>
+	<sawsdl:modelReference>
+		<msm:Precondition>
+			<rdf:value rdf:datatype="http://www.w3.org/TR/rdf-sparql-query/#GraphPattern">{
+				?request		rdf:type				sp:Category-3ARequest.
+				?request		sf:hasSemanticFormsRDFExport		?rdfExport.
+				?rdfExport		dc:format			"application/rdf+xml".
+			}</rdf:value>
+		</msm:Precondition>
+	</sawsdl:modelReference>	
+	<sawsdl:modelReference>
+			<msm:Postcondition>
+				<rdf:value rdf:datatype="http://www.w3.org/TR/rdf-sparql-query/#GraphPattern">{	
+					?request		rdf:type				sp:Category-3ARequest.
+					?request		sf:hasSemanticFormsRDFExport		?rdfExport.
+					?rdfExport		dc:format			"application/rdf+xml".
+					
+					?request 		sf:hasCorrespondingSwrlRule	?swrlRule.
+				}</rdf:value>
+			</msm:Postcondition>
+		</sawsdl:modelReference>
+</rdf:Description>
+</rdf:RDF>

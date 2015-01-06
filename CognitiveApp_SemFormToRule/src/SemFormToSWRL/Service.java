@@ -134,19 +134,18 @@ public class Service {
 		//getting the RDF export of the rule's page in SMW
 		Scanner scanner = new Scanner(new URL(rdfExport).openStream(), "UTF-8").useDelimiter("\\A");
 		String out = scanner.next();
-		RDFExportParser parser = new RDFExportParser();
-		parser.buildBody(out);
-		parser.buildHead(out);
 		
-		String rule = parser.body + "->" + parser.head;
-	    scanner.close();
+		RDFExportParser parser = new RDFExportParser();
+		String rule = parser.CreateRule(out);
+	    
+		scanner.close();
 
 	    //check
 		System.out.println("Rule: " + rule);
 		System.out.println("Classes bank: " + parser.classesBank);
 		System.out.println("Vars bank: " + parser.varsBank);
 	
-		SWRLRuleFromStringCreator creator = new SWRLRuleFromStringCreator();
+		SWRLRuleFromStringCreator2 creator = new SWRLRuleFromStringCreator2();
 		creator.fromStringToOWLRDFNotation(rule, outputPath, parser.helpIndividualsList);	
 	}
 	

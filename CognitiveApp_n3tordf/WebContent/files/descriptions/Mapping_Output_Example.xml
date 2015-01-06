@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:baseProp="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A">
+	<rdf:Description rdf:about="http://www.example.com/Request_01_Example">
+		<rdf:type rdf:resource="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3ARequest"/>
+		<baseProp:Has_N3RuleFile>
+			<rdf:Description rdf:about="http://localhost:8080/CognitiveApp6/files/input/bn.n3">
+				<rdf:type rdf:resource="http://localhost:8080/CognitiveApp/files/ontologies/lf#RuleFile"/>
+				<dc:format>text/n3</dc:format> 
+			</rdf:Description>
+		</baseProp:Has_N3RuleFile>
+		<baseProp:Has_SWRLRuleFile>
+			<rdf:Description rdf:about="http://localhost:8080/CognitiveApp6/files/output/bn.xml">
+				<rdf:type rdf:resource="http://localhost:8080/CognitiveApp/files/ontologies/lf#RuleFile"/>
+				<dc:format>application/rdf+xml</dc:format> 
+			</rdf:Description>
+		</baseProp:Has_SWRLRuleFile>
+	</rdf:Description>
+</rdf:RDF>

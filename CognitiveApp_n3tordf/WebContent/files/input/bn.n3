@@ -1,0 +1,10 @@
+@prefix base: <http://localhost/mediawiki/index.php/Special:URIResolver/> .
+@prefix baseProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A> .
+
+{
+ ?p1 baseProp:hasFather base:Boris .
+ ?p2 baseProp:hasMother base:Natasha .
+ base:Boris baseProp:marriedTo base:Natasha .
+} => {
+	?p1 baseProp:hasSibling "yes" .
+	} .
