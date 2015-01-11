@@ -34,22 +34,24 @@ public class OneRuleMapper7 {
 	public List<String> headObjectsList = new ArrayList<String>();
 	
 	public List<String> variablesBank = new ArrayList<String>();
+	public List<String> conceptsBank = new ArrayList<String>();
 	
 	/**
 	 * 
 	 * @param oneRuleN3 - one rule snippet from the whole N3 file which can contain multiple rules 
-	 * @param ruleName - the name of the rule (if multiple rules within a file, ruleName contains also the number of current partial rule)
+	 * @param ruleURI - "base + ruleName" 
+	 * @param ruleName - "ruleName + ruleCounter" for counting multiple part rules
 	 * @param allPrefixuris - prefixes and their URIs for this rule (needed for "prefixResolver" method below)
-	 * @return
+	 * @return part rules in SWRL 
 	 * @throws IOException
 	 */
-	public String action(String oneRuleN3, String ruleName, List<String> allPrefixuris) throws IOException {
+	public String action(String oneRuleN3, String ruleURI, String ruleName, List<String> allPrefixuris) throws IOException {
 		
 		//the result of this method
 		String oneRuleRDF = "";
 		
 		//building the framework for the rdf rule in a help string "transit"
-		String transit = createXMLstructureBody(oneRuleN3, ruleName);
+		String transit = createXMLstructureBody(oneRuleN3, ruleName, ruleURI);
 		
 
 		//check
@@ -104,7 +106,7 @@ public class OneRuleMapper7 {
 	    return oneRuleRDFWithTopics;
 	}
 
-	public String createXMLstructureBody(String oneRuleN3, String ruleName) throws IOException {
+	public String createXMLstructureBody(String oneRuleN3, String ruleName, String ruleURI) throws IOException {
 		
 		//----------------------------------BODY---------------------------------------------------
 			
@@ -131,10 +133,8 @@ public class OneRuleMapper7 {
 			transit = transit + "\n";
 
 			transit = transit + " <swrl:Imp rdf:about=\"" + base + ruleName + "\">" + "\n";
-			transit = transit + tabBody + "<base:Property-3AHas_name rdf:resource=\"" + base + ruleName + "\"/>" + "\n";
-			transit = transit + tabBody + "<base:Property-3AHas_SWRLRuleFile rdf:resource=\"ToDo........\"/>" + "\n";
-			transit = transit + tabBody + "<base:Property-3AHas_N3RuleFile rdf:resource=\"ToDo........\"/>" + "\n";
-
+			transit = transit + tabBody + "<base:Property-3AHas_name rdf:resource=\"" + ruleURI + "\"/>" + "\n";
+			
 			// immediate body
 			transit = transit + tabBody + "<swrl:body>" + "\n";
 			tabAtomlist = tabBody + "    ";
@@ -236,7 +236,7 @@ public class OneRuleMapper7 {
 	    	*/
 	    	// match a n3-built-in with multiple input channels
 			// like (?bil ?al ?asc ?enc ?inr) math:sum ?s .
-			if (Pattern.matches("[(]\\s*[?][a-zA-Z0-9_]+(\\s*[?][a-zA-Z0-9_]+)+\\s*[)]\\s*[a-zA-Z_0-9:,?\"./)^(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s*[.]*\\s*", line)) {
+			if (Pattern.matches("\\s*[(]\\s*[?][a-zA-Z0-9_]+(\\s*[?][a-zA-Z0-9_]+)+\\s*[)]\\s*[a-zA-Z_0-9:,?\"./)^(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s*[.]*\\s*", line)) {
 				
 				//check
 				//System.out.println("CHECK");				
@@ -927,11 +927,16 @@ public class OneRuleMapper7 {
 						// if our object is a variable it has got already a namespace 
 						if (objectWithPrefix.charAt(0)=='?') {
 							result = result + tab + "  <swrl:argument2 rdf:resource=\"" + objectFull + "\"/>" + "\n";
+							result = result + tab + "</swrl:IndividualPropertyAtom>" + "\n";
 						}
-						else 
+						else {
 							result = result + tab + "  <swrl:argument2 rdf:resource=\"" + objectFull + "\"/>" + "\n";
-				
-						result = result + tab + "</swrl:IndividualPropertyAtom>" + "\n";
+							result = result + tab + "</swrl:IndividualPropertyAtom>" + "\n";
+							
+							//we save object as an concept individual into the concepts bank
+							if (!conceptsBank.contains(objectFull))
+								conceptsBank.add(objectFull);
+						}
 					}	
 					else {			
 						
@@ -987,6 +992,10 @@ public class OneRuleMapper7 {
 		return variablesBank;
 	}
 	
+	public List<String> getConceptsBank() {
+		return conceptsBank;
+	}
+	
 	/* this method provides the rule root with the "Has_topic" annotation properties. 
 	 * The objects of this relationship are all subjects and objects which occur in a rule and which are not variables and literals. 
 	 * For example for the rule 	
@@ -1039,9 +1048,9 @@ public class OneRuleMapper7 {
 				//check
 				System.out.println("ListForTopic: " + ListForTopic);
 				
-				//remove variables, literals and blank nodes from the topics list
+				//remove variables, literals, blank nodes and (...) from the topics list
 				for (int i=0; i<ListForTopic.size(); i++) {
-					if ((ListForTopic.get(i).charAt(0)==('?')) || (ListForTopic.get(i).charAt(0)=='\"') || (Pattern.matches("\\d+", ListForTopic.get(i))) || (Pattern.matches("\\d+.\\d+", ListForTopic.get(i))) || (ListForTopic.get(i).equalsIgnoreCase("true")) || (ListForTopic.get(i).equalsIgnoreCase("false")) || (ListForTopic.get(i).charAt(0)==('_'))) {
+					if ((ListForTopic.get(i).charAt(0)==('?')) || (ListForTopic.get(i).charAt(0)=='\"') || (Pattern.matches("\\d+", ListForTopic.get(i))) || (Pattern.matches("\\d+.\\d+", ListForTopic.get(i))) || (ListForTopic.get(i).equalsIgnoreCase("true")) || (ListForTopic.get(i).equalsIgnoreCase("false")) || (ListForTopic.get(i).charAt(0)==('_')) || ((ListForTopic.get(i).charAt(0)=='('))) {
 						ListForTopic.remove(i);
 						i--;
 					}	

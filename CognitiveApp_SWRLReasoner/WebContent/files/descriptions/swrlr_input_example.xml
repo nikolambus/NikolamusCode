@@ -2,20 +2,23 @@
 <rdf:RDF 
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
 	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:surgi="http://surgipedia.sfb125.de/wiki/Special:URIResolver/"
+	xmlns:surgiProp="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A"
+	xmlns:surgiCat="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A"
+	xmlns:baseCat="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A"
 	xmlns:swrlr="http://localhost:8080/CognitiveApp5/files/ontologies/swrlr#">
 	<rdf:Description rdf:about="http://www.example.com/Request_05_Example">
 		<rdf:type rdf:resource="http://surgipedia.swrlrb125.de/wiki/Special:URIResolver/Category-3ARequest"/>
-		<swrlr:hasSWRLRule>
-			<rdf:Description rdf:about="http://localhost:8080/CognitiveApp3/files/output/RudisRule2_fit.owl">
-				<rdf:type rdf:resource="http://localhost:8080/CognitiveApp5/files/ontologies/swrlr#SWRLRule"/>
+		<surgiProp:Has_SWRLRule>
+			<!-- in case of Surgipedia the following ruleURI and its Category should be in surgi and surgiCat namespaces -->
+				<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/RudisRule2">
+				<rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AOntologyRule"/>
+			</rdf:Description>		
+		</surgiProp:Has_SWRLRule>	
+		<surgiProp:Has_PatientFile>
+			<rdf:Description rdf:about="http://localhost:8080/CognitiveApp4/files/output/Patient2.owl">
 				<dc:format>application/rdf+xml</dc:format> 
 			</rdf:Description>		
-		</swrlr:hasSWRLRule>	
-		<swrlr:hasOWLPatient>
-			<rdf:Description rdf:about="http://localhost:8080/CognitiveApp4/files/output/Patient1.owl">
-				<rdf:type rdf:resource="http://localhost:8080/CognitiveApp5/files/ontologies/swrlr#OWLPatient"/>
-				<dc:format>application/rdf+xml</dc:format> 
-			</rdf:Description>		
-		</swrlr:hasOWLPatient>
+		</surgiProp:Has_PatientFile>
 	</rdf:Description>
 </rdf:RDF>

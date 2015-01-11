@@ -129,13 +129,13 @@ public class RDFExportParser {
 	    	if (Pattern.matches("		<property:Hat_Diagnose1 rdf:resource=\"&wiki;[a-zA-Z_0-9:,?\"./]+\"/>", line)) {
 	    		diagnose1 = extractPatientValue(line) + "1";
 	    		bindIndividualToTheClass(o, getClassFromName(extractPatientValue(line)), diagnose1);
-	    		bindIndividualsToTheProperty(o, getObjectPropertyFromName("Hat_Diagnose"), name, diagnose1);
+	    		bindIndividualsToTheProperty(o, getObjectPropertyFromName("HatDiagnose"), name, diagnose1);
 	    	}    	
 	    	
 	    	if (Pattern.matches("		<property:Hat_Diagnose2 rdf:resource=\"&wiki;[a-zA-Z_0-9:,?\"./]+\"/>", line)) {
 	    		diagnose2 = extractPatientValue(line) + "1";
 	    		bindIndividualToTheClass(o, getClassFromName(extractPatientValue(line)), diagnose2);
-	    		bindIndividualsToTheProperty(o, getObjectPropertyFromName("Hat_Diagnose"), name, diagnose2);
+	    		bindIndividualsToTheProperty(o, getObjectPropertyFromName("HatDiagnose"), name, diagnose2);
 	    	} 
 	    }
 	    

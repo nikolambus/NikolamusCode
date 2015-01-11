@@ -11,8 +11,18 @@ import java.util.Properties;
 
 
 
+
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
+
+import com.hp.hpl.jena.query.Query;
+import com.hp.hpl.jena.query.QueryExecution;
+import com.hp.hpl.jena.query.QueryExecutionFactory;
+import com.hp.hpl.jena.query.QueryFactory;
+import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.query.ResultSet;
+import com.hp.hpl.jena.rdf.model.Model;
 
 public class Helper {
 	
@@ -31,7 +41,9 @@ public class Helper {
 		namespaceList.add("PREFIX owl: <http://www.w3.org/2002/07/owl#>");
 		namespaceList.add("PREFIX foaf: <http://xmlns.com/foaf/0.1/>");
 		namespaceList.add("PREFIX lf: <http://localhost:8080/CognitiveApp/files/ontologies/lf#>");
-		namespaceList.add("PREFIX dc: <http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements#>");
+		namespaceList.add("PREFIX dc: <http://purl.org/dc/elements/1.1/>");
+		namespaceList.add("PREFIX surgiProp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A>");
+		namespaceList.add("PREFIX surgiCat: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A>");
 		return namespaceList;
 	}
 
@@ -50,18 +62,53 @@ public class Helper {
 	/* Here we define the SPARQL pattern which will serve as the input checker*/ 
 	public static String getSparqlInputPattern() {
 		String startFrame = "\n" + "SELECT * WHERE { ";
-		String inputPattern = "?request		lf:hasPatientFile		?patientFile." + "\n" + 
-							  "?request		lf:hasRuleFile		?ruleFile." + "\n" +
-				
-							  "OPTIONAL { ?patientFile		dc:format			\"text/turtle\" } ." + "\n" + 
-							  "OPTIONAL { ?patientFile		rdf:type			lf:PatientFile } ." + "\n" +
-							  "OPTIONAL { ?ruleFile 		dc:format 			\"text/n3\" } ." + "\n" +
-							  "OPTIONAL { ?ruleFile			rdf:type 			lf:RuleFile } ."; 
-	
+		String inputPattern = "?request		surgiProp:Has_PatientFile		?patientFile." + "\n" + 
+							  "?request		surgiProp:Has_N3Rule		?ruleURI." + "\n" +
+							  "?patientFile		dc:format			\"text/turtle\" ." + "\n" + 
+							  "?ruleURI			rdf:type 			surgiCat:GuidelineRule ."; 
 		String endFrame = "}";
 		
 		String together = "\n" + startFrame + "\n" + inputPattern + "\n" + endFrame;
 		return together;
+	}
+	
+	public static String getSparqlPatternForN3RuleFile(String prefix, String ruleName) {
+		String sparqlPattern = "PREFIX prefix: <" + prefix + ">" + "\n" + 
+							   "PREFIX baseProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A>" + "\n" +
+							   "\n" + "SELECT ?n3RuleFile WHERE { " + "\n" + 
+							   "prefix:" + ruleName + " baseProp:Has_N3RuleFile ?n3RuleFile . }"; 
+		return sparqlPattern;
+	}
+	
+	public static QuerySolution evaluationOfSPARQLQueryAgainstModel (String queryString, Model model) {
+		
+		// that will be our result
+		QuerySolution soln = null;
+		
+		// Create a SPARQL query from the given string
+		Query query = QueryFactory.create(queryString);
+		
+		//Create a QueryExecution to execute over the Model.
+		QueryExecution qexec = QueryExecutionFactory.create(query, model);
+        		
+		try {
+			
+			// Results from a query in a table-like manner for SELECT queries. Each row corresponds to a set of bindings which fulfill the conditions of the query. Access to the results is by variable name.
+			ResultSet results = qexec.execSelect();
+
+			while(results.hasNext()){
+
+				//QuerySolution -- A single answer from a SELECT query.
+				//results.nextSolution() -- Moves to the next result
+				soln = results.nextSolution();
+
+			}		 
+		}
+		finally {
+			qexec.close();
+		}
+		
+		return soln;
 	}
 	
 	public static void printRDFDescriptionFromFile(String filepath, HttpServletResponse response, ServletContext context, String contenttype)
@@ -78,6 +125,22 @@ public class Helper {
 		br.close();
 		writer.close();
 	}
+	
+	/* just for testing the evaluation of some sparql query over http://aifb-ls3-vm2.aifb.kit.edu/rdfData/surgipediaExport.owl
+	 * 
+	 	public static String getSparqlPattern() {
+			String sparqlPattern = 
+					
+					"PREFIX surgi: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/>" + "\n" + 
+					"\n" + "SELECT ?y WHERE {" + "\n" + 
+									
+									"?x a surgi:Category-3APhaseRecognitionRules ." + "\n" + 
+									"?x surgi:Property-3AHasOPType surgi:Adrenalectomy ." + "\n" + 
+						            "?x surgi:Property-3AHas_download ?y . }";
+			return sparqlPattern;
+		}
+	 * 
+	 * */
 	
 	//actually not used 
 	/*

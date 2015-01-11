@@ -117,25 +117,29 @@ public class Service {
 			qexec.close();
 		}    
 		
-		//check
-		System.out.println("rdfExport: " + rdfExport);
-		System.out.println("Request URI: " + requestURI);	
+		if (requestURI=="")
+			System.out.println("Input pattern for this Cognitive App hasn't been matched");
+		else {
 		
-		//getting access to the text of the RDF export from the rule's page in SMW
-		Scanner scanner = new Scanner(new URL(rdfExport).openStream(), "UTF-8").useDelimiter("\\A");
-		String rdfExportText = scanner.next();
+			//check
+			System.out.println("rdfExport: " + rdfExport);
+			System.out.println("Request URI: " + requestURI);	
 		
-		//parse "Patient1" from "http://localhost/mediawiki/index.php/Special:ExportRDF/Patient1"
-		String patientName = rdfExport.substring(rdfExport.lastIndexOf("/")+1, rdfExport.length());
+			//getting access to the text of the RDF export from the rule's page in SMW
+			Scanner scanner = new Scanner(new URL(rdfExport).openStream(), "UTF-8").useDelimiter("\\A");
+			String rdfExportText = scanner.next();
+		
+			//parse "Patient1" from "http://localhost/mediawiki/index.php/Special:ExportRDF/Patient1"
+			String patientName = rdfExport.substring(rdfExport.lastIndexOf("/")+1, rdfExport.length());
 				
-		//get the output path via ServletContext method "getRealPath" (explanation at the end)
-		String outputPath = context.getRealPath("/files/output/") + "/" + patientName + ".owl";
+			//get the output path via ServletContext method "getRealPath" (explanation at the end)
+			String outputPath = context.getRealPath("/files/output/") + "/" + patientName + ".owl";
 		
-		//parse the rdfExport text and save the result OWL patient file to the outputPath
-		RDFExportParser parser = new RDFExportParser();
-		parser.buildPatient(rdfExportText, outputPath);
-	    scanner.close();
-
+			//parse the rdfExport text and save the result OWL patient file to the outputPath
+			RDFExportParser parser = new RDFExportParser();
+			parser.buildPatient(rdfExportText, outputPath);
+			scanner.close();
+		}	
 	}
 	
 	@GET

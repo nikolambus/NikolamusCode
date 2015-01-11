@@ -5,9 +5,6 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-
-
-
 import java.net.URL;
 import java.util.Scanner;
 
@@ -62,8 +59,10 @@ public class Service {
 		
 		//Variables where we gonna store our request parameters
 		String rule=null;
+		String swrlRuleFile=null;
 		String patient=null;
-		String requestURI="";
+		String requestURI="";//Base URI (in case of SFB should be changed to Surgipedia)
+		String base = "http://localhost/mediawiki/index.php/Special:URIResolver/";
 		
 		String sparql_prefixes = ServiceHelper.getSparqlPrefixesAsString();		
 		String sparql_input_pattern = ServiceHelper.getSparqlInputPattern();
@@ -77,61 +76,109 @@ public class Service {
 		
 		//Answer a fresh rdf Model with the default specification.
 		Model model = ModelFactory.createDefaultModel();
-		
+			
 	    //Add statements from a document. This method assumes the concrete syntax is RDF/XML
 		model.read(in, "");
 		
 		//Close the Model and free up resources held.
-		in.close();// Create a SPARQL query from the given string.
-		Query query = QueryFactory.create(querystring);
-
-		//Create a QueryExecution to execute over the Model.
-		QueryExecution qexec = QueryExecutionFactory.create(query, model);
-
-		try {
-			
-			// Results from a query in a table-like manner for SELECT queries. Each row corresponds to a set of bindings which fulfil the conditions of the query. Access to the results is by variable name.
-			ResultSet results = qexec.execSelect();
-				
+		in.close();
+	
+		QuerySolution soln = ServiceHelper.evaluationOfSPARQLQueryAgainstModel(querystring, model);
+	
+		if (soln==null) 
+			System.out.println("Input SPARQL pattern has not been satisfied.");
+		else {
+			//Return the value of the named variable in this binding, casting to a Resource. 
+			//This solution is a shorter alternative to the string-parsing-HandlerLF-solution. Here we do not need HandlerLF class at all.
+			requestURI = soln.getResource("request").toString();
+			rule = soln.getResource("ruleURI").toString();
+			patient = soln.getResource("patientFile").toString(); 
+		
 			//check
-			//System.out.println("CHUNGA CHANGA!!!!!!!!!!!");			
+			System.out.println("Patient: " + patient);
+			System.out.println("Rule: " + rule);
 			
-			while(results.hasNext()){
-				 
-				//QuerySolution -- A single answer from a SELECT query.
-				//results.nextSolution() -- Moves on to the next result
-				QuerySolution soln = results.nextSolution();
+			String ruleName;
+			String prefix;
 
-				//check
-				System.out.println(soln);		
+			/* finding out the the prefix and  he immediate rule name without a prefix. 
+			 * E.g.: http://localhost/mediawiki/index.php/Special:URIResolver/test2 -> 
+			 * prefix = http://localhost/mediawiki/index.php/Special:URIResolver/
+			 * ruleName  = test2
+			 */
+			if (rule.contains("/")) {
+				prefix = rule.substring(0, rule.lastIndexOf("/")+1);
+				ruleName = rule.substring(rule.lastIndexOf("/")+1, rule.length());
+			}
+			else { 
+				prefix = base;
+				ruleName = rule;
+			}				
+			
+			System.out.println("Prefix: " + prefix);
+			System.out.println("Rule name: " + ruleName);
+			//System.out.println("Request URI: " + requestURI);	
+		
+			//-------------------------------------------------------------------------------------			
+			/* Now we should find the rule file which corresponds to the obtained rule URI. 
+			 *  Therefore we evaluate another query over the global triple store.
+			 *  In case of localhost we just add some RDF/XML files to the model. 
+			 *  In case of server we should add the RDF export of the SFB Triple Store. Smth. like this: 
+			 *  
+			 *  // loading triples from SFB Triple Store 
+	        	//model2.read("http://aifb-ls3-vm2.aifb.kit.edu/rdfData/surgipediaExport.owl", "RDF/XML");
+	        	//model2.read("http://aifb-ls3-vm2.aifb.kit.edu/rdfData/rdfData.txt", "N-TRIPLE");
+			 *
+			 */
+			
+			Model model2 = ModelFactory.createDefaultModel();
+			
+			//loading local files and triples form them  (using them as a local triple store)
+	        model2.read("http://localhost:8080/CognitiveApp2/files/output/RudisRule2.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp2/files/output/RudisRule2_rdfExport.owl", "RDF/XML");
+	        
+	        // construct a query which would select the n3 rule file given a ruleURI
+	        String querystring2 = ServiceHelper.getSparqlPatternForSWRLRuleFile(prefix, ruleName);
+			QuerySolution soln2 = ServiceHelper.evaluationOfSPARQLQueryAgainstModel(querystring2, model2);
+
+			if (soln2 == null) {
+				System.out.println("Could not find the n3 rule file from rule URI \"" + rule + "\"");
+			}
+			else {
+				swrlRuleFile = soln2.getResource("swrlRuleFile").toString();
+				System.out.println("swrlRuleFile: " + swrlRuleFile);
+
+				//--------------------------------------------------------------------------------------
+				// this part describes the immediate reasoning 
+			
+				// finding the name of patient file 
+				String patientName;
+				if (patient.contains("/")) {
+					// we do not need the extension within a patient name
+					if (patient.contains(".")) 
+						patientName = patient.substring(patient.lastIndexOf("/")+1, patient.indexOf("."));
+					else 
+						patientName = patient.substring(patient.lastIndexOf("/")+1, patient.length());
+				}
+				else {
+					// we do not need the extension within a patient name
+					if (patient.contains(".")) 
+						patientName = patient.substring(0, patient.indexOf("."));
+					else 
+						patientName = patient;
+				}
 				
-				//Return the value of the named variable in this binding, casting to a Resource. 
-				//This solution is a shorter alternative to the string-parsing-HandlerLF-solution. Here we do not need HandlerLF class at all.
-				requestURI = soln.getResource("request").toString();
-				rule = soln.getResource("ruleFile").toString();
-				patient = soln.getResource("patientFile").toString();
+				//check
+				System.out.println("Patient name: " + patientName);
 
+				//get the output path via ServletContext method "getRealPath" (see explanation how does it work at the end)
+				String outputPath = context.getRealPath("/files/output/") + "\\" + patientName + "_new.owl";
+				
+				//parse the rdfExport text and save the result OWL patient file to the outputPath
+				Reasoner reasoner = new Reasoner();
+				reasoner.action(swrlRuleFile, patient, outputPath);
 			}
 		}
-		finally{
-			qexec.close();
-		}    
-		
-		//check
-		System.out.println("Request URI: " + requestURI);	
-		System.out.println("rule: " + rule);
-		System.out.println("patient: " + patient);
-		
-		//parse "Patient1" from "http://localhost:8080/CognitiveApp4/files/output/Patient1.owl"
-		String patientName = patient.substring(patient.lastIndexOf("/")+1, patient.lastIndexOf("."));
-				
-		//get the output path via ServletContext method "getRealPath" (explanation at the end)
-		String outputPath = context.getRealPath("/files/output/") + "/" + patientName + "_new.owl";
-		
-		//parse the rdfExport text and save the result OWL patient file to the outputPath
-		Reasoner reasoner = new Reasoner();
-		reasoner.action(rule, patient, outputPath);
-
 	}
 	
 	/*

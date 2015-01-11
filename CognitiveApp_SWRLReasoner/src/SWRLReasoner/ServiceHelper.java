@@ -9,6 +9,14 @@ import java.util.ArrayList;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 
+import com.hp.hpl.jena.query.Query;
+import com.hp.hpl.jena.query.QueryExecution;
+import com.hp.hpl.jena.query.QueryExecutionFactory;
+import com.hp.hpl.jena.query.QueryFactory;
+import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.query.ResultSet;
+import com.hp.hpl.jena.rdf.model.Model;
+
 public class ServiceHelper {
 
 	/* The following 3 methods help us to write SPARQL prefixes in the right way. */ 
@@ -25,8 +33,11 @@ public class ServiceHelper {
 		namespaceList.add("PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>");
 		namespaceList.add("PREFIX owl: <http://www.w3.org/2002/07/owl#>");
 		namespaceList.add("PREFIX foaf: <http://xmlns.com/foaf/0.1/>");
-		namespaceList.add("PREFIX swrlr: <http://localhost:8080/CognitiveApp5/files/ontologies/swrlr#>");
-		namespaceList.add("PREFIX dc: <http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements#>");
+		namespaceList.add("PREFIX lf: <http://localhost:8080/CognitiveApp/files/ontologies/lf#>");
+		namespaceList.add("PREFIX dc: <http://purl.org/dc/elements/1.1/>");
+		namespaceList.add("PREFIX surgiProp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A>");
+		namespaceList.add("PREFIX surgiCat: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A>");
+		namespaceList.add("PREFIX baseCat: <http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A>");
 		return namespaceList;
 	}
 
@@ -42,21 +53,62 @@ public class ServiceHelper {
 		return result;
 	}
 	
-	/* Here we define the SPARQL pattern which will serve as the input checker*/ 
+	/* Here we define the SPARQL pattern which will serve as the input checker */ 
 	public static String getSparqlInputPattern() {
 		String startFrame = "\n" + "SELECT * WHERE { ";
-		String inputPattern = "?request		swrlr:hasSWRLRule		?ruleFile." + "\n" + 
-							  "?request		swrlr:hasOWLPatient		?patientFile." + "\n" + 
-				
-							  "OPTIONAL { ?patientFile		dc:format			\"application/rdf+xml\" } ." + "\n" + 
-							  "OPTIONAL { ?patientFile		rdf:type			swrlr:OWLPatient } ." + "\n" +
-							  "OPTIONAL { ?ruleFile		dc:format			\"application/rdf+xml\" } ." + "\n" + 
-							  "OPTIONAL { ?ruleFile		rdf:type			swrlr:SWRLRule } ."; 
-	
+		String inputPattern = "?request		surgiProp:Has_PatientFile		?patientFile." + "\n" + 
+							  "?request		surgiProp:Has_SWRLRule		?ruleURI." + "\n" +
+							  "?patientFile		dc:format			\"application/rdf+xml\" ." + "\n" + 
+	/*	the category OntologyRule is provided by wiki. 
+	 * In case of localhost - we use baseCat
+	 * In case of server - we should use surgiCat (see following line): 
+	 * "?ruleURI			rdf:type 			surgiCat:OntologyRule ."; 
+	 */
+							  "?ruleURI			rdf:type 			baseCat:OntologyRule ."; 
 		String endFrame = "}";
 		
 		String together = "\n" + startFrame + "\n" + inputPattern + "\n" + endFrame;
 		return together;
+	}
+	
+	public static String getSparqlPatternForSWRLRuleFile(String prefix, String ruleName) {
+		String sparqlPattern = "PREFIX prefix: <" + prefix + ">" + "\n" + 
+							   "PREFIX baseProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A>" + "\n" +
+							   "\n" + "SELECT ?swrlRuleFile WHERE { " + "\n" + 
+							   "?bnode baseProp:Has_name prefix:" + ruleName + " ." + "\n" + 
+							   "?bnode baseProp:Has_SWRLRuleFile ?swrlRuleFile . }"; 
+		return sparqlPattern;
+	}
+	
+	public static QuerySolution evaluationOfSPARQLQueryAgainstModel (String queryString, Model model) {
+		
+		// that will be our result
+		QuerySolution soln = null;
+		
+		// Create a SPARQL query from the given string
+		Query query = QueryFactory.create(queryString);
+		
+		//Create a QueryExecution to execute over the Model.
+		QueryExecution qexec = QueryExecutionFactory.create(query, model);
+        		
+		try {
+			
+			// Results from a query in a table-like manner for SELECT queries. Each row corresponds to a set of bindings which fulfill the conditions of the query. Access to the results is by variable name.
+			ResultSet results = qexec.execSelect();
+
+			while(results.hasNext()){
+
+				//QuerySolution -- A single answer from a SELECT query.
+				//results.nextSolution() -- Moves to the next result
+				soln = results.nextSolution();
+
+			}		 
+		}
+		finally {
+			qexec.close();
+		}
+		
+		return soln;
 	}
 	
 	public static void printRDFDescriptionFromFile(String filepath, HttpServletResponse response, ServletContext context, String contenttype)

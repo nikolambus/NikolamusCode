@@ -142,7 +142,7 @@ public class Service {
 			}
 			
 			// this will be the name of our result RDF/XML file
-			String ruleRDF = ruleName + ".xml";
+			String ruleRDF = ruleName + ".owl";
 			
 			//get the output path via ServletContext method "getRealPath" (see explanation how does it work at the end)
 			String outputPath = context.getRealPath("/files/output/") + "/" + ruleRDF;

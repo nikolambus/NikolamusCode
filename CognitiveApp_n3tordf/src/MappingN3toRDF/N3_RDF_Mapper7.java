@@ -28,22 +28,24 @@ public class N3_RDF_Mapper7 {
 	public List<String> allPrefixuris = new ArrayList<String>();
 
 	public List<String> totalVariablesBank = new ArrayList<String>();
+	public List<String> totalConceptsBank = new ArrayList<String>();
+
 	public String base = "http://localhost/mediawiki/index.php/Special:URIResolver/";
 
 	/*
 	 * @param
-	 * ruleN3 - URI of the n3 rule file (e.g.: http://localhost:8080/CognitiveApp6/files/input/bn.n3)
+	 * ruleN3file - URI of the n3 rule file (e.g.: http://localhost:8080/CognitiveApp6/files/input/bn.n3)
 	 * ruleName - String (e.g.: bla)
 	 * outputPath - application-sensitive path to the result file, which 
 	 * 				corresponds to the tomcat directory with appropriate cognitive app (e.g.: D:\DiplArbeit\OurWork\Eclipse_workSPACE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\CognitiveApp6\files\output/bn.xml)
 	 * 				is reachable via appropriate URI (http://localhost:8080/CognitiveApp6/files/output/bn.xml)
 	 */
-	public void action(String ruleN3, String ruleName, String outputPath) throws IOException {
+	public void action(String ruleN3file, String ruleName, String outputPath) throws IOException {
 				
 		// here we gonna store all rules mapped to RDF from this file
 		String allRulesRDF = "";
 		
-		if (ruleN3.isEmpty())
+		if (ruleN3file.isEmpty())
 	        	System.out.println("No such file in " + System.getProperty("user.dir"));
 	    else {
 	
@@ -51,7 +53,7 @@ public class N3_RDF_Mapper7 {
 			allPrefixuris.addAll(globalPrefixuris);
 	    	
 			//produce connection to the n3 file
-			URL url = new URL(ruleN3);			
+			URL url = new URL(ruleN3file);			
 		    BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
 			
 		    String line;
@@ -107,7 +109,7 @@ public class N3_RDF_Mapper7 {
 	    			//System.out.println("Rule: " + currentRule);
 	    			
 	    			OneRuleMapper7 mapper = new OneRuleMapper7();
-	    			String  currentRuleRDF = mapper.action(currentRule, ruleName + ruleCounter, allPrefixuris);
+	    			String  currentRuleRDF = mapper.action(currentRule, base + ruleName, ruleName + "_" + ruleCounter, allPrefixuris);
 
 	    			/* alternative method to add hasTopic-properties within this class.
 	    			 * gather all concepts of the ruleCounter-th rule in the ruleCounter-th list of the ListForTopic.
@@ -122,6 +124,8 @@ public class N3_RDF_Mapper7 {
 	    			currentRule = "";
 	    			
 	    			totalVariablesBank.addAll(mapper.getVariablesBank());
+	    			totalConceptsBank.addAll(mapper.getConceptsBank());
+	    			
 	    			ruleCounter++;
 	    		}
 	    	}
@@ -133,12 +137,19 @@ public class N3_RDF_Mapper7 {
 			totalVariablesBank.clear();
 			totalVariablesBank.addAll(vars);
 			
+			//remove duplicates from the totalConceptsBank
+			Set<String> concepts = new LinkedHashSet<>(totalConceptsBank);
+			totalConceptsBank.clear();
+			totalConceptsBank.addAll(concepts);
+			
 			//check
 			//System.out.println("total variables 2: " + totalVariablesBank);
 
 			//----------------------- Writing the result to the output file -------------------------------
 			
 			PrintWriter writer = new PrintWriter(outputPath, "UTF-8");
+			
+			writer.println("<?xml version=\"1.0\"?>");
 			
 			//add rule independent prefixes to the result file
 			writer.println("<rdf:RDF xmlns:base=\"http://localhost/mediawiki/index.php/Special:URIResolver/\" xmlns:baseVar=\"http://localhost/mediawiki/index.php/Special:URIResolver/Variable#\" xmlns:baseProp=\"http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:swrl=\"http://www.w3.org/2003/11/swrl#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"");
@@ -162,8 +173,11 @@ public class N3_RDF_Mapper7 {
 			writer.println(" <!-- " + base + "Property-3AHas_name -->");
 			writer.println(" <owl:AnnotationProperty rdf:about=\"" + base + "Property-3AHas_name\"/>");
 			writer.println("");
-			writer.println(" <!-- " + base + "Property-3AHas_rule_file -->");
-			writer.println(" <owl:AnnotationProperty rdf:about=\"" + base + "Property-3AHas_rule_file\"/>");
+			writer.println(" <!-- " + base + "Property-3AHas_SWRLRuleFile -->");
+			writer.println(" <owl:AnnotationProperty rdf:about=\"" + base + "Property-3AHas_SWRLRuleFile\"/>");
+			writer.println("");
+			writer.println(" <!-- " + base + "Property-3AHas_N3RuleFile -->");
+			writer.println(" <owl:AnnotationProperty rdf:about=\"" + base + "Property-3AHas_N3RuleFile\"/>");
 			writer.println("");
 			writer.println(" <!-- " + base + "Property-3AHas_topic -->");
 			writer.println(" <owl:AnnotationProperty rdf:about=\"" + base + "Property-3AHas_topic\"/>");
@@ -175,6 +189,27 @@ public class N3_RDF_Mapper7 {
 			writer.println(" <owl:AnnotationProperty rdf:about=\"" + base + "Property-3AIs_conclusion_of\"/>");
 			writer.println("    ");
 			
+			writer.println("");
+
+			//We specify with following variable the URI our target swrl rule file will be reachable through
+			String ruleSWRLfile = "http://localhost:8080/CognitiveApp6/files/output/" + ruleName + ".owl";
+
+			// Rule URI declaration
+			writer.println("<rdf:Description rdf:about=\"" + base + ruleName + "\">");
+			writer.println("  <rdf:type rdf:resource=\"" + base + "/Category-3AGuidelineRule\"/>");
+			writer.println("  <base:Property-3AHas_N3RuleFile rdf:resource=\"" + ruleN3file + "\"/>");
+			writer.println("  <base:Property-3AHas_SWRLRuleFile rdf:resource=\"" + ruleSWRLfile + "\"/>");
+			writer.println("</rdf:Description>");
+
+			//concept individuals declaration 
+			for (int i=0; i<totalConceptsBank.size(); i++) {
+				writer.println("<rdf:Description rdf:about=\"" + totalConceptsBank.get(i) + "\">");
+				writer.println("  <rdf:type rdf:resource=\"http://www.w3.org/2004/02/skos/core#Concept\"/>");
+				writer.println("</rdf:Description>");
+			}
+			
+			writer.println("");
+			
 			//variables declaration
 			for (int i=0; i<totalVariablesBank.size(); i++) {
 				writer.println("<rdf:Description rdf:about=\"" + totalVariablesBank.get(i) + "\">");
@@ -182,12 +217,10 @@ public class N3_RDF_Mapper7 {
 				writer.println("</rdf:Description>");
 			}
 			
-			//add hasTopic properties to the all rules
-			//String ruleswithTopics = addHasTopic(allRulesRDF);
-	
+			writer.println("");
+			
 			//write the rules with topics to the result file
-			writer.println(allRulesRDF);
-		
+			writer.println(allRulesRDF);		
 			
 			//the end
 			writer.println("</rdf:RDF>");
@@ -195,43 +228,4 @@ public class N3_RDF_Mapper7 {
 		}
 		//scanner.close();
 	}	
-		
-	/*
-	 * Alternative method to add hasTopic-properties
-	 * 
-	public static String addHasTopic(String allRulesRDF) throws IOException {			
-
-		BufferedReader br = new BufferedReader(new StringReader(allRulesRDF));
-		String result = "";
-		String line;
-		int ruleCounter = 1;		 
-		while ((line = br.readLine()) != null) {
-
-			result = result + line + "\n";
-			if (Pattern.matches("\\s*<swrl:Imp rdf:about=\"http://localhost/mediawiki/index.php/Special:URIResolver/" + ruleName + "[0-9]*\">\\s*", line)) {
-
-				//find the number of blank nodes leading the line with the obtained atom type
-				Pattern patternTab = Pattern.compile("(\\s*)<swrl:Imp rdf:about=\"" + base + ruleName + "[0-9]*\">\\s*");
-				Matcher mtchTab = patternTab.matcher(line);
-				String tab = "";
-				while (mtchTab.find()) {
-					//and add it to the classNames list
-					tab = mtchTab.group(1);
-				}
-				
-				//remove duplicates from the ListForTopic's i-th list
-				Set<String> concepts = new LinkedHashSet<>(ListForTopic.get(ruleCounter));
-				ListForTopic.get(ruleCounter).clear();
-				ListForTopic.get(ruleCounter).addAll(concepts);
-				
-				for (int i=0; i<ListForTopic.get(ruleCounter).size(); i++)
-					result = result + tab + "   <base:Property-3AHas_topic rdf:resource=\"" + base + ListForTopic.get(ruleCounter).get(i) + "\"/>" + "\n";
-					//writer.println(tab + "   <base:Property-3AHas_topic rdf:resource=\"" + base + ListForTopic.get(ruleCounter).get(i) + "\"/>");
-			}			
-		}
-		br.close();
-		//writer.close();
-		return result;
-	}
-	*/
 }
