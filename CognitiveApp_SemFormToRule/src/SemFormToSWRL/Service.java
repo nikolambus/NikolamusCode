@@ -68,7 +68,7 @@ public class Service {
 		*/
 		
 		//Variables where we gonna store our request parameters
-		String rdfExport=null;
+		String ruleURI=null;
 		String requestURI="";
 		
 		String sparql_prefixes = ServiceHelper.getSparqlPrefixesAsString();		
@@ -114,46 +114,71 @@ public class Service {
 				//Return the value of the named variable in this binding, casting to a Resource. 
 				//This solution is a shorter alternative to the string-parsing-HandlerLF-solution. Here we do not need HandlerLF class at all.
 				requestURI = soln.getResource("request").toString();
-				rdfExport = soln.getResource("rdfExport").toString();
+				ruleURI = soln.getResource("ruleURI").toString();
 			}
 		}
 		finally{
 			qexec.close();
 		}    
 		
-		//check
-		System.out.println("rdfExport: " + rdfExport);
-		System.out.println("Request URI: " + requestURI);	
+		if (requestURI=="")
+			System.out.println("Input pattern for this Cognitive App hasn't been matched");
+		else {
 		
-		//parse "RudisRule2" from "http://localhost/mediawiki/index.php/Special:ExportRDF/RudisRule2"
-		String ruleName = rdfExport.substring(rdfExport.lastIndexOf("/")+1, rdfExport.length());
+			//check
+			System.out.println("Rule URI: " + ruleURI);
+			System.out.println("Request URI: " + requestURI);	
 		
-		//get the output path via ServletContext method "getRealPath" (explanation at the end)
-		String outputPath = context.getRealPath("/files/output/") + "/" + ruleName + ".owl";
-					
-		//getting the RDF export of the rule's page in SMW
-		Scanner scanner = new Scanner(new URL(rdfExport).openStream(), "UTF-8").useDelimiter("\\A");
-		String out = scanner.next();
+			//parse "RudisRule2" from "http://localhost/mediawiki/index.php/Special:ExportRDF/RudisRule2"
+			String ruleName = ruleURI.substring(ruleURI.lastIndexOf("/")+1, ruleURI.length());
 		
-		RDFExportParser parser = new RDFExportParser();
-		String rule = parser.CreateRule(out);
+			//get the output path via ServletContext method "getRealPath" (explanation at the end)
+			String outputPath = context.getRealPath("/files/output/") + "\\" + ruleName + "_without_annotations.owl";
+		
+			//now we should build a bridge between "http://localhost/mediawiki/index.php/Special:URIResolver/RudisRule2" and http://localhost/mediawiki/index.php/Special:RDFExport/RudisRule2
+			String rdfExport =  "http://localhost/mediawiki/index.php/Special:ExportRDF/" + ruleName;
+			
+			//getting the RDF export of the rule's page in SMW
+			Scanner scanner = new Scanner(new URL(rdfExport).openStream(), "UTF-8").useDelimiter("\\A");
+			String out = scanner.next();
+		
+			//Wiki rule --> SWRL rule string
+			RDFExportParser parser = new RDFExportParser();
+			String rule = parser.CreateRule(out);
 	    
-		scanner.close();
+			scanner.close();
 
-	    //check
-		System.out.println("Rule: " + rule);
-		System.out.println("Classes bank: " + parser.classesBank);
-		System.out.println("Vars bank: " + parser.varsBank);
-	
-		SWRLRuleFromStringCreator2 creator = new SWRLRuleFromStringCreator2();
-		creator.fromStringToOWLRDFNotation(rule, outputPath, parser.helpIndividualsList);	
+			//check
+			System.out.println("Rule: " + rule);
+			System.out.println("Classes bank: " + parser.classesBank);
+			System.out.println("Vars bank: " + parser.varsBank);
+
+			//SWRL rule string --> SWRL rule file
+			SWRLRuleFromStringCreator2 creator = new SWRLRuleFromStringCreator2();
+			creator.fromStringToOWLRDFNotation(rule, outputPath, parser.helpIndividualsList);	
+			
+			//the output of creator is the input for the next step
+			String inputPath = outputPath;
+			
+			System.out.println("");	
+			System.out.println("OutputPath-file-without-annotation-properties: " + outputPath);	
+
+			//get the output path via ServletContext method "getRealPath" (explanation at the end)
+			outputPath = context.getRealPath("/files/output/") + "\\" + ruleName + ".owl";
+			
+			System.out.println("");	
+			System.out.println("OutputPath-file-with-annotation-properties: " + outputPath);	
+			
+			//SWRL rule file --> SWRL rule file with annotations
+			AnnotationPropertiesImplantator2 implantator = new AnnotationPropertiesImplantator2();
+			implantator.action(inputPath, ruleName, outputPath);
+		}
 	}
 	
 	@GET
 	@Path("/descriptionRDF")
 	@Produces("application/rdf+xml")
 	public String getDescription(@Context final HttpServletResponse servletResponse, @Context final HttpServletRequest servletRequest, @Context final ServletContext context) throws Exception {
-
 		//get the descriptions path via ServletContext method "getRealPath" (see explanation how does it work at the end)
 		String descriptionsPath = context.getRealPath("/files/descriptions/") + "/";
 

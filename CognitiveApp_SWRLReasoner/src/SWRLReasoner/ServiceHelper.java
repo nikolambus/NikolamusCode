@@ -72,11 +72,20 @@ public class ServiceHelper {
 	}
 	
 	public static String getSparqlPatternForSWRLRuleFile(String prefix, String ruleName) {
+		
+		String sparqlPattern = "PREFIX prefix: <" + prefix + ">" + "\n" + 
+				   "PREFIX baseProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A>" + "\n" +
+				   "\n" + "SELECT ?swrlRuleFile WHERE { " + "\n" + 
+				   "prefix:" + ruleName + " baseProp:Has_SWRLRuleFile ?swrlRuleFile . }"; 
+		
+		/* old file architecture
+		 * 
 		String sparqlPattern = "PREFIX prefix: <" + prefix + ">" + "\n" + 
 							   "PREFIX baseProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A>" + "\n" +
 							   "\n" + "SELECT ?swrlRuleFile WHERE { " + "\n" + 
 							   "?bnode baseProp:Has_name prefix:" + ruleName + " ." + "\n" + 
 							   "?bnode baseProp:Has_SWRLRuleFile ?swrlRuleFile . }"; 
+		*/
 		return sparqlPattern;
 	}
 	

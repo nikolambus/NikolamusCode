@@ -64,8 +64,8 @@ public class Service {
 		*/
 		
 		//Variables where we gonna store our request parameters
-		String rdfExport=null;
 		String requestURI="";
+		String patURI = null;
 		
 		String sparql_prefixes = ServiceHelper.getSparqlPrefixesAsString();		
 		String sparql_input_pattern = ServiceHelper.getSparqlInputPattern();
@@ -110,7 +110,7 @@ public class Service {
 				//Return the value of the named variable in this binding, casting to a Resource. 
 				//This solution is a shorter alternative to the string-parsing-HandlerLF-solution. Here we do not need HandlerLF class at all.
 				requestURI = soln.getResource("request").toString();
-				rdfExport = soln.getResource("rdfExport").toString();
+				patURI = soln.getResource("patURI").toString();
 			}
 		}
 		finally{
@@ -122,15 +122,19 @@ public class Service {
 		else {
 		
 			//check
-			System.out.println("rdfExport: " + rdfExport);
+			System.out.println("Patient URI: " + patURI);
 			System.out.println("Request URI: " + requestURI);	
 		
+
+			//parse "Patient1" from "http://localhost/mediawiki/index.php/Special:URIResolver/Patient1"
+			String patientName = patURI.substring(patURI.lastIndexOf("/")+1, patURI.length());
+			
+			//get RDF Export of "http://localhost/mediawiki/index.php/Special:URIResolver/Patient1"
+			String rdfExport = "http://localhost/mediawiki/index.php/Special:ExportRDF/" + patientName;
+			
 			//getting access to the text of the RDF export from the rule's page in SMW
 			Scanner scanner = new Scanner(new URL(rdfExport).openStream(), "UTF-8").useDelimiter("\\A");
 			String rdfExportText = scanner.next();
-		
-			//parse "Patient1" from "http://localhost/mediawiki/index.php/Special:ExportRDF/Patient1"
-			String patientName = rdfExport.substring(rdfExport.lastIndexOf("/")+1, rdfExport.length());
 				
 			//get the output path via ServletContext method "getRealPath" (explanation at the end)
 			String outputPath = context.getRealPath("/files/output/") + "/" + patientName + ".owl";

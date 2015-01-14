@@ -52,9 +52,7 @@ public class ServiceHelper {
 	public static String getSparqlInputPattern() {
 		String startFrame = "\n" + "SELECT * WHERE { ";
 		String inputPattern = "?request		baseProp:Has_N3RuleFile		?n3ruleFile." + "\n" +
-							  "?n3ruleFile 		dc:format 			\"text/n3\" ." + "\n" +
-							  "?n3ruleFile			rdf:type 			lf:RuleFile ."; 
-	
+							  "?n3ruleFile 		dc:format 			\"text/n3\" ."; 
 		String endFrame = "}";
 		
 		String together = "\n" + startFrame + "\n" + inputPattern + "\n" + endFrame;

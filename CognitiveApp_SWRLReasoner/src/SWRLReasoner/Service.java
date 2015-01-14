@@ -135,7 +135,6 @@ public class Service {
 			
 			//loading local files and triples form them  (using them as a local triple store)
 	        model2.read("http://localhost:8080/CognitiveApp2/files/output/RudisRule2.owl", "RDF/XML");
-	        model2.read("http://localhost:8080/CognitiveApp2/files/output/RudisRule2_rdfExport.owl", "RDF/XML");
 	        
 	        // construct a query which would select the n3 rule file given a ruleURI
 	        String querystring2 = ServiceHelper.getSparqlPatternForSWRLRuleFile(prefix, ruleName);

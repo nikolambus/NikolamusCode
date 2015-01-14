@@ -69,7 +69,7 @@ public class SWRLRuleFromStringCreator2 {
 	
 	//private static final String ontologyIRI = "justSomeIRI";
 	public void fromStringToOWLRDFNotation(String rule, String outputPath, List<String> helpIndividuals) throws OWLOntologyCreationException, IOException, OWLOntologyStorageException {
-
+		
 		//this will be our owl ontology
 		OWLOntology o = m.createOntology(ontologyIRI);
 

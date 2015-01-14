@@ -109,7 +109,7 @@ public class N3_RDF_Mapper7 {
 	    			//System.out.println("Rule: " + currentRule);
 	    			
 	    			OneRuleMapper7 mapper = new OneRuleMapper7();
-	    			String  currentRuleRDF = mapper.action(currentRule, base + ruleName, ruleName + "_" + ruleCounter, allPrefixuris);
+	    			String  currentRuleRDF = mapper.action(currentRule, base + ruleName, ruleName + "#" + ruleCounter, allPrefixuris);
 
 	    			/* alternative method to add hasTopic-properties within this class.
 	    			 * gather all concepts of the ruleCounter-th rule in the ruleCounter-th list of the ListForTopic.
@@ -160,7 +160,30 @@ public class N3_RDF_Mapper7 {
 			}
 			writer.println(">");			
 			//add annotation properties which are necessary for queries
+			
 			writer.println("");
+
+			writer.println("<!-- ");
+			writer.println("///////////////////////////////////////////////////////////////////////////////////////");
+    		writer.println("//");
+    		writer.println("// Rule-URI");
+    		writer.println("//");
+    		writer.println("///////////////////////////////////////////////////////////////////////////////////////");
+    		writer.println("-->");
+
+			writer.println("");
+			writer.println("");
+
+			//We specify with following variable the URI our target swrl rule file will be reachable through
+			String ruleSWRLfile = "http://localhost:8080/CognitiveApp6/files/output/" + ruleName + ".owl";
+    		
+			// Rule URI declaration
+			writer.println("<rdf:Description rdf:about=\"" + base + ruleName + "\">");
+			writer.println("  <rdf:type rdf:resource=\"" + base + "/Category-3AGuidelineRule\"/>");
+			writer.println("  <base:Property-3AHas_N3RuleFile rdf:resource=\"" + ruleN3file + "\"/>");
+			writer.println("  <base:Property-3AHas_SWRLRuleFile rdf:resource=\"" + ruleSWRLfile + "\"/>");
+			writer.println("</rdf:Description>");
+			
 			writer.println("<!-- ");
 			writer.println("///////////////////////////////////////////////////////////////////////////////////////");
     		writer.println("//");
@@ -191,16 +214,16 @@ public class N3_RDF_Mapper7 {
 			
 			writer.println("");
 
-			//We specify with following variable the URI our target swrl rule file will be reachable through
-			String ruleSWRLfile = "http://localhost:8080/CognitiveApp6/files/output/" + ruleName + ".owl";
-
-			// Rule URI declaration
-			writer.println("<rdf:Description rdf:about=\"" + base + ruleName + "\">");
-			writer.println("  <rdf:type rdf:resource=\"" + base + "/Category-3AGuidelineRule\"/>");
-			writer.println("  <base:Property-3AHas_N3RuleFile rdf:resource=\"" + ruleN3file + "\"/>");
-			writer.println("  <base:Property-3AHas_SWRLRuleFile rdf:resource=\"" + ruleSWRLfile + "\"/>");
-			writer.println("</rdf:Description>");
-
+			writer.println("<!-- ");
+			writer.println("///////////////////////////////////////////////////////////////////////////////////////");
+    		writer.println("//");
+    		writer.println("// Concept Individuals ");
+    		writer.println("//");
+    		writer.println("///////////////////////////////////////////////////////////////////////////////////////");
+    		writer.println("-->");
+    		writer.println("");
+			writer.println("");
+			
 			//concept individuals declaration 
 			for (int i=0; i<totalConceptsBank.size(); i++) {
 				writer.println("<rdf:Description rdf:about=\"" + totalConceptsBank.get(i) + "\">");
@@ -208,6 +231,16 @@ public class N3_RDF_Mapper7 {
 				writer.println("</rdf:Description>");
 			}
 			
+			writer.println("");
+		
+			writer.println("<!-- ");
+			writer.println("///////////////////////////////////////////////////////////////////////////////////////");
+    		writer.println("//");
+    		writer.println("// Rules ");
+    		writer.println("//");
+    		writer.println("///////////////////////////////////////////////////////////////////////////////////////");
+    		writer.println("-->");
+    		writer.println("");
 			writer.println("");
 			
 			//variables declaration

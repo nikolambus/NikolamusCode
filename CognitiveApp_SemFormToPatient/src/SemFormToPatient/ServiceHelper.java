@@ -23,6 +23,12 @@ public class ServiceHelper {
 		namespaceList.add("PREFIX skos: <http://www.w3.org/2004/02/skos/core#>");
 		namespaceList.add("PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>");
 		namespaceList.add("PREFIX owl: <http://www.w3.org/2002/07/owl#>");
+		namespaceList.add("PREFIX surgi: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/>");
+		namespaceList.add("PREFIX surgiProp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A>");
+		namespaceList.add("PREFIX surgiCat: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A>");
+		namespaceList.add("PREFIX base: <http://localhost/mediawiki/index.php/Special:URIResolver/>");
+		namespaceList.add("PREFIX baseProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A>");
+		namespaceList.add("PREFIX baseCat: <http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A>");
 		namespaceList.add("PREFIX foaf: <http://xmlns.com/foaf/0.1/>");
 		namespaceList.add("PREFIX sf: <http://localhost:8080/CognitiveApp4/files/ontologies/sf#>");
 		namespaceList.add("PREFIX dc: <http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements#>");
@@ -44,11 +50,14 @@ public class ServiceHelper {
 	/* Here we define the SPARQL pattern which will serve as the input checker*/ 
 	public static String getSparqlInputPattern() {
 		String startFrame = "\n" + "SELECT * WHERE { ";
+		/* old version
 		String inputPattern = "?request		sf:hasSemanticFormsRDFExport ?rdfExport" + "\n" + 
 				
 							  "OPTIONAL { ?rdfExport		dc:format			\"application/rdf+xml\" } ." + "\n" + 
 							  "OPTIONAL { ?rdfExport		rdf:type			sf:RDFExport } ."; 
-	
+		*/
+		String inputPattern = "?request		surgiProp:Has_OntologyPatient ?patURI ." + "\n" + 
+				  			  "?patURI	rdf:type			baseCat:OntologyPatient .";
 		String endFrame = "}";
 		
 		String together = "\n" + startFrame + "\n" + inputPattern + "\n" + endFrame;
