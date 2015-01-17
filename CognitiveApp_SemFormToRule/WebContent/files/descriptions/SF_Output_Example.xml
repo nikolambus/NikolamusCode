@@ -33,11 +33,26 @@
  				<baseProp:Has_SWRLRuleFile rdf:resource="http://localhost:8080/CognitiveApp5/files/output/RudisRule2.owl"/>
 	</rdf:Description>
 	
-	<rdf:Description>
+	<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/RudisRule2#1">
  				<baseProp:Has_Name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/RudisRule2"/>
  				<baseProp:Has_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Patient"/>
  			 	<baseProp:Has_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/DRU"/>
  			 	<baseProp:Has_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie"/>
  			 	<baseProp:Has_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Auffaelliger_Befund"/>
+	</rdf:Description>
+	
+	<!-- OPTIONAL -->
+	
+	<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Patient">
+				<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/DRU">
+				<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie">
+				<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Auffaelliger_Befund">
+				<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 	</rdf:Description>
 </rdf:RDF>

@@ -32,10 +32,20 @@
  				<baseProp:Has_SWRLRuleFile rdf:resource="http://localhost:8080/CognitiveApp5/files/output/bn.owl"/>
  	</rdf:Description>
 	
-	<rdf:Description>
+	<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/bn#1">
  				<baseProp:Has_Name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/bn"/>
  				<baseProp:Has_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Boris"/>
  			 	<baseProp:Has_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Natasha"/>
+	</rdf:Description>
+	
+	<!-- OPTIONAL -->
+	
+	<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Boris">
+		<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Natasha">
+		<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 	</rdf:Description>
 	
 </rdf:RDF>
