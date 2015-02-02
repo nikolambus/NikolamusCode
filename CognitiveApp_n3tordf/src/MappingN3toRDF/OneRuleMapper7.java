@@ -135,7 +135,7 @@ public class OneRuleMapper7 {
 			transit = transit + " <swrl:Imp rdf:about=\"" + base + ruleName + "\">" + "\n";
 			transit = transit + tabBody + "<base:Property-3AHas_name rdf:resource=\"" + ruleURI + "\"/>" + "\n";
 			
-			// immediate body
+			// immediate body, construct a list iteratively
 			transit = transit + tabBody + "<swrl:body>" + "\n";
 			tabAtomlist = tabBody + "    ";
 			for (int i=0; i<numberOfBodyTriples; i++) {
@@ -157,6 +157,7 @@ public class OneRuleMapper7 {
 			}
 			transit = transit + " rdf:resource=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#nil\"/>" + "\n";
 			
+			//way back
 			String tabRest = " ";
 			tabAtomlist = tabFirst.substring(4);
 			for (int i=0; i<numberOfBodyTriples-1; i++) {
@@ -235,11 +236,11 @@ public class OneRuleMapper7 {
 	    	 * For that we propose a if-else-net.
 	    	*/
 	    	// match a n3-built-in with multiple input channels
-			// like (?bil ?al ?asc ?enc ?inr) math:sum ?s .
-			if (Pattern.matches("\\s*[(]\\s*[?][a-zA-Z0-9_]+(\\s*[?][a-zA-Z0-9_]+)+\\s*[)]\\s*[a-zA-Z_0-9:,?\"./)^(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s*[.]*\\s*", line)) {
-				
+			// like (?bil ?al ?asc ?enc ?inr) math:sum ?s .		
+			if (Pattern.matches("\\s*[(]((\\s*[?][a-zA-Z0-9_]+)|(\\s*[0-9.]+))*[)]\\s*[a-zA-Z_0-9:,?\"./)^(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s*[.]*\\s*", line)) {
+					
 				//check
-				//System.out.println("CHECK");				
+				//System.out.println("multisubject BUILT-IN!!!!");				
 				
 				// extra parsing of subject from '(' to ')'
 				bodySubjectsList.add(line.substring(line.indexOf("("), line.indexOf(")") + 1));
@@ -258,8 +259,11 @@ public class OneRuleMapper7 {
 				 handle the 0th element of this array as a predicate and the 1th - as an object. 
 				 */
 				String[] tripleArray = lineRest.split("\\s+");	
-				System.out.println("TripleArray[0]: " + tripleArray[0]);
-				System.out.println("TripleArray[1]: " + tripleArray[1]);
+				
+				//check
+				//System.out.println("TripleArray[0]: " + tripleArray[0]);
+				//System.out.println("TripleArray[1]: " + tripleArray[1]);
+				
 				bodyPredicatesList.add(tripleArray[0]);
 				bodyObjectsList.add(tripleArray[1]);
 	
@@ -268,7 +272,7 @@ public class OneRuleMapper7 {
 			else {
 				
 				//match " predicate object ; " 
-				if (Pattern.matches("\\s*[a-zA-Z_0-9:,?\"./)^(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s*;\\s*", line)) {
+				if (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)^(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s*;\\s*", line)) {
 					line = line.replaceAll("^\\s+", "");
 					line = line.replaceAll(";\\s*$", "");
 					String[] tripleArray = line.split("\\s+");
@@ -295,46 +299,49 @@ public class OneRuleMapper7 {
 					bodyTripleCounter++;
 				}
 				else {
-					//match " predicate object . "
-					if (Pattern.matches("\\s*[a-zA-Z_0-9:,?\"./)^(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s*[.]\\s*", line)) {
+					//match " predicate "objectPart1 objectPart2 ... objectPartn" ; 	
+					if (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)^(-]+\\s+\"[ a-zA-Z_0-9:%,?\"./)^(-]+\"\\s*;\\s*", line)) {
 						line = line.replaceAll("^\\s+", "");
-						line = line.replaceAll("[.]\\s*$", "");
-						String[] tripleArray = line.split("\\s+");	
-						
-						// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
+						line = line.replaceAll(";\\s*$", "");
+						String[] tripleArray = line.split("\\s+");
+		
+						/* solving the case where an object consists of multiple words. Like: "The death after 1 year"
+		    			Therefore look for all split results from the 3rd part by "A B C"-Triples and from the 2nd part by "B C"-Triples 
+						 */ 
 						int i=0; String fullObject="";
 						while (i < (tripleArray.length-1)) {
 							fullObject = fullObject + tripleArray[i+1] + " ";
 							i++;
-						}	
+						}
 						
 						//the last combining blank should be removed
-						fullObject = fullObject.substring(0, fullObject.length()-1);
+						fullObject = fullObject.substring(0, fullObject.length()-1);	
 						
 						// if we are inside of " predicate object ; " triple take the last subject from the subjects List
 						bodySubjectsList.add(bodySubjectsList.get(bodySubjectsList.size()-1));
 						bodyPredicatesList.add(tripleArray[0]);
 						bodyObjectsList.add(fullObject);
 						
+						//check
+						//System.out.println("Fullobject: " + fullObject);
 						bodyTripleCounter++;
-					}
-					
-					//match " predicate object " (without closing point. This occurs only as the last triple before body is closed with '}').
+					}					
 					else {
-						if (Pattern.matches("\\s*[a-zA-Z_0-9:,?\"./)^(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s*", line)) {
+						//match " predicate object . "
+						if (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)^(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s*[.]\\s*", line)) {
 							line = line.replaceAll("^\\s+", "");
 							line = line.replaceAll("[.]\\s*$", "");
-							String[] tripleArray = line.split("\\s+");
+							String[] tripleArray = line.split("\\s+");	
 							
 							// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
 							int i=0; String fullObject="";
 							while (i < (tripleArray.length-1)) {
 								fullObject = fullObject + tripleArray[i+1] + " ";
 								i++;
-							}
+							}	
 							
 							//the last combining blank should be removed
-							fullObject = fullObject.substring(0, fullObject.length()-1);	
+							fullObject = fullObject.substring(0, fullObject.length()-1);
 							
 							// if we are inside of " predicate object ; " triple take the last subject from the subjects List
 							bodySubjectsList.add(bodySubjectsList.get(bodySubjectsList.size()-1));
@@ -343,90 +350,257 @@ public class OneRuleMapper7 {
 							
 							bodyTripleCounter++;
 						}
+						
 						else {
-							//match " subject predicate object ; " 
-							if (Pattern.matches("\\s*[a-zA-Z_0-9:,?\"./)(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s*;\\s*", line)) {
-								
-								// remove the leading spaces if any
+
+						    //match " predicate "objectPart1 objectPart2 ... objectPartn" . "
+							if (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)^(-]+\\s+\"[ a-zA-Z_0-9:%,?\"./)^(-]+\"\\s*[.]\\s*", line)) {
 								line = line.replaceAll("^\\s+", "");
-								line = line.replaceAll(";\\s*$", "");
-								String[] tripleArray = line.split("\\s+");
+								line = line.replaceAll("[.]\\s*$", "");
+								String[] tripleArray = line.split("\\s+");	
 								
-								/* solving the case where an object consists of multiple words. Like: "The death after 1 year"
-	    		    			Therefore look for all split results from the 3rd part by "A B C"-Triples and from the 2nd part by "B C"-Triples 
-								 */ 
+								// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
 								int i=0; String fullObject="";
-								while (i < (tripleArray.length-2)) {
-									fullObject = fullObject + tripleArray[i+2] + " ";
+								while (i < (tripleArray.length-1)) {
+									fullObject = fullObject + tripleArray[i+1] + " ";
 									i++;
-								}
+								}	
 								
 								//the last combining blank should be removed
 								fullObject = fullObject.substring(0, fullObject.length()-1);
 								
-								bodySubjectsList.add(tripleArray[0]);
-								bodyPredicatesList.add(tripleArray[1]);
+								// if we are inside of " predicate object ; " triple take the last subject from the subjects List
+								bodySubjectsList.add(bodySubjectsList.get(bodySubjectsList.size()-1));
+								bodyPredicatesList.add(tripleArray[0]);
 								bodyObjectsList.add(fullObject);
 								
 								bodyTripleCounter++;
 							}
-							
-							//match " subject predicate object . "
-							else { 
-								if (Pattern.matches("\\s*[a-zA-Z_0-9:,?\"./)(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s*[.]\\s*", line)) {
-									
+							else {
+								//match " predicate object " (without closing point. This occurs only as the last triple before body is closed with '}').
+								if (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)^(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s*", line)) {
 									line = line.replaceAll("^\\s+", "");
 									line = line.replaceAll("[.]\\s*$", "");
 									String[] tripleArray = line.split("\\s+");
 									
 									// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
 									int i=0; String fullObject="";
-									while (i < (tripleArray.length-2)) {
-										fullObject = fullObject + tripleArray[i+2] + " ";
+									while (i < (tripleArray.length-1)) {
+										fullObject = fullObject + tripleArray[i+1] + " ";
 										i++;
 									}
-	    		    	
-									//remove the last combining blank
-									fullObject = fullObject.substring(0, fullObject.length()-1);
 									
-									bodySubjectsList.add(tripleArray[0]);
-									bodyPredicatesList.add(tripleArray[1]);
+									//the last combining blank should be removed
+									fullObject = fullObject.substring(0, fullObject.length()-1);	
+									
+									// if we are inside of " predicate object ; " triple take the last subject from the subjects List
+									bodySubjectsList.add(bodySubjectsList.get(bodySubjectsList.size()-1));
+									bodyPredicatesList.add(tripleArray[0]);
 									bodyObjectsList.add(fullObject);
 									
 									bodyTripleCounter++;
-								}	
-	    		    	
-								//match " subject predicate object " (without closing point. This occurs only as the last triple before body is closed with '}'). 
-								else  {
-									if (Pattern.matches("\\s*[a-zA-Z_0-9:,?\"./)(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s*", line)) {
+								}
+								else {
+									//match " predicate "objectPart1 objectPart2 ... objectPartn" " (without closing point. This occurs only as the last triple before body is closed with '}').
+									if (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)^(-]+\\s+\"[ a-zA-Z_0-9:%,?\"./)^(-]+\"\\s*", line)) {
 										line = line.replaceAll("^\\s+", "");
 										line = line.replaceAll("[.]\\s*$", "");
 										String[] tripleArray = line.split("\\s+");
 										
 										// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
 										int i=0; String fullObject="";
-										while (i < (tripleArray.length-2)) {
-											fullObject = fullObject + tripleArray[i+2] + " ";
+										while (i < (tripleArray.length-1)) {
+											fullObject = fullObject + tripleArray[i+1] + " ";
 											i++;
 										}
-
-										//remove the last combining blank
-										fullObject = fullObject.substring(0, fullObject.length()-1);
-	    		    	
-										bodySubjectsList.add(tripleArray[0]);
-										bodyPredicatesList.add(tripleArray[1]);
+										
+										//the last combining blank should be removed
+										fullObject = fullObject.substring(0, fullObject.length()-1);	
+										
+										// if we are inside of " predicate object ; " triple take the last subject from the subjects List
+										bodySubjectsList.add(bodySubjectsList.get(bodySubjectsList.size()-1));
+										bodyPredicatesList.add(tripleArray[0]);
 										bodyObjectsList.add(fullObject);
 										
 										bodyTripleCounter++;
 									}
+									else {
+										//match " subject predicate object ; " 
+										if (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s*;\\s*", line)) {
+											
+											// remove the leading spaces if any
+											line = line.replaceAll("^\\s+", "");
+											line = line.replaceAll(";\\s*$", "");
+											String[] tripleArray = line.split("\\s+");
+											
+											/* solving the case where an object consists of multiple words. Like: "The death after 1 year"
+				    		    			Therefore look for all split results from the 3rd part by "A B C"-Triples and from the 2nd part by "B C"-Triples 
+											 */ 
+											int i=0; String fullObject="";
+											while (i < (tripleArray.length-2)) {
+												fullObject = fullObject + tripleArray[i+2] + " ";
+												i++;
+											}
+											
+											//the last combining blank should be removed
+											fullObject = fullObject.substring(0, fullObject.length()-1);
+											
+											bodySubjectsList.add(tripleArray[0]);
+											bodyPredicatesList.add(tripleArray[1]);
+											bodyObjectsList.add(fullObject);
+											
+											bodyTripleCounter++;
+										}
+										else {
+											
+											//match " subject predicate "objPart1 objPart2 ... objPartn ; " 
+											if (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s+\"[ a-zA-Z_0-9:%,?\"./)^(-]+\"\\s*;\\s*", line)) {
+												
+												// remove the leading spaces if any
+												line = line.replaceAll("^\\s+", "");
+												line = line.replaceAll(";\\s*$", "");
+												String[] tripleArray = line.split("\\s+");
+												
+												/* solving the case where an object consists of multiple words. Like: "The death after 1 year"
+					    		    			Therefore look for all split results from the 3rd part by "A B C"-Triples and from the 2nd part by "B C"-Triples 
+												 */ 
+												int i=0; String fullObject="";
+												while (i < (tripleArray.length-2)) {
+													fullObject = fullObject + tripleArray[i+2] + " ";
+													i++;
+												}
+												
+												//the last combining blank should be removed
+												fullObject = fullObject.substring(0, fullObject.length()-1);
+												
+												bodySubjectsList.add(tripleArray[0]);
+												bodyPredicatesList.add(tripleArray[1]);
+												bodyObjectsList.add(fullObject);
+												
+												bodyTripleCounter++;
+											}
+											else {
+												//match " subject predicate object . "
+												if (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s*[.]\\s*", line)) {
+													
+													line = line.replaceAll("^\\s+", "");
+													line = line.replaceAll("[.]\\s*$", "");
+													String[] tripleArray = line.split("\\s+");
+													
+													// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
+													int i=0; String fullObject="";
+													while (i < (tripleArray.length-2)) {
+														fullObject = fullObject + tripleArray[i+2] + " ";
+														i++;
+													}
+					    		    	
+													//remove the last combining blank
+													fullObject = fullObject.substring(0, fullObject.length()-1);
+													
+													bodySubjectsList.add(tripleArray[0]);
+													bodyPredicatesList.add(tripleArray[1]);
+													bodyObjectsList.add(fullObject);
+													
+													bodyTripleCounter++;
+												}	
+												else  {
+													
+													//match " subject predicate "objPart1 objPart2 ... objPartn . "
+													if (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s+\"[ a-zA-Z_0-9:%,?\"./)^(-]+\"\\s*[.]\\s*", line)) {
+														
+														line = line.replaceAll("^\\s+", "");
+														line = line.replaceAll("[.]\\s*$", "");
+														String[] tripleArray = line.split("\\s+");
+														
+														// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
+														int i=0; String fullObject="";
+														while (i < (tripleArray.length-2)) {
+															fullObject = fullObject + tripleArray[i+2] + " ";
+															i++;
+														}
+						    		    	
+														//remove the last combining blank
+														fullObject = fullObject.substring(0, fullObject.length()-1);
+														
+														bodySubjectsList.add(tripleArray[0]);
+														bodyPredicatesList.add(tripleArray[1]);
+														bodyObjectsList.add(fullObject);
+														
+														bodyTripleCounter++;
+													}	
+													else {
+														//match " subject predicate object " (without closing point. This occurs only as the last triple before body is closed with '}'). 
+														if (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s*", line)) {
+															line = line.replaceAll("^\\s+", "");
+															line = line.replaceAll("[.]\\s*$", "");
+															String[] tripleArray = line.split("\\s+");
+															
+															// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
+															int i=0; String fullObject="";
+															while (i < (tripleArray.length-2)) {
+																fullObject = fullObject + tripleArray[i+2] + " ";
+																i++;
+															}
+
+															//remove the last combining blank
+															fullObject = fullObject.substring(0, fullObject.length()-1);
+						    		    	
+															bodySubjectsList.add(tripleArray[0]);
+															bodyPredicatesList.add(tripleArray[1]);
+															bodyObjectsList.add(fullObject);
+															
+															bodyTripleCounter++;
+														}
+														else {
+															//match " subject predicate "obj1 obj2 obj3" " (without closing point. This occurs only as the last triple before body is closed with '}'). 
+															if (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s+\"[ a-zA-Z_0-9:%,?\"./)^(-]+\"\\s*", line)) {
+																line = line.replaceAll("^\\s+", "");
+																line = line.replaceAll("[.]\\s*$", "");
+																String[] tripleArray = line.split("\\s+");
+																
+																// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
+																int i=0; String fullObject="";
+																while (i < (tripleArray.length-2)) {
+																	fullObject = fullObject + tripleArray[i+2] + " ";
+																	i++;
+																}
+
+																//remove the last combining blank
+																fullObject = fullObject.substring(0, fullObject.length()-1);
+							    		    	
+																bodySubjectsList.add(tripleArray[0]);
+																bodyPredicatesList.add(tripleArray[1]);
+																bodyObjectsList.add(fullObject);
+																
+																bodyTripleCounter++;
+															}
+															else {
+																
+																if (!Pattern.matches("\\s*[{]\\s*", line)) 
+																	System.out.println("Following n3 line hasn't matched any pattern: " + line);
+															}
+														}
+													}
+												}
+											}
+										}
+									}	
 								}
 							}
-						}	
+						}
 					}
 				}
 			}
 	    }		
-    	return bodyTripleCounter;
+	    br.close();
+	    
+	    System.out.println("---------------------------------------------------------------------------------------------");
+    	System.out.println("BodySubjectsList: " + bodySubjectsList);
+    	System.out.println("BodyPredicatesList: " + bodyPredicatesList);
+    	System.out.println("BodyObjectsList: " + bodyObjectsList);
+	    System.out.println("---------------------------------------------------------------------------------------------");
+
+    	return bodyTripleCounter;    	
 	}
 	public int findNumberOfHeadTriples (String oneRuleN3) throws IOException  {
 		int headTripleCounter=0;
@@ -452,72 +626,8 @@ public class OneRuleMapper7 {
 	    		
 	    	//count only the lines with the number greater than the borderNumber - they are at the head side.
 	    	
-	    	//match " subject predicate object ; " 
-	    	if ((lineNumber > borderNumber) && (Pattern.matches("\\s*[a-zA-Z_0-9:,?\"./)^(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s+[ a-zA-Z_0-9:,?\"./)^(-]+\\s*;\\s*", line))) {
-	    		
-	    		// remove the leading spaces if any
-	    		line = line.replaceAll("^\\s+", "");
-	    		line = line.replaceAll(";\\s*$", "");
-	    		String[] tripleArray = line.split("\\s+");
-	    		
-	    		// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
-	    		int i=0; String fullObject="";
-	    		while (i < (tripleArray.length-2)) {
-	    			fullObject = fullObject + tripleArray[i+2] + " ";
-	    			i++;
-	    		}
-	    		
-	    		//the last combining blank should be removed
-	    		fullObject = fullObject.substring(0, fullObject.length()-1);
-	    	
-	    		headSubjectsList.add(tripleArray[0]);
-	    		headPredicatesList.add(tripleArray[1]);
-	    		headObjectsList.add(fullObject);
-	    		
-	    		headTripleCounter++;
-	    		
-	    		//check
-	    		/*
-	    		System.out.println("BIBA-3-Semikolon!!!!!!!!!!!!!!!!!!!!!!!");
-	    		System.out.println("Subject: " + tripleArray[0]);
-	    		System.out.println("Predicate: " + tripleArray[1]);
-	    		System.out.println("Object: " + tripleArray[2]);
-	    		System.out.println("helpTripleCounter: " + headTripleCounter);
-	    		*/
-	    	}
-	    	
-	    	// There should be no lines in the head which end with blank nodes. So we should not build the if-else-net and keep the special order.
-	    	//match " subject predicate object . " 
-	    	if ((lineNumber > borderNumber) && (Pattern.matches("\\s*[a-zA-Z_0-9:,?\"./)^(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s+[ a-zA-Z_0-9:,?\"./)^(-]+\\s*[.]\\s*", line))) {
-	    		
-	    		// remove the leading spaces if any
-	    		line = line.replaceAll("^\\s+", "");
-	    		line = line.replaceAll("[.]\\s*$", "");
-	    		String[] tripleArray = line.split("\\s+");
-	    		
-	    		// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
-	    		int i=0; String fullObject="";
-	    		while (i < (tripleArray.length-2)) {
-	    			fullObject = fullObject + tripleArray[i+2] + " ";
-	    			i++;
-	    		}
-	    		
-	    		//the last combining blank should be removed
-	    		fullObject = fullObject.substring(0, fullObject.length()-1);
-	    		
-	    		//check
-	    		//System.out.println("Full object: " + fullObject);
-	    		
-	    		headSubjectsList.add(tripleArray[0]);
-	    		headPredicatesList.add(tripleArray[1]);
-	    		headObjectsList.add(fullObject);
-	    		
-	    		headTripleCounter++;
-	    	
-	    	}
-	    		    	
 	    	//match " predicate object ; " 
-	    	if ((lineNumber > borderNumber) && (Pattern.matches("\\s*[a-zA-Z_0-9:,?\"./)^(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s*;\\s*", line))) {
+	    	if ((lineNumber > borderNumber) && (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)^(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s*;\\s*", line))) {
 	    		
 	    		// remove the leading spaces if any
 	    		line = line.replaceAll("^\\s+", "");
@@ -549,36 +659,219 @@ public class OneRuleMapper7 {
 	    		System.out.println("helpTripleCounter: " + headTripleCounter);
 	    		*/
 	    	}
-	    	
-	     	//match " predicate object . " 
-	    	if ((lineNumber > borderNumber) && (Pattern.matches("\\s*[a-zA-Z_0-9:,?\"./)^(-]+\\s+[a-zA-Z_0-9:,?\"./)^(-]+\\s*[.]\\s*", line))) {
-	    		
-	    		// remove the leading spaces if any
-	    		line = line.replaceAll("^\\s+", "");
-	    		line = line.replaceAll("[.]\\s*$", "");
-	    		String[] tripleArray = line.split("\\s+");
-	    	
-	    		// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
-	    		int i=0; 
-	    		String fullObject="";
-	    		while (i < (tripleArray.length-1)) {
-	    			fullObject = fullObject + tripleArray[i+1] + " ";
-	    			i++;
-	    		}
-	   
-	    		//the last combining blank should be removed
-	    		fullObject = fullObject.substring(0, fullObject.length()-1);
-	    		
-	    		headSubjectsList.add(headSubjectsList.get(headSubjectsList.size()-1));
-	    		headPredicatesList.add(tripleArray[0]);
-	    		headObjectsList.add(fullObject);
-	    		
-	    		headTripleCounter++;
-
+	    	else {
+	    		//match " predicate "objPart1 objPart2...objPartn ; " 
+		    	if ((lineNumber > borderNumber) && (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)^(-]+\\s+\"[ a-zA-Z_0-9:%,?\"./)^(-]+\"\\s*;\\s*", line))) {
+		    		
+		    		// remove the leading spaces if any
+		    		line = line.replaceAll("^\\s+", "");
+		    		line = line.replaceAll(";\\s*$", "");	    		
+		    		String[] tripleArray = line.split("\\s+");
+		    	
+		    		// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
+		    		int i=0; String fullObject="";
+		    		while (i < (tripleArray.length-1)) {
+		    			fullObject = fullObject + tripleArray[i+1] + " ";
+		    			i++;
+		    		}
+		    		
+		    		//the last combining blank should be removed
+		    		fullObject = fullObject.substring(0, fullObject.length()-1);
+		    		
+		    		headSubjectsList.add(headSubjectsList.get(headSubjectsList.size()-1));
+		    		headPredicatesList.add(tripleArray[0]);
+		    		headObjectsList.add(fullObject);
+		    		
+		    		headTripleCounter++;   		
+		    	}
+		    	else {
+		    		//match " predicate object . " 
+			    	if ((lineNumber > borderNumber) && (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)^(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s*[.]\\s*", line))) {
+			    		
+			    		// remove the leading spaces if any
+			    		line = line.replaceAll("^\\s+", "");
+			    		line = line.replaceAll("[.]\\s*$", "");
+			    		String[] tripleArray = line.split("\\s+");
+			    	
+			    		// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
+			    		int i=0; 
+			    		String fullObject="";
+			    		while (i < (tripleArray.length-1)) {
+			    			fullObject = fullObject + tripleArray[i+1] + " ";
+			    			i++;
+			    		}
+			   
+			    		//the last combining blank should be removed
+			    		fullObject = fullObject.substring(0, fullObject.length()-1);
+			    		
+			    		headSubjectsList.add(headSubjectsList.get(headSubjectsList.size()-1));
+			    		headPredicatesList.add(tripleArray[0]);
+			    		headObjectsList.add(fullObject);
+			    		
+			    		headTripleCounter++;
+			    	}
+			    	else {
+			    		//match " predicate "objpart1 objpart2 ... objpartn" . " 
+				    	if ((lineNumber > borderNumber) && (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)^(-]+\\s+\"[ a-zA-Z_0-9:%,?\"./)^(-]+\"\\s*[.]\\s*", line))) {
+				    		
+				    		// remove the leading spaces if any
+				    		line = line.replaceAll("^\\s+", "");
+				    		line = line.replaceAll("[.]\\s*$", "");
+				    		String[] tripleArray = line.split("\\s+");
+				    	
+				    		// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
+				    		int i=0; 
+				    		String fullObject="";
+				    		while (i < (tripleArray.length-1)) {
+				    			fullObject = fullObject + tripleArray[i+1] + " ";
+				    			i++;
+				    		}
+				   
+				    		//the last combining blank should be removed
+				    		fullObject = fullObject.substring(0, fullObject.length()-1);
+				    		
+				    		headSubjectsList.add(headSubjectsList.get(headSubjectsList.size()-1));
+				    		headPredicatesList.add(tripleArray[0]);
+				    		headObjectsList.add(fullObject);
+				    		
+				    		headTripleCounter++;
+				    	}
+				    	else {
+				    		//match " subject predicate object ; " 
+					    	if ((lineNumber > borderNumber) && (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)^(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s*;\\s*", line))) {
+					    		
+					    		// remove the leading spaces if any
+					    		line = line.replaceAll("^\\s+", "");
+					    		line = line.replaceAll(";\\s*$", "");
+					    		String[] tripleArray = line.split("\\s+");
+					    		
+					    		// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
+					    		int i=0; String fullObject="";
+					    		while (i < (tripleArray.length-2)) {
+					    			fullObject = fullObject + tripleArray[i+2] + " ";
+					    			i++;
+					    		}
+					    		
+					    		//the last combining blank should be removed
+					    		fullObject = fullObject.substring(0, fullObject.length()-1);
+					    	
+					    		headSubjectsList.add(tripleArray[0]);
+					    		headPredicatesList.add(tripleArray[1]);
+					    		headObjectsList.add(fullObject);
+					    		
+					    		headTripleCounter++;
+					    		
+					    		//check
+					    		/*
+					    		System.out.println("BIBA-3-Semikolon!!!!!!!!!!!!!!!!!!!!!!!");
+					    		System.out.println("Subject: " + tripleArray[0]);
+					    		System.out.println("Predicate: " + tripleArray[1]);
+					    		System.out.println("Object: " + tripleArray[2]);
+					    		System.out.println("helpTripleCounter: " + headTripleCounter);
+					    		*/
+					    	}
+					    	else {
+					    		//match " subject predicate "objPart1 objPart2 ... objPartn" ; " 
+						    	if ((lineNumber > borderNumber) && (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)^(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s+\"[ a-zA-Z_0-9:%,?\"./)^(-]+\"\\s*;\\s*", line))) {
+						    		
+						    		// remove the leading spaces if any
+						    		line = line.replaceAll("^\\s+", "");
+						    		line = line.replaceAll(";\\s*$", "");
+						    		String[] tripleArray = line.split("\\s+");
+						    		
+						    		// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
+						    		int i=0; String fullObject="";
+						    		while (i < (tripleArray.length-2)) {
+						    			fullObject = fullObject + tripleArray[i+2] + " ";
+						    			i++;
+						    		}
+						    		
+						    		//the last combining blank should be removed
+						    		fullObject = fullObject.substring(0, fullObject.length()-1);
+						    	
+						    		headSubjectsList.add(tripleArray[0]);
+						    		headPredicatesList.add(tripleArray[1]);
+						    		headObjectsList.add(fullObject);
+						    		
+						    		headTripleCounter++;
+						    	}
+						    	else {
+							    	//match " subject predicate object . " 
+							    	if ((lineNumber > borderNumber) && (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)^(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s*[.]\\s*", line))) {
+							    		
+							    		// remove the leading spaces if any
+							    		line = line.replaceAll("^\\s+", "");
+							    		line = line.replaceAll("[.]\\s*$", "");
+							    		String[] tripleArray = line.split("\\s+");
+							    		
+							    		// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
+							    		int i=0; String fullObject="";
+							    		while (i < (tripleArray.length-2)) {
+							    			fullObject = fullObject + tripleArray[i+2] + " ";
+							    			i++;
+							    		}
+							    		
+							    		//the last combining blank should be removed
+							    		fullObject = fullObject.substring(0, fullObject.length()-1);
+							    		
+							    		//check
+							    		//System.out.println("Full object: " + fullObject);
+							    		
+							    		headSubjectsList.add(tripleArray[0]);
+							    		headPredicatesList.add(tripleArray[1]);
+							    		headObjectsList.add(fullObject);
+							    		
+							    		headTripleCounter++;
+							    	}
+							    	else {
+								    	//match " subject predicate "objPart1 objPart2...objPart3" . " 
+								    	if ((lineNumber > borderNumber) && (Pattern.matches("\\s*[a-zA-Z_0-9:%,?\"./)^(-]+\\s+[a-zA-Z_0-9:%,?\"./)^(-]+\\s+\"[ a-zA-Z_0-9:%,?\"./)^(-]+\"\\s*[.]\\s*", line))) {
+								    										    		
+								    		// remove the leading spaces if any
+								    		line = line.replaceAll("^\\s+", "");
+								    		line = line.replaceAll("[.]\\s*$", "");
+								    		String[] tripleArray = line.split("\\s+");
+								    		
+								    		// solving the case where an object consists of multiple words. Like: "The death after 1 year" 
+								    		int i=0; String fullObject="";
+								    		while (i < (tripleArray.length-2)) {
+								    			fullObject = fullObject + tripleArray[i+2] + " ";
+								    			i++;
+								    		}
+								    		
+								    		//the last combining blank should be removed
+								    		fullObject = fullObject.substring(0, fullObject.length()-1);
+								    		
+								    		//check
+								    		//System.out.println("Full object: " + fullObject);
+								    		
+								    		headSubjectsList.add(tripleArray[0]);
+								    		headPredicatesList.add(tripleArray[1]);
+								    		headObjectsList.add(fullObject);
+								    		
+								    		headTripleCounter++;
+								    	}
+								    	else {
+								    		if ((lineNumber > borderNumber) && (!Pattern.matches("\\s*[}]\\s*[.]\\s*", line)))
+								    			System.out.println("Following n3 line hasn't matched any pattern: " + line);
+								    	}  	
+							    	}
+						    	}
+					    	}
+				    	}
+			    	}
+		    	}
 	    	}
 	    } 	
 	    br.close();
 	    
+	    //check
+	    System.out.println("---------------------------------------------------------------------------------------------");
+	    System.out.println("HeadSubjectsList: " + headSubjectsList);
+    	System.out.println("HeadPredicatesList: " + headPredicatesList);
+    	System.out.println("HeadObjectsList: " + headObjectsList);
+	    System.out.println("---------------------------------------------------------------------------------------------");
+
 	    return headTripleCounter;
 	}  
 	
@@ -623,39 +916,76 @@ public class OneRuleMapper7 {
 	
 		//------------------------------------parse subject---------------------------------------------------------
 		//check
-		System.out.println("Subject with prefix: " + subjectWithPrefix);
+		//System.out.println("Subject with prefix: " + subjectWithPrefix);
 		
-		// is it a built-in with multiple inputs (subjects)? e.g.: (?a ?b) math:sum ?c
+		// is it a built-in with multiple inputs e.g.: (?a ?b 3.4) math:sum ?c
 		if (subjectWithPrefix.charAt(0)=='(') {
-			
-			/* prepare the subject for further processing. We are going to cut the patterns between '?' and ' '. 
-			 * To assure that a blank follows after ?varn, we replace the ')' by ' '
-			 * */
+
+		/* prepare the subject for further processing. We are going to find the variables/numbers between blanks. 
+		 * To assure that the first variable/number follows a blank and a blank follows after the last variable/number, we replace the '(' and ')' by ' '
+		 * */
+				
+			subjectWithPrefix = subjectWithPrefix.replaceAll("[(]", " ");
 			subjectWithPrefix = subjectWithPrefix.replaceAll("[)]", " ");
+						
+			/* now we should parse the composite expression "(?var1 ?var2 3.4 ... ?varn)" to the n separate subjects ?var1, ?var2, 3.4, ..., ?varn 
+			which will be handled as rdf:List later. Our current task is to save each argument of the built-in in a right way. Therefore we will go through the string 
+			and look at the symbols we encounter */
 			
-			/* now we should parse the composite expression "(?var1 ?var2 ... ?varn)" to the n separate subjects ?var1, ?var2, ..., ?varn 
-			which will be handled as rdf:collection */
-			int i = subjectWithPrefix.indexOf("?");
-			while ((i > 0) && (i < subjectWithPrefix.length())) {
-				
+			int i = 0;
+			while (i < subjectWithPrefix.length()) {
+					
 				//check
-				System.out.println("Begin of the current subject: " + i);
-				System.out.println("End of the current subject: " + subjectWithPrefix.indexOf(" ", i));
-				
-				multiSubjectList.add(baseVar + subjectWithPrefix.substring(i+1, subjectWithPrefix.indexOf(" ", i)));
-				i = subjectWithPrefix.indexOf("?", i+1);
-				
-				/* choose the smaller index: either the index of a variable or an index of a number 
-				 * 
-				 * not done yet! 
-				 *
-				 * i = Math.min(subjectWithPrefix.indexOf("?", i+1), subjectWithPrefix.indexOf("\\d", i+1));
-				 */
-				
+				//System.out.println("Begin of the current subject: " + i);
+				//System.out.println("End of the current subject: " + subjectWithPrefix.indexOf(" ", i));
+							
+				// we need a String in order to use the Pattern.matches functionality. But actually sign is just a char sign. 
+				String sign = subjectWithPrefix.substring(i, i+1);
+
 				//check
-				System.out.println("MultiSubjectsList: " + multiSubjectList);
+				//System.out.println("i:" + i);
+				//System.out.println("sign:" + sign);
+							
+				//by encountering a blank go further
+				if (sign.equalsIgnoreCase(" "))
+					i++;
+				else {
+					//by encountering ? -> variable
+					if (sign.equalsIgnoreCase("?")) {
+						//we save the variable plus some additional punctuation needed later by output
+						multiSubjectList.add("rdf:resource=\"" + baseVar + subjectWithPrefix.substring(i+1, subjectWithPrefix.indexOf(" ", i)) + "\"/>");
+					}
+					else {
+						
+						//by encountering digit -> it's a number -> get the whole number till a blank occur 
+						if (Pattern.matches("\\d", sign)) {
+							String number = subjectWithPrefix.substring(i, subjectWithPrefix.indexOf(" ", i));
+							String numberObject="";
+										
+							// if object is a floating-point number
+							if (Pattern.matches("\\d+.\\d+", number)) {
+								//we save the number plus some additional punctuation needed later by output
+								numberObject = "rdf:datatype=\"http://www.w3.org/2001/XMLSchema#double\">" + number + "</rdf:first>";
+							}	
+							
+							// if object is an integer
+							if (Pattern.matches("\\d+", number)) {
+								//we save the number plus some additional punctuation needed later by output
+								numberObject = "rdf:datatype=\"http://www.w3.org/2001/XMLSchema#integer\">" + number + "</rdf:first>";
+							}
+										
+						multiSubjectList.add(numberObject);
+						}					
+					}				
+								
+					// move iterator to the next sign after blank
+					i = subjectWithPrefix.indexOf(" ", i) + 1;
+				}
 			}
-		}
+			
+			//check
+			//System.out.println("MultiSubjectsList: " + multiSubjectList);
+		}		
 		
 		//is it a variable?
 		if (subjectWithPrefix.charAt(0)=='?') {
@@ -684,8 +1014,8 @@ public class OneRuleMapper7 {
 		}
 		
 		//check
-		System.out.println("Subject: " + subject);
-		System.out.println("");
+		//System.out.println("Subject: " + subject);
+		//System.out.println("");
 		
 		//------------------------------------parse predicate---------------------------------------------------------
 				
@@ -705,7 +1035,7 @@ public class OneRuleMapper7 {
 
 		//------------------------------------parse object---------------------------------------------------------
 		//check
-		System.out.println("Object with prefix: " + objectWithPrefix);
+		//System.out.println("Object with prefix: " + objectWithPrefix);
 		
 		//is it a variable?
 		if (objectWithPrefix.charAt(0)=='?') {
@@ -732,7 +1062,7 @@ public class OneRuleMapper7 {
 				object = objectWithPrefix;
 			*/
 			
-			if (objectWithPrefix.contains(":")) {
+			if (Pattern.matches("[A-Za-z0-9_%]+:[A-Za-z0-9_%]+", objectWithPrefix)) {
 			
 				//parse only the prefix part of the object
 				String objectPrefix = objectWithPrefix.substring(0, objectWithPrefix.indexOf(":"));
@@ -750,23 +1080,17 @@ public class OneRuleMapper7 {
 		}
 		
 		//check
-		System.out.println("ObjectFull: " + objectFull);
-		System.out.println("Object: " + object);
-		System.out.println("");
+		//System.out.println("ObjectFull: " + objectFull);
+		//System.out.println("Object: " + object);
+		//System.out.println("");
 
 		/*------------------- parse current triple as SWRL atom  -------------------------------------- */
 		
-		/* Possible atoms are "DatavaluedPropertyAtom", "IndividualPropertyAtom", "ClassAtom" */
+		/* Possible atoms are "DatavaluedPropertyAtom", "IndividualPropertyAtom", "ClassAtom", "BuiltinAtom", "MultiBuiltinAtom" */
 		
-		/* OPTIONAL: trying to parse built-ins with multiple input channels: sum, difference, product, quotient etc.
-		  n3 allows the constructs like this: "(?bil ?al) math:sum ?score" 
-		  should be translated into SWRL as a collection(!):
-		 
-		   <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
-		   <swrl:arguments rdf:parseType="Collection">
-		   	<rdf:Description rdf:about="Variable#score"/>
-			<rdf:Description rdf:about="Variable#bil"/>
-			<rdf:Description rdf:about="Variable#al
+		/* 1st: Parse MultiBuiltinAtom (sum, difference, product, quotient etc.)
+		  n3 allows the constructs like this: "(?bil ?al 6.46) math:sum ?score" 
+		  should be translated into a SWRL list
 		 */
 		if ((predicate.equalsIgnoreCase("sum")) | (predicate.equalsIgnoreCase("difference")) | (predicate.equalsIgnoreCase("product")) | (predicate.equalsIgnoreCase("quotient")) | (predicate.equalsIgnoreCase("exponentiation"))) {
 			switch (predicate) {
@@ -792,20 +1116,25 @@ public class OneRuleMapper7 {
 			}
 
 			result = result + tab + "<rdf:Description>" + "\n";
-			result = result + tab + "	<rdf:type rdf:resource=\"http://www.w3.org/2003/11/swrl#BuiltinAtom\"/>" + "\n";
-			result = result + tab + "	<base:Property-3AIs_premise_of rdf:resource=\"" + base + ruleName + "\"/>" + "\n";
-			result = result + tab + "	<swrl:builtin rdf:resource=\"http://www.w3.org/2003/11/swrlb#" + predicate + "\"/>" + "\n";
-			result = result + tab + "	<swrl:arguments rdf:parseType=\"Collection\">" + "\n";
-			result = result + tab + "		<rdf:Description rdf:about=\"" + objectFull + "\"/>" + "\n";
-
-			//add multiple subjects of a built-in
-			for (int i=0; i<multiSubjectList.size(); i++) {
-				result = result + tab + "		<rdf:Description rdf:about=\"" + multiSubjectList.get(i) + "\"/>" + "\n";
-			}
+			result = result + tab + "    <rdf:type rdf:resource=\"http://www.w3.org/2003/11/swrl#BuiltinAtom\"/>" + "\n";
+			result = result + tab + "    <base:Property-3AIs_premise_of rdf:resource=\"" + base + ruleName + "\"/>" + "\n";
+			result = result + tab + "    <swrl:builtin rdf:resource=\"http://www.w3.org/2003/11/swrlb#" + predicate + "\"/>" + "\n";
+			result = result + tab + "    <swrl:arguments>" + "\n";
+			result = result + tab + "        <rdf:Description>" + "\n";
+			result = result + tab + "            <rdf:type rdf:resource=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#List\"/>" + "\n";
 			
-			result = result + tab + "	</swrl:arguments>" + "\n";
+			// the result variable should be placed at the first place in a swrl list 
+			result = result + tab + "            <rdf:first rdf:resource=\"" + objectFull + "\"/>" + "\n"; 
+			result = result + tab + "            <rdf:rest>" + "\n"; 
+			
+			// build the list with all operands separately
+			result = buildListForMultiBuiltin(result, tab + "            ", multiSubjectList);
+			
+			result = result + tab + "            </rdf:rest>" + "\n";
+			result = result + tab + "        </rdf:Description>" + "\n";
+			result = result + tab + "    </swrl:arguments>" + "\n";
 			result = result + tab + "</rdf:Description>" + "\n";
-		}
+		} 
 		else {
 			/* trying to parse binary built-ins: lessThan, greaterThan, etc.
 			 */
@@ -827,26 +1156,31 @@ public class OneRuleMapper7 {
 				// Further there is a case differentiation by the object datatype. We define a special variable bobject(built-in object) to save this info. 
 				String bobject ="";
 
-				// if object is a string		
-				if (object.charAt(0)=='\"') 
-					bobject = "rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">" + object + "</rdf:first>";
-			
-				// if object is a floating-point number
-				if (Pattern.matches("\\d+.\\d+", object)) 
-					bobject = "rdf:datatype=\"http://www.w3.org/2001/XMLSchema#double\">" + object + "</rdf:first>";
-		
-				// if object is an integer
-				if (Pattern.matches("\\d+", object))
-					bobject = "rdf:datatype=\"http://www.w3.org/2001/XMLSchema#integer\">" + object + "</rdf:first>";
-				
-				// if object is a boolean
-				if ((Pattern.matches("true", object)) || (Pattern.matches("false", object)))
-					bobject = "rdf:datatype=\"http://www.w3.org/2001/XMLSchema#boolean\">" + object + "</rdf:first>";
-						
 				// if object is another variable
 				if (objectWithPrefix.charAt(0)=='?')
-					bobject = "rdf:resource=\"" + object + "\"/>";
+					bobject = "rdf:resource=\"" + objectFull + "\"/>";
+				else {
+					// if object is a string		
+					if (object.charAt(0)=='\"') 
+						bobject = "rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">" + object + "</rdf:first>";
+				
+					// if object is a floating-point number
+					if (Pattern.matches("\\d+.\\d+", object)) 
+						bobject = "rdf:datatype=\"http://www.w3.org/2001/XMLSchema#double\">" + object + "</rdf:first>";
 			
+					// if object is an integer
+					if (Pattern.matches("\\d+", object))
+						bobject = "rdf:datatype=\"http://www.w3.org/2001/XMLSchema#integer\">" + object + "</rdf:first>";
+					
+					// if object is a boolean
+					if ((Pattern.matches("true", object)) || (Pattern.matches("false", object)))
+						bobject = "rdf:datatype=\"http://www.w3.org/2001/XMLSchema#boolean\">" + object + "</rdf:first>";
+							
+					// if object is another variable
+					if (objectWithPrefix.charAt(0)=='?')
+						bobject = "rdf:resource=\"" + object + "\"/>";
+				}
+				
 				result = result + tab + "<rdf:Description>" + "\n";
 				result = result + tab + "	<rdf:type rdf:resource=\"http://www.w3.org/2003/11/swrl#BuiltinAtom\"/>" + "\n";
 				result = result + tab + "	<swrl:builtin rdf:resource=\"http://www.w3.org/2003/11/swrlb#" + predicate + "\"/>" + "\n";
@@ -953,13 +1287,12 @@ public class OneRuleMapper7 {
 						if (objectWithPrefix.charAt(0)=='?') {
 							result = result + tab + "  <swrl:argument2 rdf:resource=\"" + objectFull + "\"/>" + "\n";
 						}
-						
-						// if our object is a literal it needs no namespace 
 						else {
+							// if our object is a literal it needs no namespace 
 							
 							//------------Make up---------------------------------------------------------------------------------------------------------------------------
 							//------------parsing the literal datatype------------------------------------------------------------------------------------------------------
-						
+
 							//parse string literals					
 							if (object.charAt(0)=='\"') {
 								object = object.substring(1, object.length()-1);
@@ -1046,7 +1379,7 @@ public class OneRuleMapper7 {
 				ListForTopic.addAll(concepts);
 				
 				//check
-				System.out.println("ListForTopic: " + ListForTopic);
+				//System.out.println("ListForTopic: " + ListForTopic);
 				
 				//remove variables, literals, blank nodes and (...) from the topics list
 				for (int i=0; i<ListForTopic.size(); i++) {
@@ -1057,8 +1390,8 @@ public class OneRuleMapper7 {
 				}
 				
 				//check
-				System.out.println("ListForTopic2: " + ListForTopic);
-				System.out.println("");
+				//System.out.println("ListForTopic2: " + ListForTopic);
+				//System.out.println("");
 
 				//immediate addition of Has_topic property
 				for (int i=0; i<ListForTopic.size(); i++) {
@@ -1100,48 +1433,48 @@ public class OneRuleMapper7 {
 		return fullnamespace;
 	}
 
-	/* Future Work 
-	 * get prefix as input and output the appropriate namespace 
-	 */
-	
-	/*
-	public String prefixResolving (File ruleN3) {
+	public String buildListForMultiBuiltin (String result, String tab, List<String> multiSubjectList) {		
 		
-		if (Pattern.matches("(?sm).*^\t\t<swivt:type rdf:resource=\"http://semantic-mediawiki.org/swivt/1.0#_wpg\"/>$.*", currentPredicatePage)) {
-		return fullNamespace;
+		String tabDes = tab + "    ";
+		String tabFirst = "";
+		
+		//build a list iteratively
+		for (int i=0; i<multiSubjectList.size(); i++) {
+			tabFirst = tabDes + "    ";
+			result = result + tabDes + "<rdf:Description>" + "\n";
+			result = result + tabFirst + "<rdf:type rdf:resource=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#List\"/>" + "\n";
+			result = result + tabFirst + "<rdf:first " + multiSubjectList.get(i) + "\n"; 
+			
+			if (i < multiSubjectList.size()-1) {
+				//there are more of operands
+				result = result + tabFirst + "<rdf:rest>" + "\n"; 
+			}
+			else {
+				//there are no more operands 
+				result = result + tabFirst + "<rdf:rest";			
+			}
+			tabDes = tabFirst + "    ";
+		}
+
+		result = result + " rdf:resource=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#nil\"/>" + "\n";
+
+		//way back 
+		tabDes = tabFirst.substring(4);
+		for (int i=0; i<multiSubjectList.size()-1; i++) {
+			result = result + tabDes + "</rdf:Description>" + "\n";
+			tabFirst = tabDes.substring(4);
+			result = result + tabFirst + "</rdf:rest>" + "\n";
+			tabDes = tabFirst.substring(4);
+		}
+				
+		result = result + tabDes + "</rdf:Description>" + "\n";
+		return result;		
 	}
-	*/
 }
 
-
-/*
-//parse string literals
-//in rdf/xml: rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No
-if (object.charAt(0)=='\"')
-	object = object + "^^xsd:string";
-
-//parse double literals
-//in rdf/xml: rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0
-if (Pattern.matches("\\d+.\\d+", object))
-	object = object + "^^xsd:double";
-		
-//parse integer literals
-//in rdf/xml: rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1
-if (Pattern.matches("\\d+", object))
-	object = object + "^^xsd:integer";
-*/
-
-//testing pattern stuff
-/*
-System.out.println (Pattern.matches("\\s*[a-zA-Z_0-9:?]+\\s+[a-zA-Z_0-9:?]+\\s+[a-zA-Z_0-9:?]+\\s+\\.", " ?p1 ex:has_Father ?Bor8is ."));
-System.out.println (Pattern.matches("\\s*([a-zA-Z_0-9:?]+\\s+){3}\\.\\s*", "	?p1	ex:has_Father   ?Bor8is .   "));
-String test = "    ?p1	 	ex:has_Father  ex:Boris .";
-test = test.replaceAll("^\\s+", "");
-System.out.println(test);
-
-String[] testArray = test.split("\\s+");
-System.out.println(testArray[0]);
-System.out.println(testArray[1]);
-System.out.println(testArray[2]);
-System.out.println(testArray[3]);
- */
+//check of the tabs on the way back
+//System.out.println("tabDescr anfa: " + "\"" + tabDes + "\"");
+//System.out.println("tabDescr vorh: " + "\"" + tabDes + "\"");
+//System.out.println("tabFirst inne: " + "\"" + tabFirst + "\"");		
+//System.out.println("tabDescr inne: " + "\"" + tabDes + "\"");		
+//System.out.println("tabDescr nach: " + "\"" + tabDes + "\"");	

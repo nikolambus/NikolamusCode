@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
@@ -26,6 +27,8 @@ public class RDFExportParser {
 	public String head = "";
 	public String rule = "";
 
+   	public String base = "http://localhost/mediawiki/index.php/Special:URIResolver/";
+
 	public List<String> BodySubjectsList = new ArrayList<String>(); 
 	public List<String> BodyPredicatesList = new ArrayList<String>(); 
 	public List<String> BodyObjectsList = new ArrayList<String>(); 
@@ -36,6 +39,7 @@ public class RDFExportParser {
 
 	public List<String> varsBank = new ArrayList<String>();
 	public List<String> classesBank = new ArrayList<String>();
+	public String OPType = null;
 	
 	public List<String> helpIndividualsList = new ArrayList<String>();
 	
@@ -60,7 +64,7 @@ public class RDFExportParser {
 	    	//System.out.println(line);
 	    	
 	    	// match the line with a concept. Internal shortcuts are used.
-	    	if (Pattern.matches("		<property:(HasBodyObject|HasBodySubject|HasBodyPredicate)\\d rdf:resource=\"&wiki;[a-zA-Z_0-9:,?\"./]+\"/>", line)) {
+	    	if (Pattern.matches("\\s*<property:(HasBodyObject|HasBodySubject|HasBodyPredicate)\\d rdf:resource=\"&wiki;[a-zA-Z_0-9:,?\"./]+\"/>", line)) {
     			
 	    		//check
 	    		//System.out.println(line);
@@ -90,7 +94,29 @@ public class RDFExportParser {
     			  default:
     			    System.err.println( "Unknown concept type: " + conceptType );
     			}
-	    	}	    	
+	    	}
+	    	else {
+	    		/* Predicates with key word "Property" are rdfexported as full resources:
+		    	 * 		<property:HasPredicate1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_Age"/>
+		    	 * perform appropriate parsing 
+		    	 */
+	    		if (Pattern.matches("\\s*<property:HasBodyPredicate\\d+ rdf:resource=\"" + base + "Property-3A[a-zA-Z_0-9:,?\"./]+\"/>", line)) {
+
+	    			//Which triple it belongs to?
+	    			int conceptNumber = Integer.parseInt(line.substring(line.indexOf(" ")-1, line.indexOf(" "))); 
+	    			
+	    			//parse the immediate name of the concept
+		    		Pattern patternTab = Pattern.compile("\\s*<property:HasBodyPredicate\\d+ rdf:resource=\"" + base + "Property-3A([a-zA-Z_0-9:,?\"./]+)\"/>");
+					Matcher mtchTab = patternTab.matcher(line);
+					String conceptName = null;
+					while (mtchTab.find()) {
+						//store it in the variable conceptName
+						conceptName = mtchTab.group(1);
+					}
+					
+					BodyPredicatesList.add(conceptNumber-1, conceptName);
+	    		}
+	    	}
 	    }
 	    br.close();	
   	}
@@ -99,79 +125,87 @@ public class RDFExportParser {
   	
 	    for (int i=0; i < BodyPredicatesList.size(); i++) {
 			String currentPredicate = BodyPredicatesList.get(i);
-			
-			/* If the current predicate is "is"-relation, then we handle it in the following way: 
-			 * "Patient is HeavyPatient" --> "Patient(?patient) ^ HeavyPatient(?patient)"  
+		
+			/* If the current predicate is "Has_OPType"-relation, then we save the appropriate object to the OPType variable and send it to the AnnotationsPropertiesImplantator2
 			 */
-			if (currentPredicate.equalsIgnoreCase("Is")) {
-				body = addRuleClass(body, BodySubjectsList.get(i), BodySubjectsList.get(i));	
-				body = addRuleClass(body, BodyObjectsList.get(i), BodySubjectsList.get(i));	
+			if (currentPredicate.equalsIgnoreCase("Has_OPType")) {
+				OPType = BodyObjectsList.get(i);
 			}
 			else {
-				// the next possibility - our predicate is a built-in
-				if ((currentPredicate.equalsIgnoreCase("GreaterThan")) | (currentPredicate.equalsIgnoreCase("GreaterThanOrEqual")) | (currentPredicate.equalsIgnoreCase("LessThan")) | (currentPredicate.equalsIgnoreCase("LessThanOrEqual")) | (currentPredicate.equalsIgnoreCase("Equal"))) {
-					body = addSWRLBuiltin(currentPredicate, BodySubjectsList.get(i), BodyObjectsList.get(i));
+			
+				/* If the current predicate is "is"-relation, then we handle it in the following way: 
+				 * "Patient is HeavyPatient" --> "Patient(?patient) ^ HeavyPatient(?patient)"  
+				 */
+				if (currentPredicate.equalsIgnoreCase("Is")) {
+					body = addRuleClass(body, BodySubjectsList.get(i), BodySubjectsList.get(i));	
+					body = addRuleClass(body, BodyObjectsList.get(i), BodySubjectsList.get(i));	
 				}
 				else {
-				//get the RDF export of the current predicate
-				Scanner scanner = new Scanner(new URL("http://localhost/mediawiki/index.php/Special:ExportRDF/" + currentPredicate).openStream(), "UTF-8").useDelimiter("\\A");
-				String currentPredicatePage = scanner.next();
+					// the next possibility - our predicate is a built-in
+					if ((currentPredicate.equalsIgnoreCase("GreaterThan")) | (currentPredicate.equalsIgnoreCase("GreaterThanOrEqual")) | (currentPredicate.equalsIgnoreCase("LessThan")) | (currentPredicate.equalsIgnoreCase("LessThanOrEqual")) | (currentPredicate.equalsIgnoreCase("Equal"))) {
+						body = addSWRLBuiltin(currentPredicate, BodySubjectsList.get(i), BodyObjectsList.get(i));
+					}
+					else {
+						//get the RDF export of the current predicate
+						Scanner scanner = new Scanner(new URL("http://localhost/mediawiki/index.php/Special:ExportRDF/" + currentPredicate).openStream(), "UTF-8").useDelimiter("\\A");
+						String currentPredicatePage = scanner.next();
 				
-				// Searching for the line which contains "swivt:type ... wpg" on the RDF Export page. 
-				// For this do activate RegEx multiline modus with (?sm)
-				if (Pattern.matches("(?sm).*^\t\t<swivt:type rdf:resource=\"http://semantic-mediawiki.org/swivt/1.0#_wpg\"/>$.*", currentPredicatePage)) {
+						// Searching for the line which contains "swivt:type ... wpg" on the RDF Export page. 
+						// For this do activate RegEx multiline modus with (?sm)
+						if (Pattern.matches("(?sm).*^\t\t<swivt:type rdf:resource=\"http://semantic-mediawiki.org/swivt/1.0#_wpg\"/>$.*", currentPredicatePage)) {
 					
-					// If found, then this property is an object property.
-					// Assume: our i-th triple looks like "Patient wirdUntersuchtDurch DRU"
+							// If found, then this property is an object property.
+							// Assume: our i-th triple looks like "Patient wirdUntersuchtDurch DRU"
 					
-					// Firstly add "Patient(?patient)" to the rule 
-					body = addRuleClass(body, BodySubjectsList.get(i), BodySubjectsList.get(i));	
+							// Firstly add "Patient(?patient)" to the rule 
+							body = addRuleClass(body, BodySubjectsList.get(i), BodySubjectsList.get(i));	
 					
-					// Secondly add "DRU(?dru)" to the rule 
-					body = addRuleClass(body, BodyObjectsList.get(i), BodyObjectsList.get(i));
+							// Secondly add "DRU(?dru)" to the rule 
+							body = addRuleClass(body, BodyObjectsList.get(i), BodyObjectsList.get(i));
 					
-					// Thirdly add "wirdUntesuchtDurch (?patient, ?dru)"
-					body = addRuleObjectProperty(body, currentPredicate, BodySubjectsList.get(i), BodyObjectsList.get(i));
+							// Thirdly add "wirdUntesuchtDurch (?patient, ?dru)"
+							body = addRuleObjectProperty(body, currentPredicate, BodySubjectsList.get(i), BodyObjectsList.get(i));
 					
-				}
-				else {
-					// If not found, then this property is a data property.
+						}
+						else {
+							// If not found, then this property is a data property.
 
-					// 1st possibility: DataStringProperty
-					if (Pattern.matches("(?sm).*^\t\t<swivt:type rdf:resource=\"http://semantic-mediawiki.org/swivt/1.0#_str\"/>$.*", currentPredicatePage)) {
+							// 1st possibility: DataStringProperty
+							if (Pattern.matches("(?sm).*^\t\t<swivt:type rdf:resource=\"http://semantic-mediawiki.org/swivt/1.0#_str\"/>$.*", currentPredicatePage)) {
 						
-					// Assume: our i-th triple looks like "DRU untersuchungZeigt Auffaelliger Befund"
+								// Assume: our i-th triple looks like "DRU untersuchungZeigt Auffaelliger Befund"
 
-					// Firstly add "DRU(?dru)" to the rule 
-					body = addRuleClass(body, BodySubjectsList.get(i), BodySubjectsList.get(i));	
+								// Firstly add "DRU(?dru)" to the rule 
+								body = addRuleClass(body, BodySubjectsList.get(i), BodySubjectsList.get(i));	
 					
-					// Secondly add "untersuchungZeigt(?dru, "Auffaelliger Befund")" or 
-					// "untersuchungZeigt(?dru, ?Auffaelliger_Befund)" if ?Auffaelliger_Befund occurs in other triples
-					body = addRuleDataStringProperty(body, currentPredicate, BodySubjectsList.get(i), BodyObjectsList.get(i));
+								// Secondly add "untersuchungZeigt(?dru, "Auffaelliger Befund")" or 
+								// "untersuchungZeigt(?dru, ?Auffaelliger_Befund)" if ?Auffaelliger_Befund occurs in other triples
+								body = addRuleDataStringProperty(body, currentPredicate, BodySubjectsList.get(i), BodyObjectsList.get(i));
 					
-					}
+							}
 
-					// 2nd possibility: DataNumberProperty
-					if (Pattern.matches("(?sm).*^\t\t<swivt:type rdf:resource=\"http://semantic-mediawiki.org/swivt/1.0#_num\"/>$.*", currentPredicatePage)) {
+							// 2nd possibility: DataNumberProperty
+							if (Pattern.matches("(?sm).*^\t\t<swivt:type rdf:resource=\"http://semantic-mediawiki.org/swivt/1.0#_num\"/>$.*", currentPredicatePage)) {
 					
-						// Assume: our i-th triple looks like "Patient hasAge Age"
-						// The handling of this case is similar to the object property, with one difference: we do not create a class for Age  
-						// It makes sense, since one uses DataNumberProperties to bind some value to a variable and then
-						// to compare this variable against some threshold within a swrl built-in like: 
-						// "Patient(?p), hasAge(?p, ?age), greaterThan(?age, 70)".
+								// Assume: our i-th triple looks like "Patient hasAge Age"
+								// The handling of this case is similar to the object property, with one difference: we do not create a class for Age  
+								// It makes sense, since one uses DataNumberProperties to bind some value to a variable and then
+								// to compare this variable against some threshold within a swrl built-in like: 
+								// "Patient(?p), hasAge(?p, ?age), greaterThan(?age, 70)".
 						
-						body = addRuleClass(body, BodySubjectsList.get(i), BodySubjectsList.get(i));	
-						body = addRuleDataNumberProperty(body, currentPredicate, BodySubjectsList.get(i), BodyObjectsList.get(i));
+								body = addRuleClass(body, BodySubjectsList.get(i), BodySubjectsList.get(i));	
+								body = addRuleDataNumberProperty(body, currentPredicate, BodySubjectsList.get(i), BodyObjectsList.get(i));
 					
+							}
+						}
+						
+						//check
+						//System.out.println(currentPredicatePage);
+						scanner.close();
 					}
 				}
-
-				//check
-				//System.out.println(currentPredicatePage);
-				scanner.close();
-				}
-				}
-	    	}
+	    	}	
+	    }
 	    
 		System.out.println("Body Subjects list: " + BodySubjectsList);
 		System.out.println("Body Objects list: " + BodyObjectsList);
@@ -224,7 +258,29 @@ public class RDFExportParser {
     			  default:
     			    System.err.println( "Unknown concept type: " + conceptType );
     			}
-	    	}	    	
+	    	}
+	    	else {
+	    		/* Predicates with key word "Property" are rdfexported as full resources:
+		    	 * 		<property:HasPredicate1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_Age"/>
+		    	 * perform appropriate parsing 
+		    	 */
+	    		if (Pattern.matches("\\s*<property:HasHeadPredicate\\d+ rdf:resource=\"" + base + "Property-3A[a-zA-Z_0-9:,?\"./]+\"/>", line)) {
+
+	    			//Which triple it belongs to?
+	    			int conceptNumber = Integer.parseInt(line.substring(line.indexOf(" ")-1, line.indexOf(" "))); 
+	    			
+	    			//parse the immediate name of the concept
+		    		Pattern patternTab = Pattern.compile("\\s*<property:HasHeadPredicate\\d+ rdf:resource=\"" + base + "Property-3A([a-zA-Z_0-9:,?\"./]+)\"/>");
+					Matcher mtchTab = patternTab.matcher(line);
+					String conceptName = null;
+					while (mtchTab.find()) {
+						//store it in the variable conceptName
+						conceptName = mtchTab.group(1);
+					}
+					
+					HeadPredicatesList.add(conceptNumber-1, conceptName);
+	    		}
+	    	}
 	    }
 	    br.close();	
 	    
@@ -235,16 +291,22 @@ public class RDFExportParser {
 	    for (int i=0; i < HeadPredicatesList.size(); i++) {
 			String currentPredicate = HeadPredicatesList.get(i);
 			
-			/* If we deal with the "is"-relation at the head side, then we handle it in the following way: 
-			 * "Patient is HeavyPatient" --> "Patient(?patient) => HeavyPatient(?patient)"  
+			/* If the current predicate is "Has_OPType"-relation, then we save the appropriate object to the OPType variable and send it to the AnnotationsPropertiesImplantator2
 			 */
-			if (currentPredicate.equalsIgnoreCase("Is")) {
-				body = addRuleClass(body, HeadSubjectsList.get(i), HeadSubjectsList.get(i));	
-				head = addRuleClass(head, HeadObjectsList.get(i), HeadSubjectsList.get(i));	
-				
-				//check
-				//System.out.println("CHECK!!!!!!!!!!!!!!!!!");
+			if (currentPredicate.equalsIgnoreCase("Has_OPType")) {
+				OPType = BodyObjectsList.get(i);
 			}
+			else {
+				/* If we deal with the "is"-relation at the head side, then we handle it in the following way: 
+				 * "Patient is HeavyPatient" --> "Patient(?patient) => HeavyPatient(?patient)"  
+				 */
+				if (currentPredicate.equalsIgnoreCase("Is")) {
+					body = addRuleClass(body, HeadSubjectsList.get(i), HeadSubjectsList.get(i));	
+					head = addRuleClass(head, HeadObjectsList.get(i), HeadSubjectsList.get(i));	
+				
+					//check
+					//System.out.println("CHECK!!!!!!!!!!!!!!!!!");
+				}
 				else {
 					//get the RDF export of the current predicate
 					Scanner scanner = new Scanner(new URL("http://localhost/mediawiki/index.php/Special:ExportRDF/" + currentPredicate).openStream(), "UTF-8").useDelimiter("\\A");
@@ -314,7 +376,7 @@ public class RDFExportParser {
 					//System.out.println(currentPredicatePage);
 					scanner.close();
 				}
-			
+	    	}
 	    }
 		System.out.println("Head Subjects list: " + HeadSubjectsList);
 		System.out.println("Head Objects list: " + HeadObjectsList);

@@ -75,7 +75,9 @@ public class Service {
 		model.read(in, "");
 		
 		//Close the Model and free up resources held.
-		in.close();// Create a SPARQL query from the given string.
+		in.close();
+		
+		// Create a SPARQL query from the given string.
 		Query query = QueryFactory.create(querystring);
 
 		//check
@@ -115,7 +117,7 @@ public class Service {
 		//get the output path via ServletContext method "getRealPath" (explanation at the end)
 		String outputPath = context.getRealPath("/files/output/") + "/" + ruleName + "_fit.owl";
 		
-		AnnotationPropertiesImplantator implantator = new AnnotationPropertiesImplantator();
+		AnnotationPropertiesImplantator2 implantator = new AnnotationPropertiesImplantator2();
 		implantator.action(swrlRule, outputPath);
 	
 	}

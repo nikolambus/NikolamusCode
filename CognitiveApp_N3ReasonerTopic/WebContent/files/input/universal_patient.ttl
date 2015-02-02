@@ -1,0 +1,93 @@
+@prefix xnat: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+@prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+    
+@prefix surgi: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/> .
+@prefix surgiProp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+@prefix surgiCat: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A> .
+	
+@prefix base: <http://localhost/mediawiki/index.php/Special:URIResolver/> .
+@prefix baseProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A> .
+@prefix baseCat: <http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A> .
+    
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#CHILDPUGH
+
+[ a baseCat:Observation;
+    baseProp:hasFactor base:Bilirubin;
+    baseProp:hasPatient xnatpatient:ABC;
+    baseProp:hasObsValue 2.7 ] .
+
+[ a baseCat:Observation;
+    baseProp:hasFactor base:Albumin;
+    baseProp:hasPatient xnatpatient:ABC;
+    baseProp:hasObsValue 8.9 ] .
+
+[ a baseCat:Observation;
+    baseProp:hasFactor base:INR;
+    baseProp:hasPatient xnatpatient:ABC;
+    baseProp:hasObsValue 3.5 ] .
+
+[ a baseCat:Observation;
+    baseProp:hasFactor base:Ascites;
+    baseProp:hasPatient xnatpatient:ABC;
+    baseProp:hasObsValue "No" ] .
+
+[ a baseCat:Observation;
+    baseProp:hasFactor base:Encephalopathy;
+    baseProp:hasPatient xnatpatient:ABC;
+    baseProp:hasObsValue "Stage I - II" ] .
+
+# SF
+
+[ a baseCat:Observation;
+    baseProp:hasFactor base:TotalTumorSize;
+    baseProp:hasPatient xnatpatient:ABC;
+    baseProp:hasObsValue 7.5 ] .
+
+# SF and FONG
+
+[ a baseCat:Observation;
+    baseProp:hasFactor base:NumberOfTumors;
+    baseProp:hasPatient xnatpatient:ABC;
+    baseProp:hasObsValue 3 ] .
+
+[ a baseCat:Observation;
+    baseProp:hasFactor base:MaxTumorSize;
+    baseProp:hasPatient xnatpatient:ABC;
+    baseProp:hasObsValue 3.5 ] .
+
+# only FONG
+
+[ a baseCat:Observation;
+    baseProp:hasFactor xnat:PositiveLymphNode;  
+    baseProp:hasPatient xnatpatient:ABC;
+    baseProp:hasObsValue "Yes" ] .
+
+[ a baseCat:Observation;
+    baseProp:hasFactor base:IntervalFromResectionToMetastases;  
+    baseProp:hasPatient xnatpatient:ABC;
+    baseProp:hasObsValue 8 ] .
+
+[ a baseCat:Observation;
+    baseProp:hasFactor base:CEALevel;  
+    baseProp:hasPatient xnatpatient:ABC;
+    baseProp:hasObsValue 150 ] .
+    
+ # RINGSELECTION   
+    
+[ a baseCat:Observation;
+  baseProp:hasFactor base:leaflet_sclerosis ;
+  baseProp:hasObsValue "yes" ;
+  baseProp:hasPatient xnatpatient:ABC
+] .
+
+[ a baseCat:Observation;
+  baseProp:hasFactor base:leaflet ;
+  baseProp:hasObsValue "elongated" ;
+  baseProp:hasPatient xnatpatient:ABC
+] .
+    

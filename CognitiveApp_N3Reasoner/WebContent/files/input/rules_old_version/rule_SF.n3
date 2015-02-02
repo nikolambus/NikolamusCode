@@ -1,0 +1,128 @@
+    @prefix xnat: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+    @prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+    
+    @prefix surgi: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/> .
+	@prefix surgiProp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+	@prefix surgiCat: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A> .
+	
+	@prefix base: <http://localhost/mediawiki/index.php/Special:URIResolver/> .
+	@prefix baseProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A> .
+	@prefix baseCat: <http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A> .
+    
+    @prefix log: <http://www.w3.org/2000/10/swap/log#>.
+    @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+    @prefix time: <http://www.w3.org/2000/10/swap/time#>.
+    @prefix string: <http://www.w3.org/2000/10/swap/string#>.
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#yes-yes-path of decision tree
+
+{
+ ?o1 a baseCat:Observation ;
+ 	 baseProp:hasPatient ?p ;
+     baseProp:hasFactor base:NumberOfTumors ; 
+     baseProp:hasObsValue ?not . 
+ ?not math:notGreaterThan 1 .  
+ 
+ ?o2 a baseCat:Observation ; 
+	 baseProp:hasPatient ?p ;
+     baseProp:hasFactor base:MaxTumorSize ; 
+     baseProp:hasObsValue ?mts . 
+ ?mts math:lessThan 6.5  
+} => {
+	_:SFbnode a baseCat:Observation .
+	_:SFbnode baseProp:hasPatient ?p .
+	_:SFbnode baseProp:hasFactor base:SF_criteria .
+	_:SFbnode baseProp:hasObsValue "SF_criteria_fulfilled" .
+} .
+	
+#no-yes-yes-yes-path of decision tree
+{
+ ?o1 a baseCat:Observation ; 
+ 	 baseProp:hasPatient ?p ;
+  	 baseProp:hasFactor base:NumberOfTumors ; 
+ 	 baseProp:hasObsValue ?not . 
+ ?not math:greaterThan 1 ;  
+      math:lessThan 4 .
+ 
+ ?o2 a baseCat:Observation ; 
+  	 baseProp:hasPatient ?p ;
+     baseProp:hasFactor base:MaxTumorSize ; 
+     baseProp:hasObsValue ?mts . 
+ ?mts math:notGreaterThan 4.5 .
+ 
+ ?o3 a baseCat:Observation ; 
+  	 baseProp:hasPatient ?p ;
+   	 baseProp:hasFactor base:TotalTumorSize ; 
+   	 baseProp:hasObsValue ?tts . 
+ ?tts math:lessThan 8    
+} => {
+	_:SFbnode a baseCat:Observation .
+	_:SFbnode baseProp:hasPatient ?p .
+	_:SFbnode baseProp:hasFactor base:SF_criteria .
+	_:SFbnode baseProp:hasObsValue "SF_criteria_fulfilled" .
+} .	
+
+#no-no-Pfad
+{
+ ?o1 a baseCat:Observation ; 
+ 	 baseProp:hasPatient ?p ;
+  	 baseProp:hasFactor base:NumberOfTumors ; 
+ 	 baseProp:hasObsValue ?not . 
+ ?not math:notLessThan 4 
+} => { 
+	_:SFbnode a baseCat:Observation .
+	_:SFbnode baseProp:hasPatient ?p .
+	_:SFbnode baseProp:hasFactor base:SF_criteria .
+	_:SFbnode baseProp:hasObsValue "SF_criteria_not_fulfilled" .
+	} .	
+
+#no-yes-no-Pfad
+
+{
+ ?o1 a baseCat:Observation ; 
+ 	 baseProp:hasPatient ?p ;
+  	 baseProp:hasFactor base:NumberOfTumors ; 
+ 	 baseProp:hasObsValue ?not . 
+ ?not math:greaterThan 1 .  
+ ?not math:lessThan 4 .
+ 
+ ?o2 a baseCat:Observation ; 
+ 	 baseProp:hasPatient ?p ;
+   	 baseProp:hasFactor base:MaxTumorSize ; 
+  	 baseProp:hasObsValue ?mts . 
+ ?mts math:greaterThan 4.5
+} => { 
+	_:SFbnode a baseCat:Observation .
+	_:SFbnode baseProp:hasPatient ?p .
+	_:SFbnode baseProp:hasFactor base:SF_criteria .
+	_:SFbnode baseProp:hasObsValue "SF_criteria_not_fulfilled" .
+	} .
+	
+#no-yes-yes-no-Pfad
+
+{
+ ?o1 a baseCat:Observation ; 
+  	 baseProp:hasPatient ?p ;
+  	 baseProp:hasFactor base:NumberOfTumors ; 
+ 	 baseProp:hasObsValue ?not . 
+ ?not math:greaterThan 1 .  
+ ?not math:lessThan 4 .
+ 
+ ?o2 a baseCat:Observation ; 
+   	 baseProp:hasPatient ?p ;
+   	 baseProp:hasFactor base:MaxTumorSize ; 
+  	 baseProp:hasObsValue ?mts . 
+ ?mts math:notGreaterThan 4.5 .
+  
+ ?o3 a baseCat:Observation ; 
+     baseProp:hasPatient ?p ;
+   	 baseProp:hasFactor base:TotalTumorSize ; 
+   	 baseProp:hasObsValue ?tts . 
+ ?tts math:notLessThan 8 	
+} => { 
+	_:SFbnode a baseCat:Observation .
+	_:SFbnode baseProp:hasPatient ?p .
+	_:SFbnode baseProp:hasFactor base:SF_criteria .
+	_:SFbnode baseProp:hasObsValue "SF_criteria_not_fulfilled" .
+	} .

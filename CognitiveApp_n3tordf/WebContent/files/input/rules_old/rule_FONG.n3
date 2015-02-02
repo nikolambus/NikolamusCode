@@ -1,0 +1,221 @@
+    @prefix xnat: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+    @prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+    
+    @prefix surgi: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/> .
+	@prefix surgiProp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+	@prefix surgiCat: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A> .
+	
+	@prefix base: <http://localhost/mediawiki/index.php/Special:URIResolver/> .
+	@prefix baseProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A> .
+	@prefix baseCat: <http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A> .
+    
+    @prefix log: <http://www.w3.org/2000/10/swap/log#>.
+    @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+    @prefix time: <http://www.w3.org/2000/10/swap/time#>.
+    @prefix string: <http://www.w3.org/2000/10/swap/string#>.
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+ 
+#1    
+{ 
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:PositiveLymphNode .
+ ?o1 baseProp:hasObsValue "No" .
+ ?o1 baseProp:hasPatient ?p
+} => {
+	base:scoresHelpNode a log:Chaff .
+	base:scoresHelpNode baseProp:hasScorePosNode 0 ;
+						baseProp:hasPatient ?p .
+	} .
+
+#2
+{ 
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor xnat:PositiveLymphNode .
+ ?o1 baseProp:hasObsValue "Yes" .
+ ?o1 baseProp:hasPatient ?p
+} => {
+	base:scoresHelpNode a log:Chaff .
+	base:scoresHelpNode baseProp:hasScorePosNode 1 ;
+						baseProp:hasPatient ?p .
+	} .	
+	
+#3    
+{ 
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:IntervalFromResectionToMetastases .
+ ?o1 baseProp:hasObsValue ?interval .
+ ?o1 baseProp:hasPatient ?p .
+ ?interval math:notLessThan 12
+} => {
+	base:scoresHelpNode baseProp:hasScoreInterval 0 ;
+						baseProp:hasPatient ?p .
+	} .
+
+#4
+{ 
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:IntervalFromResectionToMetastases .
+ ?o1 baseProp:hasObsValue ?interval .
+ ?o1 baseProp:hasPatient ?p .
+ ?interval math:lessThan 12
+} => {
+	base:scoresHelpNode baseProp:hasScoreInterval 1 ;
+						baseProp:hasPatient ?p .
+	} .
+
+#5
+{ 
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:NumberOfTumors .
+ ?o1 baseProp:hasObsValue ?numTum .
+ ?o1 baseProp:hasPatient ?p .
+ ?numTum math:notGreaterThan 1
+} => {
+	base:scoresHelpNode baseProp:hasScoreNumTum 0 ;
+						baseProp:hasPatient ?p .
+	} .
+	
+#6
+{ 
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:NumberOfTumors .
+ ?o1 baseProp:hasObsValue ?numTum .
+ ?o1 baseProp:hasPatient ?p .
+ ?numTum math:greaterThan 1
+} => {
+	base:scoresHelpNode baseProp:hasScoreNumTum 1 ;
+						baseProp:hasPatient ?p .
+	} .
+
+#7
+{ 
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:CEALevel .
+ ?o1 baseProp:hasObsValue ?cea .
+ ?o1 baseProp:hasPatient ?p .
+ ?cea math:notGreaterThan 200
+} => {
+	base:scoresHelpNode baseProp:hasScoreCEA 0 ;
+						baseProp:hasPatient ?p .
+	} .
+	
+#8
+{ 
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:CEALevel .
+ ?o1 baseProp:hasObsValue ?cea .
+ ?o1 baseProp:hasPatient ?p .
+ ?cea math:greaterThan 200
+} => {
+	base:scoresHelpNode baseProp:hasScoreCEA 1 ;
+						baseProp:hasPatient ?p .
+	} .	
+
+#9
+{ 
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:MaxTumorSize .
+ ?o1 baseProp:hasObsValue ?maxTumorSize .
+ ?o1 baseProp:hasPatient ?p .
+ ?maxTumorSize math:notGreaterThan 5
+} => {
+	base:scoresHelpNode baseProp:hasScoreMaxTumorSize 0 ;
+						baseProp:hasPatient ?p .
+	} .
+
+#10
+{ 
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:MaxTumorSize .
+ ?o1 baseProp:hasObsValue ?maxTumorSize .
+ ?o1 baseProp:hasPatient ?p .
+ ?maxTumorSize math:greaterThan 5
+} => {
+	base:scoresHelpNode baseProp:hasScoreMaxTumorSize 1 ;
+						baseProp:hasPatient ?p .
+	} .	
+
+#11
+{ 
+ base:scoresHelpNode baseProp:hasPatient ?p .
+ base:scoresHelpNode baseProp:hasScorePosNode ?posNode .
+ base:scoresHelpNode baseProp:hasScoreInterval ?interval .
+ base:scoresHelpNode baseProp:hasScoreNumTum ?num .
+ base:scoresHelpNode baseProp:hasScoreCEA ?cea .
+ base:scoresHelpNode baseProp:hasScoreMaxTumorSize ?msize .
+ (?posNode ?interval ?num ?cea ?msize) math:sum ?s .
+ ?s math:equalTo 5
+} => {
+	_:FongObs a baseCat:Observation .
+	_:FongObs baseProp:hasFactor base:Fong .
+	_:FongObs baseProp:hasPatient ?p .
+	_:FongObs baseProp:hasObsValue "Prognostic survival of 15 months" .
+	} .
+	
+#12
+{ 
+ base:scoresHelpNode baseProp:hasPatient ?p .
+ base:scoresHelpNode baseProp:hasScorePosNode ?posNode .
+ base:scoresHelpNode baseProp:hasScoreInterval ?interval .
+ base:scoresHelpNode baseProp:hasScoreNumTum ?num .
+ base:scoresHelpNode baseProp:hasScoreCEA ?cea .
+ base:scoresHelpNode baseProp:hasScoreMaxTumorSize ?msize .
+ (?posNode ?interval ?num ?cea ?msize) math:sum ?s .
+ ?s math:equalTo 4
+} => {
+	_:FongObs a baseCat:Observation .
+	_:FongObs baseProp:hasFactor base:Fong .
+	_:FongObs baseProp:hasPatient ?p .
+	_:FongObs baseProp:hasObsValue "Prognostic survival of 30 months" .
+	} .
+	
+#13
+{ 
+ base:scoresHelpNode baseProp:hasPatient ?p .
+ base:scoresHelpNode baseProp:hasScorePosNode ?posNode .
+ base:scoresHelpNode baseProp:hasScoreInterval ?interval .
+ base:scoresHelpNode baseProp:hasScoreNumTum ?num .
+ base:scoresHelpNode baseProp:hasScoreCEA ?cea .
+ base:scoresHelpNode baseProp:hasScoreMaxTumorSize ?msize .
+ (?posNode ?interval ?num ?cea ?msize) math:sum ?s .
+ ?s math:equalTo 3
+} => {
+	_:FongObs a baseCat:Observation .
+	_:FongObs baseProp:hasFactor base:Fong .
+	_:FongObs baseProp:hasPatient ?p .
+	_:FongObs baseProp:hasObsValue "Prognostic survival of 50 months" .
+	} .
+
+#14
+{ 
+ base:scoresHelpNode baseProp:hasPatient ?p .
+ base:scoresHelpNode baseProp:hasScorePosNode ?posNode .
+ base:scoresHelpNode baseProp:hasScoreInterval ?interval .
+ base:scoresHelpNode baseProp:hasScoreNumTum ?num .
+ base:scoresHelpNode baseProp:hasScoreCEA ?cea .
+ base:scoresHelpNode baseProp:hasScoreMaxTumorSize ?msize .
+ (?posNode ?interval ?num ?cea ?msize) math:sum ?s .
+ ?s math:equalTo 2
+} => {
+	_:FongObs a baseCat:Observation .
+	_:FongObs baseProp:hasFactor base:Fong .
+	_:FongObs baseProp:hasPatient ?p .
+	_:FongObs baseProp:hasObsValue "Prognostic survival of 73 months" .
+	} .
+	
+#15
+{ 
+ base:scoresHelpNode baseProp:hasPatient ?p .
+ base:scoresHelpNode baseProp:hasScorePosNode ?posNode .
+ base:scoresHelpNode baseProp:hasScoreInterval ?interval .
+ base:scoresHelpNode baseProp:hasScoreNumTum ?num .
+ base:scoresHelpNode baseProp:hasScoreCEA ?cea .
+ base:scoresHelpNode baseProp:hasScoreMaxTumorSize ?msize .
+ (?posNode ?interval ?num ?cea ?msize) math:sum ?s .
+ ?s math:equalTo 1
+} => {
+	_:FongObs a baseCat:Observation .
+	_:FongObs baseProp:hasFactor base:Fong .
+	_:FongObs baseProp:hasPatient ?p .
+	_:FongObs baseProp:hasObsValue "Prognostic survival of 74 months" .
+	} .

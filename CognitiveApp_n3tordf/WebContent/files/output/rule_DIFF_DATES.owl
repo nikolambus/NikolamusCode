@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:base="http://localhost/mediawiki/index.php/Special:URIResolver/" xmlns:baseVar="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#" xmlns:baseProp="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:swrl="http://www.w3.org/2003/11/swrl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:surgi="http://surgipedia.sfb125.de/wiki/Special:URIResolver/" xmlns:surgiProp="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A" xmlns:surgiCat="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A" xmlns:baseCat="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A" xmlns:math="http://www.w3.org/2000/10/swap/math#" xmlns:time="http://www.w3.org/2000/10/swap/time#" xmlns:log="http://www.w3.org/2000/10/swap/log#" >
+
+<!-- 
+///////////////////////////////////////////////////////////////////////////////////////
+//
+// Rule-URI
+//
+///////////////////////////////////////////////////////////////////////////////////////
+-->
+
+
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_DIFF_DATES">
+  <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver//Category-3AGuidelineRule"/>
+  <base:Property-3AHas_N3RuleFile rdf:resource="http://localhost:8080/CognitiveApp6/files/input/rule_DIFF_DATES.n3"/>
+  <base:Property-3AHas_SWRLRuleFile rdf:resource="http://localhost:8080/CognitiveApp6/files/output/rule_DIFF_DATES.owl"/>
+</rdf:Description>
+<!-- 
+///////////////////////////////////////////////////////////////////////////////////////
+//
+// Annotation Properties
+//
+///////////////////////////////////////////////////////////////////////////////////////
+-->
+
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_name -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_name"/>
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_SWRLRuleFile -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_SWRLRuleFile"/>
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_N3RuleFile -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_N3RuleFile"/>
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_topic -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_topic"/>
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AIs_premise_of -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AIs_premise_of"/>
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AIs_conclusion_of -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AIs_conclusion_of"/>
+    
+
+<!-- 
+///////////////////////////////////////////////////////////////////////////////////////
+//
+// Concept Individuals 
+//
+///////////////////////////////////////////////////////////////////////////////////////
+-->
+
+
+
+<!-- 
+///////////////////////////////////////////////////////////////////////////////////////
+//
+// Rules 
+//
+///////////////////////////////////////////////////////////////////////////////////////
+-->
+
+
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#factor">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#date1">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o2">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#date2">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#dateInSecs1">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#dateInSecs2">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_DIFF_DATES#1">
+    <base:Property-3AHas_topic rdf:resource="http://www.w3.org/2000/10/swap/log#Chaff"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_DIFF_DATES"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:IndividualPropertyAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_DIFF_DATES#1"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#factor"/>
+               </swrl:IndividualPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_DIFF_DATES#1"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_DIFF_DATES#1"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsDate"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#date1"/>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:IndividualPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_DIFF_DATES#1"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o2"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#factor"/>
+                                       </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                        <swrl:AtomList>
+                                            <rdf:first>
+                                               <swrl:IndividualPropertyAtom>
+                                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_DIFF_DATES#1"/>
+                                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o2"/>
+                                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                                               </swrl:IndividualPropertyAtom>
+                                            </rdf:first>
+                                            <rdf:rest>
+                                                <swrl:AtomList>
+                                                    <rdf:first>
+                                                       <swrl:DatavaluedPropertyAtom>
+                                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_DIFF_DATES#1"/>
+                                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o2"/>
+                                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsDate"/>
+                                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#date2"/>
+                                                       </swrl:DatavaluedPropertyAtom>
+                                                    </rdf:first>
+                                                    <rdf:rest>
+                                                        <swrl:AtomList>
+                                                            <rdf:first>
+                                                               <swrl:DatavaluedPropertyAtom>
+                                                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_DIFF_DATES#1"/>
+                                                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#date1"/>
+                                                                 <swrl:propertyPredicate rdf:resource="http://www.w3.org/2000/10/swap/time#inSeconds"/>
+                                                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#dateInSecs1"/>
+                                                               </swrl:DatavaluedPropertyAtom>
+                                                            </rdf:first>
+                                                            <rdf:rest>
+                                                                <swrl:AtomList>
+                                                                    <rdf:first>
+                                                                       <swrl:DatavaluedPropertyAtom>
+                                                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_DIFF_DATES#1"/>
+                                                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#date2"/>
+                                                                         <swrl:propertyPredicate rdf:resource="http://www.w3.org/2000/10/swap/time#inSeconds"/>
+                                                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#dateInSecs2"/>
+                                                                       </swrl:DatavaluedPropertyAtom>
+                                                                    </rdf:first>
+                                                                    <rdf:rest>
+                                                                        <swrl:AtomList>
+                                                                            <rdf:first>
+                                                                               <rdf:Description>
+                                                                               	<rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                               	<swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                                                               	<base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_DIFF_DATES#1"/>
+                                                                               	<swrl:arguments>
+                                                                               		<rdf:Description>
+                                                                               			<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                               			<rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#dateInSecs1"/>
+                                                                               			<rdf:rest>
+                                                                               				<rdf:Description>
+                                                                               					<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                               					<rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#dateInSecs2"/>
+                                                                               					<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                               				</rdf:Description>
+                                                                               			</rdf:rest>
+                                                                               		</rdf:Description>
+                                                                               	</swrl:arguments>
+                                                                               </rdf:Description>
+                                                                            </rdf:first>
+                                                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                        </swrl:AtomList>
+                                                                    </rdf:rest>
+                                                                </swrl:AtomList>
+                                                            </rdf:rest>
+                                                        </swrl:AtomList>
+                                                    </rdf:rest>
+                                                </swrl:AtomList>
+                                            </rdf:rest>
+                                        </swrl:AtomList>
+                                    </rdf:rest>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_DIFF_DATES#1"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                 <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/log#Chaff"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+</rdf:RDF>

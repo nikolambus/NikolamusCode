@@ -1,0 +1,27 @@
+@prefix ex: <http://example/heart#>.
+
+#1
+{
+ ?o1 a ex:Observation ; 
+     ex:hasFactor ex:leaflet_thickening_(length) ; 
+     ex:hasObsValue "yes" ;
+     ex:hasPatient ?p 
+} => {
+	?o1 a ex:Biba ; 
+		ex:hasFactor ex:MR ; 
+     	ex:hasObsValue "degenerative" ;
+  		ex:hasPatient ?p .
+      } .
+
+#2
+{
+ ?o1 a ex:Observation ; 
+     ex:hasFactor ex:leaflet_sclerosis ; 
+     ex:hasObsValue "yes" ;
+     ex:hasPatient ?p .	
+} => {
+	_:bnode a ex:Observation ; 
+		ex:hasFactor ex:MR ; 
+     	ex:hasObsValue "degenerative" ;
+  		ex:hasPatient ?p .
+      } .

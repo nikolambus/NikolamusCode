@@ -134,14 +134,31 @@ public class Service {
 			Model model2 = ModelFactory.createDefaultModel();
 			
 			//loading local files and triples form them  (using them as a local triple store)
-	        model2.read("http://localhost:8080/CognitiveApp2/files/output/RudisRule2.owl", "RDF/XML");
-	        
-	        // construct a query which would select the n3 rule file given a ruleURI
+		    model2.read("http://localhost:8080/CognitiveApp6/files/output/rule_CHILDPUGH.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp6/files/output/rule_SF.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp6/files/output/rule_FONG.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp6/files/output/rule_RINGSELECTION.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp2/files/output/RulePancreas1.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp2/files/output/RulePancreas2.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp2/files/output/RulePancreas3.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp2/files/output/RulePancreas4.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp2/files/output/RulePancreas5.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp2/files/output/RuleCCE1.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp2/files/output/RuleCCE2.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp2/files/output/RuleCCE3.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp2/files/output/TestRule0.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp2/files/output/TestRule1.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp2/files/output/TestRule2.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp2/files/output/TestRule3.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp2/files/output/TestRule4.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp4b/files/output/ContextPancreas1.owl", "RDF/XML");
+	        model2.read("http://localhost:8080/CognitiveApp4b/files/output/ContextCCE1.owl", "RDF/XML");	        
+	        // construct a query which would select the swrl rule file given a ruleURI
 	        String querystring2 = ServiceHelper.getSparqlPatternForSWRLRuleFile(prefix, ruleName);
 			QuerySolution soln2 = ServiceHelper.evaluationOfSPARQLQueryAgainstModel(querystring2, model2);
 
 			if (soln2 == null) {
-				System.out.println("Could not find the n3 rule file from rule URI \"" + rule + "\"");
+				System.out.println("Could not find the swrl rule file from rule URI \"" + rule + "\"");
 			}
 			else {
 				swrlRuleFile = soln2.getResource("swrlRuleFile").toString();

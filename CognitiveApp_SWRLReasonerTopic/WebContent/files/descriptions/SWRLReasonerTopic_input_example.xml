@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	
+	xmlns:surgi="http://surgipedia.sfb125.de/wiki/Special:URIResolver/"
+	xmlns:surgiProp="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A"
+	xmlns:surgiCat="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A"
+	
+	xmlns:base="http://localhost/mediawiki/index.php/Special:URIResolver/"
+	xmlns:baseCat="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A"
+	xmlns:baseProp="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A"
+	
+	xmlns:swrlr="http://localhost:8080/CognitiveApp5b/files/ontologies/swrlr#">
+	
+	<!-- The first group of above namespaces targets the case of Surgipedia -->
+	<!-- The first group of above namespaces targets the case of localhost -->
+	
+	<rdf:Description rdf:about="http://www.example.com/Request_05_Example">
+		<rdf:type rdf:resource="http://surgipedia.swrlrb125.de/wiki/Special:URIResolver/Category-3ARequest"/>
+		<surgiProp:Has_Topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Auffaelliger_Befund"/>
+		<surgiProp:Has_PatientFile>
+			<rdf:Description rdf:about="http://localhost:8080/CognitiveApp4b/files/output/Patient2Triples.owl">
+				<dc:format>application/rdf+xml</dc:format> 
+			</rdf:Description>		
+		</surgiProp:Has_PatientFile>
+	</rdf:Description>
+</rdf:RDF>

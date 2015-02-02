@@ -1,0 +1,94 @@
+#Processed by Id: cwm.py,v 1.197 2007/12/13 15:38:39 syosi Exp 
+        #    using base http://localhost:8080/CognitiveApp/files/input/universal_patient2.ttl
+            @prefix base: <http://localhost/mediawiki/index.php/Special:URIResolver/> .
+    @prefix baseCat: <http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A> .
+    @prefix baseProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A> .
+    @prefix log: <http://www.w3.org/2000/10/swap/log#> .
+    @prefix math: <http://www.w3.org/2000/10/swap/math#> .
+    @prefix string: <http://www.w3.org/2000/10/swap/string#> .
+    @prefix surgi: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/> .
+    @prefix surgiCat: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A> .
+    @prefix surgiProp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+    @prefix time: <http://www.w3.org/2000/10/swap/time#> .
+    @prefix xnat: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+    @prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    
+    base:scoresHelpnode     base:Property-3AhasPatient xnatpatient:ABC;
+         base:Property-3AhasScoreCEA 1;
+         base:Property-3AhasScoreInterval 0;
+         base:Property-3AhasScoreMaxTumorSize 0;
+         base:Property-3AhasScoreNumTum 0 .
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:Albumin;
+             base:Property-3AhasObsDate "2015-02-10"^^xsd:date;
+             base:Property-3AhasObsValue 2.0;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:Albumin;
+             base:Property-3AhasObsDate "2015-02-11"^^xsd:date;
+             base:Property-3AhasObsValue 3.0;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:Bilirubin;
+             base:Property-3AhasObsDate "2015-02-05"^^xsd:date;
+             base:Property-3AhasObsValue 2.5;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:INR;
+             base:Property-3AhasObsValue 3.5;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:Ascites;
+             base:Property-3AhasObsValue "No";
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:Encephalopathy;
+             base:Property-3AhasObsValue "Stage I - II";
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:TotalTumorSize;
+             base:Property-3AhasObsValue 2.3;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:NumberOfTumors;
+             base:Property-3AhasObsValue 1;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:MaxTumorSize;
+             base:Property-3AhasObsValue 2.3;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor xnat:PositiveLymphNode;
+             base:Property-3AhasObsValue "No";
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:IntervalFromResectionToMetastases;
+             base:Property-3AhasObsValue 16;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:CEALevel;
+             base:Property-3AhasObsValue 270;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:fibrosis;
+             base:Property-3AhasObsValue "yes";
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:leaflet;
+             base:Property-3AhasObsValue "normal";
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    

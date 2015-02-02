@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://localhost/mediawiki/index.php/Special:URIResolver/"
+     xml:base="http://localhost/mediawiki/index.php/Special:URIResolver/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:URIResolver="http://localhost/mediawiki/index.php/Special:URIResolver/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3ABelongsToPhase -->
+
+    <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3ABelongsToPhase"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_ABoxesFile -->
+
+    <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_ABoxesFile"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Grasp -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Grasp">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/PreviousPhase -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/PreviousPhase">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Atraumatic_grasper -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Atraumatic_grasper">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Closure -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Closure">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/CurrentPhase -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/CurrentPhase">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/DetectedPhase -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/DetectedPhase">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Dissection -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Dissection">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Drain -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Drain">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/End -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/End">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Gastrocolic_ligament -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Gastrocolic_ligament">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Mobilisation -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Mobilisation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Port_placement -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Port_placement">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Resection -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Resection">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Start -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Start">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Atraumatic_grasper1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Atraumatic_grasper1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Atraumatic_grasper"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <Grasp rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Gastrocolic_ligament1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Closure1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Closure1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Closure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Resection1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Dissection1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Dissection1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Dissection"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Dissection1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Mobilistation1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Port_placement1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Resection1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Drain1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Drain1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Drain"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Closure1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Mobilistation1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Port_placement1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Resection1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#End1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#End1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/End"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Dissection1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Drain1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Mobilistation1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Resection1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Gastrocolic_ligament1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Gastrocolic_ligament1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Gastrocolic_ligament"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Mobilistation1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Mobilistation1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/DetectedPhase"/>
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Mobilisation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Closure1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Dissection1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Mobilistation1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Port_placement1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Resection1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Start1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Port_placement1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Port_placement1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/CurrentPhase"/>
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Port_placement"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Dissection1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Mobilistation1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Resection1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Start1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Resection1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Resection1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Resection"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Closure1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Dissection1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Mobilistation1"/>
+        <PreviousPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Resection1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Start1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Start1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Start"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/ContextPancreas1">
+        <Property-3ABelongsToPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Mobilistation1"/>
+        <Property-3AHas_ABoxesFile rdf:resource="http://localhost:8080/CognitiveApp4b/files/output/ContextPancreas1.owl"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.5-SNAPSHOT) http://owlapi.sourceforge.net -->
+

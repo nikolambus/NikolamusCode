@@ -1,0 +1,2180 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:base="http://localhost/mediawiki/index.php/Special:URIResolver/" xmlns:baseVar="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#" xmlns:baseProp="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:swrl="http://www.w3.org/2003/11/swrl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:xnat="http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#" xmlns:xnatpatient="http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#" xmlns:surgi="http://surgipedia.sfb125.de/wiki/Special:URIResolver/" xmlns:surgiProp="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A" xmlns:surgiCat="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A" xmlns:baseCat="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A" xmlns:log="http://www.w3.org/2000/10/swap/log#" xmlns:math="http://www.w3.org/2000/10/swap/math#" xmlns:time="http://www.w3.org/2000/10/swap/time#" xmlns:string="http://www.w3.org/2000/10/swap/string#" >
+
+<!-- 
+///////////////////////////////////////////////////////////////////////////////////////
+//
+// Rule-URI
+//
+///////////////////////////////////////////////////////////////////////////////////////
+-->
+
+
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG">
+  <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver//Category-3AGuidelineRule"/>
+  <base:Property-3AHas_N3RuleFile rdf:resource="http://localhost:8080/CognitiveApp6/files/input/rule_FONG.n3"/>
+  <base:Property-3AHas_SWRLRuleFile rdf:resource="http://localhost:8080/CognitiveApp6/files/output/rule_FONG.owl"/>
+</rdf:Description>
+<!-- 
+///////////////////////////////////////////////////////////////////////////////////////
+//
+// Annotation Properties
+//
+///////////////////////////////////////////////////////////////////////////////////////
+-->
+
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_name -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_name"/>
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_SWRLRuleFile -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_SWRLRuleFile"/>
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_N3RuleFile -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_N3RuleFile"/>
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_topic -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_topic"/>
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AIs_premise_of -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AIs_premise_of"/>
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AIs_conclusion_of -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AIs_conclusion_of"/>
+    
+
+<!-- 
+///////////////////////////////////////////////////////////////////////////////////////
+//
+// Concept Individuals 
+//
+///////////////////////////////////////////////////////////////////////////////////////
+-->
+
+
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/PositiveLymphNode">
+  <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#PositiveLymphNode">
+  <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/IntervalFromResectionToMetastases">
+  <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/NumberOfTumors">
+  <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/CEALevel">
+  <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/MaxTumorSize">
+  <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Fong">
+  <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<!-- 
+///////////////////////////////////////////////////////////////////////////////////////
+//
+// Rules 
+//
+///////////////////////////////////////////////////////////////////////////////////////
+-->
+
+
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#interval">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#numTum">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#cea">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#maxTumorSize">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#posNode">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#num">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#msize">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#s">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+</rdf:Description>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#1">
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/PositiveLymphNode"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+    <base:Property-3AHas_topic rdf:resource="http://www.w3.org/2000/10/swap/log#Chaff"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#1"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                 <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#1"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/PositiveLymphNode"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#1"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsValue"/>
+                                 <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">no</swrl:argument2>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:IndividualPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#1"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                                       </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#1"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                 <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/log#Chaff"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:DatavaluedPropertyAtom>
+                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#1"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScorePosNode"/>
+                         <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</swrl:argument2>
+                       </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:IndividualPropertyAtom>
+                                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#1"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                               </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#2">
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+    <base:Property-3AHas_topic rdf:resource="http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#PositiveLymphNode"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+    <base:Property-3AHas_topic rdf:resource="http://www.w3.org/2000/10/swap/log#Chaff"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#2"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                 <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#2"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                         <swrl:argument2 rdf:resource="http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#PositiveLymphNode"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#2"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsValue"/>
+                                 <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">yes</swrl:argument2>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:IndividualPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#2"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                                       </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#2"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                 <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/log#Chaff"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:DatavaluedPropertyAtom>
+                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#2"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScorePosNode"/>
+                         <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</swrl:argument2>
+                       </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:IndividualPropertyAtom>
+                                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#2"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                               </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#3">
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/IntervalFromResectionToMetastases"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#3"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                 <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#3"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/IntervalFromResectionToMetastases"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#3"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsValue"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#interval"/>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:IndividualPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#3"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                                       </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                        <swrl:AtomList>
+                                            <rdf:first>
+                                               <rdf:Description>
+                                               	<rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                               	<swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                               	<base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#3"/>
+                                               	<swrl:arguments>
+                                               		<rdf:Description>
+                                               			<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               			<rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#interval"/>
+                                               			<rdf:rest>
+                                               				<rdf:Description>
+                                               					<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               					<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</rdf:first>
+                                               					<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                               				</rdf:Description>
+                                               			</rdf:rest>
+                                               		</rdf:Description>
+                                               	</swrl:arguments>
+                                               </rdf:Description>
+                                            </rdf:first>
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                        </swrl:AtomList>
+                                    </rdf:rest>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:DatavaluedPropertyAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#3"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreInterval"/>
+                 <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</swrl:argument2>
+               </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#3"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#4">
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/IntervalFromResectionToMetastases"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#4"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                 <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#4"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/IntervalFromResectionToMetastases"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#4"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsValue"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#interval"/>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:IndividualPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#4"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                                       </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                        <swrl:AtomList>
+                                            <rdf:first>
+                                               <rdf:Description>
+                                               	<rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                               	<swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                               	<base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#4"/>
+                                               	<swrl:arguments>
+                                               		<rdf:Description>
+                                               			<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               			<rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#interval"/>
+                                               			<rdf:rest>
+                                               				<rdf:Description>
+                                               					<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               					<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</rdf:first>
+                                               					<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                               				</rdf:Description>
+                                               			</rdf:rest>
+                                               		</rdf:Description>
+                                               	</swrl:arguments>
+                                               </rdf:Description>
+                                            </rdf:first>
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                        </swrl:AtomList>
+                                    </rdf:rest>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:DatavaluedPropertyAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#4"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreInterval"/>
+                 <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</swrl:argument2>
+               </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#4"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#5">
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/NumberOfTumors"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#5"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                 <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#5"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/NumberOfTumors"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#5"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsValue"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#numTum"/>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:IndividualPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#5"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                                       </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                        <swrl:AtomList>
+                                            <rdf:first>
+                                               <rdf:Description>
+                                               	<rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                               	<swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                                               	<base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#5"/>
+                                               	<swrl:arguments>
+                                               		<rdf:Description>
+                                               			<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               			<rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#numTum"/>
+                                               			<rdf:rest>
+                                               				<rdf:Description>
+                                               					<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               					<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
+                                               					<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                               				</rdf:Description>
+                                               			</rdf:rest>
+                                               		</rdf:Description>
+                                               	</swrl:arguments>
+                                               </rdf:Description>
+                                            </rdf:first>
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                        </swrl:AtomList>
+                                    </rdf:rest>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:DatavaluedPropertyAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#5"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreNumTum"/>
+                 <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</swrl:argument2>
+               </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#5"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#6">
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/NumberOfTumors"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#6"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                 <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#6"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/NumberOfTumors"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#6"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsValue"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#numTum"/>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:IndividualPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#6"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                                       </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                        <swrl:AtomList>
+                                            <rdf:first>
+                                               <rdf:Description>
+                                               	<rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                               	<swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                               	<base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#6"/>
+                                               	<swrl:arguments>
+                                               		<rdf:Description>
+                                               			<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               			<rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#numTum"/>
+                                               			<rdf:rest>
+                                               				<rdf:Description>
+                                               					<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               					<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
+                                               					<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                               				</rdf:Description>
+                                               			</rdf:rest>
+                                               		</rdf:Description>
+                                               	</swrl:arguments>
+                                               </rdf:Description>
+                                            </rdf:first>
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                        </swrl:AtomList>
+                                    </rdf:rest>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:DatavaluedPropertyAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#6"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreNumTum"/>
+                 <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</swrl:argument2>
+               </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#6"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#7">
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/CEALevel"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#7"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                 <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#7"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/CEALevel"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#7"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsValue"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#cea"/>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:IndividualPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#7"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                                       </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                        <swrl:AtomList>
+                                            <rdf:first>
+                                               <rdf:Description>
+                                               	<rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                               	<swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                                               	<base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#7"/>
+                                               	<swrl:arguments>
+                                               		<rdf:Description>
+                                               			<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               			<rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#cea"/>
+                                               			<rdf:rest>
+                                               				<rdf:Description>
+                                               					<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               					<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</rdf:first>
+                                               					<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                               				</rdf:Description>
+                                               			</rdf:rest>
+                                               		</rdf:Description>
+                                               	</swrl:arguments>
+                                               </rdf:Description>
+                                            </rdf:first>
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                        </swrl:AtomList>
+                                    </rdf:rest>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:DatavaluedPropertyAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#7"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreCEA"/>
+                 <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</swrl:argument2>
+               </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#7"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#8">
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/CEALevel"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#8"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                 <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#8"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/CEALevel"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#8"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsValue"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#cea"/>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:IndividualPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#8"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                                       </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                        <swrl:AtomList>
+                                            <rdf:first>
+                                               <rdf:Description>
+                                               	<rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                               	<swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                               	<base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#8"/>
+                                               	<swrl:arguments>
+                                               		<rdf:Description>
+                                               			<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               			<rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#cea"/>
+                                               			<rdf:rest>
+                                               				<rdf:Description>
+                                               					<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               					<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</rdf:first>
+                                               					<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                               				</rdf:Description>
+                                               			</rdf:rest>
+                                               		</rdf:Description>
+                                               	</swrl:arguments>
+                                               </rdf:Description>
+                                            </rdf:first>
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                        </swrl:AtomList>
+                                    </rdf:rest>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:DatavaluedPropertyAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#8"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreCEA"/>
+                 <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</swrl:argument2>
+               </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#8"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#9">
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/MaxTumorSize"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#9"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                 <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#9"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/MaxTumorSize"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#9"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsValue"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#maxTumorSize"/>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:IndividualPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#9"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                                       </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                        <swrl:AtomList>
+                                            <rdf:first>
+                                               <rdf:Description>
+                                               	<rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                               	<swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                                               	<base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#9"/>
+                                               	<swrl:arguments>
+                                               		<rdf:Description>
+                                               			<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               			<rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#maxTumorSize"/>
+                                               			<rdf:rest>
+                                               				<rdf:Description>
+                                               					<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               					<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</rdf:first>
+                                               					<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                               				</rdf:Description>
+                                               			</rdf:rest>
+                                               		</rdf:Description>
+                                               	</swrl:arguments>
+                                               </rdf:Description>
+                                            </rdf:first>
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                        </swrl:AtomList>
+                                    </rdf:rest>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:DatavaluedPropertyAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#9"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreMaxTumorSize"/>
+                 <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</swrl:argument2>
+               </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#9"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#10">
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/MaxTumorSize"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#10"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                 <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#10"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/MaxTumorSize"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#10"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsValue"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#maxTumorSize"/>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:IndividualPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#10"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#o1"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                                       </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                        <swrl:AtomList>
+                                            <rdf:first>
+                                               <rdf:Description>
+                                               	<rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                               	<swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                               	<base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#10"/>
+                                               	<swrl:arguments>
+                                               		<rdf:Description>
+                                               			<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               			<rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#maxTumorSize"/>
+                                               			<rdf:rest>
+                                               				<rdf:Description>
+                                               					<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                               					<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</rdf:first>
+                                               					<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                               				</rdf:Description>
+                                               			</rdf:rest>
+                                               		</rdf:Description>
+                                               	</swrl:arguments>
+                                               </rdf:Description>
+                                            </rdf:first>
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                        </swrl:AtomList>
+                                    </rdf:rest>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:DatavaluedPropertyAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#10"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreMaxTumorSize"/>
+                 <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</swrl:argument2>
+               </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#10"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#11">
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Fong"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:IndividualPropertyAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#11"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+               </swrl:IndividualPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:DatavaluedPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#11"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScorePosNode"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#posNode"/>
+                       </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#11"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreInterval"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#interval"/>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:DatavaluedPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#11"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreNumTum"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#num"/>
+                                       </swrl:DatavaluedPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                        <swrl:AtomList>
+                                            <rdf:first>
+                                               <swrl:DatavaluedPropertyAtom>
+                                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#11"/>
+                                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreCEA"/>
+                                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#cea"/>
+                                               </swrl:DatavaluedPropertyAtom>
+                                            </rdf:first>
+                                            <rdf:rest>
+                                                <swrl:AtomList>
+                                                    <rdf:first>
+                                                       <swrl:DatavaluedPropertyAtom>
+                                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#11"/>
+                                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreMaxTumorSize"/>
+                                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#msize"/>
+                                                       </swrl:DatavaluedPropertyAtom>
+                                                    </rdf:first>
+                                                    <rdf:rest>
+                                                        <swrl:AtomList>
+                                                            <rdf:first>
+                                                               <rdf:Description>
+                                                                   <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                   <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#11"/>
+                                                                   <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                                                   <swrl:arguments>
+                                                                       <rdf:Description>
+                                                                           <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                           <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#s"/>
+                                                                           <rdf:rest>
+                                                                               <rdf:Description>
+                                                                                   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                   <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#posNode"/>
+                                                                                   <rdf:rest>
+                                                                                       <rdf:Description>
+                                                                                           <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                           <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#interval"/>
+                                                                                           <rdf:rest>
+                                                                                               <rdf:Description>
+                                                                                                   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                   <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#num"/>
+                                                                                                   <rdf:rest>
+                                                                                                       <rdf:Description>
+                                                                                                           <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                           <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#cea"/>
+                                                                                                           <rdf:rest>
+                                                                                                               <rdf:Description>
+                                                                                                                   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                   <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#msize"/>
+                                                                                                                   <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                               </rdf:Description>
+                                                                                                           </rdf:rest>
+                                                                                                       </rdf:Description>
+                                                                                                   </rdf:rest>
+                                                                                               </rdf:Description>
+                                                                                           </rdf:rest>
+                                                                                       </rdf:Description>
+                                                                                   </rdf:rest>
+                                                                               </rdf:Description>
+                                                                           </rdf:rest>
+                                                                       </rdf:Description>
+                                                                   </swrl:arguments>
+                                                               </rdf:Description>
+                                                            </rdf:first>
+                                                            <rdf:rest>
+                                                                <swrl:AtomList>
+                                                                    <rdf:first>
+                                                                       <rdf:Description>
+                                                                       	<rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                       	<swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                                                       	<base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#11"/>
+                                                                       	<swrl:arguments>
+                                                                       		<rdf:Description>
+                                                                       			<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                       			<rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#s"/>
+                                                                       			<rdf:rest>
+                                                                       				<rdf:Description>
+                                                                       					<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                       					<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</rdf:first>
+                                                                       					<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                       				</rdf:Description>
+                                                                       			</rdf:rest>
+                                                                       		</rdf:Description>
+                                                                       	</swrl:arguments>
+                                                                       </rdf:Description>
+                                                                    </rdf:first>
+                                                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                </swrl:AtomList>
+                                                            </rdf:rest>
+                                                        </swrl:AtomList>
+                                                    </rdf:rest>
+                                                </swrl:AtomList>
+                                            </rdf:rest>
+                                        </swrl:AtomList>
+                                    </rdf:rest>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#11"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                 <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#11"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Fong"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:IndividualPropertyAtom>
+                                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#11"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                               </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:DatavaluedPropertyAtom>
+                                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#11"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsValue"/>
+                                         <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prognostic survival of 15 months</swrl:argument2>
+                                       </swrl:DatavaluedPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#12">
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Fong"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:IndividualPropertyAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#12"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+               </swrl:IndividualPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:DatavaluedPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#12"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScorePosNode"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#posNode"/>
+                       </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#12"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreInterval"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#interval"/>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:DatavaluedPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#12"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreNumTum"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#num"/>
+                                       </swrl:DatavaluedPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                        <swrl:AtomList>
+                                            <rdf:first>
+                                               <swrl:DatavaluedPropertyAtom>
+                                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#12"/>
+                                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreCEA"/>
+                                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#cea"/>
+                                               </swrl:DatavaluedPropertyAtom>
+                                            </rdf:first>
+                                            <rdf:rest>
+                                                <swrl:AtomList>
+                                                    <rdf:first>
+                                                       <swrl:DatavaluedPropertyAtom>
+                                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#12"/>
+                                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreMaxTumorSize"/>
+                                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#msize"/>
+                                                       </swrl:DatavaluedPropertyAtom>
+                                                    </rdf:first>
+                                                    <rdf:rest>
+                                                        <swrl:AtomList>
+                                                            <rdf:first>
+                                                               <rdf:Description>
+                                                                   <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                   <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#12"/>
+                                                                   <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                                                   <swrl:arguments>
+                                                                       <rdf:Description>
+                                                                           <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                           <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#s"/>
+                                                                           <rdf:rest>
+                                                                               <rdf:Description>
+                                                                                   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                   <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#posNode"/>
+                                                                                   <rdf:rest>
+                                                                                       <rdf:Description>
+                                                                                           <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                           <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#interval"/>
+                                                                                           <rdf:rest>
+                                                                                               <rdf:Description>
+                                                                                                   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                   <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#num"/>
+                                                                                                   <rdf:rest>
+                                                                                                       <rdf:Description>
+                                                                                                           <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                           <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#cea"/>
+                                                                                                           <rdf:rest>
+                                                                                                               <rdf:Description>
+                                                                                                                   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                   <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#msize"/>
+                                                                                                                   <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                               </rdf:Description>
+                                                                                                           </rdf:rest>
+                                                                                                       </rdf:Description>
+                                                                                                   </rdf:rest>
+                                                                                               </rdf:Description>
+                                                                                           </rdf:rest>
+                                                                                       </rdf:Description>
+                                                                                   </rdf:rest>
+                                                                               </rdf:Description>
+                                                                           </rdf:rest>
+                                                                       </rdf:Description>
+                                                                   </swrl:arguments>
+                                                               </rdf:Description>
+                                                            </rdf:first>
+                                                            <rdf:rest>
+                                                                <swrl:AtomList>
+                                                                    <rdf:first>
+                                                                       <rdf:Description>
+                                                                       	<rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                       	<swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                                                       	<base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#12"/>
+                                                                       	<swrl:arguments>
+                                                                       		<rdf:Description>
+                                                                       			<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                       			<rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#s"/>
+                                                                       			<rdf:rest>
+                                                                       				<rdf:Description>
+                                                                       					<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                       					<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</rdf:first>
+                                                                       					<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                       				</rdf:Description>
+                                                                       			</rdf:rest>
+                                                                       		</rdf:Description>
+                                                                       	</swrl:arguments>
+                                                                       </rdf:Description>
+                                                                    </rdf:first>
+                                                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                </swrl:AtomList>
+                                                            </rdf:rest>
+                                                        </swrl:AtomList>
+                                                    </rdf:rest>
+                                                </swrl:AtomList>
+                                            </rdf:rest>
+                                        </swrl:AtomList>
+                                    </rdf:rest>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#12"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                 <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#12"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Fong"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:IndividualPropertyAtom>
+                                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#12"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                               </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:DatavaluedPropertyAtom>
+                                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#12"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsValue"/>
+                                         <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prognostic survival of 30 months</swrl:argument2>
+                                       </swrl:DatavaluedPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#13">
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Fong"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:IndividualPropertyAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#13"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+               </swrl:IndividualPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:DatavaluedPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#13"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScorePosNode"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#posNode"/>
+                       </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#13"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreInterval"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#interval"/>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:DatavaluedPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#13"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreNumTum"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#num"/>
+                                       </swrl:DatavaluedPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                        <swrl:AtomList>
+                                            <rdf:first>
+                                               <swrl:DatavaluedPropertyAtom>
+                                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#13"/>
+                                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreCEA"/>
+                                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#cea"/>
+                                               </swrl:DatavaluedPropertyAtom>
+                                            </rdf:first>
+                                            <rdf:rest>
+                                                <swrl:AtomList>
+                                                    <rdf:first>
+                                                       <swrl:DatavaluedPropertyAtom>
+                                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#13"/>
+                                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreMaxTumorSize"/>
+                                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#msize"/>
+                                                       </swrl:DatavaluedPropertyAtom>
+                                                    </rdf:first>
+                                                    <rdf:rest>
+                                                        <swrl:AtomList>
+                                                            <rdf:first>
+                                                               <rdf:Description>
+                                                                   <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                   <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#13"/>
+                                                                   <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                                                   <swrl:arguments>
+                                                                       <rdf:Description>
+                                                                           <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                           <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#s"/>
+                                                                           <rdf:rest>
+                                                                               <rdf:Description>
+                                                                                   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                   <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#posNode"/>
+                                                                                   <rdf:rest>
+                                                                                       <rdf:Description>
+                                                                                           <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                           <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#interval"/>
+                                                                                           <rdf:rest>
+                                                                                               <rdf:Description>
+                                                                                                   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                   <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#num"/>
+                                                                                                   <rdf:rest>
+                                                                                                       <rdf:Description>
+                                                                                                           <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                           <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#cea"/>
+                                                                                                           <rdf:rest>
+                                                                                                               <rdf:Description>
+                                                                                                                   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                   <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#msize"/>
+                                                                                                                   <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                               </rdf:Description>
+                                                                                                           </rdf:rest>
+                                                                                                       </rdf:Description>
+                                                                                                   </rdf:rest>
+                                                                                               </rdf:Description>
+                                                                                           </rdf:rest>
+                                                                                       </rdf:Description>
+                                                                                   </rdf:rest>
+                                                                               </rdf:Description>
+                                                                           </rdf:rest>
+                                                                       </rdf:Description>
+                                                                   </swrl:arguments>
+                                                               </rdf:Description>
+                                                            </rdf:first>
+                                                            <rdf:rest>
+                                                                <swrl:AtomList>
+                                                                    <rdf:first>
+                                                                       <rdf:Description>
+                                                                       	<rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                       	<swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                                                       	<base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#13"/>
+                                                                       	<swrl:arguments>
+                                                                       		<rdf:Description>
+                                                                       			<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                       			<rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#s"/>
+                                                                       			<rdf:rest>
+                                                                       				<rdf:Description>
+                                                                       					<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                       					<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
+                                                                       					<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                       				</rdf:Description>
+                                                                       			</rdf:rest>
+                                                                       		</rdf:Description>
+                                                                       	</swrl:arguments>
+                                                                       </rdf:Description>
+                                                                    </rdf:first>
+                                                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                </swrl:AtomList>
+                                                            </rdf:rest>
+                                                        </swrl:AtomList>
+                                                    </rdf:rest>
+                                                </swrl:AtomList>
+                                            </rdf:rest>
+                                        </swrl:AtomList>
+                                    </rdf:rest>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#13"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                 <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#13"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Fong"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:IndividualPropertyAtom>
+                                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#13"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                               </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:DatavaluedPropertyAtom>
+                                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#13"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsValue"/>
+                                         <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prognostic survival of 50 months</swrl:argument2>
+                                       </swrl:DatavaluedPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#14">
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Fong"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:IndividualPropertyAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#14"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+               </swrl:IndividualPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:DatavaluedPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#14"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScorePosNode"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#posNode"/>
+                       </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#14"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreInterval"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#interval"/>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:DatavaluedPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#14"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreNumTum"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#num"/>
+                                       </swrl:DatavaluedPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                        <swrl:AtomList>
+                                            <rdf:first>
+                                               <swrl:DatavaluedPropertyAtom>
+                                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#14"/>
+                                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreCEA"/>
+                                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#cea"/>
+                                               </swrl:DatavaluedPropertyAtom>
+                                            </rdf:first>
+                                            <rdf:rest>
+                                                <swrl:AtomList>
+                                                    <rdf:first>
+                                                       <swrl:DatavaluedPropertyAtom>
+                                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#14"/>
+                                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreMaxTumorSize"/>
+                                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#msize"/>
+                                                       </swrl:DatavaluedPropertyAtom>
+                                                    </rdf:first>
+                                                    <rdf:rest>
+                                                        <swrl:AtomList>
+                                                            <rdf:first>
+                                                               <rdf:Description>
+                                                                   <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                   <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#14"/>
+                                                                   <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                                                   <swrl:arguments>
+                                                                       <rdf:Description>
+                                                                           <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                           <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#s"/>
+                                                                           <rdf:rest>
+                                                                               <rdf:Description>
+                                                                                   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                   <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#posNode"/>
+                                                                                   <rdf:rest>
+                                                                                       <rdf:Description>
+                                                                                           <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                           <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#interval"/>
+                                                                                           <rdf:rest>
+                                                                                               <rdf:Description>
+                                                                                                   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                   <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#num"/>
+                                                                                                   <rdf:rest>
+                                                                                                       <rdf:Description>
+                                                                                                           <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                           <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#cea"/>
+                                                                                                           <rdf:rest>
+                                                                                                               <rdf:Description>
+                                                                                                                   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                   <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#msize"/>
+                                                                                                                   <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                               </rdf:Description>
+                                                                                                           </rdf:rest>
+                                                                                                       </rdf:Description>
+                                                                                                   </rdf:rest>
+                                                                                               </rdf:Description>
+                                                                                           </rdf:rest>
+                                                                                       </rdf:Description>
+                                                                                   </rdf:rest>
+                                                                               </rdf:Description>
+                                                                           </rdf:rest>
+                                                                       </rdf:Description>
+                                                                   </swrl:arguments>
+                                                               </rdf:Description>
+                                                            </rdf:first>
+                                                            <rdf:rest>
+                                                                <swrl:AtomList>
+                                                                    <rdf:first>
+                                                                       <rdf:Description>
+                                                                       	<rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                       	<swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                                                       	<base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#14"/>
+                                                                       	<swrl:arguments>
+                                                                       		<rdf:Description>
+                                                                       			<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                       			<rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#s"/>
+                                                                       			<rdf:rest>
+                                                                       				<rdf:Description>
+                                                                       					<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                       					<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rdf:first>
+                                                                       					<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                       				</rdf:Description>
+                                                                       			</rdf:rest>
+                                                                       		</rdf:Description>
+                                                                       	</swrl:arguments>
+                                                                       </rdf:Description>
+                                                                    </rdf:first>
+                                                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                </swrl:AtomList>
+                                                            </rdf:rest>
+                                                        </swrl:AtomList>
+                                                    </rdf:rest>
+                                                </swrl:AtomList>
+                                            </rdf:rest>
+                                        </swrl:AtomList>
+                                    </rdf:rest>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#14"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                 <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#14"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Fong"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:IndividualPropertyAtom>
+                                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#14"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                               </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:DatavaluedPropertyAtom>
+                                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#14"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsValue"/>
+                                         <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prognostic survival of 73 months</swrl:argument2>
+                                       </swrl:DatavaluedPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+
+
+ <swrl:Imp rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#15">
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+    <base:Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Fong"/>
+    <base:Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG"/>
+    <swrl:body>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:IndividualPropertyAtom>
+                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#15"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+               </swrl:IndividualPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:DatavaluedPropertyAtom>
+                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#15"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScorePosNode"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#posNode"/>
+                       </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:DatavaluedPropertyAtom>
+                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#15"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreInterval"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#interval"/>
+                               </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:DatavaluedPropertyAtom>
+                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#15"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreNumTum"/>
+                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#num"/>
+                                       </swrl:DatavaluedPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                        <swrl:AtomList>
+                                            <rdf:first>
+                                               <swrl:DatavaluedPropertyAtom>
+                                                 <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#15"/>
+                                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreCEA"/>
+                                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#cea"/>
+                                               </swrl:DatavaluedPropertyAtom>
+                                            </rdf:first>
+                                            <rdf:rest>
+                                                <swrl:AtomList>
+                                                    <rdf:first>
+                                                       <swrl:DatavaluedPropertyAtom>
+                                                         <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#15"/>
+                                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/scoresHelpNode"/>
+                                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasScoreMaxTumorSize"/>
+                                                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#msize"/>
+                                                       </swrl:DatavaluedPropertyAtom>
+                                                    </rdf:first>
+                                                    <rdf:rest>
+                                                        <swrl:AtomList>
+                                                            <rdf:first>
+                                                               <rdf:Description>
+                                                                   <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                   <base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#15"/>
+                                                                   <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                                                   <swrl:arguments>
+                                                                       <rdf:Description>
+                                                                           <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                           <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#s"/>
+                                                                           <rdf:rest>
+                                                                               <rdf:Description>
+                                                                                   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                   <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#posNode"/>
+                                                                                   <rdf:rest>
+                                                                                       <rdf:Description>
+                                                                                           <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                           <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#interval"/>
+                                                                                           <rdf:rest>
+                                                                                               <rdf:Description>
+                                                                                                   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                   <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#num"/>
+                                                                                                   <rdf:rest>
+                                                                                                       <rdf:Description>
+                                                                                                           <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                           <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#cea"/>
+                                                                                                           <rdf:rest>
+                                                                                                               <rdf:Description>
+                                                                                                                   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                   <rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#msize"/>
+                                                                                                                   <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                               </rdf:Description>
+                                                                                                           </rdf:rest>
+                                                                                                       </rdf:Description>
+                                                                                                   </rdf:rest>
+                                                                                               </rdf:Description>
+                                                                                           </rdf:rest>
+                                                                                       </rdf:Description>
+                                                                                   </rdf:rest>
+                                                                               </rdf:Description>
+                                                                           </rdf:rest>
+                                                                       </rdf:Description>
+                                                                   </swrl:arguments>
+                                                               </rdf:Description>
+                                                            </rdf:first>
+                                                            <rdf:rest>
+                                                                <swrl:AtomList>
+                                                                    <rdf:first>
+                                                                       <rdf:Description>
+                                                                       	<rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                       	<swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                                                       	<base:Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#15"/>
+                                                                       	<swrl:arguments>
+                                                                       		<rdf:Description>
+                                                                       			<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                       			<rdf:first rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#s"/>
+                                                                       			<rdf:rest>
+                                                                       				<rdf:Description>
+                                                                       					<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                       					<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
+                                                                       					<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                       				</rdf:Description>
+                                                                       			</rdf:rest>
+                                                                       		</rdf:Description>
+                                                                       	</swrl:arguments>
+                                                                       </rdf:Description>
+                                                                    </rdf:first>
+                                                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                </swrl:AtomList>
+                                                            </rdf:rest>
+                                                        </swrl:AtomList>
+                                                    </rdf:rest>
+                                                </swrl:AtomList>
+                                            </rdf:rest>
+                                        </swrl:AtomList>
+                                    </rdf:rest>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+        <swrl:AtomList>
+            <rdf:first>
+               <swrl:ClassAtom>
+                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#15"/>
+                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                 <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AObservation"/>
+               </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+                <swrl:AtomList>
+                    <rdf:first>
+                       <swrl:IndividualPropertyAtom>
+                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#15"/>
+                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasFactor"/>
+                         <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Fong"/>
+                       </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                        <swrl:AtomList>
+                            <rdf:first>
+                               <swrl:IndividualPropertyAtom>
+                                 <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#15"/>
+                                 <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                                 <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasPatient"/>
+                                 <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#p"/>
+                               </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                                <swrl:AtomList>
+                                    <rdf:first>
+                                       <swrl:DatavaluedPropertyAtom>
+                                         <base:Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/rule_FONG#15"/>
+                                         <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#FongObs"/>
+                                         <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AhasObsValue"/>
+                                         <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prognostic survival of 74 months</swrl:argument2>
+                                       </swrl:DatavaluedPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                </swrl:AtomList>
+                            </rdf:rest>
+                        </swrl:AtomList>
+                    </rdf:rest>
+                </swrl:AtomList>
+            </rdf:rest>
+        </swrl:AtomList>
+    </swrl:head>
+ </swrl:Imp>
+
+
+</rdf:RDF>

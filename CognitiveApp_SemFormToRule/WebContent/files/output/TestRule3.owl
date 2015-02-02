@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://localhost/mediawiki/index.php/Special:URIResolver/"
+     xml:base="http://localhost/mediawiki/index.php/Special:URIResolver/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/"/>
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rule-URI
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/TestRule3">
+  <Property-3AHas_SWRLRuleFile rdf:resource="http://localhost:8080/CognitiveApp2/files/output/TestRule3.owl"/>
+</rdf:Description>
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_name -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_name"/>
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_SWRLRuleFile -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_SWRLRuleFile"/>
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_topic -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_topic"/>
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AIs_premise_of -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AIs_premise_of"/>
+
+ <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AIs_conclusion_of -->
+ <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AIs_conclusion_of"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/BefindetSichInDerPhase -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/BefindetSichInDerPhase"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/HatDiagnose -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/HatDiagnose"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/WirdUntersuchtDurch -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/WirdUntersuchtDurch"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Zeigt -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Zeigt"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Diagnosephase -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Diagnosephase"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Patient -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Patient"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Rektumkarzinom -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Rektumkarzinom"/>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Staging -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Staging"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Staging1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Staging1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Staging"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Biopsie">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Diagnosephase">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Patient">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Rektumkarzinom">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Staging">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/TestRule3#1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <Property-3AHas_name rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/TestRule3"/>
+        <Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie"/>
+        <Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Diagnosephase"/>
+        <Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Patient"/>
+        <Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Rektumkarzinom"/>
+        <Property-3AHas_topic rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Staging"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/TestRule3#1"/>
+                                        <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Patient"/>
+                                        <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Patient"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/TestRule3#1"/>
+                                                        <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Staging"/>
+                                                        <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Staging"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/TestRule3#1"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/WirdUntersuchtDurch"/>
+                                                                        <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Biopsie"/>
+                                                                        <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Patient"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                <Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/TestRule3#1"/>
+                                                                                <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Zeigt"/>
+                                                                                <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Biopsie"/>
+                                                                                <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Rektumkarzinom"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/TestRule3#1"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/BefindetSichInDerPhase"/>
+                                                                <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Diagnosephase"/>
+                                                                <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Patient"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/TestRule3#1"/>
+                                                <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Rektumkarzinom"/>
+                                                <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Rektumkarzinom"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/TestRule3#1"/>
+                                <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Diagnosephase"/>
+                                <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Diagnosephase"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <Property-3AIs_premise_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/TestRule3#1"/>
+                        <swrl:classPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie"/>
+                        <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Biopsie"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/TestRule3#1"/>
+                        <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/BefindetSichInDerPhase"/>
+                        <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Patient"/>
+                        <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Staging"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <Property-3AIs_conclusion_of rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/TestRule3#1"/>
+                                <swrl:propertyPredicate rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/HatDiagnose"/>
+                                <swrl:argument1 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Patient"/>
+                                <swrl:argument2 rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Variable#Rektumkarzinom"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.5-SNAPSHOT) http://owlapi.sourceforge.net -->
+

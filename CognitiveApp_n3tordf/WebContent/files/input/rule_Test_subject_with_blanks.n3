@@ -1,0 +1,50 @@
+    @prefix xnat: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+    @prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+    
+    @prefix surgi: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/> .
+	@prefix surgiProp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+	@prefix surgiCat: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A> .
+	
+	@prefix base: <http://localhost/mediawiki/index.php/Special:URIResolver/> .
+	@prefix baseProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A> .
+	@prefix baseCat: <http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A> .
+    
+    @prefix log: <http://www.w3.org/2000/10/swap/log#>.
+    @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+    @prefix time: <http://www.w3.org/2000/10/swap/time#>.
+    @prefix string: <http://www.w3.org/2000/10/swap/string#>.
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    
+{
+ ?o1 baseProp:hasFactor base:sada ;
+ ?o1 baseProp:hasFactor base:Dzen_bla .
+ ?o1 baseProp:hasFactor base:Dzen    
+} => {
+	_:meldObs baseProp:hasObsValue "Mortality without transplantation: 1.9%" .
+	} .
+
+{
+ ?o1 baseProp:hasFactor base:bliu_li ;
+     baseProp:hasFactor base:Dzen_jhh ;
+     baseProp:hasFactor base:asdf . 
+     baseProp:hasFactor base:dyfsda_sa       
+} => {
+	_:meldObs baseProp:hasObsValue "Mortality without transplantation: 1.9%" .
+	} .
+
+{
+ ?o3 baseProp:hasObsValue "SOMEBODY Wew %" . 
+ ?o1 baseProp:hasObsValue "BIBA BUBA %";
+     baseProp:hasObsValue "Dzen Dzun %";
+     baseProp:hasObsValue "Dzen sdf %" .
+ ?o2  baseProp:hasObsValue "BUm BUm"     
+} => {
+	_:meldObs baseProp:hasObsValue "Mortality without transplantation: 1.9%" .
+	} .
+
+{
+ ?o3 baseProp:hasObsValue "SOMEBODY Wew %" . 
+     baseProp:hasObsValue "BUm BUm"     
+} => {
+	_:meldObs baseProp:hasObsValue "Mortality without transplantation: 1.9%" .
+	} .

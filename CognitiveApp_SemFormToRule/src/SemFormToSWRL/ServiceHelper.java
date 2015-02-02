@@ -50,7 +50,7 @@ public class ServiceHelper {
 	/* Here we define the SPARQL pattern which will serve as the input checker*/ 
 	public static String getSparqlInputPattern() {
 		String startFrame = "\n" + "SELECT * WHERE { ";
-		String inputPattern = "?request		surgiProp:Has_OntologyRule ?ruleURI ." + "\n" + 
+		String inputPattern = "?request		surgiProp:Has_SWRLRule ?ruleURI ." + "\n" + 
 							  "?ruleURI	rdf:type			baseCat:OntologyRule .";
 		String endFrame = "}";
 		

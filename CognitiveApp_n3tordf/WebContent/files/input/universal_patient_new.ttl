@@ -1,0 +1,107 @@
+#Processed by Id: cwm.py,v 1.197 2007/12/13 15:38:39 syosi Exp 
+        #    using base file:///DiplArbeit/OurWork/Eclipse_workSPACE/CognitiveApp6/WebContent/files/input/universal_patient.ttl
+            @prefix base: <http://localhost/mediawiki/index.php/Special:URIResolver/> .
+    @prefix baseCat: <http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A> .
+    @prefix baseProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A> .
+    @prefix log: <http://www.w3.org/2000/10/swap/log#> .
+    @prefix math: <http://www.w3.org/2000/10/swap/math#> .
+    @prefix string: <http://www.w3.org/2000/10/swap/string#> .
+    @prefix surgi: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/> .
+    @prefix surgiCat: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A> .
+    @prefix surgiProp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+    @prefix time: <http://www.w3.org/2000/10/swap/time#> .
+    @prefix xnat: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+    @prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:Bilirubin;
+             base:Property-3AhasObsValue 2.7;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:Albumin;
+             base:Property-3AhasObsValue 8.9;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:INR;
+             base:Property-3AhasObsValue 3.5;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:Ascites;
+             base:Property-3AhasObsValue "No";
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:Encephalopathy;
+             base:Property-3AhasObsValue "Stage I - II";
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:TotalTumorSize;
+             base:Property-3AhasObsValue 7.5;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:NumberOfTumors;
+             base:Property-3AhasObsValue 3;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:MaxTumorSize;
+             base:Property-3AhasObsValue 3.5;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor xnat:PositiveLymphNode;
+             base:Property-3AhasObsValue "Yes";
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:IntervalFromResectionToMetastases;
+             base:Property-3AhasObsValue 8;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:CEALevel;
+             base:Property-3AhasObsValue 150;
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:leaflet_sclerosis;
+             base:Property-3AhasObsValue "yes";
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:leaflet;
+             base:Property-3AhasObsValue "elongated";
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:ChildPugh;
+             base:Property-3AhasObsValue "Stage_B";
+             base:Property-3AhasPatient xnatpatient:ABC;
+             base:Property-3Ahas_score 9 ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:Fong;
+             base:Property-3AhasObsValue "Prognostic survival of 50 months";
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:SF_criteria;
+             base:Property-3AhasObsValue "SF_criteria_fulfilled";
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:MR;
+             base:Property-3AhasObsValue "degenerative";
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    
+      [      a base:Category-3AObservation;
+             base:Property-3AhasFactor base:eligible_ring;
+             base:Property-3AhasObsValue "A";
+             base:Property-3AhasPatient xnatpatient:ABC ].
+    

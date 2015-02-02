@@ -1,0 +1,43 @@
+﻿@prefix rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema/> .
+@prefix owl: 		<http://www.w3.org/2002/07/owl#>.
+@prefix sparql: 	<http://www.w3.org/TR/rdf-sparql-query/#> .
+@prefix xs:		<http://www.w3.org/2001/XMLSchema#>.
+@prefix lf: 	<http://localhost:8080/CognitiveApp/files/ontologies/lf#>.
+@prefix dc:		<http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements#>.
+@prefix msm:		<http://cms-wg.sti2.org/minimal-service-model#>.
+@prefix sawsdl: 	<http://www.w3.org/ns/sawsdl#>.
+@prefix lapis: 		<http://localhost:8080/CognitiveApp/files/ontologies/lapis#>.
+@prefix sp:			<http://surgipedia.sfb125.de/wiki/Special:URIResolver/>
+
+<http://localhost:8080/CognitiveApp/LFReasoner>	rdf:type 			<http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3ACognitive_App>;
+													rdfs:label 			"Cognitive App for reasoning over the Liver factors of a patient";
+													owl:sameAs			<http://surgipedia.sfb125.de/wiki/Special:URIResolver/LiverRuleExec>;
+													sp:Property-3AHas_description 		"Applies a rule to patient data and ouputs the patient data with some new informations";
+													lapis:hasInputDescription 	"A patient in RDF (Turtle) format and a rule formalized in N3 format";
+													lapis:hasOutputDescription 	"A patient after reasoning (with new liver factor observations)";
+													sp:Property-3AHasExampleRequest 	<http://localhost:8080/CognitiveApp/files/examples/lf/LF_Input_Example.xml>;
+													sp:Property-3AHasExampleResponse 	<http://localhost:8080/SFBPrototyp/files/examples/lf/LF_Output_Example.xml>;
+													sawsdl:modelReference
+															[a msm:Precondition; rdf:value "{
+
+?request		rdf:type				sp:Category-3ARequest.
+?request		lf:hasPatientFile		?patientFile.
+?request		lf:hasRuleFile			?ruleFile.
+?patientFile		dc:format			"text/turtle".
+?ruleFile 			dc:format 			"text/n3".
+
+															}"^^sparql:GraphPattern ].
+
+													sawsdl:modelReference
+															[a msm:Postvondition; rdf:value "{
+
+?request		rdf:type			sp:Category-3ARequest.
+?request		lf:hasPatientFile		?patientFile.
+?request		lf:hasRuleFile			?ruleFile.
+?patientFile		dc:format			"text/turtle".
+?ruleFile 			dc:format 			"text/n3".
+		
+?request 		lf:hasNewPatientFile	?newPatientFile.
+
+															}"^^sparql:GraphPattern ].

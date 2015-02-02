@@ -1,0 +1,238 @@
+    @prefix xnat: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+    @prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+    
+    @prefix surgi: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/> .
+	@prefix surgiProp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+	@prefix surgiCat: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A> .
+	
+	@prefix base: <http://localhost/mediawiki/index.php/Special:URIResolver/> .
+	@prefix baseProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A> .
+	@prefix baseCat: <http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A> .
+    
+    @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+    @prefix time: <http://www.w3.org/2000/10/swap/time#>.
+    @prefix log: <http://www.w3.org/2000/10/swap/log#>.
+    @prefix string: <http://www.w3.org/2000/10/swap/string#>.
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+{
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:Albumin .
+ ?o1 baseProp:hasPatient ?p .
+ ?o1 baseProp:hasObsValue ?alb .
+ ?alb math:greaterThan 3.5 .
+} => { 
+	base:scoresHelpNode a log:Chaff .
+	base:scoresHelpNode baseProp:has_score_albumin 1 .
+	base:scoresHelpNode	baseProp:hasPatient ?p .
+	} .
+
+{
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:Albumin .
+ ?o1 baseProp:hasPatient ?p .
+ ?o1 baseProp:hasObsValue ?alb .
+ ?alb math:notGreaterThan 3.5 .
+ ?alb math:notLessThan 2.8 .
+} => { 
+	base:scoresHelpNode a log:Chaff .
+	base:scoresHelpNode baseProp:has_score_albumin 2 .
+	base:scoresHelpNode	baseProp:hasPatient ?p .	
+	} .
+
+{
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:Albumin .
+ ?o1 baseProp:hasPatient ?p .
+ ?o1 baseProp:hasObsValue ?alb .
+ ?alb math:lessThan 2.8 .
+} => { 
+	base:scoresHelpNode a log:Chaff .
+	base:scoresHelpNode baseProp:has_score_albumin 3 .	
+	base:scoresHelpNode	baseProp:hasPatient ?p .
+	} .
+
+{
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:Bilirubin .
+ ?o1 baseProp:hasPatient ?p .
+ ?o1 baseProp:hasObsValue ?bil .
+ ?bil math:lessThan 2.0 
+} => { 
+	base:scoresHelpNode baseProp:has_score_bilirubin 1 .
+	base:scoresHelpNode	baseProp:hasPatient ?p .
+	} .
+
+{
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:Bilirubin .
+ ?o1 baseProp:hasPatient ?p .
+ ?o1 baseProp:hasObsValue ?bil .
+ ?bil math:notLessThan 2.0 .
+ ?bil math:notGreaterThan 3.0 
+} => { 
+	base:scoresHelpNode baseProp:has_score_bilirubin 2 .
+	base:scoresHelpNode	baseProp:hasPatient ?p .
+	} .
+
+{
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:Bilirubin .
+ ?o1 baseProp:hasPatient ?p .
+ ?o1 baseProp:hasObsValue ?bil .
+ ?bil math:greaterThan 3.0 
+} => { 
+	base:scoresHelpNode baseProp:has_score_bilirubin 3 .
+	base:scoresHelpNode	baseProp:hasPatient ?p .
+	} .
+
+
+
+{
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:INR .
+ ?o1 baseProp:hasPatient ?p .
+ ?o1 baseProp:hasObsValue ?inr .
+ ?inr math:lessThan 1.7 
+} => { 
+	base:scoresHelpNode baseProp:has_score_inr 1 .
+	base:scoresHelpNode	baseProp:hasPatient ?p .
+	} .
+
+{
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:INR .
+ ?o1 baseProp:hasPatient ?p .
+ ?o1 baseProp:hasObsValue ?inr .
+ ?inr math:notLessThan 1.7 .
+ ?inr math:notGreaterThan 2.2 
+} => { 
+	base:scoresHelpNode baseProp:has_score_inr 2 .
+	base:scoresHelpNode	baseProp:hasPatient ?p .
+	} .
+
+{
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:INR .
+ ?o1 baseProp:hasPatient ?p .
+ ?o1 baseProp:hasObsValue ?inr .
+ ?inr math:greaterThan 2.2 
+} => { 
+	base:scoresHelpNode baseProp:has_score_inr 3 .
+	base:scoresHelpNode	baseProp:hasPatient ?p .
+	} .
+
+{
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:Ascites .
+ ?o1 baseProp:hasPatient ?p .
+ ?o1 baseProp:hasObsValue "no" .
+} => { 
+	base:scoresHelpNode baseProp:has_score_ascites 1 .
+	base:scoresHelpNode	baseProp:hasPatient ?p .
+	} .
+
+{
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:Ascites .
+ ?o1 baseProp:hasPatient ?p .
+ ?o1 baseProp:hasObsValue "Mild (Grade 1)" .
+} => { 
+	base:scoresHelpNode baseProp:has_score_ascites 2 .
+	base:scoresHelpNode	baseProp:hasPatient ?p .
+	} .
+
+{
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:Ascites .
+ ?o1 baseProp:hasPatient ?p .
+ ?o1 baseProp:hasObsValue "Moderate (Grade 2,3)" .
+} => { 
+	base:scoresHelpNode baseProp:has_score_ascites 3 .
+	base:scoresHelpNode	baseProp:hasPatient ?p .
+	} .
+
+
+{
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:Encephalopathy .
+ ?o1 baseProp:hasPatient ?p .
+ ?o1 baseProp:hasObsValue "no" .
+} => { 
+	base:scoresHelpNode baseProp:has_score_encephalopathy 1 .
+	base:scoresHelpNode	baseProp:hasPatient ?p .
+	} .
+
+{
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:Encephalopathy .
+ ?o1 baseProp:hasPatient ?p .
+ ?o1 baseProp:hasObsValue "Stage I - II" .
+} => { 
+	base:scoresHelpNode baseProp:has_score_encephalopathy 2 .
+	base:scoresHelpNode	baseProp:hasPatient ?p .
+	} .
+
+{
+ ?o1 a baseCat:Observation . 
+ ?o1 baseProp:hasFactor base:Encephalopathy .
+ ?o1 baseProp:hasPatient ?p .
+ ?o1 baseProp:hasObsValue "Stage III - IV" .
+} => { 
+	base:scoresHelpNode baseProp:has_score_encephalopathy 3 .
+	base:scoresHelpNode	baseProp:hasPatient ?p .
+	} .
+	
+{
+ base:scoresHelpNode baseProp:hasPatient ?p .
+ base:scoresHelpNode baseProp:has_score_albumin ?alb .
+ base:scoresHelpNode baseProp:has_score_bilirubin ?bil .
+ base:scoresHelpNode baseProp:has_score_encephalopathy ?enc .
+ base:scoresHelpNode baseProp:has_score_inr ?inr .
+ base:scoresHelpNode baseProp:has_score_ascites ?asc .
+ (?bil ?alb ?asc ?enc ?inr) math:sum ?s .
+ ?s math:notLessThan 5 .
+ ?s math:notGreaterThan 6
+} => {
+	_:bmiObs a baseCat:Observation .
+	_:bmiObs baseProp:hasFactor base:ChildPugh .
+	_:bmiObs baseProp:hasPatient ?p .
+	_:bmiObs baseProp:has_score ?s . 
+        _:bmiObs baseProp:hasObsValue "Stage_A" .
+} .
+
+{
+ base:scoresHelpNode baseProp:hasPatient ?p .
+ base:scoresHelpNode baseProp:has_score_albumin ?alb .
+ base:scoresHelpNode baseProp:has_score_bilirubin ?bil .
+ base:scoresHelpNode baseProp:has_score_encephalopathy ?enc .
+ base:scoresHelpNode baseProp:has_score_inr ?inr .
+ base:scoresHelpNode baseProp:has_score_ascites ?asc .
+ (?bil ?alb ?asc ?enc ?inr) math:sum ?s .
+ ?s math:notLessThan 7 .
+ ?s math:notGreaterThan 9
+} => {
+	_:bmiObs a baseCat:Observation .
+	_:bmiObs baseProp:hasFactor base:ChildPugh .
+	_:bmiObs baseProp:hasPatient ?p .
+	_:bmiObs baseProp:has_score ?s . 
+    _:bmiObs baseProp:hasObsValue "Stage_B" .
+} .
+
+{
+ base:scoresHelpNode baseProp:hasPatient ?p .
+ base:scoresHelpNode baseProp:has_score_albumin ?alb .
+ base:scoresHelpNode baseProp:has_score_bilirubin ?bil .
+ base:scoresHelpNode baseProp:has_score_encephalopathy ?enc .
+ base:scoresHelpNode baseProp:has_score_inr ?inr .
+ base:scoresHelpNode baseProp:has_score_ascites ?asc .
+ (?bil ?alb ?asc ?enc ?inr) math:sum ?s .
+ ?s math:notLessThan 10 .
+ ?s math:notGreaterThan 15
+} => {
+	_:bmiObs a baseCat:Observation .
+	_:bmiObs baseProp:hasFactor base:ChildPugh .
+	_:bmiObs baseProp:hasPatient ?p .
+	_:bmiObs baseProp:has_score ?s . 
+    _:bmiObs baseProp:hasObsValue "Stage_C" .
+} .

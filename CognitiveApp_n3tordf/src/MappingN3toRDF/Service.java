@@ -117,9 +117,9 @@ public class Service {
 		else {
 			
 			//check
-			System.out.println("N3RuleFile: " + ruleFile);
-			System.out.println("Request URI: " + requestURI);	
-			System.out.println("");
+			//System.out.println("N3RuleFile: " + ruleFile);
+			//System.out.println("Request URI: " + requestURI);	
+			//System.out.println("");
 		
 			/* at first we find the name of our rule. 
 			 * Commonly our N3 rule is given as an address. We should parse it.
@@ -148,9 +148,9 @@ public class Service {
 			String outputPath = context.getRealPath("/files/output/") + "/" + ruleRDF;
 		
 			//check
-			System.out.println("n3 rule URI: " + ruleFile);
+			System.out.println("n3 rule file: " + ruleFile);
 			System.out.println("rule name: " + ruleName);
-			System.out.println("new swrl rule URI: " + outputPath);
+			System.out.println("new swrl rule file: " + outputPath);
 			System.out.println("");
 		
 			N3_RDF_Mapper7 mapper = new N3_RDF_Mapper7();

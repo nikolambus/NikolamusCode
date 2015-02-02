@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://localhost/mediawiki/index.php/Special:URIResolver/"
+     xml:base="http://localhost/mediawiki/index.php/Special:URIResolver/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:URIResolver="http://localhost/mediawiki/index.php/Special:URIResolver/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_ABoxesFile -->
+
+    <owl:AnnotationProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3AHas_ABoxesFile"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/BefindetSichInDerPhase -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/BefindetSichInDerPhase">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/HatDiagnose -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/HatDiagnose">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/WirdUntersuchtDurch -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/WirdUntersuchtDurch">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Zeigt -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Zeigt">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/MRT_Becken -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/MRT_Becken">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Patient -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Patient">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Rektumkarzinom -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Rektumkarzinom">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Staging -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Staging">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Ultraschall_Abdomen -->
+
+    <owl:Class rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Ultraschall_Abdomen">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Biopsie1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Biopsie1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Biopsie"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <Zeigt rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Rektumkarzinom1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#MRT_Becken1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#MRT_Becken1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/MRT_Becken"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Patient1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Patient1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Patient"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <WirdUntersuchtDurch rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Biopsie1"/>
+        <WirdUntersuchtDurch rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#MRT_Becken1"/>
+        <HatDiagnose rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Rektumkarzinom1"/>
+        <BefindetSichInDerPhase rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Staging1"/>
+        <WirdUntersuchtDurch rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Ultraschall_Abdomen1"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Rektumkarzinom1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Rektumkarzinom1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Rektumkarzinom"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Staging1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Staging1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Staging"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Ultraschall_Abdomen1 -->
+
+    <owl:Thing rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Individual#Ultraschall_Abdomen1">
+        <rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Ultraschall_Abdomen"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/TestPatient3">
+        <Property-3AHas_ABoxesFile rdf:resource="http://localhost:8080/CognitiveApp4b/files/output/TestPatient3.owl"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.5-SNAPSHOT) http://owlapi.sourceforge.net -->
+

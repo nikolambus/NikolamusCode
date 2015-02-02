@@ -12,6 +12,10 @@ import java.io.InputStream;
 
 
 import java.net.URL;
+import java.nio.file.DirectoryNotEmptyException;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 import javax.servlet.ServletContext;
@@ -160,18 +164,32 @@ public class Service {
 			//the output of creator is the input for the next step
 			String inputPath = outputPath;
 			
-			System.out.println("");	
-			System.out.println("OutputPath-file-without-annotation-properties: " + outputPath);	
+			//System.out.println("");	
+			//System.out.println("OutputPath-file-without-annotation-properties: " + outputPath);	
 
 			//get the output path via ServletContext method "getRealPath" (explanation at the end)
 			outputPath = context.getRealPath("/files/output/") + "\\" + ruleName + ".owl";
 			
 			System.out.println("");	
-			System.out.println("OutputPath-file-with-annotation-properties: " + outputPath);	
+			System.out.println("OutputPath: " + outputPath);	
 			
 			//SWRL rule file --> SWRL rule file with annotations
 			AnnotationPropertiesImplantator2 implantator = new AnnotationPropertiesImplantator2();
-			implantator.action(inputPath, ruleName, outputPath);
+			implantator.action(inputPath, ruleName, parser.OPType, outputPath);
+			
+			//cleaning up
+			//removing the rule file without annotations
+			java.nio.file.Path p1 = Paths.get(inputPath);
+			try {
+			    Files.delete(p1);
+			} catch (NoSuchFileException x) {
+			    System.err.format("%s: no such" + " file or directory%n", p1);
+			} catch (DirectoryNotEmptyException x) {
+			    System.err.format("%s not empty%n", p1);
+			} catch (IOException x) {
+			    // File permission problems are caught here.
+			    System.err.println(x);
+			}
 		}
 	}
 	

@@ -15,7 +15,7 @@ public class AnnotationPropertiesImplantator2 {
 
 	public String base = "http://localhost/mediawiki/index.php/Special:URIResolver/";
 	
-	public void action(String inputPath, String ruleName, String outputPath) throws IOException {
+	public void action(String inputPath, String ruleName, String OPType, String outputPath) throws IOException {
 		
 		//defining the OWL result file
 		PrintWriter writer = new PrintWriter(outputPath, "UTF-8");
@@ -52,6 +52,12 @@ public class AnnotationPropertiesImplantator2 {
 				writer.println("<rdf:Description rdf:about=\"" + base + ruleName + "\">");
 				//writer.println("  <rdf:type rdf:resource=\"" + base + "/Category-3AOntologyRule\"/>");
 				writer.println("  <Property-3AHas_SWRLRuleFile rdf:resource=\"" + ruleSWRLFile + "\"/>");
+				
+				// if our variable OPType isn't empty, it means, we are dealing with a phase recognition rule. 
+				// So we specify the corresponding OP type. 
+				if (OPType!=null) 
+					writer.println("  <Property-3AHas_OPType rdf:resource=\"" + base + OPType + "\"/>");
+
 				writer.println("</rdf:Description>");
 				
 				writer.println("    <!-- ");
@@ -78,6 +84,13 @@ public class AnnotationPropertiesImplantator2 {
 				writer.println("");
 				writer.println(" <!-- " + base + "Property-3AIs_conclusion_of -->");
 				writer.println(" <owl:AnnotationProperty rdf:about=\"" + base + "Property-3AIs_conclusion_of\"/>");
+				// if our variable OPType isn't empty, it means, we are dealing with a phase recognition rule. 
+				// So we specify appropriate Annotation property. 
+				if (OPType!=null) {
+					writer.println("");
+					writer.println(" <!-- " + base + "Property-3AHas_OPType -->");
+					writer.println(" <owl:AnnotationProperty rdf:about=\"" + base + "Property-3AHas_OPType\"/>");
+				}
 			}
 			
 			// if we encounter a class declaration save the class name - each class name is the value of the "Property-3AHas_topic" property

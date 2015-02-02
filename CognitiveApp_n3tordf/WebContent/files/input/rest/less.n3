@@ -1,0 +1,10 @@
+@prefix wiki:<http://localhost/mediawiki/index.php/Special:URIResolver/> .
+@prefix   wikiProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A> .
+
+{
+ ?o1 baseProp:hasObsValue ?weight1 .
+ ?o2 baseProp:hasObsValue ?weight2 .
+( ?weight1  ?weight2 ) math:sum ?s .   
+} => {
+	?o1 baseProp:hasSibling ?s .
+	} .

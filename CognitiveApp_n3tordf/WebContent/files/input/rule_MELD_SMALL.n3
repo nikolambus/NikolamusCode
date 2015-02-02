@@ -1,0 +1,39 @@
+    @prefix xnat: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+    @prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+    
+    @prefix surgi: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/> .
+	@prefix surgiProp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+	@prefix surgiCat: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A> .
+	
+	@prefix base: <http://localhost/mediawiki/index.php/Special:URIResolver/> .
+	@prefix baseProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A> .
+	@prefix baseCat: <http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A> .
+    
+    @prefix log: <http://www.w3.org/2000/10/swap/log#>.
+    @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+    @prefix time: <http://www.w3.org/2000/10/swap/time#>.
+    @prefix string: <http://www.w3.org/2000/10/swap/string#>.
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    
+{
+ ?o1  baseProp:hasFactor base:Creatinin .
+ ?o1  baseProp:hasPatient ?p .
+ ?o1  baseProp:hasObsValue ?cr .
+ ?o2  baseProp:hasFactor base:Bilirubin .
+ ?o2  baseProp:hasPatient ?p .
+ ?o2  baseProp:hasObsValue ?bil .
+ ?o3  baseProp:hasFactor base:INR .
+ ?o3  baseProp:hasPatient ?p .
+ ?o3  baseProp:hasObsValue ?inr .
+ (?cr 9.57) math:product ?s1 .
+ (?bil 3.78) math:product ?s2 .
+ (?inr 11.2) math:product ?s3 .
+ (?s1 ?s2 ?s3 6.43) math:sum ?meld .
+ ?meld math:notGreaterThan 9 
+} => {
+	_:meldObs a  baseCat:Observation .
+	_:meldObs  baseProp:hasFactor base:MELD .
+	_:meldObs  baseProp:hasPatient ?p .
+	_:meldObs  baseProp:hasmeldValue ?meld .
+	_:meldObs  baseProp:hasObsValue "Mortality without transplantation: 1.9%" .
+	} .

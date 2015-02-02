@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	
+	xmlns:surgi="http://surgipedia.sfb125.de/wiki/Special:URIResolver/"
+	xmlns:surgiProp="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A"
+	xmlns:surgiCat="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A"
+	
+	xmlns:base="http://localhost/mediawiki/index.php/Special:URIResolver/"
+	xmlns:baseCat="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A"
+	xmlns:baseProp="http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A"
+	
+	xmlns:sf="http://localhost:8080/CognitiveApp4/files/ontologies/sf#">
+	
+	<!-- The first group of above namespaces targets the case of Surgipedia -->
+	<!-- The first group of above namespaces targets the case of localhost -->
+	
+	<rdf:Description rdf:about="http://www.example.com/Request_Triples_Example">
+		<rdf:type rdf:resource="http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3ARequest"/>
+		<surgiProp:Has_ABoxes>
+			<rdf:Description rdf:about="http://localhost/mediawiki/index.php/Special:URIResolver/Patient2Triples">
+				<rdf:type rdf:resource="http://localhost/mediawiki/index.php/Special:URIResolver/Category-3AABoxes"/>
+			</rdf:Description>		
+		</surgiProp:Has_ABoxes>	
+	</rdf:Description>
+</rdf:RDF>

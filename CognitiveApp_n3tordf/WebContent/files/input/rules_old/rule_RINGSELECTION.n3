@@ -1,0 +1,448 @@
+    @prefix xnat: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors#> .
+    @prefix xnatpatient: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/Liver_Factors/Patient#> .
+    
+    @prefix surgi: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/> .
+	@prefix surgiProp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+	@prefix surgiCat: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A> .
+	
+	@prefix base: <http://localhost/mediawiki/index.php/Special:URIResolver/> .
+	@prefix baseProp: <http://localhost/mediawiki/index.php/Special:URIResolver/Property-3A> .
+	@prefix baseCat: <http://localhost/mediawiki/index.php/Special:URIResolver/Category-3A> .
+    
+    @prefix log: <http://www.w3.org/2000/10/swap/log#>.
+    @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+    @prefix time: <http://www.w3.org/2000/10/swap/time#>.
+    @prefix string: <http://www.w3.org/2000/10/swap/string#>.
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    
+#################################################################################################
+#  ... -> MR:="degenerative"                                                                    #
+#################################################################################################
+
+#1
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:leaflet_thickening_length ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     	baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#2
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:leaflet_sclerosis ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#3
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:leaflet_vegetation ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#4
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:perforation ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#5
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:thickening ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#6
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:excess_leaflet_tissue ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#7
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:retraction ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#8
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:abscess ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#9
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:calcification ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#10
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:fibrosis ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#11
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:tear ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#12
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:commissure_fusion ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#13
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:vegetation ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#14
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:thrombotic_material ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#15
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:tumor ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#16
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:commissural_fusion ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#17
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:traumatic_lesion ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+
+#################################################################################################
+#  ... -> MR:="non_degenerative"                                                                #
+#################################################################################################
+
+#18
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:leaflet_thickening_length ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .	
+
+ ?o2 a baseCat:Observation ; 
+     baseProp:hasFactor base:leaflet_sclerosis ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .
+
+ ?o3 a baseCat:Observation ; 
+     baseProp:hasFactor base:leaflet_vegetation ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .
+
+ ?o4 a baseCat:Observation ; 
+     baseProp:hasFactor base:perforation ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .
+
+ ?o5 a baseCat:Observation ; 
+     baseProp:hasFactor base:thickening ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .	
+
+ ?o6 a baseCat:Observation ; 
+     baseProp:hasFactor base:excess_leaflet_tissue ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .	
+
+ ?o7 a baseCat:Observation ; 
+     baseProp:hasFactor base:retraction ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .
+
+ ?o8 a baseCat:Observation ; 
+     baseProp:hasFactor base:abscess ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .
+
+ ?o9 a baseCat:Observation ; 
+     baseProp:hasFactor base:calcification ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .
+
+ ?o10 a baseCat:Observation ; 
+     baseProp:hasFactor base:fibrosis ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .
+
+ ?o11 a baseCat:Observation ; 
+     baseProp:hasFactor base:tear ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .	
+
+ ?o12 a baseCat:Observation ; 
+     baseProp:hasFactor base:commissure_fusion ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .
+
+ ?o13 a baseCat:Observation ; 
+     baseProp:hasFactor base:vegetation ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .	
+
+ ?o14 a baseCat:Observation ; 
+     baseProp:hasFactor base:thrombotic_material ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .	
+
+ ?o15 a baseCat:Observation ; 
+     baseProp:hasFactor base:tumor ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .	
+
+ ?o16 a baseCat:Observation ; 
+     baseProp:hasFactor base:commissural_fusion ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .	
+
+ ?o17 a baseCat:Observation ; 
+     baseProp:hasFactor base:traumatic_lesion ; 
+     baseProp:hasObsValue "no" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:MR ; 
+     		baseProp:hasObsValue "non-degenerative" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#################################################################################################
+#  "degenerative MR" and "normal leaflet" -> eligible_ring:="B,C"                               #
+#################################################################################################
+
+
+#19
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:MR ; 
+     baseProp:hasObsValue "degenerative" ;
+     baseProp:hasPatient ?p .	
+ 
+ ?o2 a baseCat:Observation ; 
+     baseProp:hasFactor base:leaflet ; 
+     baseProp:hasObsValue "normal" ;
+     baseProp:hasPatient ?p .	  
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:eligible_ring ; 
+     		baseProp:hasObsValue "B,C" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#################################################################################################
+#  "degenerative MR" and "elongated leaflet" -> eligible_ring:="A"                             #
+#################################################################################################
+
+
+#20
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:MR ; 
+     baseProp:hasObsValue "degenerative" ;
+     baseProp:hasPatient ?p .	
+ 
+ ?o2 a baseCat:Observation ; 
+     baseProp:hasFactor base:leaflet ; 
+     baseProp:hasObsValue "elongated" ;
+     baseProp:hasPatient ?p .	  
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:eligible_ring ; 
+     		baseProp:hasObsValue "A" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+
+#################################################################################################
+#  "non-degenerative MR" -> eligible_ring:="B,D,E"                                              #
+#################################################################################################
+
+
+#21
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:MR ; 
+     baseProp:hasObsValue "non-degenerative" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:eligible_ring ; 
+     		baseProp:hasObsValue "B,D,E" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#################################################################################################
+#  "ischemic cardiomyopathy" -> eligible_ring:="F"                                              #
+#################################################################################################
+
+
+#22
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:ischemic ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:eligible_ring ; 
+     		baseProp:hasObsValue "F" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+#################################################################################################
+#  "dilated cardiomyopathy" -> eligible_ring:="G"                                              #
+#################################################################################################
+
+
+#23
+{
+ ?o1 a baseCat:Observation ; 
+     baseProp:hasFactor base:dilated ; 
+     baseProp:hasObsValue "yes" ;
+     baseProp:hasPatient ?p .	
+} => {
+	_:bnode a baseCat:Observation ; 
+		baseProp:hasFactor base:eligible_ring ; 
+     	baseProp:hasObsValue "G" ;
+  		baseProp:hasPatient ?p .
+      } .
+
+# A - Myxo Etlogix annuloplasty ring (Edwards Lifescience)
+# B - Carpentier-Edwards Classic mitral annuloplasty ring (Edwards Lifescience)
+# C - Colvin-Galloway Future Composite Ring (Medtronic, Minneapolis, Minn)
+# D - Rigid Saddle Ring (St. Jude Medical, St. Paul, Minn)
+# E - AnnuloFlo, annuloplasty ring (CarboMedics/Sorin Group, Arvada, Colo) 
+# F - Carpentier-McCarthy-Adams IMR Etlogix ring (Edwards Lifescience)
+# G - GeoForm annuloplasty ring (Edwards Lifescience)
