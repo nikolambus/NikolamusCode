@@ -30,7 +30,7 @@
 #2
 { 
  ?o1 a baseCat:Observation . 
- ?o1 baseProp:hasFactor xnat:PositiveLymphNode .
+ ?o1 baseProp:hasFactor base:PositiveLymphNode .
  ?o1 baseProp:hasObsValue "yes" .
  ?o1 baseProp:hasPatient ?p
 } => {

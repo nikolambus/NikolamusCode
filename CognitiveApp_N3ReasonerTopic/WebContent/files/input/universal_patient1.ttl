@@ -17,24 +17,24 @@
 #CHILDPUGH
 
 [ a baseCat:Observation;
-    baseProp:hasFactor base:Bilirubin;
-    baseProp:hasPatient xnatpatient:ABC;
-    baseProp:hasObsValue 2.7 ] .
-
-[ a baseCat:Observation;
     baseProp:hasFactor base:Albumin;
     baseProp:hasPatient xnatpatient:ABC;
-    baseProp:hasObsValue 8.9 ] .
+    baseProp:hasObsValue 2.0 ] .
+
+[ a baseCat:Observation;
+    baseProp:hasFactor base:Bilirubin;
+    baseProp:hasPatient xnatpatient:ABC;
+    baseProp:hasObsValue 2.5 ] .
 
 [ a baseCat:Observation;
     baseProp:hasFactor base:INR;
     baseProp:hasPatient xnatpatient:ABC;
-    baseProp:hasObsValue 3.5 ] .
+    baseProp:hasObsValue 1.9 ] .
 
 [ a baseCat:Observation;
     baseProp:hasFactor base:Ascites;
     baseProp:hasPatient xnatpatient:ABC;
-    baseProp:hasObsValue "No" ] .
+    baseProp:hasObsValue "no" ] .
 
 [ a baseCat:Observation;
     baseProp:hasFactor base:Encephalopathy;
@@ -63,9 +63,9 @@
 # only FONG
 
 [ a baseCat:Observation;
-    baseProp:hasFactor xnat:PositiveLymphNode;  
+    baseProp:hasFactor base:PositiveLymphNode;  
     baseProp:hasPatient xnatpatient:ABC;
-    baseProp:hasObsValue "Yes" ] .
+    baseProp:hasObsValue "yes" ] .
 
 [ a baseCat:Observation;
     baseProp:hasFactor base:IntervalFromResectionToMetastases;  

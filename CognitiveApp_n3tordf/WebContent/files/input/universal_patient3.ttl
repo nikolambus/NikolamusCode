@@ -50,7 +50,7 @@
 [ a baseCat:Observation;
     baseProp:hasFactor base:INR;
     baseProp:hasPatient xnatpatient:ABC;
-    baseProp:hasObsValue 3.5 ] .
+    baseProp:hasObsValue 1.1 ] .
 
 [ a baseCat:Observation;
     baseProp:hasFactor base:Ascites;
@@ -84,7 +84,7 @@
 # only FONG
 
 [ a baseCat:Observation;
-    baseProp:hasFactor xnat:PositiveLymphNode;  
+    baseProp:hasFactor base:PositiveLymphNode;  
     baseProp:hasPatient xnatpatient:ABC;
     baseProp:hasObsValue "yes" ] .
 
