@@ -1,0 +1,4515 @@
+@prefix hft-version: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/B01/file/Heart_factors_Version_1.0.1.rdf#> .
+@prefix sp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/> .
+@prefix spProp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+@prefix spCat: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+hft-version:1_0_1 spProp:has_Version "1.0.1" ;
+	a spCat:Heart_Factor_Table .
+
+_:node19eeif0iqx1 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:case_number .
+
+hft-version:case_number rdfs:label "case number" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx1 spProp:possibleObsValue "number" ;
+	spProp:obsValue "xxxxx" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx2 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:patient_identification_number .
+
+hft-version:patient_identification_number rdfs:label "patient identification number" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx2 spProp:possibleObsValue "number" ;
+	spProp:obsValue "xxxxx" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx3 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:running_number .
+
+hft-version:running_number rdfs:label "running number" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx3 spProp:possibleObsValue "number" ;
+	spProp:obsValue 1.00 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx4 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:access_number .
+
+hft-version:access_number rdfs:label "access number" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx4 spProp:possibleObsValue "number" ;
+	spProp:obsValue "xxxxx" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx5 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:case_number .
+
+hft-version:case_number rdfs:label "case number" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx5 spProp:possibleObsValue "number" ;
+	spProp:obsValue "xxxxx" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx7 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:date_of_birth .
+
+hft-version:date_of_birth rdfs:label "date of birth" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx7 spProp:possibleObsValue "date" ;
+	spProp:obsValue "xx.xx.19xx" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:date ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx8 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:stenosis .
+
+hft-version:stenosis rdfs:label "stenosis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx8 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx9 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:insufficiency .
+
+hft-version:insufficiency rdfs:label "insufficiency" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx9 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx10 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:LVEF .
+
+hft-version:LVEF rdfs:label "LVEF" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx10 spProp:possibleObsValue "decimal number (%)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx11 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:pressure_gradient_stenosis .
+
+hft-version:pressure_gradient_stenosis rdfs:label "pressure gradient (stenosis)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx11 spProp:possibleObsValue "decimal number (mmHg)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx12 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:regurgitation_insufficiency .
+
+hft-version:regurgitation_insufficiency rdfs:label "regurgitation (insufficiency)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx12 spProp:possibleObsValue "milde (1)" , "moderate (2)" , "severe (3)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx13 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:inner_mitral_orifice .
+
+hft-version:inner_mitral_orifice rdfs:label "inner mitral orifice" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx13 spProp:possibleObsValue "decimal number (cm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx14 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:PISA_radius .
+
+hft-version:PISA_radius rdfs:label "PISA radius" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx14 spProp:possibleObsValue "decimal number (cm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx15 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:EROA_effective_regurgitation_orifice_area .
+
+hft-version:EROA_effective_regurgitation_orifice_area rdfs:label "EROA (effective regurgitation orifice area)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx15 spProp:possibleObsValue "decimal number (cm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx16 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:vena_contracta .
+
+hft-version:vena_contracta rdfs:label "vena contracta" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx16 spProp:possibleObsValue "decimal number (cm)" ;
+	spProp:obsValue 0.6 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx17 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:jet_area .
+
+hft-version:jet_area rdfs:label "jet area" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx17 spProp:possibleObsValue "decimal number (cm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx18 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:normal_leaflet_motion .
+
+hft-version:normal_leaflet_motion rdfs:label "normal leaflet motion" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx18 spProp:possibleObsValue "anterior leaflet" , "posterior leaflet" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx19 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:leaflet_prolapse .
+
+hft-version:leaflet_prolapse rdfs:label "leaflet prolapse" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx19 spProp:possibleObsValue "anterior leaflet" , "posterior leaflet" , "no" ;
+	spProp:obsValue "posterior leaflet (P1" , "P2)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx20 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:restricted_leaflet_opening .
+
+hft-version:restricted_leaflet_opening rdfs:label "restricted leaflet opening" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx20 spProp:possibleObsValue "anterior leaflet" , "posterior leaflet" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx21 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:restricted_leaflet_closure .
+
+hft-version:restricted_leaflet_closure rdfs:label "restricted leaflet closure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx21 spProp:possibleObsValue "anterior leaflet" , "posterior leaflet" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx22 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:leaflet_thickening_length .
+
+hft-version:leaflet_thickening_length rdfs:label "leaflet thickening (length)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx22 spProp:possibleObsValue "anterior leaflet" , "posterior leaflet" , "no (length: decimal number (mm))" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx23 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:leaflet_sclerosis .
+
+hft-version:leaflet_sclerosis rdfs:label "leaflet sclerosis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx23 spProp:possibleObsValue "anterior leaflet" , "posterior leaflet" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx24 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:leaflet_vegetation .
+
+hft-version:leaflet_vegetation rdfs:label "leaflet vegetation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx24 spProp:possibleObsValue "anterior leaflet" , "posterior leaflet" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx25 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:pressure_gradient_stenosis .
+
+hft-version:pressure_gradient_stenosis rdfs:label "pressure gradient (stenosis)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx25 spProp:possibleObsValue "decimal number (mmHg)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx26 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:regurgitation_insufficiency .
+
+hft-version:regurgitation_insufficiency rdfs:label "regurgitation (insufficiency)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx26 spProp:possibleObsValue "milde (1)" , "moderate (2)" , "severe (3)" ;
+	spProp:obsValue 1.00 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx27 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:inner_aortic_orifice .
+
+hft-version:inner_aortic_orifice rdfs:label "inner aortic orifice" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx27 spProp:possibleObsValue "decimal number (cm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx28 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:pressure_gradient_stenosis .
+
+hft-version:pressure_gradient_stenosis rdfs:label "pressure gradient (stenosis)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx28 spProp:possibleObsValue "decimal number (mmHg)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx29 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:regurgitation_insufficiency .
+
+hft-version:regurgitation_insufficiency rdfs:label "regurgitation (insufficiency)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx29 spProp:possibleObsValue "milde (1)" , "moderate (2)" , "severe (3)" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx30 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:pressure_gradient_stenosis .
+
+hft-version:pressure_gradient_stenosis rdfs:label "pressure gradient (stenosis)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx30 spProp:possibleObsValue "decimal number (mmHg)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx31 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:regurgitation_insufficiency .
+
+hft-version:regurgitation_insufficiency rdfs:label "regurgitation (insufficiency)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx31 spProp:possibleObsValue "milde (1)" , "moderate (2)" , "severe (3)" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx32 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:ischemic .
+
+hft-version:ischemic rdfs:label "ischemic" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx32 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx33 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:dilated .
+
+hft-version:dilated rdfs:label "dilated" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx33 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx34 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:hypertrophic_obstructive .
+
+hft-version:hypertrophic_obstructive rdfs:label "hypertrophic obstructive" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx34 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx35 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:surgical_procedure .
+
+hft-version:surgical_procedure rdfs:label "surgical procedure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx35 spProp:possibleObsValue "code" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Unit "0-13; 99" ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx36 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:date_of_surgery .
+
+hft-version:date_of_surgery rdfs:label "date of surgery" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx36 spProp:possibleObsValue "date" ;
+	spProp:obsValue 4.19344 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx37 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:urgency .
+
+hft-version:urgency rdfs:label "urgency" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx37 spProp:possibleObsValue "elective" , "urgent" , "emergency" , "ultima ratio" ;
+	spProp:obsValue "elective" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx38 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:surgeon .
+
+hft-version:surgeon rdfs:label "surgeon" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx38 spProp:possibleObsValue "number" ;
+	spProp:obsValue "De Simone" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx39 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:assistant_1 .
+
+hft-version:assistant_1 rdfs:label "assistant 1" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx39 spProp:possibleObsValue "number" ;
+	spProp:obsValue "Al-Maisery" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx40 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:assistant_2 .
+
+hft-version:assistant_2 rdfs:label "assistant 2" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx40 spProp:possibleObsValue "number" ;
+	spProp:obsValue "Soso" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx41 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:assistant_3 .
+
+hft-version:assistant_3 rdfs:label "assistant 3" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx41 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx42 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:assistant_4 .
+
+hft-version:assistant_4 rdfs:label "assistant 4" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx42 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx43 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:anesthesiologist_1 .
+
+hft-version:anesthesiologist_1 rdfs:label "anesthesiologist 1" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx43 spProp:possibleObsValue "number" ;
+	spProp:obsValue "Rauch" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx44 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:anesthesiologist_2 .
+
+hft-version:anesthesiologist_2 rdfs:label "anesthesiologist 2" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx44 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx45 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:perfusionist_1 .
+
+hft-version:perfusionist_1 rdfs:label "perfusionist 1" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx45 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx46 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:perfusionist_2 .
+
+hft-version:perfusionist_2 rdfs:label "perfusionist 2" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx46 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx47 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:nurse_1 .
+
+hft-version:nurse_1 rdfs:label "nurse 1" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx47 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx48 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:nurse_2 .
+
+hft-version:nurse_2 rdfs:label "nurse 2" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx48 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx49 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:thoracotomy .
+
+hft-version:thoracotomy rdfs:label "thoracotomy" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx49 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx50 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:chest_closure .
+
+hft-version:chest_closure rdfs:label "chest closure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx50 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx51 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:saphenectomy .
+
+hft-version:saphenectomy rdfs:label "saphenectomy" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx51 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx52 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:IMA_preparation .
+
+hft-version:IMA_preparation rdfs:label "IMA preparation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx52 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx53 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:operation_time .
+
+hft-version:operation_time rdfs:label "operation time" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx53 spProp:possibleObsValue "number" ;
+	spProp:obsValue "221 min" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx54 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:endocardial_thickening .
+
+hft-version:endocardial_thickening rdfs:label "endocardial thickening" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx54 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx55 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:thrombus_formation .
+
+hft-version:thrombus_formation rdfs:label "thrombus formation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx55 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx56 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:calcification .
+
+hft-version:calcification rdfs:label "calcification" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx56 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx57 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:myocardial_tumors .
+
+hft-version:myocardial_tumors rdfs:label "myocardial tumors" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx57 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx58 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:jet_lesions .
+
+hft-version:jet_lesions rdfs:label "jet lesions" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx58 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx59 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:prolpase .
+
+hft-version:prolpase rdfs:label "prolpase" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx59 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx60 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:A1 .
+
+hft-version:A1 rdfs:label "A1" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx60 spProp:possibleObsValue "normal" , "restricted; decimal number (distance to annulus plane in mm)" ;
+	spProp:obsValue 1.568180 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx61 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:A2 .
+
+hft-version:A2 rdfs:label "A2" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx61 spProp:possibleObsValue "normal" , "restricted; decimal number (distance to annulus plane in mm)" ;
+	spProp:obsValue -1.1187390 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx62 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:A3 .
+
+hft-version:A3 rdfs:label "A3" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx62 spProp:possibleObsValue "normal" , "restricted; decimal number (distance to annulus plane in mm)" ;
+	spProp:obsValue 1.469780 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx63 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:P2 .
+
+hft-version:P2 rdfs:label "P2" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx63 spProp:possibleObsValue "normal" , "restricted; decimal number (distance to annulus plane in mm)" ;
+	spProp:obsValue -1.0147891 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx64 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:P3 .
+
+hft-version:P3 rdfs:label "P3" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx64 spProp:possibleObsValue "normal" , "restricted; decimal number (distance to annulus plane in mm)" ;
+	spProp:obsValue -6.16560 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx65 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:anterior_leaflet_-_size .
+
+hft-version:anterior_leaflet_-_size rdfs:label "anterior leaflet - size" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx65 spProp:possibleObsValue "decimal number (mm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx66 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:posterior_leaflet_-_size .
+
+hft-version:posterior_leaflet_-_size rdfs:label "posterior leaflet - size" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx66 spProp:possibleObsValue "decimal number (mm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx67 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:segment_-_size .
+
+hft-version:segment_-_size rdfs:label "segment - size" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx67 spProp:possibleObsValue "decimal number (mm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx68 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:intercommissural_distance .
+
+hft-version:intercommissural_distance rdfs:label "intercommissural distance" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx68 spProp:possibleObsValue "decimal number (mm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx69 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:coaption_line .
+
+hft-version:coaption_line rdfs:label "coaption line" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx69 spProp:possibleObsValue "spline (subsequent 3D-points)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx70 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:coaption_zone_height .
+
+hft-version:coaption_zone_height rdfs:label "coaption zone height" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx70 spProp:possibleObsValue "decimal number (mm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx71 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:normal .
+
+hft-version:normal rdfs:label "normal" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx71 spProp:possibleObsValue "yes" , "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:many_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx72 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:perforation .
+
+hft-version:perforation rdfs:label "perforation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx72 spProp:possibleObsValue "yes" , "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:many_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx73 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:thickening .
+
+hft-version:thickening rdfs:label "thickening" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx73 spProp:possibleObsValue "yes" , "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:many_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx74 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:excess_leaflet_tissue .
+
+hft-version:excess_leaflet_tissue rdfs:label "excess leaflet tissue" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx74 spProp:possibleObsValue "yes" , "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:many_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx75 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:retraction .
+
+hft-version:retraction rdfs:label "retraction" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx75 spProp:possibleObsValue "yes" , "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:many_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx76 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:abscess .
+
+hft-version:abscess rdfs:label "abscess" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx76 spProp:possibleObsValue "yes" , "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:many_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx77 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:calcification .
+
+hft-version:calcification rdfs:label "calcification" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx77 spProp:possibleObsValue "yes" , "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:many_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx78 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:fibrosis .
+
+hft-version:fibrosis rdfs:label "fibrosis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx78 spProp:possibleObsValue "yes" , "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:many_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx79 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:tear .
+
+hft-version:tear rdfs:label "tear" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx79 spProp:possibleObsValue "yes" , "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:many_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx80 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:commissure_fusion .
+
+hft-version:commissure_fusion rdfs:label "commissure fusion" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx80 spProp:possibleObsValue "yes" , "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:many_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx81 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:vegetation .
+
+hft-version:vegetation rdfs:label "vegetation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx81 spProp:possibleObsValue "yes" , "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:many_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx82 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:thrombotic_material .
+
+hft-version:thrombotic_material rdfs:label "thrombotic material" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx82 spProp:possibleObsValue "yes" , "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:many_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx83 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:tumor .
+
+hft-version:tumor rdfs:label "tumor" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx83 spProp:possibleObsValue "yes" , "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:many_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx84 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:commissural_fusion .
+
+hft-version:commissural_fusion rdfs:label "commissural fusion" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx84 spProp:possibleObsValue "yes" , "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:many_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx85 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:traumatic_lesion .
+
+hft-version:traumatic_lesion rdfs:label "traumatic lesion" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx85 spProp:possibleObsValue "yes" , "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:many_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx86 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:fusion .
+
+hft-version:fusion rdfs:label "fusion" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx86 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx87 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:thickening .
+
+hft-version:thickening rdfs:label "thickening" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx87 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx88 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:calcification .
+
+hft-version:calcification rdfs:label "calcification" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx88 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx89 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:anteroposterior_diameter .
+
+hft-version:anteroposterior_diameter rdfs:label "anteroposterior diameter" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx89 spProp:possibleObsValue "decimal number (mm)" ;
+	spProp:obsValue 3.307171 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx90 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:septolateral_diameter .
+
+hft-version:septolateral_diameter rdfs:label "septolateral diameter" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx90 spProp:possibleObsValue "decimal number (mm)" ;
+	spProp:obsValue 3.307171 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx91 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:intertrigonal_distance .
+
+hft-version:intertrigonal_distance rdfs:label "intertrigonal distance" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx91 spProp:possibleObsValue "decimal number (mm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx92 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:ratio_transverse_diameter_anteroposterior_diameter .
+
+hft-version:ratio_transverse_diameter_anteroposterior_diameter rdfs:label "ratio transverse diameter : anteroposterior diameter" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx92 spProp:possibleObsValue "decimal number" ;
+	spProp:obsValue 1.00 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx93 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:shape_quantitativ .
+
+hft-version:shape_quantitativ rdfs:label "shape (quantitativ)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx93 spProp:possibleObsValue "spline (subsequent 3D-points)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx94 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:shape_qualitativ .
+
+hft-version:shape_qualitativ rdfs:label "shape (qualitativ)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx94 spProp:possibleObsValue "symmetric" , "asymmetric" , "ovoid" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx95 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:circumference .
+
+hft-version:circumference rdfs:label "circumference" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx95 spProp:possibleObsValue "decimal number (mm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx96 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:area .
+
+hft-version:area rdfs:label "area" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx96 spProp:possibleObsValue "decimal number (mm)" ;
+	spProp:obsValue 7.365092 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx97 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:normal .
+
+hft-version:normal rdfs:label "normal" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx97 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx98 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:calcification .
+
+hft-version:calcification rdfs:label "calcification" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx98 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx99 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:dilatation .
+
+hft-version:dilatation rdfs:label "dilatation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx99 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx100 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:sclerosis .
+
+hft-version:sclerosis rdfs:label "sclerosis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx100 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx101 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:infection .
+
+hft-version:infection rdfs:label "infection" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx101 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx102 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:abscess .
+
+hft-version:abscess rdfs:label "abscess" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx102 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx103 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:rupture .
+
+hft-version:rupture rdfs:label "rupture" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx103 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx104 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:length .
+
+hft-version:length rdfs:label "length" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx104 spProp:possibleObsValue "decimal number (mm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx105 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:rupture .
+
+hft-version:rupture rdfs:label "rupture" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx105 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx106 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:calcification .
+
+hft-version:calcification rdfs:label "calcification" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx106 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx107 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:sclerosis .
+
+hft-version:sclerosis rdfs:label "sclerosis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx107 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx108 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:shortening .
+
+hft-version:shortening rdfs:label "shortening" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx108 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx109 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:elongation .
+
+hft-version:elongation rdfs:label "elongation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx109 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx110 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:thickening .
+
+hft-version:thickening rdfs:label "thickening" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx110 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx111 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:fusion .
+
+hft-version:fusion rdfs:label "fusion" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx111 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx112 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:normal .
+
+hft-version:normal rdfs:label "normal" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx112 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx113 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:calcification .
+
+hft-version:calcification rdfs:label "calcification" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx113 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx114 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:elongation .
+
+hft-version:elongation rdfs:label "elongation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx114 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx115 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:rupture .
+
+hft-version:rupture rdfs:label "rupture" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx115 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx116 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:others .
+
+hft-version:others rdfs:label "others" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx116 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx117 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:aneurysm .
+
+hft-version:aneurysm rdfs:label "aneurysm" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx117 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx118 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:fibrouse_plaque .
+
+hft-version:fibrouse_plaque rdfs:label "fibrouse plaque" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx118 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx119 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:dilatation .
+
+hft-version:dilatation rdfs:label "dilatation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx119 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx120 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:myocardial_tumors .
+
+hft-version:myocardial_tumors rdfs:label "myocardial tumors" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx120 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx121 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:infarction .
+
+hft-version:infarction rdfs:label "infarction" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx121 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx122 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:myocarditis .
+
+hft-version:myocarditis rdfs:label "myocarditis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx122 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx123 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:calcification .
+
+hft-version:calcification rdfs:label "calcification" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx123 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx124 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:special_findings .
+
+hft-version:special_findings rdfs:label "special findings" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx124 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx125 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:model_type .
+
+hft-version:model_type rdfs:label "model type" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx125 spProp:possibleObsValue "code" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx126 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:paravalvular_leak .
+
+hft-version:paravalvular_leak rdfs:label "paravalvular leak" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx126 spProp:possibleObsValue "yes" , "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx127 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:defect_of_mechanical_prothesis .
+
+hft-version:defect_of_mechanical_prothesis rdfs:label "defect of mechanical prothesis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx127 spProp:possibleObsValue "yes" , "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx128 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:bioprosthesis_degeneration .
+
+hft-version:bioprosthesis_degeneration rdfs:label "bioprosthesis degeneration" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx128 spProp:possibleObsValue "yes" , "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx129 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:redo_cardiac_surgery .
+
+hft-version:redo_cardiac_surgery rdfs:label "redo cardiac surgery" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx129 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx130 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:start_of_surgery .
+
+hft-version:start_of_surgery rdfs:label "start of surgery" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx130 spProp:possibleObsValue "time" ;
+	spProp:obsValue 0.41944444444444445 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx131 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:end_of_surgery .
+
+hft-version:end_of_surgery rdfs:label "end of surgery" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx131 spProp:possibleObsValue "time" ;
+	spProp:obsValue 0.5729166666666666 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx132 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:bypass_time .
+
+hft-version:bypass_time rdfs:label "bypass time" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx132 spProp:possibleObsValue "number" ;
+	spProp:obsValue 1.292 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx133 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:aortic_crossclamp_time .
+
+hft-version:aortic_crossclamp_time rdfs:label "aortic crossclamp time" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx133 spProp:possibleObsValue "number" ;
+	spProp:obsValue 7.71 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx134 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:surgical_strategy .
+
+hft-version:surgical_strategy rdfs:label "surgical strategy" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx134 spProp:possibleObsValue "code" ;
+	spProp:obsValue 1.31 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Unit "1-5" ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx135 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:echocardiography .
+
+hft-version:echocardiography rdfs:label "echocardiography" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx135 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx136 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:median_approach .
+
+hft-version:median_approach rdfs:label "median approach" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx136 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx137 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:transversal_approach .
+
+hft-version:transversal_approach rdfs:label "transversal approach" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx137 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx138 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:partial_approach .
+
+hft-version:partial_approach rdfs:label "partial approach" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx138 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx139 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:parasternal_approach .
+
+hft-version:parasternal_approach rdfs:label "parasternal approach" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx139 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx140 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:infrasternal_approach .
+
+hft-version:infrasternal_approach rdfs:label "infrasternal approach" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx140 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx141 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:posterolateral_approach .
+
+hft-version:posterolateral_approach rdfs:label "posterolateral approach" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx141 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx142 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:anterolateral_approach .
+
+hft-version:anterolateral_approach rdfs:label "anterolateral approach" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx142 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx143 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:other_approaches .
+
+hft-version:other_approaches rdfs:label "other approaches" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx143 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx144 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:other_approaches .
+
+hft-version:other_approaches rdfs:label "other approaches" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx144 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx145 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:approach_through_left_atrium .
+
+hft-version:approach_through_left_atrium rdfs:label "approach through left atrium" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx145 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx146 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:transseptal_approach .
+
+hft-version:transseptal_approach rdfs:label "transseptal approach" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx146 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx147 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:approach_aortic_root .
+
+hft-version:approach_aortic_root rdfs:label "approach aortic root" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx147 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx148 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:exclusion_of_atrial_auricle .
+
+hft-version:exclusion_of_atrial_auricle rdfs:label "exclusion of atrial auricle" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx148 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx149 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:implant .
+
+hft-version:implant rdfs:label "implant" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx149 spProp:possibleObsValue "code" ;
+	spProp:obsValue 3.00 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx150 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:valve_prothesis .
+
+hft-version:valve_prothesis rdfs:label "valve prothesis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx150 spProp:possibleObsValue "code" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx151 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:serial_number .
+
+hft-version:serial_number rdfs:label "serial number" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx151 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx152 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:diameter .
+
+hft-version:diameter rdfs:label "diameter" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx152 spProp:possibleObsValue "number" ;
+	spProp:obsValue 3.01 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx153 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:implant_2 .
+
+hft-version:implant_2 rdfs:label "implant 2" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx153 spProp:possibleObsValue "code" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx154 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:intraanular .
+
+hft-version:intraanular rdfs:label "intraanular" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx154 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx155 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:extraanular .
+
+hft-version:extraanular rdfs:label "extraanular" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx155 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx156 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:interrupted_suture .
+
+hft-version:interrupted_suture rdfs:label "interrupted suture" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx156 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx157 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:interrupted_U-suture .
+
+hft-version:interrupted_U-suture rdfs:label "interrupted U-suture" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx157 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx158 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:running_suture .
+
+hft-version:running_suture rdfs:label "running suture" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx158 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx159 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:suture_with_felt .
+
+hft-version:suture_with_felt rdfs:label "suture with felt" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx159 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx160 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:preservation_of_subvalvular_apparatus .
+
+hft-version:preservation_of_subvalvular_apparatus rdfs:label "preservation of subvalvular apparatus" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx160 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx161 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:ring_prothesis .
+
+hft-version:ring_prothesis rdfs:label "ring prothesis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx161 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx162 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:ring_reconstruction .
+
+hft-version:ring_reconstruction rdfs:label "ring reconstruction" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx162 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx163 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:anuloplasty .
+
+hft-version:anuloplasty rdfs:label "anuloplasty" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx163 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx164 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:leaflet_triangular_resection .
+
+hft-version:leaflet_triangular_resection rdfs:label "leaflet triangular resection" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx164 spProp:possibleObsValue "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx165 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:leaflet_quadrangular_resection .
+
+hft-version:leaflet_quadrangular_resection rdfs:label "leaflet quadrangular resection" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx165 spProp:possibleObsValue "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P4" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx166 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:sliding_leaflet_plasty .
+
+hft-version:sliding_leaflet_plasty rdfs:label "sliding leaflet plasty" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx166 spProp:possibleObsValue "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P5" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx167 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:others .
+
+hft-version:others rdfs:label "others" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx167 spProp:possibleObsValue "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P6" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx168 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:size_of_resected_tissue_piece .
+
+hft-version:size_of_resected_tissue_piece rdfs:label "size of resected tissue/ piece" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx168 spProp:possibleObsValue "decimal number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx169 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:plastic_repair_of_chordae .
+
+hft-version:plastic_repair_of_chordae rdfs:label "plastic repair of chordae" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx169 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx170 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:chordae_transposition .
+
+hft-version:chordae_transposition rdfs:label "chordae transposition" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx170 spProp:possibleObsValue "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P3" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx171 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:chordae_replacement_with_artifical_chordae .
+
+hft-version:chordae_replacement_with_artifical_chordae rdfs:label "chordae replacement (with artifical chordae)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx171 spProp:possibleObsValue "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P4" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx172 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:chordae_shortening .
+
+hft-version:chordae_shortening rdfs:label "chordae shortening" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx172 spProp:possibleObsValue "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P5" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx173 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:secondary_chordae .
+
+hft-version:secondary_chordae rdfs:label "secondary chordae" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx173 spProp:possibleObsValue "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P6" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx174 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:others .
+
+hft-version:others rdfs:label "others" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx174 spProp:possibleObsValue "no" , "A1" , "A2" , "A3" , "P1" , "P2" , "P7" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx175 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:resuspension_of_chordae .
+
+hft-version:resuspension_of_chordae rdfs:label "resuspension of chordae" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx175 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx176 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:papillary_muscle_plasty .
+
+hft-version:papillary_muscle_plasty rdfs:label "papillary muscle plasty" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx176 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx177 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:papillary_muscle_shortening .
+
+hft-version:papillary_muscle_shortening rdfs:label "papillary muscle shortening" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx177 spProp:possibleObsValue "anterolateral papillary muscle" , "posteromedial papillary muscle" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx178 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:papillary_muscle_plication .
+
+hft-version:papillary_muscle_plication rdfs:label "papillary muscle plication" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx178 spProp:possibleObsValue "anterolateral papillary muscle" , "posteromedial papillary muscle" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx179 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:papillary_muscle_sliding_plasty .
+
+hft-version:papillary_muscle_sliding_plasty rdfs:label "papillary muscle sliding plasty" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx179 spProp:possibleObsValue "anterolateral papillary muscle" , "posteromedial papillary muscle" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx180 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:papillary_muscle_reimplantation .
+
+hft-version:papillary_muscle_reimplantation rdfs:label "papillary muscle reimplantation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx180 spProp:possibleObsValue "anterolateral papillary muscle" , "posteromedial papillary muscle" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx181 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:papillary_muscle_head_implantation .
+
+hft-version:papillary_muscle_head_implantation rdfs:label "papillary muscle head implantation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx181 spProp:possibleObsValue "anterolateral papillary muscle" , "posteromedial papillary muscle" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx182 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:others .
+
+hft-version:others rdfs:label "others" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx182 spProp:possibleObsValue "anterolateral papillary muscle" , "posteromedial papillary muscle" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx183 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:Woolers_plastic .
+
+hft-version:Woolers_plastic rdfs:label "Woolers plastic" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx183 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx184 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:other_reconstruction_of_valvular_ring .
+
+hft-version:other_reconstruction_of_valvular_ring rdfs:label "other reconstruction of valvular ring" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx184 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx185 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:other_reconstruction_of_valvular_ring .
+
+hft-version:other_reconstruction_of_valvular_ring rdfs:label "other reconstruction of valvular ring" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx185 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx186 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:commissurotomy .
+
+hft-version:commissurotomy rdfs:label "commissurotomy" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx186 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx187 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:other_valvuloplasty .
+
+hft-version:other_valvuloplasty rdfs:label "other valvuloplasty" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx187 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx188 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:other_valvuloplasty .
+
+hft-version:other_valvuloplasty rdfs:label "other valvuloplasty" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx188 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx189 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:alifieri_repair_edge-to-edge_approximation .
+
+hft-version:alifieri_repair_edge-to-edge_approximation rdfs:label "alifieri repair (edge-to-edge approximation)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx189 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx190 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:paneth_plasty .
+
+hft-version:paneth_plasty rdfs:label "paneth plasty" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx190 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx191 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:primary_valve_replacement .
+
+hft-version:primary_valve_replacement rdfs:label "primary valve replacement" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx191 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx192 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:cardiac_failure_after_CBP .
+
+hft-version:cardiac_failure_after_CBP rdfs:label "cardiac failure after CBP" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx192 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx193 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:severe_cardiac_arrhythmias .
+
+hft-version:severe_cardiac_arrhythmias rdfs:label "severe cardiac arrhythmias" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx193 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx194 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:severe_bleeding .
+
+hft-version:severe_bleeding rdfs:label "severe bleeding" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx194 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx195 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:others .
+
+hft-version:others rdfs:label "others" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx195 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx196 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:valvuloplasty .
+
+hft-version:valvuloplasty rdfs:label "valvuloplasty" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx196 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx197 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:leaflet_plasty .
+
+hft-version:leaflet_plasty rdfs:label "leaflet plasty" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx197 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx198 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:valve_explantaton .
+
+hft-version:valve_explantaton rdfs:label "valve explantaton" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx198 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx199 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:explanted_prothesis .
+
+hft-version:explanted_prothesis rdfs:label "explanted prothesis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx199 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx200 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:type_of_explanted_prosthesis .
+
+hft-version:type_of_explanted_prosthesis rdfs:label "type of explanted prosthesis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx200 spProp:possibleObsValue "code" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx201 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:diameter_of_explanted_prosthesis .
+
+hft-version:diameter_of_explanted_prosthesis rdfs:label "diameter of explanted prosthesis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx201 spProp:possibleObsValue "number" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx202 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:special_features .
+
+hft-version:special_features rdfs:label "special features" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx202 spProp:possibleObsValue "free text" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:string ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx203 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:diagnosis .
+
+hft-version:diagnosis rdfs:label "diagnosis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx203 spProp:possibleObsValue "free text" ;
+	spProp:obsValue "ausgepraegter Prolaps des posterioren Mitralsegels (am ehesten in Segment P1/P2) mit resultierender stark exzentrischer" , "hochgradiger Mitralinsuffizienz; leichte Ektasie der Aortenwurzel (37 mm)" , "leichtgardige Aortenklappeninsuffizienz" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:string ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx204 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:operation .
+
+hft-version:operation rdfs:label "operation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx204 spProp:possibleObsValue "free text" ;
+	spProp:obsValue "Mitralklappenplastik mit Verschluss des Clefts am Uebergang zwischen vorderem Mitralklappensegel und der vorderen Kommissur; Implkantation eines Annuloplastieringes (Physio-Ring 30)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:string ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx205 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:canulation_aorta .
+
+hft-version:canulation_aorta rdfs:label "canulation aorta" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx205 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx206 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:canulation_upper_vena_cava .
+
+hft-version:canulation_upper_vena_cava rdfs:label "canulation upper vena cava" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx206 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx207 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:canulation_femoral_artery .
+
+hft-version:canulation_femoral_artery rdfs:label "canulation femoral artery" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx207 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx208 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:canulation_femoral_vein .
+
+hft-version:canulation_femoral_vein rdfs:label "canulation femoral vein" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx208 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx209 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:canulation_left_atrium .
+
+hft-version:canulation_left_atrium rdfs:label "canulation left atrium" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx209 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx210 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:canulation_right_atrium .
+
+hft-version:canulation_right_atrium rdfs:label "canulation right atrium" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx210 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx211 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:canulation_pulmonary_artery .
+
+hft-version:canulation_pulmonary_artery rdfs:label "canulation pulmonary artery" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx211 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx212 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:canulation_others .
+
+hft-version:canulation_others rdfs:label "canulation others" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx212 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx213 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:canulation_others .
+
+hft-version:canulation_others rdfs:label "canulation others" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx213 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx214 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:vent .
+
+hft-version:vent rdfs:label "vent" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx214 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx215 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:pericardiolysis .
+
+hft-version:pericardiolysis rdfs:label "pericardiolysis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx215 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx216 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:closure_of_pericardium .
+
+hft-version:closure_of_pericardium rdfs:label "closure of pericardium" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx216 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx217 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:pericardium_-_foreingn_material .
+
+hft-version:pericardium_-_foreingn_material rdfs:label "pericardium - foreingn material" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx217 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx218 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:chest_closure .
+
+hft-version:chest_closure rdfs:label "chest closure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx218 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx219 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:steel_wires .
+
+hft-version:steel_wires rdfs:label "steel wires" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx219 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx220 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:absorbable_sutures .
+
+hft-version:absorbable_sutures rdfs:label "absorbable sutures" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx220 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx222 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:non-absorbable_sutures .
+
+hft-version:non-absorbable_sutures rdfs:label "non-absorbable sutures" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx222 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx223 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:closure_of_soft_tissue .
+
+hft-version:closure_of_soft_tissue rdfs:label "closure of soft tissue" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx223 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx224 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:antiseptic_washing .
+
+hft-version:antiseptic_washing rdfs:label "antiseptic washing" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx224 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx225 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:other_closure_technique .
+
+hft-version:other_closure_technique rdfs:label "other closure technique" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx225 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx226 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:other_closure_technique .
+
+hft-version:other_closure_technique rdfs:label "other closure technique" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx226 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx227 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:mediastinal_drain .
+
+hft-version:mediastinal_drain rdfs:label "mediastinal drain" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx227 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx228 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:pleural_drain .
+
+hft-version:pleural_drain rdfs:label "pleural drain" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx228 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx230 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:leg_drain .
+
+hft-version:leg_drain rdfs:label "leg drain" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx230 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx231 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:pacing_electrodes .
+
+hft-version:pacing_electrodes rdfs:label "pacing electrodes" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx231 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx232 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:extracorporeal_circulation .
+
+hft-version:extracorporeal_circulation rdfs:label "extracorporeal circulation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx232 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx233 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:number_of_extracorporeal_circulation .
+
+hft-version:number_of_extracorporeal_circulation rdfs:label "number of extracorporeal circulation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx233 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx234 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:oxygenator .
+
+hft-version:oxygenator rdfs:label "oxygenator" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx234 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx235 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:coating .
+
+hft-version:coating rdfs:label "coating" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx235 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx236 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:time_of_ischemia .
+
+hft-version:time_of_ischemia rdfs:label "time of ischemia" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx236 spProp:possibleObsValue "number" ;
+	spProp:obsValue 77 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx237 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:reperfusion_time .
+
+hft-version:reperfusion_time rdfs:label "reperfusion time" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx237 spProp:possibleObsValue "number" ;
+	spProp:obsValue 34 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx238 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:time_of_cardiocirculatory_arrest .
+
+hft-version:time_of_cardiocirculatory_arrest rdfs:label "time of cardiocirculatory arrest" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx238 spProp:possibleObsValue "number" ;
+	spProp:obsValue 0 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx239 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:core_temperature .
+
+hft-version:core_temperature rdfs:label "core temperature" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx239 spProp:possibleObsValue "number" ;
+	spProp:obsValue 34 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx240 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:flow_of_extracorporeal_circulation .
+
+hft-version:flow_of_extracorporeal_circulation rdfs:label "flow of extracorporeal circulation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx240 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx241 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:hemoglobin .
+
+hft-version:hemoglobin rdfs:label "hemoglobin" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx241 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx242 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:hematocrit .
+
+hft-version:hematocrit rdfs:label "hematocrit" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx242 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx243 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:hemofiltration .
+
+hft-version:hemofiltration rdfs:label "hemofiltration" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx243 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx244 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:dialysis .
+
+hft-version:dialysis rdfs:label "dialysis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx244 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx245 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:hemodilution .
+
+hft-version:hemodilution rdfs:label "hemodilution" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx245 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx246 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:fibrinolysis_inhibitor .
+
+hft-version:fibrinolysis_inhibitor rdfs:label "fibrinolysis inhibitor" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx246 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx247 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:myocardial_protection .
+
+hft-version:myocardial_protection rdfs:label "myocardial protection" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx247 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx248 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:local_cooling .
+
+hft-version:local_cooling rdfs:label "local cooling" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx248 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx249 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:systemic_hypthermia .
+
+hft-version:systemic_hypthermia rdfs:label "systemic hypthermia" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx249 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx250 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:induced_fibrillation .
+
+hft-version:induced_fibrillation rdfs:label "induced fibrillation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx250 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx251 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:intermittent_crossclamping .
+
+hft-version:intermittent_crossclamping rdfs:label "intermittent crossclamping" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx251 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx252 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:myocardial_protection .
+
+hft-version:myocardial_protection rdfs:label "myocardial protection" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx252 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx253 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:myocardial_protection .
+
+hft-version:myocardial_protection rdfs:label "myocardial protection" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx253 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx254 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:cardioplegia .
+
+hft-version:cardioplegia rdfs:label "cardioplegia" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx254 spProp:possibleObsValue "no" , "antegrade" , "retrograde" ;
+	spProp:obsValue "antegrade" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx255 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:cardioplegic_solution .
+
+hft-version:cardioplegic_solution rdfs:label "cardioplegic solution" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx255 spProp:possibleObsValue "code" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Unit "1-9" ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx256 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:initial_cardioplegia_volume .
+
+hft-version:initial_cardioplegia_volume rdfs:label "initial cardioplegia (volume)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx256 spProp:possibleObsValue "number" ;
+	spProp:obsValue 20 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx257 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:total_cardioplegia_volume .
+
+hft-version:total_cardioplegia_volume rdfs:label "total cardioplegia (volume)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx257 spProp:possibleObsValue "number" ;
+	spProp:obsValue 2.03 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx258 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:contractility .
+
+hft-version:contractility rdfs:label "contractility" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx258 spProp:possibleObsValue "good" , "reduced" , "bad" ;
+	spProp:obsValue "good" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx259 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:epicardial_fat_tissue .
+
+hft-version:epicardial_fat_tissue rdfs:label "epicardial fat tissue" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx259 spProp:possibleObsValue "little" , "moderate" , "much" ;
+	spProp:obsValue "moderate" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx260 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:infarction_scar .
+
+hft-version:infarction_scar rdfs:label "infarction scar" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx260 spProp:possibleObsValue "no" , "anterior wall" , "posterior wall" , "apex" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx261 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:adhesiv_process .
+
+hft-version:adhesiv_process rdfs:label "adhesiv process" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx261 spProp:possibleObsValue "no" , "moderate" , "much" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx262 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:particularities .
+
+hft-version:particularities rdfs:label "particularities" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx262 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx263 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:weaning_problems .
+
+hft-version:weaning_problems rdfs:label "weaning problems" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx263 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx264 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:low_output .
+
+hft-version:low_output rdfs:label "low output" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx264 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx265 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:bypass_occlusion .
+
+hft-version:bypass_occlusion rdfs:label "bypass occlusion" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx265 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx266 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:surgical_bleeding .
+
+hft-version:surgical_bleeding rdfs:label "surgical bleeding" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx266 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx267 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:infarction .
+
+hft-version:infarction rdfs:label "infarction" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx267 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx268 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:hemostatic_problems .
+
+hft-version:hemostatic_problems rdfs:label "hemostatic problems" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx268 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx269 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:dysfunction_of_prosthesis .
+
+hft-version:dysfunction_of_prosthesis rdfs:label "dysfunction of prosthesis" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx269 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx270 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:surgical_lesions .
+
+hft-version:surgical_lesions rdfs:label "surgical lesions" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx270 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx271 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:arrhythmias .
+
+hft-version:arrhythmias rdfs:label "arrhythmias" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx271 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx272 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:hypoxemie .
+
+hft-version:hypoxemie rdfs:label "hypoxemie" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx272 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx273 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:other_complications .
+
+hft-version:other_complications rdfs:label "other complications" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx273 spProp:possibleObsValue "free text" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:string ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx274 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:other_complications .
+
+hft-version:other_complications rdfs:label "other complications" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx274 spProp:possibleObsValue "free text" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:string ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx275 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:number_of_defibrillations .
+
+hft-version:number_of_defibrillations rdfs:label "number of defibrillations" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx275 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx276 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:right_atrial_pressure .
+
+hft-version:right_atrial_pressure rdfs:label "right atrial pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx276 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx277 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:systolic_right_atrial_pressure .
+
+hft-version:systolic_right_atrial_pressure rdfs:label "systolic right atrial pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx277 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx278 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:diastolic_right_atrial_pressure .
+
+hft-version:diastolic_right_atrial_pressure rdfs:label "diastolic right atrial pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx278 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx279 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:mean_right_atrial_pressure .
+
+hft-version:mean_right_atrial_pressure rdfs:label "mean right atrial pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx279 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx280 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:left_atrial_pressure .
+
+hft-version:left_atrial_pressure rdfs:label "left atrial pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx280 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx281 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:systolic_left_atrial_pressure .
+
+hft-version:systolic_left_atrial_pressure rdfs:label "systolic left atrial pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx281 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx282 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:diastolic_left_atrial_pressure .
+
+hft-version:diastolic_left_atrial_pressure rdfs:label "diastolic left atrial pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx282 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx283 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:mean_left_atrial_pressure .
+
+hft-version:mean_left_atrial_pressure rdfs:label "mean left atrial pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx283 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx284 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:right_ventricular_pressure .
+
+hft-version:right_ventricular_pressure rdfs:label "right ventricular pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx284 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx285 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:systolic_right_ventricular_pressure .
+
+hft-version:systolic_right_ventricular_pressure rdfs:label "systolic right ventricular pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx285 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx286 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:diastolic_right_ventricular_pressure .
+
+hft-version:diastolic_right_ventricular_pressure rdfs:label "diastolic right ventricular pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx286 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx287 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:mean_right_ventricular_pressure .
+
+hft-version:mean_right_ventricular_pressure rdfs:label "mean right ventricular pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx287 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx288 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:pulmonary_pressure .
+
+hft-version:pulmonary_pressure rdfs:label "pulmonary pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx288 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx289 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:systolic_pulmonary_pressure .
+
+hft-version:systolic_pulmonary_pressure rdfs:label "systolic pulmonary pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx289 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx290 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:diastolic_pulmonary_pressure .
+
+hft-version:diastolic_pulmonary_pressure rdfs:label "diastolic pulmonary pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx290 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx291 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:mean_pulmonary_pressure .
+
+hft-version:mean_pulmonary_pressure rdfs:label "mean pulmonary pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx291 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx292 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:arterial_pressure .
+
+hft-version:arterial_pressure rdfs:label "arterial pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx292 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx293 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:systolic_arterial_pressure .
+
+hft-version:systolic_arterial_pressure rdfs:label "systolic arterial pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx293 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx294 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:diastolic_arterial_pressure .
+
+hft-version:diastolic_arterial_pressure rdfs:label "diastolic arterial pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx294 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx295 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:mean_arterial_pressure .
+
+hft-version:mean_arterial_pressure rdfs:label "mean arterial pressure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx295 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx296 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:circulatory_state .
+
+hft-version:circulatory_state rdfs:label "circulatory state" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx296 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx297 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:heart_rhythm .
+
+hft-version:heart_rhythm rdfs:label "heart rhythm" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx297 spProp:possibleObsValue "sinus rhythm" , "atrial fibrillation" , "VES" , "SVES" , "av-block" ;
+	spProp:obsValue "sinus rhythm" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx298 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:pacing .
+
+hft-version:pacing rdfs:label "pacing" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx298 spProp:possibleObsValue "no" , "atrium" , "ventricle" , "sequential" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx299 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:assist_device .
+
+hft-version:assist_device rdfs:label "assist device" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx299 spProp:possibleObsValue "no" , "pump" , "ECMO" , "others" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx300 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:localisation_of_assist_device .
+
+hft-version:localisation_of_assist_device rdfs:label "localisation of assist device" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx300 spProp:possibleObsValue "left" , "right" , "both" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx301 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:IABP .
+
+hft-version:IABP rdfs:label "IABP" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx301 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx302 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:dopamin_-_renal_dose .
+
+hft-version:dopamin_-_renal_dose rdfs:label "dopamin - renal dose" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx302 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx303 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:norepinephrine .
+
+hft-version:norepinephrine rdfs:label "norepinephrine" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx303 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx304 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:dopamin_-_circulation .
+
+hft-version:dopamin_-_circulation rdfs:label "dopamin - circulation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx304 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx305 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:vasodilators .
+
+hft-version:vasodilators rdfs:label "vasodilators" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx305 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx306 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:dobutamine .
+
+hft-version:dobutamine rdfs:label "dobutamine" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx306 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx307 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:antiarrhythmics .
+
+hft-version:antiarrhythmics rdfs:label "antiarrhythmics" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx307 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx308 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:epinephrine .
+
+hft-version:epinephrine rdfs:label "epinephrine" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx308 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx309 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:inotropic_drugs .
+
+hft-version:inotropic_drugs rdfs:label "inotropic drugs" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx309 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx310 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:platelet_concentrate .
+
+hft-version:platelet_concentrate rdfs:label "platelet concentrate" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx310 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx311 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:procoagulant_drugs .
+
+hft-version:procoagulant_drugs rdfs:label "procoagulant drugs" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx311 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx312 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:foreign_blood .
+
+hft-version:foreign_blood rdfs:label "foreign blood" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx312 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx313 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:foreign_plasma .
+
+hft-version:foreign_plasma rdfs:label "foreign plasma" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx313 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx314 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:own_blood .
+
+hft-version:own_blood rdfs:label "own blood" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx314 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx315 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:own_plasma .
+
+hft-version:own_plasma rdfs:label "own plasma" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx315 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx316 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:plasma_from_own_blood .
+
+hft-version:plasma_from_own_blood rdfs:label "plasma from own blood" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx316 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx317 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:cellsaver .
+
+hft-version:cellsaver rdfs:label "cellsaver" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx317 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx318 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:autotransfusion .
+
+hft-version:autotransfusion rdfs:label "autotransfusion" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx318 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx319 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:transfer_intubated .
+
+hft-version:transfer_intubated rdfs:label "transfer intubated" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx319 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx320 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:transfer_from_OR .
+
+hft-version:transfer_from_OR rdfs:label "transfer from OR" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx320 spProp:possibleObsValue "code" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Unit "1-3;0" ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx321 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:transfer_to .
+
+hft-version:transfer_to rdfs:label "transfer to" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx321 spProp:possibleObsValue "intensive care unit" , "normal care unit" ;
+	spProp:obsValue "intensive care unit" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx322 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:reason_of_death .
+
+hft-version:reason_of_death rdfs:label "reason of death" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx322 spProp:possibleObsValue "cardiac" , "non-cardiac" , "unknown" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx323 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:hight_of_the_surface_of_coaptation .
+
+hft-version:hight_of_the_surface_of_coaptation rdfs:label "hight of the surface of coaptation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx323 spProp:possibleObsValue "decimal number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx324 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:morphology_and_position_of_closure_line .
+
+hft-version:morphology_and_position_of_closure_line rdfs:label "morphology and position of closure line" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx324 spProp:possibleObsValue "???" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx325 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:sufficient_valve_function .
+
+hft-version:sufficient_valve_function rdfs:label "sufficient valve function" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx325 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx326 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:pressure_gradient_stenosis .
+
+hft-version:pressure_gradient_stenosis rdfs:label "pressure gradient (stenosis)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx326 spProp:possibleObsValue "decimal number (mmHg)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx327 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:regurgitation_insufficiency .
+
+hft-version:regurgitation_insufficiency rdfs:label "regurgitation (insufficiency)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx327 spProp:possibleObsValue "milde (1)" , "moderate (2)" , "severe (3)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx328 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:inner_mitral_orifice .
+
+hft-version:inner_mitral_orifice rdfs:label "inner mitral orifice" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx328 spProp:possibleObsValue "decimal number (cm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx329 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:PISA_radius .
+
+hft-version:PISA_radius rdfs:label "PISA radius" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx329 spProp:possibleObsValue "decimal number (cm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx330 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:EROA_effective_regurgitation_orifice_area .
+
+hft-version:EROA_effective_regurgitation_orifice_area rdfs:label "EROA (effective regurgitation orifice area)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx330 spProp:possibleObsValue "decimal number (cm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx331 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:vena_contracta .
+
+hft-version:vena_contracta rdfs:label "vena contracta" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx331 spProp:possibleObsValue "decimal number (cm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx332 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:jet_area .
+
+hft-version:jet_area rdfs:label "jet area" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx332 spProp:possibleObsValue "decimal number (cm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx333 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:normal_leaflet_motion .
+
+hft-version:normal_leaflet_motion rdfs:label "normal leaflet motion" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx333 spProp:possibleObsValue "anterior leaflet" , "posterior leaflet" , "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx334 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:leaflet_prolapse .
+
+hft-version:leaflet_prolapse rdfs:label "leaflet prolapse" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx334 spProp:possibleObsValue "anterior leaflet" , "posterior leaflet" , "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx335 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:restricted_leaflet_opening .
+
+hft-version:restricted_leaflet_opening rdfs:label "restricted leaflet opening" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx335 spProp:possibleObsValue "anterior leaflet" , "posterior leaflet" , "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx336 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:restricted_leaflet_closure .
+
+hft-version:restricted_leaflet_closure rdfs:label "restricted leaflet closure" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx336 spProp:possibleObsValue "anterior leaflet" , "posterior leaflet" , "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx337 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:residual_leaks .
+
+hft-version:residual_leaks rdfs:label "residual leaks" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx337 spProp:possibleObsValue "yes" , "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx338 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:further_intervention .
+
+hft-version:further_intervention rdfs:label "further intervention" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx338 spProp:possibleObsValue "valve replacement" , "others" , "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx339 a spCat:Heart_Factor_Observation .
+
+_:node19eeif0iqx340 a spCat:Heart_Factor_Observation .
+
+_:node19eeif0iqx341 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:medical_therapy .
+
+hft-version:medical_therapy rdfs:label "medical therapy" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx341 spProp:possibleObsValue "yes" , "no" , "unknown" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx342 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:shortness_of_breath .
+
+hft-version:shortness_of_breath rdfs:label "shortness of breath" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx342 spProp:possibleObsValue "yes" , "no" , "unknown" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx343 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:dizzines .
+
+hft-version:dizzines rdfs:label "dizzines" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx343 spProp:possibleObsValue "yes" , "no" , "unknown" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx344 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:fainting .
+
+hft-version:fainting rdfs:label "fainting" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx344 spProp:possibleObsValue "yes" , "no" , "unknown" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx345 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:leg_swelling .
+
+hft-version:leg_swelling rdfs:label "leg swelling" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx345 spProp:possibleObsValue "yes" , "no" , "unknown" ;
+	spProp:obsValue "yes" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx346 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:NYHA-_classification .
+
+hft-version:NYHA-_classification rdfs:label "NYHA- classification" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx346 spProp:possibleObsValue "I" , "II" , "III" , "IVa" , "IVb" ;
+	spProp:obsValue "III" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx347 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:infarcts .
+
+hft-version:infarcts rdfs:label "infarcts" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx347 spProp:possibleObsValue "yes" , "no" , "unknown" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx348 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:number_of_infarcts .
+
+hft-version:number_of_infarcts rdfs:label "number of infarcts" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx348 spProp:possibleObsValue "number" ;
+	spProp:obsValue 0.00 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx349 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:date_of_last_infarct .
+
+hft-version:date_of_last_infarct rdfs:label "date of last infarct" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx349 spProp:possibleObsValue "date" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:date ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx350 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:syncopes .
+
+hft-version:syncopes rdfs:label "syncopes" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx350 spProp:possibleObsValue "yes" , "no" , "unknown" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx351 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:number_of_syncopes .
+
+hft-version:number_of_syncopes rdfs:label "number of syncopes" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx351 spProp:possibleObsValue "number" ;
+	spProp:obsValue 0.00 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx352 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:date_of_last_syncope .
+
+hft-version:date_of_last_syncope rdfs:label "date of last syncope" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx352 spProp:possibleObsValue "date" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:date ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx353 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:embolism .
+
+hft-version:embolism rdfs:label "embolism" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx353 spProp:possibleObsValue "yes" , "no" , "unknown" ;
+	spProp:obsValue 0.00 ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx354 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:number_of_embolism .
+
+hft-version:number_of_embolism rdfs:label "number of embolism" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx354 spProp:possibleObsValue "number" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx355 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:date_of_last_empolism .
+
+hft-version:date_of_last_empolism rdfs:label "date of last empolism" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx355 spProp:possibleObsValue "date" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:date ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx356 a spCat:Heart_Factor_Observation .
+
+_:node19eeif0iqx357 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:LVEF .
+
+hft-version:LVEF rdfs:label "LVEF" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx357 spProp:possibleObsValue "decimal number (%)" ;
+	spProp:obsValue "gut" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:double ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx358 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:systolic_SPAP .
+
+hft-version:systolic_SPAP rdfs:label "systolic (SPAP)" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx358 spProp:possibleObsValue "decimal number (mmHg)" ;
+	spProp:obsValue "normal" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx359 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:atrial_fibrillation .
+
+hft-version:atrial_fibrillation rdfs:label "atrial fibrillation" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx359 spProp:possibleObsValue "yes" , "no" ;
+	spProp:obsValue "no" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:one_of_list ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .
+
+_:node19eeif0iqx360 a spCat:Heart_Factor_Observation ;
+	spProp:has_Heart_Factor hft-version:LVESD .
+
+hft-version:LVESD rdfs:label "LVESD" ;
+	a skos:Concept , spCat:Heart_Factor .
+
+_:node19eeif0iqx360 spProp:possibleObsValue "decimal number (mm)" ;
+	spProp:has_Obs_Date "2015-10-22T00:00:00.000+02:00"^^xsd:dateTime ;
+	spProp:has_Datatype hft-version:int ;
+	spProp:has_Patient "ABCDE1234" ;
+	spProp:has_Heart_Factor_Table hft-version:1_0_1 .

@@ -1,0 +1,439 @@
+@prefix hft-version: <http://aifb-ls3-vm2.aifb.kit.edu:8080/xnatwrapper/id/project/B01/file/Heart_factors_Version_1.0.1.rdf#> .
+@prefix sp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/> .
+@prefix spProp: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Property-3A> .
+@prefix spCat: <http://surgipedia.sfb125.de/wiki/Special:URIResolver/Category-3A> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+    
+#################################################################################################
+#  ... -> MR:="degenerative"                                                                    #
+#################################################################################################
+
+#1
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:leaflet_thickening_length ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+	     	spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#2
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:leaflet_sclerosis ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#3
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:leaflet_vegetation ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#4
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:perforation ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#5
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:thickening ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#6
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:excess_leaflet_tissue ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#7
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:retraction ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#8
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:abscess ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#9
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:calcification ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#10
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:fibrosis ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#11
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:tear ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#12
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:commissure_fusion ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#13
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:vegetation ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#14
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:thrombotic_material ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#15
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:tumor ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#16
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:commissural_fusion ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#17
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:traumatic_lesion ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+
+#################################################################################################
+#  ... -> MR:="non_degenerative"                                                                #
+#################################################################################################
+
+#18
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:leaflet_thickening_length ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .	
+
+ ?o2 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:leaflet_sclerosis ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .
+
+ ?o3 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:leaflet_vegetation ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .
+
+ ?o4 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:perforation ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .
+
+ ?o5 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:thickening ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .	
+
+ ?o6 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:excess_leaflet_tissue ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .	
+
+ ?o7 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:retraction ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .
+
+ ?o8 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:abscess ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .
+
+ ?o9 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:calcification ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .
+
+ ?o10 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:fibrosis ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .
+
+ ?o11 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:tear ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .	
+
+ ?o12 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:commissure_fusion ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .
+
+ ?o13 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:vegetation ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .	
+
+ ?o14 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:thrombotic_material ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .	
+
+ ?o15 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:tumor ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .	
+
+ ?o16 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:commissural_fusion ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .	
+
+ ?o17 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:traumatic_lesion ; 
+     spProp:obsValue "no" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:MR ; 
+     		spProp:obsValue "non-degenerative" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#################################################################################################
+#  "degenerative MR" and "normal leaflet" -> eligible_ring:="B,C"                               #
+#################################################################################################
+
+
+#19
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:MR ; 
+     spProp:obsValue "degenerative" ;
+     spProp:has_Patient ?p .	
+ 
+ ?o2 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:leaflet ; 
+     spProp:obsValue "normal" ;
+     spProp:has_Patient ?p .	  
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:eligible_ring ; 
+     		spProp:obsValue "B,C" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#################################################################################################
+#  "degenerative MR" and "elongated leaflet" -> eligible_ring:="A"                             #
+#################################################################################################
+
+
+#20
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:MR ; 
+     spProp:obsValue "degenerative" ;
+     spProp:has_Patient ?p .	
+ 
+ ?o2 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:leaflet ; 
+     spProp:obsValue "elongated" ;
+     spProp:has_Patient ?p .	  
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:eligible_ring ; 
+     		spProp:obsValue "A" ;
+  		spProp:has_Patient ?p .
+      } .
+
+
+#################################################################################################
+#  "non-degenerative MR" -> eligible_ring:="B,D,E"                                              #
+#################################################################################################
+
+
+#21
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:MR ; 
+     spProp:obsValue "non-degenerative" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:eligible_ring ; 
+     		spProp:obsValue "B,D,E" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#################################################################################################
+#  "ischemic cardiomyopathy" -> eligible_ring:="F"                                              #
+#################################################################################################
+
+
+#22
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:ischemic ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:eligible_ring ; 
+     		spProp:obsValue "F" ;
+  		spProp:has_Patient ?p .
+      } .
+
+#################################################################################################
+#  "dilated cardiomyopathy" -> eligible_ring:="G"                                              #
+#################################################################################################
+
+
+#23
+{
+ ?o1 a spCat:Heart_Factor_Observation ; 
+     spProp:has_Heart_Factor hft-version:dilated ; 
+     spProp:obsValue "yes" ;
+     spProp:has_Patient ?p .	
+} => {
+	_:bnode a spCat:Heart_Factor_Observation ; 
+		spProp:has_Heart_Factor hft-version:eligible_ring ; 
+     	spProp:obsValue "G" ;
+  		spProp:has_Patient ?p .
+      } .
+
+# A - Myxo Etlogix annuloplasty ring (Edwards Lifescience)
+# B - Carpentier-Edwards Classic mitral annuloplasty ring (Edwards Lifescience)
+# C - Colvin-Galloway Future Composite Ring (Medtronic, Minneapolis, Minn)
+# D - Rigid Saddle Ring (St. Jude Medical, St. Paul, Minn)
+# E - AnnuloFlo, annuloplasty ring (CarboMedics/Sorin Group, Arvada, Colo) 
+# F - Carpentier-McCarthy-Adams IMR Etlogix ring (Edwards Lifescience)
+# G - GeoForm annuloplasty ring (Edwards Lifescience)
