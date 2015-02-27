@@ -57,7 +57,7 @@ public class ServiceHelper {
 							  "OPTIONAL { ?rdfExport		rdf:type			sf:RDFExport } ."; 
 		*/
 		String inputPattern = "?request		surgiProp:Has_ABoxes ?ABoxesURI ." + "\n" + 
-				  			  "?indURI	rdf:type			baseCat:ABoxes .";
+				  			  "?ABoxesURI	rdf:type			baseCat:ABoxes .";
 		String endFrame = "}";
 		
 		String together = "\n" + startFrame + "\n" + inputPattern + "\n" + endFrame;
