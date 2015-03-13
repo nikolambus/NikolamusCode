@@ -11,6 +11,8 @@ import java.io.InputStream;
 
 
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.ThreadMXBean;
 import java.net.URL;
 import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.Files;
@@ -60,8 +62,12 @@ public class Service {
 	@POST
 	@Path("/input")
 	@Consumes("application/rdf+xml")
-	public void postStuff(String rdf, @Context final HttpServletResponse servletResponse, @Context final HttpServletRequest servletRequest, @Context final ServletContext context) throws IOException, SAXException, OWLOntologyCreationException, OWLOntologyStorageException {
+	public void postStuff(String rdf, @Context final HttpServletResponse servletResponse, @Context final HttpServletRequest servletRequest, @Context final ServletContext context) throws IOException, SAXException, OWLOntologyCreationException, OWLOntologyStorageException {		
 		
+		//save the startTime from System
+		long startTimeSystem = System.currentTimeMillis();
+		//System.out.println("Start time System: " + System.currentTimeMillis());
+
 		/* String rdf is read (via POST from Postman) and has a rdf/xml structure that should satisfy the pattern in Helper.getSparqlInputPattern()
 		  a) check if it satisfies the SPARQL input pattern 
 		  b) if yes, then extract 
@@ -179,6 +185,7 @@ public class Service {
 			
 			//cleaning up
 			//removing the rule file without annotations
+			
 			java.nio.file.Path p1 = Paths.get(inputPath);
 			try {
 			    Files.delete(p1);
@@ -190,7 +197,12 @@ public class Service {
 			    // File permission problems are caught here.
 			    System.err.println(x);
 			}
+			
 		}
+		
+		//output the working time with the SYSTEM method
+		System.out.println("SYSTEM_TIME: that took "+ (System.currentTimeMillis() - startTimeSystem) + " ms");
+
 	}
 	
 	@GET

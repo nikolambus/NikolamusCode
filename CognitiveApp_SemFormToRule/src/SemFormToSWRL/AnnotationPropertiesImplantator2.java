@@ -139,18 +139,58 @@ public class AnnotationPropertiesImplantator2 {
 						writer.println("        <Property-3AHas_topic rdf:resource=\"" + base + classNames.get(i) + "\"/>");
 				}
 				else {
-					writer.println(nextLine);
-					writer.println(nextnextLine);
+					/* </rdf:Description> occurs pretty often. So we should take care not to lose some information 
+					 * in the nextLine and nextNextLine after "</Description>". 
+					 * For example <swrl:head> or <swrl:body> could stand in one of these lines. 
+					 * So they need to be processed.  */
+					
+					//mark the moment when we have reached the line with <swrl:body>
+					if (Pattern.matches("\\s*<swrl:body>\\s*", nextLine)) {
+						System.out.println("Start of the body!");
+						bodyFlag = true;
+						writer.println(nextLine);
+					}	
+					else {
+						//mark the moment when we have reached the line with <swrl:head>
+						if (Pattern.matches("\\s*<swrl:head>\\s*", nextLine)) {
+							System.out.println("Start of the head!");
+							bodyFlag = false;
+							writer.println(nextLine);
+						}
+						else 
+							writer.println(nextLine);
+					}
+					
+					//mark the moment when we have reached the line with <swrl:body>
+					if (Pattern.matches("\\s*<swrl:body>\\s*", nextnextLine)) {
+						System.out.println("Start of the body!");
+						bodyFlag = true;
+						writer.println(nextnextLine);
+					}	
+					else {
+						//mark the moment when we have reached the line with <swrl:head>
+						if (Pattern.matches("\\s*<swrl:head>\\s*", nextnextLine)) {
+							System.out.println("Start of the head!");
+							bodyFlag = false;
+							writer.println(nextnextLine);
+						}
+						else 
+							writer.println(nextnextLine);
+					}
 				}	
 			}
 			
 			//mark the moment when we have reached the line with <swrl:body>
-			if (Pattern.matches("\\s*<swrl:body>\\s*", line))
-				bodyFlag = true;
+			if (Pattern.matches("\\s*<swrl:body>\\s*", line)) {
+				System.out.println("Start of the body!");
+				bodyFlag = true;		
+			}		
 			
 			//mark the moment when we have reached the line with <swrl:head>
-			if (Pattern.matches("\\s*<swrl:head>\\s*", line))
+			if (Pattern.matches("\\s*<swrl:head>\\s*", line)) {
+				System.out.println("Start of the head!");
 				bodyFlag = false;
+			}
 			
 			/* if we find the line where some individual is asserted to a class -> 
 			it means, this is a help individual and its class has been moved here from the head side 
@@ -199,7 +239,6 @@ public class AnnotationPropertiesImplantator2 {
 				Matcher mtchTab = patternTab.matcher(line);
 				String tab = "";
 				while (mtchTab.find()) {
-					//and add it to the classNames list
 					tab = mtchTab.group(1);
 				}
 				
@@ -237,7 +276,6 @@ public class AnnotationPropertiesImplantator2 {
 				Matcher mtchTab = patternTab.matcher(line);
 				String tab = "";
 				while (mtchTab.find()) {
-					//and add it to the classNames list
 					tab = mtchTab.group(1);
 				}
 				
@@ -252,8 +290,14 @@ public class AnnotationPropertiesImplantator2 {
 			}
 			
 			/* OPTIONAL
-			 * There is another possibility to specify SWRL atoms. Following if-clause processes this variant.
+			 * There is another possibility to specify SWRL atoms. Instead of
+			 * <rdf:type rdf:resource=\"http://www.w3.org/2003/11/swrl#ClassAtom\"/>
+			 * it is specified by 
+			 * <swrl:ClassAtom>  
+			 * 
+			 * Following if-clause processes this variant.
 			 */
+			/*
 			if( (Pattern.matches("\\s*<swrl:ClassAtom>\\s*", line)) || (Pattern.matches("\\s*<swrl:IndividualPropertyAtom>\\s*", line)) || (Pattern.matches("\\s*<swrl:DatavaluedPropertyAtom>\\s*", line)) || (Pattern.matches("\\s*<swrl:BuiltinAtom>\\s*", line)) ){
 
 				//find out which kind of atom we are dealing with
@@ -282,7 +326,7 @@ public class AnnotationPropertiesImplantator2 {
 					// head --> conclusion
 					writer.println(tab + "	<Property-3AIs_conclusion_of rdf:resource=\"" + currentRuleName + "\"/>");	
 				}
-			}
+			}*/
 	    }
 	    
 		writer.close();
